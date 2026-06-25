@@ -1,3 +1,5 @@
+# Astro-CFG
+This is a Test Store for ASTRO
 # Astro Starter Kit: Basics
 
 ```sh
