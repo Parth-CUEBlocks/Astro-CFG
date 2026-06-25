@@ -1,0 +1,151 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="About Us | CueForGood">
+	<section class="about-hero">
+		<span class="badge">Business as a Force for Good</span>
+		<h1>Aligning Competence with Purpose</h1>
+		<p class="subtitle">We amplify the digital impact of planet-friendly brands, B Corps, and socially-responsible organizations.</p>
+	</section>
+
+	<hr class="separator" />
+
+	<section class="about-content">
+		<h2>Who We Are</h2>
+		<p>
+			At <strong>CueForGood</strong>, we are eCommerce specialists driven to do things the right way—with purpose, conscience, and the belief that business should create positive global change. We partner with purpose-led brands, nonprofits, and sustainable businesses to create digital experiences that drive growth without compromising values.
+		</p>
+	</section>
+
+	<section class="our-pillars">
+		<h2>What We Do Best</h2>
+		<div class="pillars-grid">
+			<div class="pillar-card">
+				<div class="icon">🎨</div>
+				<h3>01. Design</h3>
+				<p>eCommerce & sustainable web design, UI/UX development, custom wireframing, and Conversion Rate Optimization (CRO) focused on building digital trust.</p>
+			</div>
+			<div class="pillar-card">
+				<div class="icon">💻</div>
+				<h3>02. Code</h3>
+				<p>High-performance engineering across Shopify, Core PHP/Laravel, WordPress, and Magento—engineered natively with site speed and Web Accessibility (WCAG compliance) built-in.</p>
+			</div>
+			<div class="pillar-card">
+				<div class="icon">📈</div>
+				<h3>03. Digital Marketing</h3>
+				<p>Ethical audience growth through organic search SEO, sustainable paid search setups, email marketing automation, and story‑driven copywriting.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="about-cta">
+		<p>Have a purpose-driven project in mind?</p>
+		<a href="/contact" class="cta-button">Let's Talk</a>
+	</section>
+</MainLayout>
+
+<style>
+	.about-hero {
+		text-align: center;
+		padding: 4rem 0 2rem;
+	}
+	.badge {
+		background: rgba(168, 85, 247, 0.1);
+		color: #a855f7;
+		padding: 0.4rem 1rem;
+		border-radius: 50px;
+		font-size: 0.85rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		border: 1px solid rgba(168, 85, 247, 0.2);
+	}
+	h1 {
+		font-size: 2.8rem;
+		color: #fff;
+		margin-top: 1rem;
+		margin-bottom: 0.75rem;
+	}
+	.subtitle {
+		font-size: 1.25rem;
+		color: #94a3b8;
+		max-width: 600px;
+		margin: 0 auto;
+		line-height: 1.5;
+	}
+	.separator {
+		border: 0;
+		height: 1px;
+		background: #334155;
+		margin: 3rem 0;
+	}
+	.about-content h2, .our-pillars h2 {
+		color: #a855f7;
+		margin-bottom: 1.5rem;
+		font-size: 1.8rem;
+	}
+	.about-content p {
+		line-height: 1.7;
+		color: #cbd5e1;
+		font-size: 1.1rem;
+	}
+	.pillars-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+	.pillar-card {
+		background: #1e293b;
+		padding: 2rem;
+		border-radius: 12px;
+		border: 1px solid #334155;
+		transition: transform 0.2s ease, border-color 0.2s ease;
+	}
+	.pillar-card:hover {
+		transform: translateY(-4px);
+		border-color: #4f46e5;
+	}
+	.pillar-card .icon {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+	.pillar-card h3 {
+		margin-top: 0;
+		font-size: 1.3rem;
+		color: #38bdf8;
+		margin-bottom: 0.75rem;
+	}
+	.pillar-card p {
+		font-size: 0.95rem;
+		color: #94a3b8;
+		line-height: 1.5;
+	}
+	.about-cta {
+		text-align: center;
+		margin-top: 4rem;
+		padding: 2rem;
+		background: linear-gradient(135deg, #1e1b4b, #311042);
+		border-radius: 12px;
+		border: 1px solid #4f46e5;
+	}
+	.about-cta p {
+		font-size: 1.2rem;
+		color: #fff;
+		margin-bottom: 1.5rem;
+	}
+	.cta-button {
+		display: inline-block;
+		background: #4f46e5;
+		color: #fff;
+		padding: 0.75rem 2rem;
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: bold;
+		transition: background 0.2s ease;
+	}
+	.cta-button:hover {
+		background: #6366f1;
+	}
+</style>
