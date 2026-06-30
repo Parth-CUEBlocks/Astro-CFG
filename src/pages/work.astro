@@ -1,0 +1,201 @@
+---
+// src/pages/work.astro
+import Layout from '../layouts/Layout.astro';
+import '../styles/work.less';
+
+const clientLogos = [
+  { name: "LIFEPLUGIN", variant: "monospaced" },
+  { name: "Bell Lane Coffee Roasters", variant: "serif" },
+  { name: "DAKINE", variant: "sans-bold" },
+  { name: "PLANETJILL", variant: "spaced" },
+  { name: "KIWI.COM", variant: "capsule" },
+  { name: "Jiva", variant: "cursive" },
+  { name: "Clamcleat", variant: "italic-bold" },
+  { name: "Womanswork", variant: "stamp" },
+  { name: "paradise galleries", variant: "lowercase-light" },
+  { name: "blinc", variant: "modern-thin" },
+  { name: "ALL THAT GROWS", variant: "stacked-bold" },
+  { name: "SWITCH", variant: "wide-geometric" },
+  { name: "THE DIAMOND PRO", variant: "luxury" },
+  { name: "THEATER", variant: "classic-serif" },
+  { name: "Perennial CYCLE", variant: "handwritten" },
+  { name: "PETER MANNING NEW YORK", variant: "tailored" },
+  { name: "PetDoors.com", variant: "friendly" },
+  { name: "RAPIDS WHOLESALE", variant: "industrial" },
+  { name: "myfruits", variant: "organic" },
+  { name: "DIAMOND DESIGNS", variant: "elegant" },
+  { name: "Alzheimer's Speaks", variant: "advocacy" },
+  { name: "NIRVANA SAGE", variant: "spiritual" },
+  { name: "RYDA.com", variant: "retail-bold" }
+];
+
+// Complete dataset containing 12 items for the dynamic masonry scroll loop
+const portfolioCards = [
+  {
+    title: "JoinSwitch",
+    badges: ["LARAVEL/REACT", "WEB ACCESSIBILITY"],
+    description: "How we moved Switch from Legacy PHP to Laravel & React",
+    image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "JoinSwitch project layout showcase",
+    link: "/work/joinswitch"
+  },
+  {
+    title: "Divorce Harmony",
+    badges: ["WORDPRESS", "SPEED OPTIMIZATION"],
+    description: "How We Took DivorceHarmony.com from Slow to Speedy (39 to 85)",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Divorce Harmony project screenshot",
+    link: "/work/divorce-harmony"
+  },
+  {
+    title: "AllThatGrows",
+    badges: ["SHOPIFY", "UI/UX DESIGN"],
+    description: "Re-platforming and scaling sustainable seed eCommerce frameworks globally",
+    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "AllThatGrows garden shop view",
+    link: "/work/allthatgrows"
+  },
+  {
+    title: "PerennialCycle",
+    badges: ["MAGENTO", "TECHNICAL SEO"],
+    description: "Driving a 156% surge in organic traffic for urban cycling portals",
+    image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Perennial Cycle eco hub showcase",
+    link: "/work/perennial-cycle"
+  },
+  {
+    title: "Veganologie",
+    badges: ["SHOPIFY PLUS", "ETHICAL BRANDING"],
+    description: "Crafting visual identities and high-converting stores for sustainable luxury accessories",
+    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Veganologie sustainable fashion line",
+    link: "/work/veganologie"
+  },
+  {
+    title: "LearningRx",
+    badges: ["CUSTOM APPS", "ACCESSIBILITY (WCAG)"],
+    description: "Building accessible cognitive learning architectures for diverse mindsets",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "LearningRx mental exercises display",
+    link: "/work/learningrx"
+  },
+  {
+    title: "Betty and Biddy",
+    badges: ["ECOMMERCE DEV", "CRO MANAGEMENT"],
+    description: "Optimizing checkout experiences to drive massive reductions in cart abandonment rates",
+    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Betty and Biddy curated catalog display",
+    link: "/work/betty-biddy"
+  },
+  {
+    title: "Alzheimer's Speaks",
+    badges: ["WORDPRESS LOCAL", "ACCESSIBILITY COMPLIANCE"],
+    description: "Deploying ADA & EAA compliant advocacy networks for community inclusion networks",
+    image: "https://images.unsplash.com/photo-1469571486040-0b9b1743f559?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Alzheimer's Speaks advocacy community layer",
+    link: "/work/alzheimers-speaks"
+  },
+  {
+    title: "NirvanaSage",
+    badges: ["LARAVEL/REACT", "CUSTOM DATABASE"],
+    description: "Engineering tailored, complex feature application matrixes for identity brands",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "NirvanaSage customized portal logic",
+    link: "/work/nirvanasage"
+  },
+  {
+    title: "The Diamond Pro",
+    badges: ["SPEED OPTIMIZATION", "NEXT.JS ENGINE"],
+    description: "Migrating enterprise educational review platforms to zero-bloat frameworks",
+    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "The Diamond Pro structural platform layer",
+    link: "/work/diamond-pro"
+  },
+  {
+    title: "Bell Lane Roasters",
+    badges: ["SHOPIFY", "RECURRING SUBSCRIPTIONS"],
+    description: "Designing streamlined, automated subscription flows for premium artisan brands",
+    image: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Bell Lane storefront overview",
+    link: "/work/bell-lane"
+  },
+  {
+    title: "Peter Manning NY",
+    badges: ["CUSTOM PHP", "ENTERPRISE FULFILLMENT"],
+    description: "Integrating multi-warehouse complex API stock operations safely without platform lag",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Peter Manning apparel storefront system",
+    link: "/work/peter-manning"
+  }
+];
+---
+
+<Layout title="Our Work | CueForGood">
+  <main class="work-showcase-page">
+    
+    <section class="brand-matrix-belt">
+      <div class="container-inner">
+        <div class="logo-flexible-grid">
+          {clientLogos.map((logo) => (
+            <div class={`logo-wrapper-item ${logo.variant}`}>
+              <span>{logo.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="case-studies-intro">
+      <div class="container-inner">
+        <div class="intro-split-layout">
+          <div class="left-heading-col">
+            <h2>Case Studies</h2>
+            <p>
+              Meticulously honing our skills over the last 15 years, we constantly strive to deliver on our promise of in-depth client collaborations fueled by clear & consistent communication.
+            </p>
+          </div>
+          <div class="right-context-col">
+            <p>
+              Adhering to timing & budget expectations of our clients, we build & modify the solutions their customers are looking for, thereby reinforcing the brand identity in the industry. Take an in-depth look into how we sailed through a few of our projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-cards-section">
+      <div class="container-inner">
+        <div class="cards-stack">
+          {portfolioCards.map((card, index) => (
+            <div class={`project-row-card ${index % 2 === 1 ? 'row-reversed' : ''}`}>
+              
+              <div class="card-content-side">
+                <h2>{card.title}</h2>
+                
+                <div class="badge-row-container">
+                  {card.badges.map((badge) => (
+                    <span class="tech-badge">{badge}</span>
+                  ))}
+                </div>
+                
+                <p class="project-headline-desc">{card.description}</p>
+                
+                <div class="action-btn-wrapper">
+                  <a href={card.link} class="btn-read-more">READ MORE</a>
+                </div>
+              </div>
+
+              <div class="card-media-side">
+                <div class="image-crop-box">
+                  <img src={card.image} alt={card.imageAlt} loading="lazy" />
+                </div>
+              </div>
+
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Layout>

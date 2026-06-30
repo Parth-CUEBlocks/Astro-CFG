@@ -1,4 +1,4 @@
-/* src/styles/homepage.less — Full Replicated Landing Experience */
+/* src/styles/homepage.less — Unified Front Page Layout Styles */
 
 @import "./variables.less";
 
@@ -358,12 +358,275 @@
   }
 
   @media (min-width: 768px) {
-    padding: 7rem 3rem;
+    padding: 7rem 3rem 4rem 3rem;
   }
 }
 
 /* ==========================================================================
-   4. Bottom Conversion Block Layout
+   4. Case Studies Asymmetrical Balanced Grid
+   ========================================================================== */
+.cfg-cases-viewport {
+  background-color: #191c23; 
+  padding: 2rem 1.5rem 4rem 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  .cfg-cases-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  .cfg-case-card {
+    display: block;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 3rem 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+    @media (min-width: 992px) {
+      padding: 4.5rem 3.5rem;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .cfg-card-lavender {
+    background-color: #e5e7fa; 
+  }
+
+  .cfg-card-iceblue {
+    background-color: #cce3f8; 
+  }
+
+  .cfg-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    color: #191c23;
+
+    .cfg-case-eyebrow {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+
+      @media (min-width: 992px) {
+        font-size: 2.65rem;
+      }
+    }
+
+    .cfg-case-client {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 0 0 1.25rem 0;
+      letter-spacing: -0.01em;
+
+      @media (min-width: 992px) {
+        font-size: 1.85rem;
+      }
+    }
+
+    .cfg-case-badge {
+      background-color: #6ee7b7; 
+      color: #064e3b;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+    }
+
+    .cfg-case-summary {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #334155;
+      margin: 0 0 2rem 0;
+      font-weight: 400;
+      max-width: 480px;
+
+      @media (min-width: 992px) {
+        font-size: 1.25rem;
+      }
+    }
+
+    .cfg-case-link {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #191c23;
+    }
+  }
+
+  @media (min-width: 992px) {
+    padding: 2rem 3rem 5rem 3rem;
+  }
+}
+
+/* ==========================================================================
+   5. Client Speak Testimonial Section
+   ========================================================================== */
+.cfg-testimonial-viewport {
+  background-color: #191c23; 
+  padding: 4rem 1.5rem 6rem 1.5rem;
+  text-align: center;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  border-top: 1px solid #222731;
+
+  .cfg-testimonial-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cfg-quote-icon {
+    font-size: 5rem;
+    font-family: Georgia, serif;
+    color: #2e3545; 
+    line-height: 1;
+    margin-bottom: -1rem;
+  }
+
+  .cfg-testimonial-heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+    letter-spacing: -0.01em;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .cfg-testimonial-slider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .cfg-nav-arrow {
+    background: transparent;
+    border: 1px solid #475569;
+    color: #94a3b8;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      border-color: #ffffff;
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    @media (max-width: 576px) {
+      display: none; // Hides small secondary actions cleanly on cramped mobile views
+    }
+  }
+
+  .cfg-testimonial-content {
+    max-width: 760px;
+    margin: 0 auto;
+
+    .cfg-testimonial-text {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: #94a3b8;
+      margin: 0 0 2rem 0;
+      font-weight: 400;
+
+      @media (min-width: 768px) {
+        font-size: 1.35rem;
+      }
+    }
+
+    .cfg-testimonial-author {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #ffffff;
+      margin: 0 0 1rem 0;
+    }
+
+    .cfg-testimonial-brand {
+      margin-top: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      
+      .cfg-brand-logo-text {
+        font-size: 1.65rem;
+        font-weight: 700;
+        color: #94a3b8;
+        letter-spacing: -0.02em;
+        border-left: 4px solid #6ee7b7;
+        padding-left: 0.5rem;
+      }
+    }
+  }
+
+  .cfg-testimonial-dots {
+    display: flex;
+    gap: 0.65rem;
+    justify-content: center;
+    align-items: center;
+
+    .cfg-tdot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid #475569;
+      background-color: transparent;
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &.cfg-tdot-active {
+        background-color: #94a3b8;
+        border-color: #94a3b8;
+      }
+
+      &:hover {
+        border-color: #ffffff;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 5rem 3rem 7rem 3rem;
+  }
+}
+
+/* ==========================================================================
+   6. Bottom Conversion Block Layout
    ========================================================================== */
 .cfg-bottom-cta {
   background-color: #15181f;

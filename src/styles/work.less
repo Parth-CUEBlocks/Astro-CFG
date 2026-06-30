@@ -1,0 +1,289 @@
+/* src/styles/service.less — High-Fidelity Replication Theme Layout with Top Belt and 12-Card Loop Support */
+@import "./variables.less";
+
+.work-showcase-page,
+.work-showcase-page * {
+  box-sizing: border-box;
+}
+
+.work-showcase-page {
+  background-color: #0d111a; /* Exact rich deep dark navy/slate hue background from screenshots */
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  padding: 0 0 10rem 0; /* Adjusted to 0 at top to let the brand belt sit flush with the header */
+  width: 100%;
+
+  .container-inner {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  /* ==========================================================================
+     1. Top Segment: Muted Gray Client Logo Matrix Belt
+     ========================================================================== */
+  .brand-matrix-belt {
+    background-color: #555d6b; /* Precise lighter gray-slate banner background */
+    padding: 4.5rem 0;
+    width: 100%;
+
+    .logo-flexible-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 3.5rem 2rem;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      .logo-wrapper-item {
+        color: rgba(255, 255, 255, 0.85);
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        span {
+          font-size: 1.1rem;
+          white-space: nowrap;
+        }
+
+        /* Typographic logo treatment engines matching your exact browser layout marks */
+        &.monospaced span { font-family: monospace; font-weight: 700; letter-spacing: -0.02em; }
+        &.serif span { font-family: serif; font-style: italic; }
+        &.sans-bold span { font-weight: 900; font-family: sans-serif; letter-spacing: -0.04em; }
+        &.spaced span { letter-spacing: 0.25em; font-size: 0.95rem; font-weight: 300; }
+        &.capsule span { background: rgba(255,255,255,0.15); padding: 0.25rem 0.6rem; border-radius: 50px; font-weight: 700; font-size: 0.9rem; }
+        &.cursive span { font-family: cursive; font-weight: 600; }
+        &.italic-bold span { font-style: italic; font-weight: 800; transform: skewX(-10deg); }
+        &.stamp span { border: 1px dashed rgba(255,255,255,0.6); padding: 0.3rem; border-radius: 50%; font-size: 0.75rem; }
+        &.lowercase-light span { text-transform: lowercase; font-weight: 300; opacity: 0.8; }
+        &.modern-thin span { font-weight: 200; font-family: sans-serif; letter-spacing: 0.05em; }
+        &.stacked-bold span { font-weight: 800; line-height: 0.95; display: inline-block; text-align: left; font-size: 0.95rem; }
+        &.wide-geometric span { letter-spacing: 0.15em; font-weight: 600; text-transform: uppercase; }
+        &.luxury span { font-family: serif; letter-spacing: 0.1em; font-size: 0.95rem; text-transform: uppercase; }
+        &.classic-serif span { font-family: serif; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; }
+        &.handwritten span { font-family: cursive; font-style: italic; }
+        &.tailored span { text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; font-weight: bold; }
+        &.friendly span { font-family: sans-serif; font-weight: 700; color: #dcfce7; }
+        &.industrial span { font-family: monospace; letter-spacing: -0.05em; font-weight: 900; text-transform: uppercase; }
+        &.organic span { color: #fecdd3; font-style: italic; font-weight: bold; }
+        &.elegant span { letter-spacing: 0.3em; font-size: 0.8rem; line-height: 1; display: block; text-transform: uppercase; }
+        &.advocacy span { font-family: serif; font-weight: bold; color: #fef08a; }
+        &.spiritual span { color: #ccfbf1; font-weight: 300; letter-spacing: 0.05em; text-transform: uppercase; }
+        &.retail-bold span { font-weight: 900; color: #ef4444; text-transform: uppercase; }
+      }
+    }
+  }
+
+  /* ==========================================================================
+     2. Case Studies Text Header Block
+     ========================================================================== */
+  .case-studies-intro {
+    padding: 8rem 0 5rem 0;
+    width: 100%;
+
+    .intro-split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 5rem;
+      align-items: start;
+
+      h2 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 0 0 1.5rem 0;
+        color: #ffffff;
+      }
+
+      p {
+        font-size: 1.15rem;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.6);
+        margin: 0;
+      }
+
+      .right-context-col {
+        padding-top: 4.5rem; /* Syncs description paragraphs visually across the layout grid */
+      }
+    }
+  }
+
+  /* ==========================================================================
+     3. Core Alternating Row Grid System (Dynamic 12-Card Loop Support)
+     ========================================================================== */
+  .work-cards-section {
+    margin-top: 2rem;
+
+    .cards-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 8rem; /* Clean structural space between looping project card rows */
+    }
+
+    .project-row-card {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4.5rem;
+      align-items: center;
+      width: 100%;
+
+      /* Text Column Details Layout */
+      .card-content-side {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        h2 {
+          font-size: 2.5rem;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+          margin: 0 0 1.2rem 0;
+          color: #ffffff;
+        }
+
+        .badge-row-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.6rem;
+          margin-bottom: 1.8rem;
+
+          .tech-badge {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: #0d111a;
+            background-color: #10b981; /* Precise high-visibility green tag badge from your reference link */
+            padding: 0.4rem 0.85rem;
+            border-radius: 2px;
+          }
+        }
+
+        .project-headline-desc {
+          font-size: 1.35rem;
+          font-weight: 400;
+          line-height: 1.55;
+          color: rgba(255, 255, 255, 0.8);
+          margin: 0 0 2.2rem 0;
+          max-width: 440px;
+        }
+
+        .action-btn-wrapper {
+          .btn-read-more {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            border: 2px solid #ffffff; /* Sharp crisp white ghost outline button action */
+            padding: 0.85rem 2.2rem;
+            background: transparent;
+            transition: background-color 0.2s ease, color 0.2s ease;
+
+            &:hover {
+              background-color: #ffffff;
+              color: #0d111a;
+            }
+          }
+        }
+      }
+
+      /* Media/Visual Asset Container Column */
+      .card-media-side {
+        width: 100%;
+
+        .image-crop-box {
+          width: 100%;
+          aspect-ratio: 16 / 10;
+          border-radius: 4px;
+          overflow: hidden;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+          }
+        }
+
+        &:hover .image-crop-box img {
+          transform: scale(1.02);
+        }
+      }
+
+      /* Target Alternating Flip Engine via class indicator conditional rules */
+      &.row-reversed {
+        grid-template-columns: 1.1fr 1fr;
+
+        .card-content-side {
+          grid-column: 2;
+        }
+
+        .card-media-side {
+          grid-column: 1;
+          grid-row: 1;
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+     4. Fluid Adaptive Media Query System
+     ========================================================================== */
+@media (max-width: 992px) {
+  .work-showcase-page {
+    .brand-matrix-belt .logo-flexible-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem 1.5rem;
+    }
+
+    .case-studies-intro {
+      padding: 5rem 0 3rem 0;
+      .intro-split-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        
+        .right-context-col {
+          padding-top: 0;
+        }
+      }
+    }
+
+    .work-cards-section {
+      .cards-stack {
+        gap: 5rem;
+      }
+
+      .project-row-card,
+      .project-row-card.row-reversed {
+        grid-template-columns: 1fr; /* Drop cleanly into full-width layout grids on responsive viewports */
+        gap: 2.5rem;
+
+        .card-content-side,
+        .card-media-side {
+          grid-column: auto !important;
+          grid-row: auto !important;
+        }
+
+        .card-content-side {
+          h2 { font-size: 2.2rem; }
+          .project-headline-desc { font-size: 1.2rem; }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .work-showcase-page .brand-matrix-belt {
+    padding: 3rem 0;
+    .logo-flexible-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
