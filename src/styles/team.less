@@ -1,0 +1,190 @@
+/* src/styles/team.less — Exact CueForGood Matching Layer Styles */
+@import "./variables.less";
+
+.team-page-container,
+.team-page-container * {
+  box-sizing: border-box;
+}
+
+.team-page-container {
+  background-color: #0b0d12; 
+  color: #ffffff;
+  padding: 10rem 2rem 8rem;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Header Section Formatting Adjustments */
+  .team-hero {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto 6rem auto;
+    text-align: center;
+
+    .subtitle-badge {
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      color: rgba(255, 255, 255, 0.4);
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: 3.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin: 0 0 1.25rem 0;
+      color: #ffffff;
+
+      span {
+        color: #ffffff;
+        font-weight: 800;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  /* Matrix Layout Engine Specifications */
+  .team-grid-section {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+
+    .team-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      column-gap: 2rem;
+      row-gap: 4.5rem;
+      width: 100%;
+
+      .team-card-wrapper {
+        background: transparent;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .avatar-container {
+          width: 150px; 
+          height: 150px;
+          margin-bottom: 1.5rem;
+          position: relative;
+          overflow: hidden;
+          border-radius: 50%;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: #141822;
+
+          .dummy-avatar-svg {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+        }
+
+        &:hover {
+          .avatar-container .dummy-avatar-svg {
+            transform: scale(1.05); /* Fluid smooth scale transition */
+          }
+        }
+
+        .card-meta {
+          h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0 0 0.4rem 0;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+          }
+
+          .role-text {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin: 0;
+            line-height: 1.4;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  /* Integrated CTA Link Layout Styles */
+  .join-team-banner {
+    width: 100%;
+    max-width: 1140px;
+    margin: 10rem auto 2rem auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 6rem 1rem 2rem;
+    text-align: center;
+
+    .banner-content {
+      max-width: 500px;
+      margin: 0 auto;
+
+      h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin: 0 0 0.75rem 0;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin: 0 0 2rem 0;
+      }
+
+      .cta-primary-link {
+        display: inline-block;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.05rem;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+/* Fluid Viewport Balancing Engine */
+@media (max-width: 768px) {
+  .team-page-container {
+    padding: 7rem 1.5rem 4rem;
+
+    .team-hero {
+      margin-bottom: 4rem;
+      h1 { font-size: 2.6rem; }
+      p { font-size: 1.1rem; }
+    }
+
+    .team-grid-section .team-cards-grid {
+      column-gap: 1.5rem;
+      row-gap: 3.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+
+    .join-team-banner {
+      margin-top: 6rem;
+      padding-top: 4rem;
+      h2 { font-size: 1.8rem; }
+    }
+  }
+}

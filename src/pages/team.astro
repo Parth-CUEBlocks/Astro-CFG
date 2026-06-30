@@ -1,0 +1,82 @@
+---
+// src/pages/team.astro
+import Layout from '../layouts/Layout.astro';
+import '../styles/team.less';
+
+const teamMembers = [
+  { name: 'Avneet Jirman', role: 'Co-Founder' },
+  { name: 'Sarthak Aggarwal', role: 'Co-Founder' },
+  { name: 'Pancham Prashar', role: 'CEO & Founder' },
+  { name: 'Girish Tiwari', role: 'Division Head - eCommerce Development' },
+  { name: 'Aravindkumar B', role: 'Sr. Shopify Developer' },
+  { name: 'Urmila', role: 'Sr. Shopify Developer' },
+  { name: 'Jyoti', role: 'Sr. Web Developer' },
+  { name: 'Sumit Sharma', role: 'Sr. Web Developer' },
+  { name: 'Ravinder Singh', role: 'Sr. Front End Developer' },
+  { name: 'Sahil Singh', role: 'Front End Developer' },
+  { name: 'Parth Gautam', role: 'Front End Developer' },
+  { name: 'Sahil', role: 'Web Developer' },
+  { name: 'Shreya', role: 'Intern - Web Developer' },
+  { name: 'Dheeraj Kumar', role: 'Sr. Linux Administrator' },
+  { name: 'Yash Pal', role: 'Division Head, Digital Marketing (CSE)' },
+  { name: 'Rajiv Singha', role: 'Division Head - Organic Search' },
+  { name: 'Vivek Puri', role: 'Manager - Digital Advertising' },
+  { name: 'Rajender Kumar', role: 'Sr. Digital Advertising Specialist' },
+  { name: 'Harleen Kaur Sandhu', role: 'Organic Search Strategist' },
+  { name: 'Mannu Dhiman', role: 'Organic Search Strategist' },
+  { name: 'Kunal Mahajan', role: 'Digital Advertising Specialist' },
+  { name: 'Vikas', role: 'Intern - Organic Search Marketing' },
+  { name: 'Shivam Thakur', role: 'UI/ UX Designer' },
+  { name: 'Gaurav Jafrain', role: 'Team Lead - Quality Analyst' },
+  { name: 'Priyanka Pabbi', role: 'Quality Analyst' },
+  { name: 'Harsha Chaudhary', role: 'Intern - QA' },
+  { name: 'Ketaky Sharma', role: 'Division Head - People & Culture' },
+  { name: 'Krittika', role: 'ESG Analyst' },
+  { name: 'Deep Sharma', role: 'Sr. Accountant' },
+  { name: 'Shriya Mishra', role: 'Intern - Finance' },
+  { name: 'Ajay Kumar', role: 'Office Support' },
+  { name: 'Carlos', role: 'Chief Cuddles Officer 🐾' }
+];
+---
+
+<Layout title="CueForGood Team | The Specialists Helping Businesses Become a Force for Good">
+  <main class="team-page-container">
+    
+    <section class="team-hero">
+      <div class="subtitle-badge">You are in Good Company</div>
+      <h1>Meet the <span>CueForGood</span> team</h1>
+      <p>
+        Meet the CueForGood team that works on amplifying the success of our 'for purpose' clients.
+      </p>
+    </section>
+
+    <section class="team-grid-section">
+      <div class="team-cards-grid">
+        {teamMembers.map((member) => (
+          <div class="team-card-wrapper">
+            <div class="avatar-container">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" class="dummy-avatar-svg">
+                <circle cx="70" cy="70" r="70" fill="#141822"/>
+                <circle cx="70" cy="54" r="22" fill="#2d3545"/>
+                <path d="M34 110c0-15 16-24 36-24s36 9 36 24H34z" fill="#2d3545"/>
+              </svg>
+            </div>
+            <div class="card-meta">
+              <h3>{member.name}</h3>
+              <p class="role-text">{member.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="join-team-banner">
+      <div class="banner-content">
+        <h2>Join our team</h2>
+        <p>We are always looking for passionate people to join us. Check out our open positions.</p>
+        <a href="/career" class="cta-primary-link">See Open Roles &rarr;</a>
+      </div>
+    </section>
+
+  </main>
+</Layout>

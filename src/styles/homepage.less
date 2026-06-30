@@ -1,0 +1,413 @@
+/* src/styles/homepage.less — Full Replicated Landing Experience */
+
+@import "./variables.less";
+
+/* ==========================================================================
+   1. Brand Purpose Viewport Style Configuration (Hero Area)
+   ========================================================================== */
+.cfg-purpose-viewport {
+  background-color: #191c23; 
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  .cfg-graphic-cube {
+    position: absolute;
+    right: 10%;
+    top: 25%;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #2b303c 0%, #14171d 100%);
+    transform: rotate(-18deg) skewX(12deg);
+    box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
+
+    @media (min-width: 768px) {
+      right: 22%;
+      top: 36%;
+      width: 75px;
+      height: 75px;
+      opacity: 0.8;
+    }
+  }
+
+  .cfg-purpose-container {
+    max-width: 960px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cfg-statement-eyebrow {
+    font-size: 1rem;
+    color: #94a3b8;
+    font-weight: 500;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+
+    .cfg-quote-symbol {
+      color: #ffffff;
+      font-size: 1.2rem;
+      padding: 0 0.15rem;
+      font-family: serif;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .cfg-statement-headline {
+    font-size: 1.85rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #ffffff;
+    margin: 0 0 2.5rem 0;
+    letter-spacing: -0.015em;
+
+    @media (min-width: 480px) {
+      font-size: 2.2rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 3.65rem;
+      line-height: 1.25;
+      margin-bottom: 3.5rem;
+      letter-spacing: -0.02em;
+    }
+  }
+
+  .cfg-experience-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+
+    @media (min-width: 768px) {
+      gap: 0.85rem;
+    }
+
+    .cfg-experience-badge {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      font-style: italic;
+
+      @media (min-width: 768px) {
+        font-size: 0.95rem;
+      }
+    }
+
+    .cfg-experience-divider {
+      width: 8px;
+      height: 8px;
+      background-color: #272c38;
+      border: 1px solid #475569;
+      transform: rotate(45deg);
+      display: inline-block;
+
+      @media (min-width: 768px) {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    min-height: 85vh;
+    padding: 6rem 2rem;
+  }
+}
+
+/* ==========================================================================
+   2. Client Logo Ticker Section
+   ========================================================================== */
+.cfg-logo-ticker {
+  background-color: #15181f; 
+  padding: 3.5rem 1.5rem;
+  border-top: 1px solid #222731;
+  border-bottom: 1px solid #222731;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+
+  .cfg-ticker-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .cfg-ticker-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: #475569;
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+  }
+
+  .cfg-ticker-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+
+    @media (min-width: 768px) {
+      gap: 5rem;
+    }
+
+    .cfg-brand-logo {
+      color: #475569;
+      font-weight: 600;
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+  }
+}
+
+/* ==========================================================================
+   3. Capabilities & Identity Double Matrix Viewport
+   ========================================================================== */
+.cfg-overview-viewport {
+  background-color: #191c23; 
+  padding: 5rem 1.5rem;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  .cfg-overview-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+
+    @media (min-width: 992px) {
+      grid-template-columns: 1.1fr 1fr;
+      gap: 5rem;
+    }
+  }
+
+  .cfg-overview-heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.01em;
+
+    @media (min-width: 768px) {
+      font-size: 2.8rem;
+    }
+  }
+
+  .cfg-overview-lead {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: #94a3b8;
+    margin-bottom: 3rem;
+    max-width: 540px;
+  }
+
+  .cfg-profile-description {
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #94a3b8;
+      margin: 0 0 1.5rem 0;
+
+      @media (min-width: 768px) {
+        font-size: 1.15rem;
+      }
+    }
+  }
+
+  .cfg-services-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .cfg-service-block {
+    .cfg-service-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+      color: #ffffff;
+    }
+
+    .cfg-service-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      li {
+        font-size: 1.05rem;
+        color: #94a3b8;
+        padding-left: 0.5rem;
+      }
+    }
+  }
+
+  .cfg-slider-system {
+    margin-top: 2.5rem;
+    width: 100%;
+
+    .cfg-slider-window {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .cfg-slider-track {
+      display: flex;
+      width: 100%;
+    }
+
+    .cfg-slide-panel {
+      min-width: 100%;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #232834;
+
+      .cfg-dummy-vector {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    .cfg-slider-dots {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+      justify-content: flex-start;
+
+      .cfg-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #475569;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.25s ease;
+
+        &.cfg-dot-active {
+          background-color: #3b82f6; 
+        }
+      }
+    }
+
+    .cfg-slider-timeline {
+      margin-top: 2.5rem;
+      position: relative;
+      width: 100%;
+
+      .cfg-timeline-track-line {
+        width: 100%;
+        height: 1px;
+        background-color: #334155;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .cfg-timeline-active-node {
+        width: 8px;
+        height: 8px;
+        background-color: #3b82f6;
+        border-radius: 50%;
+        position: absolute;
+        top: -4px;
+        left: 0;
+      }
+
+      .cfg-timeline-labels {
+        padding-top: 0.75rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .cfg-time-text {
+          font-size: 0.95rem;
+          color: #ffffff;
+          font-weight: 500;
+        }
+
+        .cfg-time-year {
+          font-size: 0.95rem;
+          color: #475569;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 7rem 3rem;
+  }
+}
+
+/* ==========================================================================
+   4. Bottom Conversion Block Layout
+   ========================================================================== */
+.cfg-bottom-cta {
+  background-color: #15181f;
+  padding: 6rem 1.5rem;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+  border-top: 1px solid #222731;
+
+  .cfg-cta-inner {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .cfg-cta-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.02em;
+
+    @media (min-width: 768px) {
+      font-size: 2.75rem;
+    }
+  }
+
+  .cfg-cta-desc {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .cfg-cta-button {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #15181f;
+    font-weight: 600;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

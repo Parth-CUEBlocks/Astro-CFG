@@ -1,11 +1,154 @@
 ---
-import Welcome from '../components/Welcome.astro';
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Import our custom front page Less compilation
+import '../styles/homepage.less';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="CueForGood | eCommerce Agency for B Corps, Sustainable & Purpose Driven Brands">
+  
+  <section class="cfg-purpose-viewport">
+    <div class="cfg-graphic-cube" aria-hidden="true"></div>
+    <div class="cfg-purpose-container">
+      <p class="cfg-statement-eyebrow">
+        <span class="cfg-quote-symbol">“</span>Leveraging eCommerce for Purpose<span class="cfg-quote-symbol">”</span>
+      </p>
+      <h1 class="cfg-statement-headline">
+        We are an eCommerce agency for B Corps, sustainable, planet-friendly and purpose driven brands.
+      </h1>
+      <div class="cfg-experience-row">
+        <span class="cfg-experience-badge">20 Years Exp</span>
+        <span class="cfg-experience-divider" aria-hidden="true"></span>
+        <span class="cfg-experience-badge">~40 Experts</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cfg-logo-ticker">
+    <div class="cfg-ticker-container">
+      <p class="cfg-ticker-title">TRUSTED BY LEADING PURPOSE-DRIVEN BRANDS</p>
+      <div class="cfg-ticker-grid">
+        <div class="cfg-brand-logo">Brand Logo 1</div>
+        <div class="cfg-brand-logo">Brand Logo 2</div>
+        <div class="cfg-brand-logo">Brand Logo 3</div>
+        <div class="cfg-brand-logo">Brand Logo 4</div>
+        <div class="cfg-brand-logo">Brand Logo 5</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cfg-overview-viewport">
+    <div class="cfg-overview-container">
+      
+      <div class="cfg-overview-column">
+        <h2 class="cfg-overview-heading">What We Do</h2>
+        <p class="cfg-overview-lead">
+          We fuel the digital initiatives of socially-responsible companies and purpose-driven organizations.
+        </p>
+
+        <div class="cfg-services-group">
+          <div class="cfg-service-block">
+            <h3 class="cfg-service-title">01. Design</h3>
+            <ul class="cfg-service-list">
+              <li>- eCommerce & Web Design</li>
+              <li>- Sustainable Web Design</li>
+              <li>- Conversion Rate Optimization (CRO)</li>
+              <li>- UI/UX Development</li>
+              <li>- Wireframes & Prototyping</li>
+            </ul>
+          </div>
+
+          <div class="cfg-service-block">
+            <h3 class="cfg-service-title">02. Code</h3>
+            <ul class="cfg-service-list">
+              <li>- Shopify</li>
+              <li>- Core PHP & Laravel</li>
+              <li>- Wordpress / WooCommerce</li>
+              <li>- Magento</li>
+              <li>- BigCommerce</li>
+              <li>- Web Accessibility</li>
+            </ul>
+          </div>
+
+          <div class="cfg-service-block">
+            <h3 class="cfg-service-title">03. Digital Marketing</h3>
+            <ul class="cfg-service-list">
+              <li>- Paid Search</li>
+              <li>- Organic Search</li>
+              <li>- Email Marketing</li>
+              <li>- Story-driven Copywriting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="cfg-overview-column">
+        <h2 class="cfg-overview-heading">Who We Are</h2>
+        <div class="cfg-profile-description">
+          <p>
+            We are eCommerce specialists amplifying the impact of planet friendly brands and organisations that are working on solving world problems.
+          </p>
+          <p>
+            We are driven to do things the right way - with purpose, conscience, and the belief of using business as a force for good.
+          </p>
+        </div>
+
+        <div class="cfg-slider-system">
+          <div class="cfg-slider-window">
+            <div class="cfg-slider-track">
+              <div class="cfg-slide-panel">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" class="cfg-dummy-vector" aria-label="CueForGood abstract brand values wireframe">
+                  <rect width="100%" height="100%" fill="#232834"/>
+                  <defs>
+                    <linearGradient id="sliderGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.12"/>
+                      <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0.35"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#sliderGlow)"/>
+                  <circle cx="150" cy="225" r="80" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="4 4" />
+                  <circle cx="450" cy="225" r="120" fill="none" stroke="#334155" stroke-width="1" />
+                  <path d="M120,320 C120,260 160,240 200,240 C240,240 280,260 280,320" fill="none" stroke="#475569" stroke-width="2"/>
+                  <circle cx="200" cy="170" r="35" fill="none" stroke="#475569" stroke-width="2"/>
+                  <path d="M320,350 C320,280 370,260 420,260 C470,260 520,280 520,350" fill="none" stroke="#64748b" stroke-width="2"/>
+                  <circle cx="420" cy="180" r="45" fill="none" stroke="#64748b" stroke-width="2"/>
+                  <rect x="230" y="360" width="140" height="35" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+                  <text x="300" y="382" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle" letter-spacing="1">BUSINESS FOR GOOD</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cfg-slider-dots" aria-hidden="true">
+            <span class="cfg-dot cfg-dot-active"></span>
+            <span class="cfg-dot"></span>
+            <span class="cfg-dot"></span>
+            <span class="cfg-dot"></span>
+            <span class="cfg-dot"></span>
+            <span class="cfg-dot"></span>
+            <span class="cfg-dot"></span>
+          </div>
+
+          <div class="cfg-slider-timeline">
+            <div class="cfg-timeline-track-line"></div>
+            <div class="cfg-timeline-active-node"></div>
+            <div class="cfg-timeline-labels">
+              <span class="cfg-time-text">Serving Food</span>
+              <span class="cfg-time-year">2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cfg-bottom-cta">
+    <div class="cfg-cta-inner">
+      <h2 class="cfg-cta-title">Let’s make a difference together.</h2>
+      <p class="cfg-cta-desc">Ready to grow your mission-driven brand with a scalable digital ecosystem?</p>
+      <a href="/contact" class="cfg-cta-button">Get in Touch</a>
+    </div>
+  </section>
+
 </Layout>

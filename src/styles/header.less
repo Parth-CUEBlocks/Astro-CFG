@@ -1,0 +1,180 @@
+/* src/styles/header.less — Integrated Mega Menu Layout */
+@import "./variables.less";
+
+.site-header {
+  background-color: @header-bg;
+  padding: 1.25rem 2rem;
+  position: sticky; /* Becomes the direct positioning anchor for the absolute mega menu */
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+
+  .header-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Stacked Logo Layout */
+  .logo {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    line-height: 1.1;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+    .logo-top {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: @header-text;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-bottom {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: @header-text;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+
+      .loop {
+        color: @header-green;
+        font-weight: 900;
+        letter-spacing: -0.05em;
+        margin: 0 1px;
+      }
+    }
+  }
+
+  /* Centered Navigation Matrix */
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    a {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      color: @header-muted;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: @header-text;
+      }
+    }
+
+    /* Nested Mega Menu Triggers and Logic */
+    .has-mega-menu {
+      /* CHANGED: Neutralized relative context so the child can read the full header width */
+      position: static; 
+
+      &:hover {
+        .mega-menu {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  /* Right-Aligned Social Cluster */
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+
+    a {
+      color: @header-text;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+
+      &:hover {
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
+
+      svg {
+        fill: currentColor;
+      }
+    }
+  }
+}
+
+/* Base styling for Mega Menu (Now perfectly relative to the .site-header bounds) */
+.mega-menu {
+  position: absolute;
+  top: 100%; /* Spawns exactly below the header line */
+  left: 0;
+  width: 100%; /* Spans 100% width of the screen-wide header wrapper */
+  background-color: #11141a; /* Dark background matching the theme */
+  padding: 40px 2rem;
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  /* CHANGED: Inner layout container mirrors the site grid constraints precisely */
+  .mega-menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+    max-width: 1440px; 
+    margin: 0 auto;
+  }
+
+  .mega-menu-title h2 {
+    color: @header-text;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+  .mega-menu-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    a {
+      color: @header-muted;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: @header-text;
+      }
+    }
+  }
+
+  /* Consultation button outline variant style */
+  .btn-consultation {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid @header-text;
+    color: @header-text;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background-color: @header-text;
+      color: #11141a;
+    }
+  }
+}

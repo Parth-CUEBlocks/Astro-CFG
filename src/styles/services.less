@@ -1,0 +1,305 @@
+/* src/styles/service.less — High-Fidelity Theme Layout with Sticky Columns & Graphic Placeholders */
+@import "./variables.less";
+
+.services-page,
+.services-page * {
+  box-sizing: border-box;
+}
+
+.services-page {
+  background-color: #0b0d12;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  padding: 10rem 0 6rem 0;
+  width: 100%;
+
+  .container-inner {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Hero Section Styling */
+  .services-hero {
+    text-align: left;
+    margin-bottom: 8rem;
+
+    .eyebrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.4);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin: 0 0 2.5rem 0;
+      color: #ffffff;
+    }
+
+    .hero-lead {
+      font-size: 1.35rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.65;
+      max-width: 900px;
+      margin: 0 0 2rem 0;
+    }
+
+    .hero-focus {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.45);
+      margin: 0 0 1.5rem 0;
+    }
+
+    .pillar-anchors {
+      display: flex;
+      gap: 1rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ffffff;
+
+      span {
+        position: relative;
+        &:not(:last-child)::after {
+          content: '';
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+
+  /* Two-Column Grid Row Framework */
+  .services-matrix-section {
+    .service-block {
+      margin-bottom: 6rem;
+
+      .block-divider {
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        margin-top: 6rem;
+      }
+
+      &:last-child .block-divider {
+        display: none;
+      }
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: start;
+
+      /* Sticky Scroll Layout Engine */
+      .service-meta-col {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 8rem;
+
+        h2 {
+          font-size: 2.4rem;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+          margin: 0 0 1.5rem 0;
+        }
+
+        .service-desc {
+          font-size: 1.1rem;
+          line-height: 1.65;
+          color: rgba(255, 255, 255, 0.55);
+          margin: 0 0 2.5rem 0;
+        }
+
+        /* Inline SVG Dummy Graphic Box Integration */
+        .service-graphic-box {
+          width: 100%;
+          max-width: 320px;
+          border-radius: 8px;
+          overflow: hidden;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+
+          .service-dummy-svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform 0.4s ease;
+          }
+        }
+
+        &:hover {
+          .service-graphic-box .service-dummy-svg {
+            transform: scale(1.03);
+          }
+        }
+      }
+
+      .service-details-col {
+        /* Standard capability bullet map */
+        .capability-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            line-height: 1.5;
+
+            &:first-child { padding-top: 0; }
+            &:last-child { border-bottom: none; }
+          }
+        }
+
+        /* Subsections platform block grid matrix */
+        .platform-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2.5rem 2rem;
+
+          .platform-card {
+            h3 {
+              font-size: 1.25rem;
+              font-weight: 700;
+              margin: 0 0 0.5rem 0;
+              color: #ffffff;
+            }
+
+            p {
+              font-size: 0.95rem;
+              color: rgba(255, 255, 255, 0.5);
+              line-height: 1.5;
+              margin: 0;
+            }
+          }
+        }
+
+        /* Specialized Web Accessibility Info Block */
+        .accessibility-highlight-box {
+          margin-top: 4rem;
+          padding-top: 3rem;
+          border-top: 1px dashed rgba(255, 255, 255, 0.12);
+
+          h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0 0 0.75rem 0;
+          }
+
+          p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.6;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  /* eCommerce & Beyond Section Framework */
+  .beyond-retail-section {
+    margin-top: 6rem;
+    padding-bottom: 4rem;
+
+    .beyond-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: start;
+
+      .beyond-meta h2 {
+        font-size: 2.4rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 0;
+      }
+
+      .beyond-content {
+        p {
+          font-size: 1.15rem;
+          color: rgba(255, 255, 255, 0.6);
+          line-height: 1.7;
+          margin: 0 0 2.5rem 0;
+        }
+
+        .cta-wrapper {
+          .btn-cta {
+            display: inline-block;
+            color: #0b0d12;
+            background-color: #ffffff;
+            text-decoration: none;
+            text-transform: lowercase;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 0.85rem 2.2rem;
+            border-radius: 4px;
+            transition: opacity 0.2s ease;
+
+            &:hover {
+              opacity: 0.9;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Structural Media Breaks */
+@media (max-width: 992px) {
+  .services-page {
+    padding: 7rem 0 4rem 0;
+
+    .services-hero {
+      margin-bottom: 5rem;
+      h1 { font-size: 2.8rem; }
+      .hero-lead { font-size: 1.15rem; }
+    }
+
+    .services-matrix-section {
+      .service-row {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+
+        .service-meta-col {
+          position: static;
+          margin-bottom: 1.5rem;
+
+          .service-graphic-box {
+            max-width: 100%; /* Spans full width gracefully on smaller form-factors */
+          }
+        }
+      }
+    }
+
+    .beyond-retail-section {
+      .beyond-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .services-matrix-section .service-block .block-divider {
+      margin-top: 4rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .services-page .services-matrix-section .service-row .service-details-col {
+    .platform-grid {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+  }
+}

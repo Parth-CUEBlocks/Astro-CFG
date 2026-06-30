@@ -1,20 +1,45 @@
+---
+// src/layouts/Layout.astro
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Import your decoupled Less style sheets
+import '../styles/base.less';
+import '../styles/header.less';
+import '../styles/footer.less';
+
+const { title = "CueForGood | eCommerce Agency for Impact Brands" } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content="eCommerce digital agency aligning competence with purpose." />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<p>TEST</p>
-		<slot />
+		<Header />
+
+		<main>
+			<slot /> </main>
+
+		<Footer />
 	</body>
 </html>
 
-<style>
+<style is:global>
+	body {
+		font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+	}
 	html,
 	body {
 		margin: 0;
