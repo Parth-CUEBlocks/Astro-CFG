@@ -1,0 +1,30 @@
+---
+import {client} from "../../lib/contentful"; 
+import small from '../assets/homeicon.svg';
+// import HeroData from "../components/Herodata";
+
+const res =await client.getEntries({
+  content_type: "homepageHeroBanner"
+});
+
+const post = res.items[0].fields;
+
+---
+
+<section class="cfg-purpose-viewport">
+     <div class="cfg-graphic-cube" aria-hidden="true"></div>
+    <div class="cfg-purpose-container">
+      <p class="cfg-statement-eyebrow">
+        <span class="cfg-quote-symbol">“</span>{post.subTitle}<span class="cfg-quote-symbol">”</span>
+      </p>
+      <h1 class="cfg-statement-headline">
+        {post.mainTitle}
+      </h1>
+      <div class="cfg-experience-row">
+        <span class="cfg-experience-badge">{post.belowDetails}</span>
+        <span ><img src={small.src} alt="Small Icon" /></span>
+        <span class="cfg-experience-badge">{post.experts}</span>
+      </div>
+    </div> 
+  </section>
+  
