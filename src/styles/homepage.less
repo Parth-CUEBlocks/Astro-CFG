@@ -480,7 +480,7 @@
 }
 
 /* ==========================================================================
-   5. Client Speak Testimonial Section — RESTRUCTURED & FIXED STRUCTURAL GAP
+   5. Client Speak Testimonial Section
    ========================================================================== */
 .cfg-testimonial-viewport {
   background-color: #191c23; 
@@ -517,12 +517,11 @@
     }
   }
 
-  /* --- CRITICAL: Mapping necessary core layout configs onto your separate component container --- */
   .testimonial-swiper {
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    overflow: hidden; /* Mask out non-active horizontal slide elements completely */
+    overflow: hidden; 
     list-style: none;
     padding: 0;
     z-index: 1;
@@ -530,7 +529,6 @@
     width: 100%;
     margin-bottom: 2.5rem;
 
-    /* Re-establishes the linear horizontal flex strip layout inside your custom namespace */
     .swiper-wrapper {
       position: relative;
       width: 100%;
@@ -541,7 +539,6 @@
       box-sizing: content-box;
     }
 
-    /* Sets bounds up so that exactly one full item stretches across the viewer portal width */
     .swiper-slide {
       flex-shrink: 0;
       width: 100%;
@@ -552,7 +549,6 @@
     }
   }
 
-  /* Decoupled layout formatting rule for the structural navigation arrows */
   .testimonial-prev, .testimonial-next {
     position: absolute;
     top: 50%;
@@ -595,9 +591,9 @@
   }
 
   .cfg-testimonial-content {
-    // max-width: 760px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 0 45px; /* Creates inner gutters so elements clear absolute arrows gracefully */
+    padding: 0 45px; 
     box-sizing: border-box;
 
     .cfg-testimonial-text {
@@ -636,7 +632,6 @@
     }
   }
 
-  /* Style adjustments targeting Swiper pagination loops natively */
   .testimonial-pagination {
     display: flex;
     gap: 0.65rem;
@@ -718,4 +713,108 @@
 
 .swiper-pagination {
   text-align: left;
+}
+
+/* ==========================================================================
+   7. Latest Blog Posts Layout (NEW SECTION MATCHING GRID SCREENSHOT)
+   ========================================================================== */
+.cfg-blog-viewport {
+  background-color: #191c23;
+  padding: 5rem 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #ffffff;
+  border-top: 1px solid #222731;
+
+  .cfg-blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .cfg-blog-heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 3rem 0;
+    letter-spacing: -0.01em;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .cfg-blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .cfg-blog-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    .cfg-blog-image-wrapper {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-radius: 4px;
+      background-color: #232834;
+      margin-bottom: 1.5rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &:hover .cfg-blog-image-wrapper img {
+      transform: scale(1.03);
+    }
+
+    .cfg-blog-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #ffffff;
+      margin: 0 0 1rem 0;
+      letter-spacing: -0.01em;
+      min-height: 56px; /* Balance title fields dynamically */
+    }
+
+    .cfg-blog-excerpt {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #94a3b8;
+      margin: 0 0 2rem 0;
+      flex-grow: 1;
+    }
+
+    .cfg-blog-btn {
+      align-self: flex-start;
+      border: 1px solid #475569;
+      background: transparent;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.75rem 1.5rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: #ffffff;
+        color: #191c23;
+        border-color: #ffffff;
+      }
+    }
+  }
 }
