@@ -1,0 +1,160 @@
+---
+// src/components/Testimonials.astro
+---
+
+<section class="cfg-testimonial-viewport">
+  <div class="cfg-testimonial-container">
+    
+    <div class="cfg-quote-icon" aria-hidden="true">“</div>
+    
+    <h2 class="cfg-testimonial-heading">Client Speak</h2>
+    
+    <div class="testimonial-swiper cfg-testimonial-slider">
+      
+      <div class="swiper-wrapper">
+        
+        <div class="swiper-slide cfg-testimonial-content">
+          <p class="cfg-testimonial-text">
+            “We started out with smaller projects and built from there. That was perfect for me because it took out the risk. Their billing system is really nice — it’s crystal clear what you’re paying for, what you’re getting, and how much time it took. I have a lot of trust in them. Ten years from now, I fully intend to still be a client of theirs.”
+          </p>
+          <p class="cfg-testimonial-author">Nick Pullano- CEO</p>
+          <div class="cfg-testimonial-brand">
+            <span class="cfg-brand-logo-text">PetDoors.com</span>
+          </div>
+        </div>
+
+        <div class="swiper-slide cfg-testimonial-content">
+          <p class="cfg-testimonial-text">
+            “They are very organized, communicative and professional. We are very pleased with their work and feel that our site performance has improved. Their project management approach was effective and seamless.”
+          </p>
+          <p class="cfg-testimonial-author">Luke Breen- Owner</p>
+          <div class="cfg-testimonial-brand">
+            <span class="cfg-brand-logo-text">Perennial Cycle</span>
+          </div>
+        </div>
+
+        <div class="swiper-slide cfg-testimonial-content">
+          <p class="cfg-testimonial-text">
+            “The team handles tasks efficiently and delivers quality work within the agreed timeline. Their communication is clear and regular, ensuring transparency throughout the project.”
+          </p>
+          <p class="cfg-testimonial-author">Nate- Director of eCommerce</p>
+          <div class="cfg-testimonial-brand">
+            <span class="cfg-brand-logo-text">Natural Healthy Concepts</span>
+          </div>
+        </div>
+
+        <div class="swiper-slide cfg-testimonial-content">
+          <p class="cfg-testimonial-text">
+            “CueForGood provides exceptional developmental support. They understand our requirements quickly, execute efficiently, and maintain high standards across all deliverables.”
+          </p>
+          <p class="cfg-testimonial-author">Alex- Managing Director</p>
+          <div class="cfg-testimonial-brand">
+            <span class="cfg-brand-logo-text">Strategic Choice</span>
+          </div>
+        </div>
+
+        <div class="swiper-slide cfg-testimonial-content">
+          <p class="cfg-testimonial-text">
+            “Their dedication to sustainable development matches our brand ethos perfectly. The speed optimization work they completed has noticeably boosted our mobile conversion rates.”
+          </p>
+          <p class="cfg-testimonial-author">Chloe- Founder</p>
+          <div class="cfg-testimonial-brand">
+            <span class="cfg-brand-logo-text">The Green Leaf</span>
+          </div>
+        </div>
+
+        <div class="swiper-slide cfg-testimonial-content">
+          <p class="cfg-testimonial-text">
+            “A truly dependable tech partner. They solved complex data synchronization tasks between our warehouse and Shopify store smoothly without any downtime.”
+          </p>
+          <p class="cfg-testimonial-author">Marcus- Tech Lead</p>
+          <div class="cfg-testimonial-brand">
+            <span class="cfg-brand-logo-text">EcoMarket</span>
+          </div>
+        </div>
+
+        <div class="swiper-slide cfg-testimonial-content">
+          <p class="cfg-testimonial-text">
+            “Working with CueForGood feels like an extension of our internal team. Their workflow transparency makes managing long-term platform migrations stress-free.”
+          </p>
+          <p class="cfg-testimonial-author">Sophia- Operations Manager</p>
+          <div class="cfg-testimonial-brand">
+            <span class="cfg-brand-logo-text">Purpose Collective</span>
+          </div>
+        </div>
+
+      </div> 
+      
+      <button class="cfg-nav-arrow cfg-arrow-left testimonial-prev" aria-label="Previous testimonial">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </button>
+
+      <button class="cfg-nav-arrow cfg-arrow-right testimonial-next" aria-label="Next testimonial">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="testimonial-pagination cfg-testimonial-dots"></div>
+
+  </div>
+</section>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+
+  function initTestimonialSwiper() {
+    if (document.querySelector('.testimonial-swiper')) {
+      new Swiper('.testimonial-swiper', {
+        modules: [Navigation, Pagination, Autoplay],
+        loop: true,
+        slidesPerView: 1, // Change to 2 if you want to show two items side-by-side on desktop
+        spaceBetween: 30,
+        autoplay: {
+          delay: 4000, // Balanced speed for text-heavy content
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.testimonial-next',
+          prevEl: '.testimonial-prev',
+        },
+        pagination: {
+          el: '.testimonial-pagination',
+          clickable: true,
+        },
+        // Optional breakpoints to mimic the design file's multi-column view on larger layouts
+        breakpoints: {
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 40
+          }
+        }
+      });
+    }
+  }
+
+  // Execution handling for structural integrity & Astro View Transitions
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTestimonialSwiper);
+  } else {
+    initTestimonialSwiper();
+  }
+  document.addEventListener('astro:after-swap', initTestimonialSwiper);
+</script>
+
+<style>
+  /* Include your testimonial-specific CSS layouts here if necessary */
+  .testimonial-swiper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+</style>
