@@ -6,7 +6,8 @@ import Layout from '../layouts/Layout.astro';
 
 // Import our custom front page Less compilation
 import '../styles/homepage.less';
-
+import Testimonials from '../components/Testimonials.astro';
+import blog1 from '../assets/blog1.png';
 
 ---
 
@@ -109,58 +110,49 @@ import '../styles/homepage.less';
     </div>
   </section>
 
-  <section class="cfg-testimonial-viewport">
-    <div class="cfg-testimonial-container">
-      
-      <div class="cfg-quote-icon" aria-hidden="true">“</div>
-      
-      <h2 class="cfg-testimonial-heading">Client Speak</h2>
-      
-      <div class="cfg-testimonial-slider">
-        <button class="cfg-nav-arrow cfg-arrow-left" aria-label="Previous testimonial">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-          </svg>
-        </button>
+  <Testimonials />
 
-        <div class="cfg-testimonial-content">
-          <p class="cfg-testimonial-text">
-            “We started out with smaller projects and built from there. That was perfect for me because it took out the risk. Their billing system is really nice — it’s crystal clear what you’re paying for, what you’re getting, and how much time it took. I have a lot of trust in them. Ten years from now, I fully intend to still be a client of theirs.”
-          </p>
-          
-          <p class="cfg-testimonial-author">Nick Pullano- CEO</p>
-          
-          <div class="cfg-testimonial-brand">
-            <span class="cfg-brand-logo-text">PetDoors.com</span>
+  <section class="cfg-blog-viewport">
+    <div class="cfg-blog-container">
+      <h2 class="cfg-blog-heading">Latest Posts</h2>
+      
+      <div class="cfg-blog-grid">
+        <article class="cfg-blog-card">
+          <div class="cfg-blog-image-wrapper">
+            <img src={blog1.src} alt="Fastest Shopify Themes 2025" />
           </div>
-        </div>
+          <h3 class="cfg-blog-title">Fastest Shopify Themes 2025 – Tested & Ranked using Google PageSpeed Insights</h3>
+          <p class="cfg-blog-excerpt">Beautiful and feature-rich themes can directly impact user-journeys and conversions.</p>
+          <a href="/blog/fastest-shopify-themes-2025" class="cfg-blog-btn">Read Full Post</a>
+        </article>
 
-        <button class="cfg-nav-arrow cfg-arrow-right" aria-label="Next testimonial">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-          </svg>
-        </button>
+        <article class="cfg-blog-card">
+          <div class="cfg-blog-image-wrapper">
+            <img src={blog1.src} alt="Optimize & Track Google Discover" />
+          </div>
+          <h3 class="cfg-blog-title">How to Optimize & Track Google Discover in Google Analytics</h3>
+          <p class="cfg-blog-excerpt">Google Discover is a curated content feed inside the Google app. The app has more than 800 million monthly active users in Android and iOS phones.</p>
+          <a href="/blog/optimize-track-google-discover" class="cfg-blog-btn">Read Full Post</a>
+        </article>
+
+        <article class="cfg-blog-card">
+          <div class="cfg-blog-image-wrapper">
+            <img src={blog1.src} alt="Sustainable Marketing Principles" />
+          </div>
+          <h3 class="cfg-blog-title">Discover Essential Sustainable Marketing Principles and Strategies for Ethical Business Growth</h3>
+          <p class="cfg-blog-excerpt">Given the major issues that our world is currently facing, such as pollution and climate change, sustainability...</p>
+          <a href="/blog/sustainable-marketing-principles" class="cfg-blog-btn">Read Full Post</a>
+        </article>
       </div>
-
-      <div class="cfg-testimonial-dots" aria-hidden="true">
-        <span class="cfg-tdot"></span>
-        <span class="cfg-tdot cfg-tdot-active"></span>
-        <span class="cfg-tdot"></span>
-        <span class="cfg-tdot"></span>
-        <span class="cfg-tdot"></span>
-        <span class="cfg-tdot"></span>
-        <span class="cfg-tdot"></span>
-      </div>
-
     </div>
   </section>
 
-  <section class="cfg-bottom-cta">
+  <!-- <section class="cfg-bottom-cta">
     <div class="cfg-cta-inner">
       <h2 class="cfg-cta-title">Let’s make a difference together.</h2>
       <p class="cfg-cta-desc">Ready to grow your mission-driven brand with a scalable digital ecosystem?</p>
       <a href="/contact" class="cfg-cta-button">Get in Touch</a>
     </div>
-  </section>
+  </section> -->
 
 </Layout>

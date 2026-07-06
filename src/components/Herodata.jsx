@@ -1,7 +1,16 @@
+const response =await client.getEntries({
+  content_type: "homepageHeroBanner"
+});
 
+const data = response.items[0].fields;
+ <script>
+        console.log(data);
+    </script>
 export default function HeroData({ data }) {
   return (
+    
     <section class="cfg-purpose-viewport">
+       
     {/* <div class="cfg-graphic-cube" aria-hidden="true"></div>
     <div class="cfg-purpose-container">
       <p class="cfg-statement-eyebrow">

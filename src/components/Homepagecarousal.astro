@@ -1,21 +1,34 @@
 ---
-// 1. Leave your frontmatter empty of swiper imports!
-// Do NOT import swiper.js up here.
+import { client } from "../../lib/contentful"; 
+
+const response = await client.getEntries({
+  content_type: "homepageSlider"
+});
+
+// Extract data on the server
+const data = response.items[0]?.fields;
+const slideImages = (data?.slideImage as any[]) || [];
+console.log(slideImages);
 ---
 
 <div class="swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
+    {slideImages.map((slide) => {
+      const url = slide.fields?.file?.url;
+      const altText = slide.fields?.title || "Slider Image";
+      
+      // Render only if the URL exists
+      return url ? (
+        <div class="swiper-slide">
+          <img src={`https:${url}`} alt={altText} />
+        </div>
+      ) : null;
+    })}
   </div>
   
   <div class="swiper-pagination"></div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
 </div>
 
 <script>
   import '../scripts/swiper.js'; 
-  // (Adjust the relative path above to point correctly to your swiper.js file)
 </script>

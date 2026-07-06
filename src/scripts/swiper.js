@@ -1,43 +1,66 @@
 import Swiper from 'swiper';
-// 1. Added Autoplay to the imports
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-function initSwiper() {
+function initSliders() {
+  // --- Existing Swiper Slider ---
   if (document.querySelector('.swiper')) {
     new Swiper('.swiper', {
-      // 2. Added Autoplay to the modules array
       modules: [Navigation, Pagination, Autoplay],
       loop: true,
-      
-      // 3. Added Autoplay settings
       autoplay: {
-        delay: 3000, // Time in milliseconds between slide transitions (3 seconds)
-        disableOnInteraction: false, // Keeps autoplay running even after user swipes/clicks
+        delay: 3000,
+        disableOnInteraction: false,
       },
-      
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-      
       pagination: {
         el: '.swiper-pagination',
-        clickable: true, // 4. This makes the pagination dots clickable!
+        clickable: true,
+      },
+    });
+  }
+
+  // --- New Testimonial Slider (Completely Separate) ---
+  if (document.querySelector('.testimonial-swiper')) {
+    new Swiper('.testimonial-swiper', {
+      modules: [Navigation, Pagination, Autoplay],
+      loop: true,
+      slidesPerView: 1, // Shows one testimonial group at a time
+      spaceBetween: 30, // Spacing between slides
+      autoplay: {
+        delay: 4000, // Slightly longer delay for reading text
+        disableOnInteraction: false,
+      },
+      // Breakpoints matching your design if you want 2 columns on desktop
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        }
+      },
+      navigation: {
+        nextEl: '.testimonial-next',
+        prevEl: '.testimonial-prev',
+      },
+      pagination: {
+        el: '.testimonial-pagination',
+        clickable: true,
       },
     });
   }
 }
 
-// Safely run whether DOM is loading or already loaded
+// Execution lifecycle wrappers
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initSwiper);
+  document.addEventListener('DOMContentLoaded', initSliders);
 } else {
-  initSwiper();
+  initSliders();
 }
 
-// If you use Astro View Transitions, re-init on page swaps
-document.addEventListener('astro:after-swap', initSwiper);
+document.addEventListener('astro:after-swap', initSliders);
