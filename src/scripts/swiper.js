@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 function initSliders() {
-  // --- Existing Swiper Slider ---
+  // --- 1. Existing Generic/Top Slider ---
   if (document.querySelector('.swiper')) {
     new Swiper('.swiper', {
       modules: [Navigation, Pagination, Autoplay],
@@ -26,18 +26,17 @@ function initSliders() {
     });
   }
 
-  // --- New Testimonial Slider (Completely Separate) ---
+  // --- 2. New Testimonial Slider (Completely Separate) ---
   if (document.querySelector('.testimonial-swiper')) {
     new Swiper('.testimonial-swiper', {
       modules: [Navigation, Pagination, Autoplay],
       loop: true,
-      slidesPerView: 1, // Shows one testimonial group at a time
-      spaceBetween: 30, // Spacing between slides
+      slidesPerView: 1, 
+      spaceBetween: 30, 
       autoplay: {
-        delay: 4000, // Slightly longer delay for reading text
+        delay: 4000, 
         disableOnInteraction: false,
       },
-      // Breakpoints matching your design if you want 2 columns on desktop
       breakpoints: {
         768: {
           slidesPerView: 2,
@@ -52,6 +51,32 @@ function initSliders() {
         el: '.testimonial-pagination',
         clickable: true,
       },
+    });
+  }
+
+  // --- 3. New Partners Logo Ticker Slider ---
+  if (document.querySelector('.partners-swiper')) {
+    new Swiper('.partners-swiper', {
+      modules: [Autoplay],
+      loop: true,
+      // spaceBetween: 30,
+      slidesPerView: 2,
+      slidesPerGroup: 1, 
+      watchSlidesProgress: true, // Prevents elements from rendering with out-of-bounds offsets
+      autoplay: {
+        delay: 3000, 
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+          slidesPerGroup: 1,
+        },
+        992: {
+          slidesPerView: 5, 
+          slidesPerGroup: 1, 
+        }
+      }
     });
   }
 }
