@@ -8,7 +8,7 @@ const response = await client.getEntries({
 // Extract data on the server
 const data = response.items[0]?.fields;
 const slideImages = (data?.slideImage as any[]) || [];
-console.log(slideImages);
+// console.log(slideImages);
 ---
 
 <div class="swiper">

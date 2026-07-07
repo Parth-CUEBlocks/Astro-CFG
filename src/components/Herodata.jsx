@@ -4,7 +4,7 @@ const response =await client.getEntries({
 
 const data = response.items[0].fields;
  <script>
-        console.log(data);
+        {/* console.log(data); */}
     </script>
 export default function HeroData({ data }) {
   return (
