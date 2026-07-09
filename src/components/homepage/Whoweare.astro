@@ -1,0 +1,43 @@
+---
+import Homepagecarousal from './Homepagecarousal.astro';
+import { client } from "../../../lib/contentful"; 
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+
+const response = await client.getEntries({
+  content_type: "whatWeDo"
+});
+
+const data = response.items[0]?.fields;
+
+// Instead of mapping over an array, convert the whole rich text block into HTML string
+const serviceBlockHtml = data?.serviceBlock ? documentToHtmlString(data.serviceBlock as any)  : "";
+---
+
+<section class="cfg-overview-viewport">
+    <div class="cfg-overview-container">
+      
+      <div class="cfg-overview-column">
+        <h2 class="cfg-overview-heading">{data?.leftHeading}</h2>
+        <p class="cfg-overview-lead">
+         {data?.leftDescription}
+        </p>
+
+        <div class="cfg-services-group">
+            {/* This will automatically render your headings (<h2>, <h3>), paragraphs, and lists */}
+            <div class="cfg-rich-text-content" set:html={serviceBlockHtml} />
+        </div>
+      </div>
+
+      <div class="cfg-overview-column">
+        <h2 class="cfg-overview-heading">{data?.rightText}</h2>
+        <div class="cfg-profile-description">
+          <p>{data?.rightDescription}</p>
+        </div>
+
+        <div class="cfg-slider-system">
+          <Homepagecarousal/>
+        </div>
+      </div>
+
+    </div>
+</section>

@@ -12,6 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^17.2.2",
     "astro": "^7.0.2",
     "contentful": "^11.12.6",
     "jquery": "^4.0.0",

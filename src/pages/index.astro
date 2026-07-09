@@ -1,115 +1,21 @@
 ---
 // src/pages/index.astro
-import Homepagecarousal from '../components/Homepagecarousal.astro';
-  import HomepageHero from '../components/HomepageHero.astro';
-import Layout from '../layouts/Layout.astro';
-
+import HomepageHero from '../components/homepage/HomepageHero.astro';
+import Testimonials from '../components/homepage/Testimonials.astro';
 // Import our custom front page Less compilation
+import Layout from '../layouts/Layout.astro';
 import '../styles/homepage.less';
-import Testimonials from '../components/Testimonials.astro';
 import blog1 from '../assets/blog1.png';
+import Whoweare from '../components/homepage/Whoweare.astro';
+import Homecasestudy from '../components/homepage/Homecasestudy.astro';
 
 ---
 
 <Layout title="CueForGood | eCommerce Agency for B Corps, Sustainable & Purpose Driven Brands">
   
   <HomepageHero/>
-
-  <section class="cfg-overview-viewport">
-    <div class="cfg-overview-container">
-      
-      <div class="cfg-overview-column">
-        <h2 class="cfg-overview-heading">What We Do</h2>
-        <p class="cfg-overview-lead">
-          We fuel the digital initiatives of socially-responsible companies and purpose-driven organizations.
-        </p>
-
-        <div class="cfg-services-group">
-          <div class="cfg-service-block">
-            <h3 class="cfg-service-title">01. Design</h3>
-            <ul class="cfg-service-list">
-              <li>- eCommerce & Web Design</li>
-              <li>- Sustainable Web Design</li>
-              <li>- Conversion Rate Optimization (CRO)</li>
-              <li>- UI/UX Development</li>
-              <li>- Wireframes & Prototyping</li>
-            </ul>
-          </div>
-
-          <div class="cfg-service-block">
-            <h3 class="cfg-service-title">02. Code</h3>
-            <ul class="cfg-service-list">
-              <li>- Shopify</li>
-              <li>- Core PHP & Laravel</li>
-              <li>- Wordpress / WooCommerce</li>
-              <li>- Magento</li>
-              <li>- BigCommerce</li>
-              <li>- Web Accessibility</li>
-            </ul>
-          </div>
-
-          <div class="cfg-service-block">
-            <h3 class="cfg-service-title">03. Digital Marketing</h3>
-            <ul class="cfg-service-list">
-              <li>- Paid Search</li>
-              <li>- Organic Search</li>
-              <li>- Email Marketing</li>
-              <li>- Story-driven Copywriting</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="cfg-overview-column">
-        <h2 class="cfg-overview-heading">Who We Are</h2>
-        <div class="cfg-profile-description">
-          <p>
-            We are eCommerce specialists amplifying the impact of planet friendly brands and organisations that are working on solving world problems.
-          </p>
-          <p>
-            We are driven to do things the right way - with purpose, conscience, and the belief of using business as a force for good.
-          </p>
-        </div>
-
-        <div class="cfg-slider-system">
-          <Homepagecarousal/>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section class="cfg-cases-viewport">
-    <div class="cfg-cases-container">
-      
-      <a href="/case-studies/perennial-cycle" class="cfg-case-card cfg-card-lavender">
-        <div class="cfg-card-content">
-          <span class="cfg-case-eyebrow">Case Studies</span>
-          <h2 class="cfg-case-client">Perennial Cycle</h2>
-          <div class="cfg-case-badge">SEO</div>
-          <p class="cfg-case-summary">
-            How PerennialCycle increased YOY Organic Revenue by 155.63% with just Elemental SEO.
-          </p>
-          <span class="cfg-case-link">Read more..</span>
-        </div>
-      </a>
-
-      <a href="/case-studies/petdoors" class="cfg-case-card cfg-card-iceblue">
-        <div class="cfg-card-content">
-          <span class="cfg-case-eyebrow">Case Studies</span>
-          <h2 class="cfg-case-client">PETDOORS</h2>
-          <div class="cfg-case-badge">MAGENTO</div>
-          <p class="cfg-case-summary">
-            Merging revenue-driven blogs to increase organic sessions by 106.94% for PetDoors.
-          </p>
-          <span class="cfg-case-link">Read more..</span>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
+  <Whoweare/>
+  <Homecasestudy/>
   <Testimonials />
 
   <section class="cfg-blog-viewport">

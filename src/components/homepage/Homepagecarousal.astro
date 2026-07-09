@@ -1,5 +1,5 @@
 ---
-import { client } from "../../lib/contentful"; 
+import { client } from "../../../lib/contentful"; 
 
 const response = await client.getEntries({
   content_type: "homepageSlider"
@@ -30,5 +30,5 @@ const slideImages = (data?.slideImage as any[]) || [];
 </div>
 
 <script>
-  import '../scripts/swiper.js'; 
+  import '../../scripts/swiper.js'; 
 </script>

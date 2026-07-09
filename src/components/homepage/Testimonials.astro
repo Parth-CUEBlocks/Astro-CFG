@@ -1,6 +1,6 @@
 ---
 // src/components/Testimonials.astro
-import { client } from "../../lib/contentful"; 
+import { client } from "../../../lib/contentful"; 
 
 const response = await client.getEntries({
   content_type: "homepageTestimonials"
@@ -55,5 +55,5 @@ const testimonialsList = (data as any[]) || [];
 </section>
 
 <script>
-  import '../scripts/swiper.js'; 
+  import '../../scripts/swiper.js'; 
 </script>
