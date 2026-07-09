@@ -4,8 +4,6 @@
 .site-header {
   background-color: @header-bg;
   padding: 1.25rem 2rem;
-  position: sticky; /* Becomes the direct positioning anchor for the absolute mega menu */
-  top: 0;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -26,6 +24,7 @@
     text-decoration: none;
     line-height: 1.1;
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    width: 125px;
 
     .logo-top {
       font-size: 1.4rem;
@@ -50,6 +49,10 @@
         margin: 0 1px;
       }
     }
+    svg{
+      width: 120px;
+      transition: width 0.3s ease-in-out;
+    }
   }
 
   /* Centered Navigation Matrix */
@@ -60,7 +63,7 @@
 
     a {
       font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      color: @header-muted;
+      color: #e0e5ec;
       text-decoration: none;
       font-size: 0.95rem;
       font-weight: 500;
@@ -116,7 +119,7 @@
   top: 100%; /* Spawns exactly below the header line */
   left: 0;
   width: 100%; /* Spans 100% width of the screen-wide header wrapper */
-  background-color: #11141a; /* Dark background matching the theme */
+  background-color: #171c28; /* Dark background matching the theme */
   padding: 40px 2rem;
   box-sizing: border-box;
   opacity: 0;
@@ -177,4 +180,54 @@
       color: #11141a;
     }
   }
+}
+.site-header.scrolled {
+  height: 70px;
+  transition: all 0.3s ease;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #141721;
+}
+
+.site-header .social-links a svg,
+.site-header .social-links a svg path {
+  fill: #e0e5ec;
+  color: #e0e5ec;
+}
+
+.announcementbar {
+  background: #141924;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.4s ease-out;
+  will-change: transform, opacity;
+  display: block !important;
+  position: relative;
+  z-index: 1000;
+}
+
+.announcementbar:has(+ .site-header.scrolled) {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.site-header {
+  position: fixed;
+  top: 41px;
+  left: 0;
+  right: 0;
+  height: 90px;
+  z-index: 999;
+  background-color: #171c28;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1), top 0.4s cubic-bezier(0.65, 0, 0.35, 1), height 0.4s cubic-bezier(0.65, 0, 0.35, 1), background-color 0.4s ease;
+  will-change: transform, top, height;
+}
+.site-header.scrolled .logo svg{
+  width: 85px;
 }
