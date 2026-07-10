@@ -222,7 +222,7 @@
     font-weight: 700;
     margin: 0 0 10px 0;
     letter-spacing: -0.01em;
-    font-family: monserrat, system-ui, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 
     @media (min-width: 768px) {
       font-size: 34px;
@@ -448,7 +448,7 @@
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 0.5rem;
-      font-family: monserrat, system-ui, sans-serif;
+      font-family: 'Montserrat', sans-serif;
 
       @media (min-width: 992px) {
         font-size: 34px;
@@ -507,7 +507,7 @@
    ========================================================================== */
 .cfg-testimonial-viewport {
   background-color: #171c28;
-  padding: 4rem 1.5rem 6rem 1.5rem;
+  padding: 50px 0;
   text-align: center;
   color: #ffffff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -528,7 +528,7 @@
   .cfg-testimonial-heading {
     font-size: 2.2rem;
     font-weight: 700;
-    margin: 0 0 2.5rem 0;
+    margin: 0 0 20px 0;
     letter-spacing: -0.01em;
     text-align: center;
 
@@ -741,11 +741,10 @@
    7. Latest Blog Posts Layout (NEW SECTION MATCHING GRID SCREENSHOT)
    ========================================================================== */
 .cfg-blog-viewport {
-  background-color: #171c28;
-  padding: 5rem 1.5rem;
+  background-color: #141924;
+  padding: 50px 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: #ffffff;
-  border-top: 1px solid #222731;
 
   .cfg-blog-container {
     max-width: 1290px;
@@ -754,13 +753,14 @@
   }
 
   .cfg-blog-heading {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin: 0 0 3rem 0;
+    font-size: 36px;
+    line-height: 1;
+    padding-bottom: 24px;
     letter-spacing: -0.01em;
+    color: #e0e5ec;
 
     @media (min-width: 768px) {
-      font-size: 2.5rem;
+      font-size: 36px;
     }
   }
 
@@ -786,7 +786,7 @@
       overflow: hidden;
       border-radius: 4px;
       background-color: #232834;
-      margin-bottom: 1.5rem;
+      margin-bottom: 14px;
 
       img {
         width: 100%;
@@ -802,37 +802,38 @@
     }
 
     .cfg-blog-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      line-height: 1.4;
-      color: #ffffff;
-      margin: 0 0 1rem 0;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      font-size: 22px;
+      color: #e0e5ec;
       letter-spacing: -0.01em;
-      min-height: 56px;
-      /* Balance title fields dynamically */
     }
 
     .cfg-blog-excerpt {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #aab3c0;
-      margin: 0 0 2rem 0;
+      font-weight: 400;
+      line-height: 1.4;
+      padding-bottom: 24px;
+      font-size: 16px;
       flex-grow: 1;
+      color: #e0e5ec;
     }
 
     .cfg-blog-btn {
       align-self: flex-start;
-      border: 1px solid #475569;
       background: transparent;
       color: #ffffff;
-      font-size: 0.75rem;
-      font-weight: 700;
       letter-spacing: 0.05em;
-      padding: 0.75rem 1.5rem;
-      text-transform: uppercase;
       text-decoration: none;
-      border-radius: 2px;
       transition: all 0.2s ease;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+      margin-top: auto;
+      padding: 15px 34px;
+      text-transform: uppercase;
+      width: -webkit-fit-content;
+      width: fit-content;
+      border: 1px solid #e0e5ec;
 
       &:hover {
         background-color: #ffffff;
@@ -907,4 +908,36 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     flex-direction: row;
     gap: 5px;
     margin: 10px 0 20px;
+}
+
+.cfg-testimonial-text{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 auto;
+  padding-top: 28px;
+  width: 80%;
+  color: #aab3c0;
+}
+p.cfg-testimonial-author{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.18;
+  padding: 28px 0 18px;
+  color: #aab3c0;
+}
+.cfg-testimonial-container img{
+  max-width: 230px;
+}
+.cfg-testimonial-container .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets{
+  text-align: center;
+  padding-top: 30px;
+}
+.cfg-testimonial-container .swiper-button-prev svg, .cfg-testimonial-container .swiper-button-next svg {
+    fill: none;
+    stroke: #e0e5ec;
+    background-color: transparent;
+    border: 1px solid #bfddfb4d;
+    width: 33px;
+    height: auto;
 }

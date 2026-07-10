@@ -1,12 +1,13 @@
 ---
 import ServicesMegaMenu from './ServicesMegaMenu.astro';
+import MobileHeader from './MobileHeader.astro';
 import '../styles/header.less'; 
 
 
 ---
 <div class="announcementbar"><div class="notification-top">"Leveraging eCommerce for Purpose"</div></div>
-<header class="site-header">
-  <div class="header-container">
+<header class="site-header ">
+  <div class="header-container desk">
     
     <a href="/" class="logo">
       <svg xmlns="http://www.w3.org/2000/svg" width="121" height="56" viewBox="0 0 121 56" fill="none">
@@ -49,6 +50,10 @@ import '../styles/header.less';
     </div>
 
   </div>
+
+<div class="mob header-container">
+  <MobileHeader />
+</div>
 </header>
 <script>
   import '../scripts/header-sticky.js'; 
