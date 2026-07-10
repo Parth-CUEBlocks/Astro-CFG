@@ -8,6 +8,7 @@ import '../styles/homepage.less';
 import blog1 from '../assets/blog1.png';
 import Whoweare from '../components/homepage/Whoweare.astro';
 import Homecasestudy from '../components/homepage/Homecasestudy.astro';
+import Homepageblogs from '../components/homepage/Homepageblogs.astro';
 
 ---
 
@@ -17,41 +18,7 @@ import Homecasestudy from '../components/homepage/Homecasestudy.astro';
   <Whoweare/>
   <Homecasestudy/>
   <Testimonials />
-
-  <section class="cfg-blog-viewport">
-    <div class="cfg-blog-container">
-      <h2 class="cfg-blog-heading">Latest Posts</h2>
-      
-      <div class="cfg-blog-grid">
-        <article class="cfg-blog-card">
-          <div class="cfg-blog-image-wrapper">
-            <img src={blog1.src} alt="Fastest Shopify Themes 2025" />
-          </div>
-          <h3 class="cfg-blog-title">Fastest Shopify Themes 2025 – Tested & Ranked using Google PageSpeed Insights</h3>
-          <p class="cfg-blog-excerpt">Beautiful and feature-rich themes can directly impact user-journeys and conversions.</p>
-          <a href="/blog/fastest-shopify-themes-2025" class="cfg-blog-btn">Read Full Post</a>
-        </article>
-
-        <article class="cfg-blog-card">
-          <div class="cfg-blog-image-wrapper">
-            <img src={blog1.src} alt="Optimize & Track Google Discover" />
-          </div>
-          <h3 class="cfg-blog-title">How to Optimize & Track Google Discover in Google Analytics</h3>
-          <p class="cfg-blog-excerpt">Google Discover is a curated content feed inside the Google app. The app has more than 800 million monthly active users in Android and iOS phones.</p>
-          <a href="/blog/optimize-track-google-discover" class="cfg-blog-btn">Read Full Post</a>
-        </article>
-
-        <article class="cfg-blog-card">
-          <div class="cfg-blog-image-wrapper">
-            <img src={blog1.src} alt="Sustainable Marketing Principles" />
-          </div>
-          <h3 class="cfg-blog-title">Discover Essential Sustainable Marketing Principles and Strategies for Ethical Business Growth</h3>
-          <p class="cfg-blog-excerpt">Given the major issues that our world is currently facing, such as pollution and climate change, sustainability...</p>
-          <a href="/blog/sustainable-marketing-principles" class="cfg-blog-btn">Read Full Post</a>
-        </article>
-      </div>
-    </div>
-  </section>
+  <Homepageblogs/>
 
   <!-- <section class="cfg-bottom-cta">
     <div class="cfg-cta-inner">

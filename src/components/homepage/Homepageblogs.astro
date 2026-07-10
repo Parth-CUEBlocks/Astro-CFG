@@ -1,0 +1,46 @@
+---
+// src/components/Testimonials.astro
+import { client } from "../../../lib/contentful"; 
+
+const response = await client.getEntries({
+  content_type: "homepageLatestPosts"
+});
+
+// 1. Get the fields from the first entry
+const data = response.items;
+
+// 2. Access the 'testmonials' reference field (using the API schema's spelling)
+const posts = (data as any[]) || [];
+// console.log(testimonialsList);
+---
+<section class="cfg-blog-viewport">
+    <div class="cfg-blog-container">
+      <h2 class="cfg-blog-heading">Latest Posts</h2>
+      
+      <div class="cfg-blog-grid">
+        {posts.map((item) => {
+          // Extract data from individual reference items
+          const description = item.fields?.description ;
+          const postTitle = item.fields?.postTitle;
+          const postUrl = item.fields?.postUrl;
+          const postImage = item.fields?.postImage.fields?.file?.url;
+          const postImageAlt = item.fields?.postImage.fields?.title;
+          
+          return (
+              <article class="cfg-blog-card">
+                <div class="cfg-blog-image-wrapper">
+                  <img src={`https:${postImage}`} alt={postImageAlt} />
+                </div>
+                <h3 class="cfg-blog-title">{postTitle}</h3>
+                <p class="cfg-blog-excerpt">{description}</p>
+                <a href={postUrl} target="_blank" class="cfg-blog-btn">Read Full Post</a>
+              </article>
+          );
+        })}
+        
+
+       
+      </div>
+    </div>
+  </section>
+
