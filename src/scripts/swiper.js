@@ -55,29 +55,56 @@ function initSliders() {
   }
 
   // --- 3. New Partners Logo Ticker Slider ---
-  if (document.querySelector('.partners-swiper')) {
+  // if (document.querySelector('.partners-swiper')) {
+  //   new Swiper('.partners-swiper', {
+  //     modules: [Autoplay],
+  //     loop: true,
+  //     // spaceBetween: 30,
+  //     slidesPerView: 2,
+  //     slidesPerGroup: 1, 
+  //     watchSlidesProgress: true, // Prevents elements from rendering with out-of-bounds offsets
+  //     autoplay: {
+  //       delay: 3000, 
+  //       disableOnInteraction: false,
+  //     },
+  //     breakpoints: {
+  //       640: {
+  //         slidesPerView: 2,
+  //         slidesPerGroup: 1,
+  //         spaceBetween: 30,
+  //       },
+  //       992: {
+  //         slidesPerView: 5, 
+  //         slidesPerGroup: 1, 
+  //       }
+  //     }
+  //   });
+  // }
+
+    if (document.querySelector('.partners-swiper')) {
     new Swiper('.partners-swiper', {
       modules: [Autoplay],
       loop: true,
-      // spaceBetween: 30,
       slidesPerView: 2,
-      slidesPerGroup: 1, 
-      watchSlidesProgress: true, // Prevents elements from rendering with out-of-bounds offsets
+      slidesPerGroup: 1,
+      spaceBetween: 10,
       autoplay: {
-        delay: 3000, 
+        delay: 3000,
         disableOnInteraction: false,
       },
       breakpoints: {
         640: {
-          slidesPerView: 2,
+          slidesPerView: 3,
+          slidesPerGroup: 1,
+          spaceBetween: 20,
+        },
+        992: {
+          slidesPerView: 5,
           slidesPerGroup: 1,
           spaceBetween: 30,
         },
-        992: {
-          slidesPerView: 5, 
-          slidesPerGroup: 1, 
-        }
-      }
+      },
+      watchOverflow: true,
     });
   }
 }
