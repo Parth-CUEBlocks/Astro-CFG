@@ -2,6 +2,7 @@
 import {client} from "../../../lib/contentful"; 
 import small from '../../assets/homeicon.svg';
 // import HeroData from "../components/Herodata";
+import block from '../../assets/block.svg';
 
 const response =await client.getEntries({
   content_type: "homepageHeroBanner"
@@ -26,7 +27,7 @@ const data = response.items[0].fields;
         <span ><img src={small.src} alt="Small Icon" /></span>
         <span class="cfg-experience-badge">{data.experts}</span>
       </div>
-      <div class="block-homepage"></div>
+      <div class="block-homepage"><img src={block.src} alt="Block Icon" /></div>
     </div> 
   </section>
   
