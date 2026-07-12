@@ -7,9 +7,9 @@
 }
 
 .team-page-container {
-  background-color: #0b0d12; 
-  color: #ffffff;
-  padding: 10rem 2rem 8rem;
+  background-color: #171c28; 
+  color: #e0e5ec;
+  padding: 86px 0;
   font-family: 'Lato', sans-serif;
   min-height: 100vh;
   width: 100%;
@@ -20,45 +20,39 @@
   /* Header Section Formatting Adjustments */
   .team-hero {
     width: 100%;
-    max-width: 750px;
-    margin: 0 auto 6rem auto;
+    max-width: 510px;
+    margin: 88px auto 80px auto;
     text-align: center;
-
-    .subtitle-badge {
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      color: rgba(255, 255, 255, 0.4);
-      font-weight: 500;
-      margin-bottom: 1rem;
-      display: inline-block;
-    }
+    padding: 0 15px;
 
     h1 {
-      font-size: 3.4rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin: 0 0 1.25rem 0;
-      color: #ffffff;
+      font-size: clamp(24px, 2.5vw, 34px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+      text-transform: none;
+      color: #e0e5ec;
+      font-family: 'Montserrat', sans-serif;
 
       span {
-        color: #ffffff;
+        color: #e0e5ec;
         font-weight: 800;
       }
     }
 
     p {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.6);
-      line-height: 1.6;
-      margin: 0;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.3;
+      margin: 0 auto;
+      max-width: 510px;
     }
   }
 
   /* Matrix Layout Engine Specifications */
   .team-grid-section {
     width: 100%;
-    max-width: 1140px;
+    padding: 0 15px;
+    max-width: 1290px;
     margin: 0 auto;
 
     .team-cards-grid {
@@ -76,9 +70,8 @@
         align-items: center;
 
         .avatar-container {
-          width: 150px; 
-          height: 150px;
-          margin-bottom: 1.5rem;
+          width: 242px; 
+          height: 242px;
           position: relative;
           overflow: hidden;
           border-radius: 50%;
@@ -91,6 +84,12 @@
             border-radius: 50%;
             transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
           }
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+          }
         }
 
         &:hover {
@@ -101,19 +100,20 @@
 
         .card-meta {
           h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 0 0 0.4rem 0;
-            color: #ffffff;
-            letter-spacing: -0.01em;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 16px 0 4px;
+            color: #e0e5ec;
+            letter-spacing: 0;
+            line-height: 1.1;
           }
 
           .role-text {
-            font-size: 0.88rem;
-            color: rgba(255, 255, 255, 0.45);
+            font-size: 14px;
+            color: #aab3c0;
             margin: 0;
-            line-height: 1.4;
             font-weight: 400;
+            letter-spacing: 0;
           }
         }
       }
@@ -138,7 +138,7 @@
         font-weight: 700;
         margin: 0 0 0.75rem 0;
         letter-spacing: -0.02em;
-        color: #ffffff;
+        color: #e0e5ec;
       }
 
       p {
@@ -150,7 +150,7 @@
 
       .cta-primary-link {
         display: inline-block;
-        color: #ffffff;
+        color: #e0e5ec;
         text-decoration: none;
         font-weight: 600;
         font-size: 1.05rem;
@@ -164,21 +164,34 @@
   }
 }
 
+section.team-banner {
+  display: flex;
+  margin-bottom: 0;
+}
+section.team-banner img{
+  width: 100%;
+}
+
 /* Fluid Viewport Balancing Engine */
 @media (max-width: 768px) {
   .team-page-container {
-    padding: 7rem 1.5rem 4rem;
+    padding: 55px 0 0;
 
     .team-hero {
-      margin-bottom: 4rem;
-      h1 { font-size: 2.6rem; }
-      p { font-size: 1.1rem; }
+      margin-bottom: 50px;
+      margin-top: 36px;
+      h1{
+        line-height: 1.3;
+        margin-bottom: 14px;
+      }
+      p{
+        color: #aab3c0;
+      }
     }
 
     .team-grid-section .team-cards-grid {
-      column-gap: 1.5rem;
-      row-gap: 3.5rem;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
     }
 
     .join-team-banner {
@@ -186,5 +199,15 @@
       padding-top: 4rem;
       h2 { font-size: 1.8rem; }
     }
+  }
+  .team-page-container .team-grid-section .team-cards-grid .team-card-wrapper .avatar-container {
+    width: 120px;
+    height: 120px;
+  }
+  .team-page-container .team-grid-section .team-cards-grid .team-card-wrapper .card-meta h3 {
+    font-size: 16px;
+  }
+  .team-page-container .team-grid-section .team-cards-grid .team-card-wrapper .card-meta .role-text {
+    font-size: 12px;
   }
 }
