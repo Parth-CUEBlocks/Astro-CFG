@@ -29,7 +29,7 @@ const posts = (data as any[]) || [];
           return (
               <article class="cfg-blog-card">
                 <div class="cfg-blog-image-wrapper">
-                  <img src={`https:${postImage}`} alt={postImageAlt} />
+                  <img src={`https:${postImage}`} alt={postImageAlt} loading="lazy" />
                 </div>
                 <h3 class="cfg-blog-title">{postTitle}</h3>
                 <p class="cfg-blog-excerpt">{description}</p>
