@@ -1,0 +1,31 @@
+---
+
+import { client } from "../../lib/contentful"; 
+
+const response = await client.getEntries({
+  content_type: "footerClutch" 
+});
+
+const data = response.items[0]?.fields as any;
+ const url = data?.clutchUrl;
+const imageUrl = data?.clutchImage?.fields?.file?.url;
+// console.log(data);
+---
+ <div class="fixed-clutch" >
+          <a href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="CueForGood profile on Clutch (opens in a new tab)"
+            class="focus-visible">
+            <img src={`https:${imageUrl}`} alt="CueForGood profile on Clutch" />
+
+          </a>
+        </div>
+<style>
+.fixed-clutch { 
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 9;
+}
+</style>

@@ -1,52 +1,38 @@
 ---
-import partner1 from '../assets/partner1.svg';
-import partner2 from '../assets/partner2.png';
-import partner3 from '../assets/partner3.svg';
-import partner4 from '../assets/partner4.svg';
-import partner5 from '../assets/partner5.svg';
+
+import { client } from "../../lib/contentful"; 
+
+const response = await client.getEntries({
+  content_type: "footerPartnerLogo" 
+});
+
+const data = response.items;
+
+const logolist = (data as any[]) || [];
+// console.log(logolist);
 ---
  <div class=" partners-swiper">
       <div class="swiper-wrapper elements-align-center">
-        
-        <div class="swiper-slide partner-logo shopify">
-          <img src={partner5.src} alt="Shopify Partners" loading="lazy" width="217px" height="auto"/>
-        </div>
-
-        <div class="swiper-slide partner-logo google">
-          <img src={partner1.src} alt="Google Partner" loading="lazy" width="99px" height="auto"/>
-        </div>
-
-        <div class="swiper-slide partner-logo wpengine">
-          <img src={partner3.src} alt="Klaviyo" loading="lazy" width="71px" height="auto"/>
-        </div>
-
-        <div class="swiper-slide partner-logo green-hosting">
-          <img src={partner2.src} alt="Green Hosting by CueForGood" loading="lazy" width="160px"/>
-        </div>
-
-        <div class="swiper-slide partner-logo userway">
-          <img src={partner4.src} alt="UserWay Accessibility" loading="lazy" width="160px"/>
-        </div>
-
-        <div class="swiper-slide partner-logo shopify">
-          <img src={partner5.src} alt="Shopify Partners" loading="lazy" width="217px" height="auto"/>
-        </div>
-
-        <div class="swiper-slide partner-logo google">
-          <img src={partner1.src} alt="Google Partner" loading="lazy" width="99px" height="auto"/>
-        </div>
-
-        <div class="swiper-slide partner-logo wpengine">
-          <img src={partner3.src} alt="Klaviyo" loading="lazy" width="71px" height="auto"/>
-        </div>
-
-        <div class="swiper-slide partner-logo green-hosting">
-          <img src={partner2.src} alt="Green Hosting by CueForGood" loading="lazy" width="160px"/>
-        </div>
-
-        <div class="swiper-slide partner-logo userway">
-          <img src={partner4.src} alt="UserWay Accessibility" loading="lazy" width="160px"/>
-        </div>
+        {logolist.map((item) => {
+          // Extract data from individual reference items
+          const url = item.fields?.partnerLogoUrl;
+          const websiteLogo = item.fields?.partnerLogo.fields?.file?.url;
+          const websiteLogoalt = item.fields?.partnerLogo.fields?.title;
+          
+          return (
+            <div class="swiper-slide partner-logo shopify">
+              { url ? 
+                  <a href={url} target="_blank">
+                   <img src={`https:${websiteLogo}`} alt={websiteLogoalt} loading="lazy" width="217px" height="auto" />
+                   </a> 
+                   : 
+                   <img src={`https:${websiteLogo}`} alt={websiteLogoalt} loading="lazy" width="217px" height="auto" />
+                }
+               
+             
+            </div>
+          );
+        })}
         
       </div>
     </div>
@@ -54,3 +40,10 @@ import partner5 from '../assets/partner5.svg';
 <script>
   import '../scripts/swiper.js'; 
 </script>
+<style>
+  .partner-logo img{
+    max-height: 76px;
+    width: auto;
+    max-width: 180px;
+  }
+</style>
