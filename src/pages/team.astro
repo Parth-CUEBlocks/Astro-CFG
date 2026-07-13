@@ -3,28 +3,36 @@
 import Layout from "../layouts/Layout.astro";
 import "../styles/team.less";
 
-import bannerdesk from '../assets/Page.teams/teambanner.jpg';
-import bannermob from '../assets/Page.teams/team_cfg_mob.png';
+import bannerdesk from "../assets/Page.teams/teambanner.jpg";
+import bannermob from "../assets/Page.teams/team_cfg_mob.png";
+
+import bannerfooterdesk from "../assets/Page.teams/team_footer.png";
+import bannerfootermob from "../assets/Page.teams/team_footer_mob.png";
+
 
 // Import your team member images here
-import pancham from '../assets/Page.teams/pancham.png';
-import avneet from '../assets/Page.teams/Avneet.png'; 
-import sarthak from '../assets/Page.teams/Sarthak.png';
-import girish from '../assets/Page.teams/Girish.png';
-import ketaky from '../assets/Page.teams/Ketaky.png';
-import parth from '../assets/Page.teams/Parth.png';
-import ravinder from '../assets/Page.teams/ravinder.png';
-import gaurav from '../assets/Page.teams/Gaurav.png';
-import rajiv from '../assets/Page.teams/Rajiv.png';
-import vivek from '../assets/Page.teams/Vivek.png';
-import deep from '../assets/Page.teams/Deep.png';
-import Testimonials from "../components/homepage/Testimonials.astro";
+import pancham from "../assets/Page.teams/pancham.png";
+import avneet from "../assets/Page.teams/Avneet.png";
+import sarthak from "../assets/Page.teams/Sarthak.png";
+import girish from "../assets/Page.teams/Girish.png";
+import ketaky from "../assets/Page.teams/Ketaky.png";
+import parth from "../assets/Page.teams/Parth.png";
+import ravinder from "../assets/Page.teams/ravinder.png";
+import gaurav from "../assets/Page.teams/Gaurav.png";
+import rajiv from "../assets/Page.teams/Rajiv.png";
+import vivek from "../assets/Page.teams/Vivek.png";
+import deep from "../assets/Page.teams/Deep.png";
+// import Testimonials from "../components/homepage/Testimonials.astro";
 
 const rawTeamMembers = [
   { name: "Avneet Jirman", role: "Co-Founder", image: avneet },
   { name: "Sarthak Aggarwal", role: "Co-Founder", image: sarthak },
   { name: "Pancham Prashar", role: "CEO & Founder", image: pancham },
-  { name: "Girish Tiwari", role: "Division Head - eCommerce Development", image: girish },
+  {
+    name: "Girish Tiwari",
+    role: "Division Head - eCommerce Development",
+    image: girish,
+  },
   { name: "Aravindkumar B", role: "Sr. Shopify Developer" },
   { name: "Urmila", role: "Sr. Shopify Developer" },
   { name: "Jyoti", role: "Sr. Web Developer" },
@@ -36,7 +44,11 @@ const rawTeamMembers = [
   { name: "Shreya", role: "Intern - Web Developer" },
   { name: "Dheeraj Kumar", role: "Sr. Linux Administrator" },
   { name: "Yash Pal", role: "Division Head, Digital Marketing (CSE)" },
-  { name: "Rajiv Singha", role: "Division Head - Organic Search", image: rajiv },
+  {
+    name: "Rajiv Singha",
+    role: "Division Head - Organic Search",
+    image: rajiv,
+  },
   { name: "Vivek Puri", role: "Manager - Digital Advertising", image: vivek },
   { name: "Rajender Kumar", role: "Sr. Digital Advertising Specialist" },
   { name: "Harleen Kaur Sandhu", role: "Organic Search Strategist" },
@@ -44,10 +56,18 @@ const rawTeamMembers = [
   { name: "Kunal Mahajan", role: "Digital Advertising Specialist" },
   { name: "Vikas", role: "Intern - Organic Search Marketing" },
   { name: "Shivam Thakur", role: "UI/ UX Designer" },
-  { name: "Gaurav Jafrain", role: "Team Lead - Quality Analyst", image: gaurav },
+  {
+    name: "Gaurav Jafrain",
+    role: "Team Lead - Quality Analyst",
+    image: gaurav,
+  },
   { name: "Priyanka Pabbi", role: "Quality Analyst" },
   { name: "Harsha Chaudhary", role: "Intern - QA" },
-  { name: "Ketaky Sharma", role: "Division Head - People & Culture", image: ketaky },
+  {
+    name: "Ketaky Sharma",
+    role: "Division Head - People & Culture",
+    image: ketaky,
+  },
   { name: "Krittika", role: "ESG Analyst" },
   { name: "Deep Sharma", role: "Sr. Accountant", image: deep },
   { name: "Shriya Mishra", role: "Intern - Finance" },
@@ -58,8 +78,8 @@ const rawTeamMembers = [
 // Helper function to assign tier priority weights based on roles
 function getRolePriority(role) {
   const r = role.toLowerCase();
-  if (r.includes('founder') || r.includes('ceo')) return 1;
-  if (r.includes('division head') || r.includes('manager')) return 2;
+  if (r.includes("founder") || r.includes("ceo")) return 1;
+  if (r.includes("division head") || r.includes("manager")) return 2;
   return 3;
 }
 
@@ -80,7 +100,7 @@ const teamMembers = rawTeamMembers
 <Layout
   title="CueForGood Team | The Specialists Helping Businesses Become a Force for Good"
 >
-  <main class="team-page-container">
+  <section class="team-page-container">
     <section class="team-banner">
       <img
         class="desk-h"
@@ -107,9 +127,9 @@ const teamMembers = rawTeamMembers
           teamMembers.map((member) => (
             <div class="team-card-wrapper">
               <div class="avatar-container">
-                <img 
-                  src={member.image.src} 
-                  alt={`${member.name} profile picture`} 
+                <img
+                  src={member.image.src}
+                  alt={`${member.name} profile picture`}
                   class="team-member-img"
                 />
               </div>
@@ -122,18 +142,27 @@ const teamMembers = rawTeamMembers
         }
       </div>
     </section>
+    <section class="team-banner team-banner-bottom">
+      <img
+        class="desk-h"
+        src={bannerfooterdesk.src}
+        alt="CueForGood team picture"
+      /><img
+        class="mob"
+        src={bannerfootermob.src}
+        alt="CueForGood team picture for mobile"
+      />
+    </section>
 
     <section class="join-team-banner">
       <div class="banner-content">
         <h2>Join our team</h2>
         <p>
-          We are always looking for passionate people to join us. Check out our
-          open positions.
+          We’re always on the lookout for smart, purposeful, and driven people to be part of our growing team. Check out the careers page for open positions.
         </p>
-        <a href="/career" class="cta-primary-link">See Open Roles &rarr;</a>
+        <a href="/career" class="cta-primary-link">Open Positions <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.66667 2V3.33333H1.33333V10.6667H8.66667V7.33333H10V11.3333C10 11.7015 9.70153 12 9.33333 12H0.666667C0.29848 12 0 11.7015 0 11.3333V2.66667C0 2.29848 0.29848 2 0.666667 2H4.66667ZM12 0V5.33333H10.6667L10.6666 2.27533L5.4714 7.4714L4.52859 6.5286L9.72327 1.33333H6.66667V0H12Z" fill="white"></path></svg></a>
       </div>
     </section>
-  <Testimonials />
-    
-  </main>
+    <!-- <Testimonials /> -->
+  </section>
 </Layout>

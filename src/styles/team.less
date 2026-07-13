@@ -9,7 +9,7 @@
 .team-page-container {
   background-color: #171c28; 
   color: #e0e5ec;
-  padding: 86px 0;
+  padding: 86px 0 0;
   font-family: 'Lato', sans-serif;
   min-height: 100vh;
   width: 100%;
@@ -123,10 +123,8 @@
   /* Integrated CTA Link Layout Styles */
   .join-team-banner {
     width: 100%;
-    max-width: 1140px;
-    margin: 10rem auto 2rem auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 6rem 1rem 2rem;
+    max-width: 1290px;
+    padding: 100px 15px 70px;
     text-align: center;
 
     .banner-content {
@@ -134,18 +132,20 @@
       margin: 0 auto;
 
       h2 {
-        font-size: 2.2rem;
+        font-size: 34px;
         font-weight: 700;
-        margin: 0 0 0.75rem 0;
-        letter-spacing: -0.02em;
+        margin: 0 0 16px 0;
+        line-height: 1;
         color: #e0e5ec;
       }
 
       p {
-        color: rgba(255, 255, 255, 0.5);
-        font-size: 1.1rem;
-        line-height: 1.5;
-        margin: 0 0 2rem 0;
+        color: #aab3c0;
+        font-size: 18px;
+        line-height: 1;
+        margin: 0 0 28px 0;
+        font-family: 'Montserrat';
+        line-height: 24px;
       }
 
       .cta-primary-link {
@@ -155,9 +155,24 @@
         font-weight: 600;
         font-size: 1.05rem;
         transition: opacity 0.2s ease;
+        
+        border: 1px solid #e0e5ec;
+        border-radius: 40px;
+        color: #e0e5ec;
+        display: inline-flex;
+        font-size: 16px;
+        gap: 7px;
+        line-height: 1;
+        padding: 17px 32px;
+        align-items: center;
+        font-weight: 500;
 
         &:hover {
-          opacity: 0.8;
+          background-color: #fff;
+          color: #000;
+        }
+        &:hover svg path{
+          fill: #000;
         }
       }
     }
@@ -170,6 +185,9 @@ section.team-banner {
 }
 section.team-banner img{
   width: 100%;
+}
+section.team-banner.team-banner-bottom {
+    margin-top: 120px;
 }
 
 /* Fluid Viewport Balancing Engine */
