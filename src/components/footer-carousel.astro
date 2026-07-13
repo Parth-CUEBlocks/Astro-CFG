@@ -16,6 +16,7 @@ const logolist = (data as any[]) || [];
         {logolist.map((item) => {
           // Extract data from individual reference items
           const url = item.fields?.partnerLogoUrl;
+          const width = item.fields?.width;
           const websiteLogo = item.fields?.partnerLogo.fields?.file?.url;
           const websiteLogoalt = item.fields?.partnerLogo.fields?.title;
           
@@ -23,10 +24,10 @@ const logolist = (data as any[]) || [];
             <div class="swiper-slide partner-logo shopify">
               { url ? 
                   <a href={url} target="_blank">
-                   <img src={`https:${websiteLogo}`} alt={websiteLogoalt} loading="lazy" width="217px" height="auto" />
+                   <img src={`https:${websiteLogo}`} alt={websiteLogoalt} loading="lazy" width={`${width}px`} height="auto" />
                    </a> 
                    : 
-                   <img src={`https:${websiteLogo}`} alt={websiteLogoalt} loading="lazy" width="217px" height="auto" />
+                   <img src={`https:${websiteLogo}`} alt={websiteLogoalt} loading="lazy" width={`${width}px`} height="auto" />
                 }
                
              
@@ -43,7 +44,7 @@ const logolist = (data as any[]) || [];
 <style>
   .partner-logo img{
     max-height: 76px;
-    width: auto;
+    /* width: auto; */
     max-width: 180px;
   }
 </style>

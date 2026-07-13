@@ -20,7 +20,7 @@ const slideImages = (data?.slideImage as any[]) || [];
       // Render only if the URL exists
       return url ? (
         <div class="swiper-slide">
-          <img src={`https:${url}`} alt={altText} />
+          <img src={`https:${url}`} alt={altText} loading="lazy" />
         </div>
       ) : null;
     })}
