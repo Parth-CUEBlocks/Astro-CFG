@@ -1,0 +1,51 @@
+---
+// src/components/Testimonials.astro
+import { client } from "../../../lib/contentful"; 
+
+const response = await client.getEntries({
+  content_type: "teamPageMembers"
+});
+
+// 1. Get the fields from the first entry
+const data = response.items;
+
+// 2. Access the 'testmonials' reference field and sort by name (A-Z)
+const memberlist = ((data as any[]) || []).sort((a, b) => {
+  const nameA = a.fields?.name || "";
+  const nameB = b.fields?.name || "";
+  return nameA.localeCompare(nameB);
+});
+
+// console.log(memberlist);
+---
+<section class="team-grid-section">
+      <div class="team-cards-grid">
+        {memberlist.map((item) => {
+          // Extract data from individual reference items
+            const name = item.fields?.name;
+            const designation = item.fields?.designation;
+            const linkedinUrl = item.fields?.linkedinUrl;
+            const memberimage = item.fields?.image.fields?.file?.url;
+          
+          return (
+             <div class="team-card-wrapper">
+              <div class="avatar-container">
+                <img src={`https:${memberimage}`} alt={name} loading="lazy"  class="team-member-img"/>
+                
+              </div>
+              <div class="card-meta">
+                <h3>{name}</h3>
+                <p class="role-text">{designation}</p>
+                {linkedinUrl && (
+                  <a href={linkedinUrl} target="_blank" rel="noreferrer" id="first-focus-element" class="focus-visible member-link" title="Opens in a new window">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#0077B5"></circle><path d="M10.592 9.29682C10.5918 9.82459 10.2716 10.2995 9.78242 10.4977C9.29326 10.6958 8.73282 10.5776 8.36535 10.1988C7.99789 9.81992 7.8968 9.25613 8.10974 8.77323C8.32268 8.29033 8.80714 7.98475 9.33466 8.00059C10.0353 8.02162 10.5923 8.59584 10.592 9.29682ZM10.6309 11.5523H8.03843V19.6667H10.6309V11.5523ZM14.727 11.5523H12.1475V19.6667H14.7011V15.4085C14.7011 13.0364 17.7926 12.8161 17.7926 15.4085V19.6667H20.3527V14.5271C20.3527 10.5282 15.777 10.6773 14.7011 12.6411L14.727 11.5523Z" fill="white"></path></svg>
+                </a>
+                )}
+                
+
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
