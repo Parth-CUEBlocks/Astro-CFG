@@ -1,0 +1,21 @@
+---
+import {client} from "../../../lib/contentful"; 
+
+
+const response =await client.getEntries({
+  content_type: "teamPageBanners"
+});
+
+const data = response.items[0].fields as any;
+const desktopImageUrl = data?.topBannerDesktop?.fields?.file?.url;
+const mobileImageUrl = data?.topBannerMobile?.fields?.file?.url;
+// console.log(data); 
+
+---
+
+
+    <section class="team-banner">
+      <img class="desk-h" src={`https:${desktopImageUrl}`} alt="CueForGood team picture" loading="eager" fetchpriority="high" />
+      <img class="mob" src={`https:${mobileImageUrl}`} alt="CueForGood team picture for mobile" loading="eager" fetchpriority="high" />
+    </section>
+  
