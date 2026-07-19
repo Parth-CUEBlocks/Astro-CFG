@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/contact.less'; 
+import clock from '../assets/page.contact/clock.png'
+---
+
+<Layout title="Contact Us | Get in Touch with CueForGood">
+  <div class="cfg-contact-outer-wrapper">
+    <div class="cfg-contact-inner-container">
+      
+      <!-- LEFT SIDE: Form Section -->
+      <section class="cfg-contact-form-section">
+        <h1 class="cfg-contact-heading">Let's start the conversation!</h1>
+        <p class="cfg-contact-text">
+          Please fill the following form or send us an email at <a href="mailto:letstalk@cueforgood.com" class="cfg-contact-email-link">letstalk@cueforgood.com</a>.
+          <button type="button" class="cfg-contact-copy-btn"><span class="cfg-icon"><svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Copy Icon"><path d="M2.39988 2.4V0.6C2.39988 0.268632 2.66851 0 2.99988 0H10.1999C10.5313 0 10.7999 0.268632 10.7999 0.6V9C10.7999 9.33138 10.5313 9.6 10.1999 9.6H8.39988V11.3995C8.39988 11.7311 8.12994 12 7.7958 12H0.603996C0.270354 12 0 11.7332 0 11.3995L0.00155997 3.00052C0.00161997 2.66887 0.271584 2.4 0.605652 2.4H2.39988ZM1.20145 3.6L1.20011 10.8H7.19988V3.6H1.20145ZM3.59988 2.4H8.39988V8.4H9.59988V1.2H3.59988V2.4Z" fill="#676767"></path></svg></span> Copy Email</button>
+        </p>
+        <p class="cfg-contact-mandatory-notice">(* indicates mandatory fields)</p>
+
+        <form action="#" method="POST">
+          <div class="cfg-contact-form-group">
+            <input type="text" name="name" placeholder="Name*" required class="cfg-contact-input-field" />
+          </div>
+
+          <div class="cfg-contact-form-group">
+            <input type="email" name="email" placeholder="Email*" required class="cfg-contact-input-field" />
+          </div>
+
+          <div class="cfg-contact-form-group">
+            <input type="tel" name="phone" placeholder="Phone (optional)" class="cfg-contact-input-field" />
+          </div>
+
+          <div class="cfg-contact-form-group">
+            <input type="url" name="website" placeholder="Website (optional)" class="cfg-contact-input-field" />
+          </div>
+
+          <span class="cfg-contact-services-label">Services that interest you*</span>
+          <div class="cfg-contact-services-flex-container">
+            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="shopify" /> <span class="custom-box"></span> Shopify</label>
+            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="wordpress" /> <span class="custom-box"></span> WordPress</label>
+            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="laravel" /> <span class="custom-box"></span> PHP/Laravel</label>
+            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="magento" /> <span class="custom-box"></span> Magento</label>
+            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="webdesign" /> <span class="custom-box"></span> Web Design</label>
+            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="accessibility" /> <span class="custom-box"></span> Web Accessibility Audit</label>
+            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="ga4" /> <span class="custom-box"></span> Google Analytics 4 Audit</label>
+            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="seo" /> <span class="custom-box"></span> Organic Search</label>
+            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="advertising" /> <span class="custom-box"></span> Digital Advertising</label>
+            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="cro" /> <span class="custom-box"></span> Conversion Optimization</label>
+            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="email" /> <span class="custom-box"></span> Email Marketing</label>
+            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="other" /> <span class="custom-box"></span> Other</label>
+          </div>
+
+          <div class="cfg-contact-form-group">
+            <textarea name="story" rows="5" placeholder="Please share details of your story & project requirements*" required class="cfg-contact-textarea-field"></textarea>
+          </div>
+
+          <div class="cfg-contact-form-group">
+            <input type="text" name="source" placeholder="How did you hear about CueForGood?*" required class="cfg-contact-input-field " />
+          </div>
+
+          <div class="cfg-contact-captcha-placeholder">
+            <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+          </div>
+
+          <button type="submit" class="cfg-contact-submit-btn">Submit</button>
+        </form>
+      </section>
+
+      <!-- RIGHT SIDE: Sidebar Corporate Info -->
+      <section class="cfg-contact-info-section">
+        <h2 class="cfg-contact-subheading">We work from</h2>
+        
+        <div class="cfg-contact-location-row">
+          <div class="cfg-contact-clock-widget">
+            <!-- Simulated minimal analog clock face -->
+            <img src={clock.src} alt="clock"/>
+          </div>
+          <span class="cfg-contact-city-label">Chandigarh, IN</span>
+        </div>
+
+        <p class="address-cb">SCO 7, Third Floor,<br>Sector 17 E, Chandigarh - 160017<br>India<br><br>Careers: <a href="tel:+919876008994" aria-label="Call us at +91 987-600-8994" class="focus-visible">+91-987-600-8994</a></p>
+      </section>
+
+    </div>
+  </div>
+</Layout>

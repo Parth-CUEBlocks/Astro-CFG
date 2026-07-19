@@ -1,164 +1,206 @@
 ---
 // src/pages/services.astro
 import Layout from '../layouts/Layout.astro';
-import '../styles/services.less'; // Clean external style layer assignment
+import '../styles/services.less';
 
-const servicesData = [
-  {
-    title: "Design",
-    type: "design",
-    description: "We create intuitive, accessible, and visually striking designs that embody your mission and convert visitors into loyal supporters.",
-    items: [
-      "eCommerce & Web Design",
-      "UI/UX Development",
-      "Sustainable Web Design",
-      "Conversion Rate Optimization (CRO) focused Web Design",
-      "Wireframes & Prototyping",
-      "Illustration & Iconography"
-    ]
-  },
-  {
-    title: "Code",
-    type: "code",
-    description: "From simple builds to complex integrations, we craft scalable, high‑performance websites and stores that deliver seamless user experiences, with site speed and web accessibility built in from the start.",
-    subSections: [
-      { name: "Shopify", text: "Store builds from scratch, theme customisations, feature enhancements, Shopify Plus optimization." },
-      { name: "Magento", text: "Full setup, migration, performance optimisation." },
-      { name: "PHP", text: "Custom e‑commerce and complex development." },
-      { name: "Wordpress", text: "Flexible, content‑rich sites that scale with your needs." },
-      { name: "WooCommerce", text: "Tailored site builds, integrations, and optimisations." },
-      { name: "BigCommerce", text: "Store setups, seamless integrations, and advanced customization." }
-    ],
-    accessibilityBlock: {
-      title: "Web Accessibility",
-      text: "Digital experiences designed for everyone, built to inspire change. Our web accessibility services help brands meet WCAG 2.1, ADA, and EAA compliance without compromising voice or visual identity."
-    }
-  },
-  {
-    title: "Marketing & Audience Growth",
-    type: "marketing",
-    description: "We develop and execute campaigns that elevate your visibility, increase conversions, and inspire repeat engagement.",
-    items: [
-      "Paid Search – Data‑driven targeting for qualified traffic.",
-      "Organic Search – Long‑term SEO/GEO strategies for consistent organic visibility & growth.",
-      "Email Marketing – Automated, personalised journeys for retention and revenue.",
-      "Conversion Rate Optimisation (CRO)",
-      "Story‑driven Copywriting for impact‑driven brands."
-    ]
-  }
+import heroimg from '../assets/Page.services/ourserv-1.png';
+import designImg from '../assets/Page.services/ourserv-design.png';
+import codeImg from '../assets/Page.services/ourserv-dev.png';
+import marketingImg from '../assets/Page.services/ourserv-market.png';
+import webImg from '../assets/Page.services/ourserv-web.png';
+
+
+const designItems = [
+  "eCommerce & Web Design",
+  "UI/UX Development",
+  "Sustainable Web Design",
+  "Conversion Rate Optimization (CRO) focused Web Design",
+  "Wireframes & Prototyping",
+  "Illustration & Iconography"
+];
+
+const codePlatforms = [
+  { name: "Shopify", text: "Store builds from scratch, theme customisations, feature enhancements, Shopify Plus optimization." },
+  { name: "Magento", text: "Full setup, migration, performance optimisation." },
+  { name: "PHP", text: "Custom e‑commerce and complex development." },
+  { name: "Wordpress", text: "Flexible, content‑rich sites that scale with your needs." },
+  { name: "WooCommerce", text: "Tailored site builds, integrations, and optimisations." },
+  { name: "BigCommerce", text: "Store setups, seamless integrations, and advanced customization." }
+];
+
+const accessibilityBullets = [
+  "Advance your mission by making your digital spaces usable and inclusive for all",
+  "Improve SEO through clean, accessible code",
+  "Reduce legal and reputational risks",
+  "Comprehensive audits, remediation guidance, and ongoing monitoring"
+];
+
+const marketingItems = [
+  "Paid Search – Data‑driven targeting for qualified traffic.",
+  "Organic Search – Long‑term SEO/GEO strategies for consistent organic visibility & growth.",
+  "Email Marketing – Automated, personalised journeys for retention and revenue.",
+  "Conversion Rate Optimisation (CRO)",
+  "Story‑driven Copywriting for impact‑driven brands."
 ];
 ---
 
-<Layout title="Our Services | CueForGood">
-  <main class="services-page">
+<Layout title="Our Services | CueForGood" description="CueForGood partners with purpose-led brands, B Corps, nonprofits, and socially conscious businesses to create digital experiences that drive growth and meaningful impact. We work across e-commerce and beyond, helping brands connect with audiences through design, development, and marketing that reflect their values.">
+  <section class="services-page">
     
-    <header class="services-hero">
+    <!-- Hero Section -->
+    <section class="services-hero">
       <div class="container-inner">
-        <span class="eyebrow">OUR SERVICES</span>
-        <h1>Understanding Your Needs</h1>
-        <p class="hero-lead">
-          Every project begins with a deep dive into your mission, goals, and challenges. We assess your digital footprint, uncover opportunities for impact, and co‑create a strategy that aligns with your brand values, sustainability objectives, and growth ambitions.
-        </p>
-        <p class="hero-focus">
-          We believe we are very strong in the following 3 areas of e-commerce.
-        </p>
-        <div class="pillar-anchors">
-          <span>Design.</span>
-          <span>Code.</span>
-          <span>Marketing.</span>
+        <div class="hero-split-grid">
+          <div class="hero-text-col">
+            <h1>Our Services</h1>
+            <p class="hero-lead">
+              CueForGood partners with purpose-led brands, B Corps, nonprofits, and socially conscious businesses to create digital experiences that drive growth and meaningful impact.
+            </p>
+            <p class="hero-lead-secondary">
+              We work across e-commerce and beyond, helping brands connect with audiences through design, development, and marketing that reflect their values.
+            </p>
+            
+            <div class="intro-philosophy">
+              <h2>Understanding Your Needs</h2>
+              <p>Every project begins with a deep dive into your mission, goals, and challenges. We assess your digital footprint, uncover opportunities for impact, and co-create a strategy that aligns with your brand values, sustainability objectives, and growth ambitions.</p>
+            </div>
+          </div>
+          
+          <div class="hero-graphic-col">
+            <div class="hero-image-field">
+              <img src={heroimg.src} alt="Isometric Cubes Representation Graphic" class="page-hero-img" />
+            </div>
+          </div>
+        </div>
+
+        <div class="pillar-block">
+          <p class="hero-focus">We believe we are very strong in the following 3 areas of e-commerce</p>
+          <h2 class="pillar-main-statement">Design. Code. Marketing.</h2>
+          <p class="pillar-subtext">We may start our relationship with one of the 3 key services, but we excel when we can collaborate with you from the initial planning to the launch and beyond.</p>
         </div>
       </div>
-    </header>
+    </section>
 
+    <!-- Services Body Matrix Layout -->
     <section class="services-matrix-section">
       <div class="container-inner">
-        {servicesData.map((service) => (
-          <div class="service-block">
-            <div class="service-row">
-              <div class="service-meta-col">
-                <h2>{service.title}</h2>
-                <p class="service-desc">{service.description}</p>
-                
-                <div class="service-graphic-box">
-                  {service.type === 'design' && (
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" class="service-dummy-svg">
-                      <rect width="200" height="120" rx="8" fill="#141822"/>
-                      <rect x="20" y="20" width="60" height="45" rx="4" fill="none" stroke="#2d3545" stroke-width="2"/>
-                      <circle cx="140" cy="45" r="20" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4 4"/>
-                      <path d="M20 90h160" stroke="#2d3545" stroke-width="2"/>
-                      <path d="M50 80l10 20M140 80l10 20" stroke="#2d3545" stroke-width="2"/>
-                    </svg>
-                  )}
-                  {service.type === 'code' && (
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" class="service-dummy-svg">
-                      <rect width="200" height="120" rx="8" fill="#141822"/>
-                      <path d="M30 40l-15 15 15 15M55 40l15 15-15 15M42 35l6 40" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      <rect x="90" y="42" width="80" height="6" rx="3" fill="#2d3545"/>
-                      <rect x="90" y="58" width="50" height="6" rx="3" fill="#2d3545"/>
-                    </svg>
-                  )}
-                  {service.type === 'marketing' && (
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" class="service-dummy-svg">
-                      <rect width="200" height="120" rx="8" fill="#141822"/>
-                      <path d="M30 90h140M45 90V70M80 90V50M115 90V35M150 90V20" stroke="#2d3545" stroke-width="3" stroke-linecap="round"/>
-                      <path d="M45 70l35-20 35-15 35-15" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/>
-                      <circle cx="150" cy="20" r="4" fill="#6366f1"/>
-                    </svg>
-                  )}
-                </div>
-              </div>
 
-              <div class="service-details-col">
-                {service.items && (
-                  <ul class="capability-list">
-                    {service.items.map((item) => (
-                      <li>{item}</li>
-                    ))}
-                  </ul>
-                )}
-
-                {service.subSections && (
-                  <div class="platform-grid">
-                    {service.subSections.map((sub) => (
-                      <div class="platform-card">
-                        <h3>{sub.name}</h3>
-                        <p>{sub.text}</p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {service.accessibilityBlock && (
-                  <div class="accessibility-highlight-box">
-                    <h3>{service.accessibilityBlock.title}</h3>
-                    <p>{service.accessibilityBlock.text}</p>
-                  </div>
-                )}
+        <!-- DESIGN SECTION -->
+        <div class="service-block">
+          <div class="service-row">
+            <div class="service-content-col">
+              <span class="service-pill pill-design">DESIGN</span>
+              <h2>Design</h2>
+              <p class="service-desc">Your brand's visual and interactive identity sets the tone for trust and engagement. We create intuitive, accessible, and visually striking designs that embody your mission and convert visitors into loyal supporters.</p>
+              
+              <ul class="service-list">
+                {designItems.map((item) => <li><span class="dash">—</span> {item}</li>)}
+              </ul>
+            </div>
+            <div class="service-image-col">
+              <div class="showcase-image-wrap">
+                <img src={designImg.src} alt="Design Projects Showcase" class="showcase-img" />
               </div>
             </div>
-            <hr class="block-divider" />
           </div>
-        ))}
+        </div>
+
+        <!-- CODE & DEVELOPMENT SECTION -->
+        <div class="service-block">
+          <div class="service-row">
+            <div class="service-content-col">
+              <span class="service-pill pill-code">CODE</span>
+              <h2>Development Across Platforms</h2>
+              <p class="service-desc">From simple builds to complex integrations, we craft scalable, high‑performance websites and stores that deliver seamless user experiences, with site speed and web accessibility built in from the start.</p>
+              
+              <ul class="service-list platforms-list">
+                {codePlatforms.map((platform) => (
+                  <li>
+                    <span class="dash">—</span> <span><strong>{platform.name}</strong> – {platform.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="service-image-col">
+              <div class="showcase-image-wrap">
+                <img src={codeImg.src} alt="Development Infrastructure Showcase" class="showcase-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEB ACCESSIBILITY SECTION -->
+        <div class="service-block">
+          <div class="service-row">
+            <div class="service-content-col">
+              <span class="service-pill pill-accessibility">WEB ACCESSIBILITY</span>
+              <h2>Web Accessibility</h2>
+              <p class="service-desc">Digital experiences designed for everyone, built to inspire change. Our web accessibility services help brands meet WCAG 2.1, ADA, and EAA compliance without compromising voice or visual identity.</p>
+              
+              <ul class="service-list">
+                {accessibilityBullets.map((bullet) => <li><span class="dash">—</span> {bullet}</li>)}
+              </ul>
+              
+              <div class="action-btn-wrap">
+                <a href="#" class="btn-outline-cta">BOOK A FREE ACCESSIBILITY CONSULTATION</a>
+              </div>
+            </div>
+            <div class="service-image-col">
+              <div class="showcase-image-wrap">
+                <img src={webImg.src} alt="Accessibility Audit Interface Dashboard" class="showcase-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MARKETING & BEYOND SECTION -->
+        <div class="service-block marketing-block">
+          <div class="service-row">
+            <div class="service-content-col">
+              <span class="service-pill pill-marketing">MARKETING</span>
+              <h2>Marketing & Audience Growth</h2>
+              <p class="service-desc">We develop and execute campaigns that elevate your visibility, increase conversions, and inspire repeat engagement.</p>
+              
+              <ul class="service-list inline-bold-list">
+                {marketingItems.map((item) => {
+                  const parts = item.split(' – ');
+                  return parts.length > 1 ? (
+                    <li><span class="dash">—</span> <span><strong>{parts[0]}</strong> – {parts[1]}</span></li>
+                  ) : (
+                    <li><span class="dash">—</span> {item}</li>
+                  );
+                })}
+              </ul>
+
+              <!-- eCommerce and Beyond (Positioned directly under marketing lists inside the left column) -->
+              <div class="beyond-retail-block">
+                <h2>eCommerce and Beyond</h2>
+                <p>
+                  Our expertise extends to platforms and projects outside of online retail, including advocacy campaigns, nonprofit portals, community hubs, and custom applications. Whether you're scaling a product line, launching a social cause, or improving accessibility, we adapt our approach to your unique goals.
+                </p>
+              </div>
+            </div>
+            <div class="service-image-col">
+              <div class="showcase-image-wrap align-bottom-graphic">
+                <img src={marketingImg.src} alt="Marketing and Brand Purpose Illustration" class="showcase-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section class="beyond-retail-section">
+    <!-- Center Card Contact CTA Banner -->
+    <section class="impact-cta-section">
       <div class="container-inner">
-        <div class="beyond-grid">
-          <div class="beyond-meta">
-            <h2>eCommerce and Beyond</h2>
-          </div>
-          <div class="beyond-content">
-            <p>
-              Our expertise extends to platforms and projects outside of online retail, including advocacy campaigns, nonprofit portals, community hubs, and custom applications. Whether you're scaling a product line, launching a social cause, or improving accessibility, we adapt our approach to your unique goals.
-            </p>
-            <div class="cta-wrapper">
-              <a href="/contact" class="btn-cta">get in touch </a>
-            </div>
-          </div>
+        <div class="impact-card">
+          <h2>Make Us Part of the Impact</h2>
+          <p>Please <a href="#" class="inline-cta-link">share details</a> of your story & project requirements</p>
         </div>
       </div>
     </section>
 
-  </main>
+
+  </section>
 </Layout>

@@ -1,0 +1,313 @@
+/* Standalone CSS for CueForGood Career Page */
+
+.cfg-career-outer-wrapper {
+  background-color: #0e131f;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  padding: 80px 0;
+}
+
+.cfg-career-inner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  box-sizing: border-box;
+}
+
+/* Intro / Culture Section */
+.cfg-career-intro-section {
+  margin-bottom: 64px;
+}
+
+.cfg-career-heading {
+  font-size: 44px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+.cfg-career-intro-text {
+  font-size: 16px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.cfg-career-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 64px 0;
+}
+
+/* Employee Care Culture Block */
+.cfg-career-culture-block {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.cfg-career-subheading {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+.cfg-career-culture-description {
+  color: #94a3b8;
+  max-width: 950px;
+  margin: 0 auto 56px auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Perks Layout */
+.cfg-career-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 16px;
+}
+
+.cfg-career-perk-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+}
+
+.cfg-career-perk-icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+  color: #94a3b8;
+  opacity: 0.9;
+}
+
+.cfg-career-perk-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Carousel Indicators */
+.cfg-career-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cfg-career-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+}
+
+.cfg-career-dot.cfg-active-dot {
+  background-color: #a5b4fc;
+  border-color: #a5b4fc;
+}
+
+/* Office Image Gallery */
+.cfg-career-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 96px;
+}
+
+.cfg-career-gallery-thumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Hiring Section Blocks */
+.cfg-career-openings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  margin-bottom: 96px;
+  align-items: start;
+}
+
+.cfg-career-status-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cfg-career-status-badge {
+  background-color: #00e396;
+  color: #000000;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  align-self: flex-start;
+  border-radius: 2px;
+}
+
+.cfg-career-status-panel h2 {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.cfg-career-listings-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cfg-career-job-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.cfg-career-job-title:hover {
+  color: #00e396;
+}
+
+/* Application Form Block */
+.cfg-career-form-block h2 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.cfg-career-mandatory-notice {
+  font-style: italic;
+  color: #94a3b8;
+  font-size: 14px;
+  margin-bottom: 48px;
+}
+
+.cfg-career-application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cfg-career-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.cfg-career-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cfg-career-input-group label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.cfg-career-input-field {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px 0;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: border-bottom-color 0.2s ease;
+}
+
+.cfg-career-input-field:focus {
+  border-bottom-color: #00e396;
+}
+
+/* File Attachment Upload Box */
+.cfg-career-upload-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cfg-career-upload-group label {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.cfg-career-file-wrapper {
+  margin-top: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 16px;
+}
+
+.cfg-career-file-wrapper input[type="file"] {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* reCAPTCHA Mock Frame */
+.cfg-career-captcha-wrapper {
+  margin-top: 12px;
+}
+
+.cfg-career-captcha-box {
+  background-color: #222222;
+  border: 1px solid #333333;
+  width: 300px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* Submit Form Button */
+.cfg-career-submit-wrapper {
+  margin-top: 16px;
+}
+
+.cfg-career-submit-btn {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 14px 48px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.cfg-career-submit-btn:hover {
+  background-color: #ffffff;
+  color: #0e131f;
+}
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+  .cfg-career-inner-container {
+    padding: 0 24px;
+  }
+  .cfg-career-perks-grid, 
+  .cfg-career-gallery, 
+  .cfg-career-openings-grid, 
+  .cfg-career-form-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

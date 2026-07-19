@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/career.less';
+---
+
+<Layout title="Careers at CueForGood | Join Our Team">
+  <div class="cfg-career-outer-wrapper">
+    <div class="cfg-career-inner-container">
+      
+      <!-- INTRODUCTION SECTION -->
+      <section class="cfg-career-intro-section">
+        <h1 class="cfg-career-heading">Work With Us</h1>
+        <p class="cfg-career-intro-text">
+          With passion as its compass, CueForGood offers a platform with purpose. Our team of developers, designers, and online marketers reimagines eCommerce through creativity that outlasts each of us as individuals. We believe in coming to work with ideas that have whiffs of newness and a heart that feels like it is on a trip to La La Land.
+        </p>
+        <p class="cfg-career-intro-text">
+          While doing this, we build an environment that allows us to get away from the desks & get our creative juices flowing. If you're looking for a career that fuels your creativity in a company where you are more than just your job, CueForGood would love to hear from you.
+        </p>
+      </section>
+
+      <hr class="cfg-career-divider" />
+
+      <!-- CULTURE & BENEFITS SECTION -->
+      <section class="cfg-career-culture-block">
+        <h2 class="cfg-career-subheading">We Care - Here's How</h2>
+        <p class="cfg-career-culture-description">
+          Thriving as a place for people and their ideas, we work towards elevating eCommerce businesses (both start-ups and established ones). As part of a close-knit team, we create opportunities that help each one of us flourish. But the best thing we do at CueForGood is care for our employees.
+        </p>
+
+        <div class="cfg-career-perks-grid">
+          <!-- Remote-Friendly Work -->
+          <div class="cfg-career-perk-card">
+            <svg class="cfg-career-perk-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+            </svg>
+            <h3>Remote-Friendly Work</h3>
+          </div>
+
+          <!-- Competitive Salary -->
+          <div class="cfg-career-perk-card">
+            <svg class="cfg-career-perk-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.22.058a7.067 7.067 0 011.83.684c.548.283 1.17.283 1.718 0a7.07 7.07 0 011.83-.684l.22-.058M9 9.182l.22-.058a7.07 7.07 0 011.83-.684c.548-.283 1.17-.283 1.718 0a7.07 7.07 0 011.83.684l.22.058M12 3v18" />
+            </svg>
+            <h3>Competitive Salary</h3>
+          </div>
+
+          <!-- Maternity / Paternity Leave -->
+          <div class="cfg-career-perk-card">
+            <svg class="cfg-career-perk-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M12 18.75a6.75 6.75 0 110-13.5 6.75 6.75 0 010 13.5zM9.75 9.75h.008v.008H9.75V9.75zm4.5 0h.008v.008h-.008V9.75z" />
+            </svg>
+            <h3>Maternity/ Paternity Leave</h3>
+          </div>
+        </div>
+
+        <div class="cfg-career-carousel-dots">
+          <span class="cfg-career-dot cfg-active-dot"></span>
+          <span class="cfg-career-dot"></span>
+        </div>
+      </section>
+
+      <!-- OFFICE GALLERY -->
+      <section class="cfg-career-gallery">
+        <img src="/images/team-meeting.jpg" alt="Collaborative meeting session" class="cfg-career-gallery-thumb" />
+        <img src="/images/cue-for-good-glass.jpg" alt="Frosted glass branding window" class="cfg-career-gallery-thumb" />
+        <img src="/images/team-gathering.jpg" alt="All-hands collaborative gathering" class="cfg-career-gallery-thumb" />
+      </section>
+
+      <!-- JOB OPENINGS LIST -->
+      <section class="cfg-career-openings-grid">
+        <div class="cfg-career-status-panel">
+          <span class="cfg-career-status-badge">Open Posts</span>
+          <h2>WE ARE HIRING<br />AT CueForGood</h2>
+        </div>
+
+        <div class="cfg-career-listings-panel">
+          <div class="cfg-career-job-title">Email Marketing Specialist</div>
+          <div class="cfg-career-job-title">Business Development Specialist</div>
+          <div class="cfg-career-job-title">Shopify Developer</div>
+          <div class="cfg-career-job-title">Senior Shopify Developer</div>
+          <div class="cfg-career-job-title">(QA) Quality Analyst</div>
+        </div>
+      </section>
+
+      <!-- JOB APPLICATION FORM -->
+      <section class="cfg-career-form-block">
+        <h2>Apply Now!</h2>
+        <p class="cfg-career-mandatory-notice">(* Indicates Mandatory Fields)</p>
+
+        <form class="cfg-career-application-form" action="#" method="POST" enctype="multipart/form-data">
+          <div class="cfg-career-form-grid">
+            <div class="cfg-career-input-group">
+              <label for="name">Name*</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required class="cfg-career-input-field" />
+            </div>
+
+            <div class="cfg-career-input-group">
+              <label for="email">Email*</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required class="cfg-career-input-field" />
+            </div>
+
+            <div class="cfg-career-input-group">
+              <label for="phone">Phone*</label>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone" required class="cfg-career-input-field" />
+            </div>
+
+            <div class="cfg-career-input-group">
+              <label for="job">Job*</label>
+              <input type="text" id="job" name="job" placeholder="Enter Job title" required class="cfg-career-input-field" />
+            </div>
+          </div>
+
+          <div class="cfg-career-form-grid">
+            <div class="cfg-career-upload-group">
+              <label>Attachment (.png, .pdf, .txt, .doc)*</label>
+              <span style="font-size: 13px; color: #94a3b8;">Max size allowed-2 MB</span>
+              <div class="cfg-career-file-wrapper">
+                <input type="file" name="resume" accept=".png, .pdf, .txt, .doc" required />
+              </div>
+            </div>
+
+            <div class="cfg-career-captcha-wrapper">
+              <div class="cfg-career-captcha-box">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <input type="checkbox" id="captcha-check" style="width: 24px; height: 24px;" />
+                  <label for="captcha-check" style="font-size: 14px; color: #ffffff;">I'm not a robot</label>
+                </div>
+                <div style="text-align: center; font-size: 10px; color: #94a3b8;">
+                  <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA Security" width="24" height="24" /><br />
+                  reCAPTCHA
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfg-career-submit-wrapper">
+            <button type="submit" class="cfg-career-submit-btn">Submit</button>
+          </div>
+        </form>
+      </section>
+
+    </div>
+  </div>
+</Layout>

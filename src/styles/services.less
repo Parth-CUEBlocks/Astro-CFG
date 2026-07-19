@@ -1,4 +1,4 @@
-/* src/styles/service.less — High-Fidelity Theme Layout with Sticky Columns & Graphic Placeholders */
+/* src/styles/services.less */
 @import "./variables.less";
 
 .services-page,
@@ -7,299 +7,523 @@
 }
 
 .services-page {
-  background-color: #0b0d12;
-  color: #ffffff;
-  font-family: 'Lato', sans-serif;
-  padding: 10rem 0 6rem 0;
+  background-color: #171c28;
+  color: #aab3c0;
   width: 100%;
+  overflow-x: hidden;
 
   .container-inner {
     width: 100%;
-    max-width: 1140px;
+    max-width: 1290px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 15px;
   }
 
-  /* Hero Section Styling */
+  /* --- Hero Design Layout Architecture --- */
   .services-hero {
-    text-align: left;
-    margin-bottom: 8rem;
+    padding: 200px 0 120px 0;
 
-    .eyebrow {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: rgba(255, 255, 255, 0.4);
-      font-weight: 700;
-      display: block;
-      margin-bottom: 1.5rem;
+    .hero-split-grid {
+      display: flex;
+      gap: 172px;
+      align-items: flex-start;
+
+      > * {
+        &:nth-child(1) { flex: 545px 0 0; }
+        &:nth-child(2) { flex: 1; }
+      }
     }
 
     h1 {
-      font-size: 3.8rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
       line-height: 1.1;
-      margin: 0 0 2.5rem 0;
-      color: #ffffff;
+      font-family: Lato;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 100%;
+      margin: 0;
+      padding-bottom: 16px;
+      padding-top: 21px;
     }
 
     .hero-lead {
-      font-size: 1.35rem;
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.65;
-      max-width: 900px;
-      margin: 0 0 2rem 0;
+      font-size: 18px;
+      color: #aab3c0;
+      line-height: 1.4;
+      margin: 0 0 15px 0;
     }
 
-    .hero-focus {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.45);
-      margin: 0 0 1.5rem 0;
+    .hero-lead-secondary {
+      font-size: 18px;
+      color: #aab3c0;
+      line-height: 1.4;
+      margin: 0 0 40px 0;
     }
 
-    .pillar-anchors {
+    .intro-philosophy {
+      max-width: 680px;
+
+      h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0 0 30px 0;
+        letter-spacing: -0.02em;
+      }
+      p {
+        font-size: 18px;
+        color: #aab3c0;
+        line-height: 1.4;
+        margin: 0;
+      }
+    }
+
+    .hero-graphic-col {
       display: flex;
-      gap: 1rem;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #ffffff;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding-top: 1rem;
 
-      span {
-        position: relative;
-        &:not(:last-child)::after {
-          content: '';
-          margin-left: 0.5rem;
+      .hero-image-field {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        .page-hero-img {
+          display: block;
+          height: auto;
+          width: auto;
         }
+      }
+    }
+
+    .pillar-block {
+      padding-top: 80px;
+
+      .hero-focus {
+        font-size: 18px;
+        color: #aab3c0;
+        margin: 0 0;
+      }
+
+      .pillar-main-statement {
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+        margin: 0 0 24px 0;
+        color: #bfddfb;
+        font-family: Lato;
+      }
+
+      .pillar-subtext {
+        color: #aab3c0;
+        margin: 0;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 1.5;
+        max-width: 761px;
       }
     }
   }
 
-  /* Two-Column Grid Row Framework */
+  /* --- Two Column Feature Grid Layout System --- */
   .services-matrix-section {
+    padding: 2rem 0;
+
     .service-block {
-      margin-bottom: 6rem;
-
-      .block-divider {
-        border: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        margin-top: 6rem;
-      }
-
-      &:last-child .block-divider {
-        display: none;
-      }
+      margin-bottom: 150px;
+      &:last-child { margin-bottom: 4rem; }
     }
 
     .service-row {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 4rem;
-      align-items: start;
+      display: flex;
+      gap: 5px ;
+      align-items: flex-start;
 
-      /* Sticky Scroll Layout Engine */
-      .service-meta-col {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 8rem;
+      .service-content-col {
+        flex: 0 630px;
+        
+        // Brand identification label pills
+        .service-pill {
+          display: inline-block;
+          color: #171c28;
+          background: #1aeb9f;
+          font-size: 10px;
+          font-weight: 800;
+          letter-spacing: 2px;
+          line-height: 140%;
+          margin: 0 0 5px;
+          padding: 3px 13px 2px;
+          font-family: lato, sans-serif;
+        }
 
         h2 {
-          font-size: 2.4rem;
-          font-weight: 800;
-          letter-spacing: -0.02em;
-          margin: 0 0 1.5rem 0;
+          font-size: 28px;
+          font-weight: 700;
+          margin: 0 0 18px 0;
+          line-height: 1.4;
+          color: #e0e5ec;
+          font-family: Lato, sans-serif;
         }
 
         .service-desc {
-          font-size: 1.1rem;
-          line-height: 1.65;
-          color: rgba(255, 255, 255, 0.55);
-          margin: 0 0 2.5rem 0;
+          font-size: 18px;
+          line-height: 1.4;
+          color: #aab3c0;
+          font-weight: 300;
+          margin: 0 0;
         }
 
-        /* Inline SVG Dummy Graphic Box Integration */
-        .service-graphic-box {
-          width: 100%;
-          max-width: 320px;
-          border-radius: 8px;
-          overflow: hidden;
-          border: 1px solid rgba(255, 255, 255, 0.05);
-          box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+        // Feature and capability details arrays
+        .service-list {
+          list-style: none;
+          padding: 0;
+          margin: 40px 0 0;
 
-          .service-dummy-svg {
-            display: block;
-            width: 100%;
-            height: auto;
-            transition: transform 0.4s ease;
+          li {
+            font-size: 16px;
+            color: #aab3c0;
+            line-height: 1.8;
+            font-family: Montserrat;
+            padding-bottom: 10px;
+            font-weight: 500;
+            display: flex;
+            align-items: flex-start;
+
+            .dash {
+              color: #aab3c0;
+              margin-right: 12px;
+              flex-shrink: 0;
+            }
+
+            strong {
+              color: #bfddfb;
+              font-weight: 700;
+            }
           }
         }
 
-        &:hover {
-          .service-graphic-box .service-dummy-svg {
-            transform: scale(1.03);
+        .action-btn-wrap {
+          margin-top: 3rem;
+
+          .btn-outline-cta {
+            text-decoration: none;
+            font-size: 18px;
+            letter-spacing: 0.02em;
+            border: 4px solid #e0e5ec;
+            color: #e0e5ec;
+            display: inline-block;
+            font-weight: 600;
+            margin-top: 20px;
+            max-width: 100%;
+            min-width: 200px;
+            padding: 22px 30px;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            transition: all .5s ease;
+
+            &:hover {
+              background: #fff;
+              color: #171c28;
+              border-color: #fff;
+            }
+          }
+        }
+
+        // Nested block formatting matching Screenshot 4 layout
+        .beyond-retail-block {
+          margin-top: 5rem;
+          padding-top: 1px;
+
+          h2 {
+            font-size: 28px;
+          font-weight: 700;
+          margin: 0 0 18px 0;
+          line-height: 1.4;
+          color: #e0e5ec;
+          font-family: Lato, sans-serif;
+          }
+
+          p {
+            color: #aab3c0;
+            margin: 0;
+            font-size: 18px;
+            color: #aab3c0;
+            line-height: 1.4;
           }
         }
       }
 
-      .service-details-col {
-        /* Standard capability bullet map */
-        .capability-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
+      .service-image-col {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
 
-          li {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.85);
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            line-height: 1.5;
-
-            &:first-child { padding-top: 0; }
-            &:last-child { border-bottom: none; }
-          }
-        }
-
-        /* Subsections platform block grid matrix */
-        .platform-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 2.5rem 2rem;
-
-          .platform-card {
-            h3 {
-              font-size: 1.25rem;
-              font-weight: 700;
-              margin: 0 0 0.5rem 0;
-              color: #ffffff;
-            }
-
-            p {
-              font-size: 0.95rem;
-              color: rgba(255, 255, 255, 0.5);
-              line-height: 1.5;
-              margin: 0;
-            }
-          }
-        }
-
-        /* Specialized Web Accessibility Info Block */
-        .accessibility-highlight-box {
-          margin-top: 4rem;
-          padding-top: 3rem;
-          border-top: 1px dashed rgba(255, 255, 255, 0.12);
-
-          h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin: 0 0 0.75rem 0;
+        .showcase-image-wrap {
+          width: 100%;
+          overflow: hidden;
+          
+          .showcase-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
           }
 
-          p {
-            font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.55);
-            line-height: 1.6;
-            margin: 0;
-          }
+          
         }
       }
     }
   }
 
-  /* eCommerce & Beyond Section Framework */
-  .beyond-retail-section {
-    margin-top: 6rem;
-    padding-bottom: 4rem;
+  /* --- Action CTA Banner Layout (Light Minimalist Container) --- */
+  .impact-cta-section {
+    padding: 0 0 150px;
 
-    .beyond-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 4rem;
-      align-items: start;
+    .impact-card {
+      background: #e1f0ff;
+      padding: 57px 0 64px;
+      text-align: center;
 
-      .beyond-meta h2 {
-        font-size: 2.4rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        margin: 0;
+      h2 {
+          margin: 0 0 8px 0;
+          line-height: 1.4;
+          color: #e0e5ec;
+          font-family: Lato, sans-serif;
+          font-size: 34px;
+          font-style: normal;
+          font-weight: 800;
+          text-align: center;
+          color: #171c28;
       }
 
-      .beyond-content {
-        p {
-          font-size: 1.15rem;
-          color: rgba(255, 255, 255, 0.6);
-          line-height: 1.7;
-          margin: 0 0 2.5rem 0;
+      p {
+        margin: 0;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        text-align: center;
+        font-family: Montserrat;
+        color: #171c28;
+      }
+
+      .inline-cta-link {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 130%;
+        text-align: center;
+        font-family: Montserrat;
+        color: #171c28;
+      }
+    }
+  }
+
+  /* --- Testimonial Content Block Layout System --- */
+  .client-speak-section {
+    background: #171c28;
+    padding: 4rem 0 8rem 0;
+
+    .section-eyebrow {
+      font-size: 2.6rem;
+      color: #aab3c0;
+      display: block;
+      text-align: center;
+      margin-bottom: 4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .slider-viewport {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .slider-track {
+      display: flex;
+      flex-direction: column;
+      gap: 6rem;
+    }
+
+    .slide {
+      width: 100%;
+      text-align: center;
+
+      blockquote {
+        font-size: 1.55rem;
+        line-height: 1.7;
+        font-weight: 400;
+        color: #aab3c0;
+        margin: 0 0 2rem 0;
+        padding: 0;
+      }
+
+      .author-info {
+        strong {
+          display: block;
+          font-size: 1.2rem;
+          margin-bottom: 0.25rem;
+          font-weight: 700;
+          color: #aab3c0;
         }
-
-        .cta-wrapper {
-          .btn-cta {
-            display: inline-block;
-            color: #0b0d12;
-            background-color: #ffffff;
-            text-decoration: none;
-            text-transform: lowercase;
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 0.85rem 2.2rem;
-            border-radius: 4px;
-            transition: opacity 0.2s ease;
-
-            &:hover {
-              opacity: 0.9;
-            }
-          }
+        span { 
+          font-size: 1rem; 
+          color: rgba(255, 255, 255, 0.4); 
         }
       }
     }
   }
 }
 
-/* Responsive Structural Media Breaks */
+.services-page .services-matrix-section .service-block.marketing-block .service-row .service-image-col .showcase-image-wrap .showcase-img{
+  max-height: unset;
+  object-fit: cover;
+}
+/* --- Responsive Layout Breakpoints System --- */
 @media (max-width: 992px) {
   .services-page {
-    padding: 7rem 0 4rem 0;
-
     .services-hero {
-      margin-bottom: 5rem;
-      h1 { font-size: 2.8rem; }
-      .hero-lead { font-size: 1.15rem; }
-    }
-
-    .services-matrix-section {
-      .service-row {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-
-        .service-meta-col {
-          position: static;
-          margin-bottom: 1.5rem;
-
-          .service-graphic-box {
-            max-width: 100%; /* Spans full width gracefully on smaller form-factors */
+      padding: 4rem 15px 35px;
+      .hero-split-grid {
+        flex-direction: column;
+        gap: 24px;
+        > * {
+          &:nth-child(1), &:nth-child(2) { 
+            flex: none;
+            width: 100%; 
           }
         }
       }
-    }
-
-    .beyond-retail-section {
-      .beyond-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+      h1 {
+          color: #e0e5ec;
+          font-size: 28px;
+          font-weight: 800;
+          padding-bottom: 10px;
+       }
+      .hero-lead, .hero-lead-secondary { 
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 140%;
+        font-family: Montserrat;
+      }
+      .pillar-block .pillar-main-statement { font-size: 60px;
+          margin-bottom: 18px;
       }
     }
-
-    .services-matrix-section .service-block .block-divider {
-      margin-top: 4rem;
+    .services-matrix-section {
+      .service-block { margin-bottom: 60px; }
+      .service-row {
+        flex-direction: column;
+        gap: 32px;
+        .service-content-col, .service-image-col {
+          flex: none;
+          width: 100%;
+        }
+        .service-image-col {
+          justify-content: center;
+        }
+      }
     }
+    .impact-cta-section .impact-card {
+      padding: 30px 15px;
+      h2 { 
+        font-size: 24px;
+        margin-bottom: 0;
+      }
+      p { font-size: 15px; }
+    }
+    .client-speak-section {
+      .section-eyebrow { font-size: 2rem; margin-bottom: 3rem; }
+      .slide blockquote { font-size: 1.35rem; }
+    }
+  }
+  .services-page .services-hero .intro-philosophy h2 {
+    font-size: 24px;
+    color: #e0e5ec;
+    margin-bottom: 8px;
+  }
+  .service-section .service-inner .servicein .h1-p{
+    padding-bottom: 40px;
+  }
+  .services-page .services-hero .intro-philosophy p {
+    font-size: 15px;
+    font-family: Montserrat;
+  }
+  .services-page .services-hero .hero-graphic-col .hero-image-field .page-hero-img {
+    max-width: 310px;
+  }
+  .services-page .services-hero .hero-graphic-col .hero-image-field{
+    justify-content: flex-start;
+  }
+  .services-page .services-hero .pillar-block .hero-focus {
+    font-size: 15px;
+  }
+  .services-page .services-hero .pillar-block .pillar-subtext{
+    font-size: 15px;
+  }
+  .services-page .services-matrix-section{
+    padding: 0;
+  }
+  .services-page .services-matrix-section .service-row .service-content-col .service-list li {
+    font-size: 15px;
+    padding-bottom: 0;
+  }
+  .services-page .services-matrix-section .service-row .service-content-col .service-desc {
+    font-size: 15px;
+    font-family: Montserrat;
+  }
+  .services-page .services-matrix-section .service-row .service-content-col .service-list {
+    margin: 28px 0 0;
+  }
+  .services-page .services-matrix-section .service-row .service-content-col .service-list li{
+    padding-bottom: 10px;
+  }
+  .services-page .services-matrix-section .service-row .service-content-col .action-btn-wrap {
+    margin-top: 0;
+  }
+  .services-page .services-matrix-section .service-row .service-content-col .action-btn-wrap .btn-outline-cta{
+    margin-top: 20px;
+  }
+  .services-page .services-matrix-section .service-row .service-content-col .beyond-retail-block{
+    margin-top: 5px;
+  }
+  .services-page .services-matrix-section .service-row .service-content-col .beyond-retail-block p{
+    font-size: 15px;
+  }
+  .services-page .container-inner{
+    padding: 0;
+  }
+  .services-page .services-matrix-section .service-row{
+    padding: 0 15px;
+  }
+  .cfg-testimonial-text{
+    width: 75%;
   }
 }
 
 @media (max-width: 576px) {
-  .services-page .services-matrix-section .service-row .service-details-col {
-    .platform-grid {
-      grid-template-columns: 1fr;
-      gap: 1.75rem;
+  .services-page {
+    .services-hero .pillar-block .pillar-main-statement { font-size: 60px; }
+    .services-matrix-section .service-row .service-content-col {
+      h2 { 
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 140%;
+        padding-bottom: 10px;
+        margin: 0;
+      }
+      .beyond-retail-block h2 { 
+        font-size: 24px;
+        margin-bottom: 0;
+      }
+      .action-btn-wrap .btn-outline-cta { width: 100%; text-align: center; padding: 1rem; }
     }
   }
 }

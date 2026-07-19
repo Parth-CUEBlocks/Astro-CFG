@@ -1,0 +1,328 @@
+/* Outer Layout Wrapper */
+.cfg-contact-outer-wrapper {
+  width: 100%;
+  background-color: #171c28; /* Matches exact screenshot slate dark background */
+  color: #aab3c0;
+  font-family: 'Montserrat', sans-serif; /* Removed 'Lato' fallback */
+  letter-spacing: -0.01em;
+}
+
+/* Inner Container */
+.cfg-contact-inner-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 120px 15px 40px;
+  box-sizing: border-box;
+}
+
+.cfg-contact-form-section {
+  flex: 1 1 600px;
+}
+
+.cfg-contact-info-section {
+  flex: 0 0 350px;
+  border-left: 1px solid #aab3c0;
+  padding-left: 4rem;
+}
+
+/* Typography */
+.cfg-contact-heading {
+  font-size: 34px;
+  margin: 0 0 15px ;
+  font-weight: 700;
+  color: #e0e5ec;
+}
+
+.cfg-contact-subheading {
+  font-size: 34px;
+  margin: 0 0 15px ;
+  font-weight: 700;
+  color: #e0e5ec;
+}
+
+.cfg-contact-text {
+  color: #aab3c0;
+  line-height: 1.6;
+  margin: 0 0 0.5rem 0;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cfg-contact-email-link {
+  color: #aab3c0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+.cfg-contact-copy-btn {
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.35);
+  color: #aab3c0;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+  
+  .cfg-icon {
+    font-size: 0.8rem;
+    margin-right: 2px;
+  }
+
+  &:hover {
+    border-color: #aab3c0;
+    color: #aab3c0;
+  }
+}
+
+.cfg-contact-mandatory-notice {
+    color: #aab3c0;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+/* Form inputs & boxes */
+.cfg-contact-form-group {
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+}
+
+.cfg-contact-input-field, 
+.cfg-contact-textarea-field {
+  width: 100%;
+  padding: 26px;
+  background-color: #171d2c;
+  border: 1px solid #aab3c0;
+  border-radius: 6px;
+  color: #aab3c0;
+  font-size: 18px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: 'Montserrat', sans-serif;
+    color: #aab3c0;
+}
+
+.cfg-contact-input-field:focus, 
+.cfg-contact-textarea-field:focus {
+  border-color: #4a5568;
+}
+
+.cfg-contact-input-field::placeholder, 
+.cfg-contact-textarea-field::placeholder {
+  color: #aab3c0;
+}
+
+/* Services Flex Block replacing grid */
+.cfg-contact-services-label {
+  display: block;
+  margin: 12px 0 10px 0;
+  color: #aab3c0;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.cfg-contact-services-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1.25rem;
+  column-gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.cfg-contact-checkbox-label {
+  display: flex;
+  align-items: center;
+  color: #aab3c0;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1.7;
+  flex: 0 0 calc(50% - 1rem); 
+  box-sizing: border-box;
+  user-select: none;
+
+  input {
+    display: none;
+  }
+
+  /* Custom Checkbox Design matching capture */
+  .custom-box {
+    flex-shrink: 0;
+
+    align-items: center;
+    background: transparent;
+    border: 1px solid #aab3c0;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    float: left;
+    height: 30px;
+    justify-content: center;
+    margin-right: 20px;
+    position: relative;
+    transition: all .25s cubic-bezier(.4, 0, .23, 1);
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  input:checked + .custom-box {
+    border-color: #aab3c0;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-color: #000;
+    background-image: url(../assets/page.contact/tick.png);
+  }
+}
+
+/* Submit Block */
+.cfg-contact-captcha-placeholder {
+  margin: 2rem 0;
+}
+
+.cfg-contact-submit-btn {
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 24px;
+    font-weight: 400;
+    height: 70px;
+    padding: 10px;
+    text-transform: capitalize;
+    width: 264px;
+        background-color: transparent;
+    border:4px solid #e0e5ec;
+    color: #e0e5ec;
+        line-height: 1;
+    transition: all .5s ease;
+}
+
+.cfg-contact-submit-btn:hover {
+  background: #e0e5ec;
+  color: #171c28;
+}
+
+/* Sidebar Styling Details */
+.cfg-contact-info-section {
+  position: sticky;
+  top: 80px;
+  align-self: start;
+}
+.cfg-contact-location-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.cfg-contact-city-label {
+  font-weight: 600;
+  font-size: 18px;
+  color: #aab3c0;
+  font-family: 'Montserrat';
+}
+
+.address-cb {
+    line-height: 1.4;
+    margin-top: 10px;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 400;
+    color: #aab3c0;
+}
+p.address-cb a {
+    color: #aab3c0;
+    text-decoration: none;
+}
+
+/* Responsive Breakpoints using full Flex conversions */
+@media (max-width: 992px) {
+  .cfg-contact-inner-container {
+    flex-direction: column;
+    gap: 40px 3.5rem ;
+    padding: 120px 15px;
+  }
+
+  .cfg-contact-info-section {
+    border-left: none;
+    border-top: 1px solid #aab3c0;
+    padding-left: 0;
+    padding-top: 30px;
+    flex: 1 1 auto;
+    width: 100%;
+  }
+  .cfg-contact-heading{
+    font-size: 24px;
+    text-align: center;
+  }
+  .cfg-contact-text{
+    font-size: 14px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .cfg-contact-mandatory-notice {
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .cfg-contact-copy-btn{
+    display: none;
+  }
+  .cfg-contact-form-group{
+    margin-bottom: 15px;
+  }
+  .cfg-contact-input-field, .cfg-contact-textarea-field {
+    border-radius: 6px;
+    font-size: 12px;
+    height: 45px;
+    padding: 10px 13px;
+  }
+  .cfg-contact-services-label {
+    margin: 14px 0 12px 0;
+    font-size: 14px;
+  }
+  .cfg-contact-services-flex-container{
+    row-gap: 0.6em;
+    flex-direction: row;
+  }
+  .cfg-contact-checkbox-label{
+    font-size: 14px;
+    flex: 0 0 45%;
+  }
+  textarea.cfg-contact-textarea-field {
+    height: 100px;
+  }
+   .cfg-contact-submit-btn {
+     height: 50px;
+     margin-top: 12px;
+     width: 100%;
+     font-size: 14px;
+    }
+  .cfg-contact-subheading {
+    font-size: 24px;
+    margin: 0 0 45px;
+    text-align: center;
+  }
+  .cfg-contact-clock-widget {
+    max-width: 110px;
+    width: 100%;
+    display: flex;
+  }
+  .cfg-contact-clock-widget img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+ 
+}
