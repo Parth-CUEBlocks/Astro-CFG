@@ -1,12 +1,62 @@
-/* src/styles/header.less — Integrated Mega Menu Layout */
+/* ==========================================================================
+   DESKTOP HEADER STYLES
+   ========================================================================== */
 @import "./variables.less";
 
-.site-header {
-  background-color: @header-bg;
-  padding: 1.25rem 0;
+/* Announcement Bar */
+.announcementbar {
+  background: #141924;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.4s ease-out;
+  will-change: transform, opacity;
+  display: block !important;
+  position: relative;
   z-index: 1000;
+  font-family: 'Montserrat', sans-serif;
+
+  &:has(+ .site-header.scrolled) {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* Main Desktop Header Structure */
+.site-header {
+  background-color: #171c28;
+  padding: 1.25rem 0;
+  z-index: 999;
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 37px;
+  left: 0;
+  right: 0;
+  height: 90px;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1), 
+              top 0.4s cubic-bezier(0.65, 0, 0.35, 1), 
+              height 0.4s cubic-bezier(0.65, 0, 0.35, 1), 
+              background-color 0.4s ease;
+  will-change: transform, top, height;
+
+  /* Sticky Scrolled State */
+  &.scrolled {
+    height: 70px;
+    transition: all 0.3s ease;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #141721;
+
+    .logo svg {
+      width: 85px;
+    }
+  }
 
   .header-container {
     width: 100%;
@@ -50,7 +100,8 @@
         margin: 0 1px;
       }
     }
-    svg{
+
+    svg {
       width: 120px;
       transition: width 0.3s ease-in-out;
     }
@@ -75,9 +126,8 @@
       }
     }
 
-    /* Nested Mega Menu Triggers and Logic */
+    /* Nested Mega Menu Triggers */
     .has-mega-menu {
-      /* CHANGED: Neutralized relative context so the child can read the full header width */
       position: static; 
 
       &:hover {
@@ -107,20 +157,22 @@
         transform: scale(1.05);
       }
 
-      svg {
-        fill: currentColor;
+      svg,
+      svg path {
+        fill: #e0e5ec;
+        color: #e0e5ec;
       }
     }
   }
 }
 
-/* Base styling for Mega Menu (Now perfectly relative to the .site-header bounds) */
+/* Base styling for Mega Menu */
 .mega-menu {
   position: absolute;
-  top: 100%; /* Spawns exactly below the header line */
+  top: 100%;
   left: 0;
-  width: 100%; /* Spans 100% width of the screen-wide header wrapper */
-  background-color: #171c28; /* Dark background matching the theme */
+  width: 100%;
+  background-color: #171c28;
   padding: 40px 2rem;
   box-sizing: border-box;
   opacity: 0;
@@ -129,7 +181,6 @@
   z-index: 999;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 
-  /* CHANGED: Inner layout container mirrors the site grid constraints precisely */
   .mega-menu-container {
     display: flex;
     justify-content: space-between;
@@ -165,7 +216,7 @@
     }
   }
 
-  /* Consultation button outline variant style */
+  /* Consultation Button Outline Variant */
   .btn-consultation {
     display: inline-block;
     padding: 12px 24px;
@@ -182,191 +233,10 @@
     }
   }
 }
-.site-header.scrolled {
-  height: 70px;
-  transition: all 0.3s ease;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  right: 0;
-  top: 0;
-  background-color: #141721;
+
+/* Media Query: Hide Desktop Layout Below Desktop Breakpoint */
+@media (max-width: 767px) {
+  .desk-h {
+    display: none !important;
+  }
 }
-
-.site-header .social-links a svg,
-.site-header .social-links a svg path {
-  fill: #e0e5ec;
-  color: #e0e5ec;
-}
-
-.announcementbar {
-  background: #141924;
-  color: #fff;
-  font-size: 14px;
-  padding: 10px;
-  text-align: center;
-  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.4s ease-out;
-  will-change: transform, opacity;
-  display: block !important;
-  position: relative;
-  z-index: 1000;
-  font-family: 'Montserrat';
-}
-
-.announcementbar:has(+ .site-header.scrolled) {
-  transform: translateY(-100%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.site-header {
-  position: fixed;
-  top: 37px;
-  left: 0;
-  right: 0;
-  height: 90px;
-  z-index: 999;
-  background-color: #171c28;
-  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1), top 0.4s cubic-bezier(0.65, 0, 0.35, 1), height 0.4s cubic-bezier(0.65, 0, 0.35, 1), background-color 0.4s ease;
-  will-change: transform, top, height;
-}
-.site-header.scrolled .logo svg{
-  width: 85px;
-}
-
-
-.mob{
-  display: none !important;
-}
-@media (max-width:767px){
-  .desk-h{
-    display: none  !important;
-  }
-  .mob{
-    display: flex  !important;
-  }
-  .site-header{
-    padding: 0;
-    top: 0;
-    height: auto;
-  }
-  .site-header.scrolled{
-    height: 55px;
-  }
-  .site-header.scrolled .logo svg {
-    width: 72px;
-  }
-  
-  /* Flex containment matching header layout */
-  .mobile-header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 1.25rem;
-    height: 55px;
-    position: relative;
-    z-index: 100;
-  }
-
-  /* Logo & Tagline Flex Structure */
-  .logo-with-tagline {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  /* Target exact live responsive dimensions for the SVG */
-  .site-header .mobile-logo svg {
-    width: 72px;
-    height: auto;
-    display: block;
-  }
-
-  .header-tagline {
-    display: block;
-    font-family: Lato;
-    font-size: 12px;
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: .2px;
-    line-height: 130%;
-    margin-left: -20px;
-    text-align: center;
-    color: #aab3c0;
-  }
-
-  /* Hamburger Interactive Styling Adjustments (Updated for 2 lines) */
-  .mobile-menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 26px;
-    height: 12px; /* Tightened layout bounding container height */
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 110;
-  }
-
-  .hamburger-bar {
-    width: 100%;
-    height: 2px;
-    background-color: #ffffff;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-origin: center center; /* Anchored centered to swing cleanly into place */
-  }
-
-  /* Transform rules to align 2 lines into a perfect close 'X' */
-  .mobile-menu-toggle.active .hamburger-bar:nth-child(1) {
-    transform: translateY(5px) rotate(45deg);
-  }
-  .mobile-menu-toggle.active .hamburger-bar:nth-child(2) {
-    transform: translateY(-5px) rotate(-45deg);
-  }
-
-  /* Full Screen Left-to-Right Overlay Drawer */
-  .mobile-navigation-drawer {
-    position: fixed;
-    top: 0;
-    left: -100%; /* Placed on left to hidden */
-    width: 100%;  /* Full screen width assignment */
-    height: 100vh;
-    background-color: #0b111e; /* Matched base aesthetic palette background */
-    transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1); /* Animate smoothly from left */
-    padding: 100px 2.5rem 2rem;
-    z-index: 105;
-    box-sizing: border-box;
-  }
-
-  /* Slide right into active visible space */
-  .mobile-navigation-drawer.is-open {
-    left: 0;
-  }
-
-  .mobile-nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1.75rem;
-  }
-
-  .mobile-nav-links a {
-    color: #ffffff;
-    font-size: 1.5rem; 
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-
-  .mobile-nav-links a:hover {
-    color: #028A0F;
-  }
-
-  
-}
-@media (max-width: 360px) {
-    .site-header .logo{
-      width: 90px;
-    }
-  }
