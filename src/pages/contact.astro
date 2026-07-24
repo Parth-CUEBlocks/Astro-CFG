@@ -17,50 +17,60 @@ import clock from '../assets/page.contact/clock.png'
         </p>
         <p class="cfg-contact-mandatory-notice">(* indicates mandatory fields)</p>
 
-        <form action="#" method="POST">
+        <form action="#" method="POST" novalidate id="cfg-contact-form">
           <div class="cfg-contact-form-group">
             <input type="text" name="name" placeholder="Name*" required class="cfg-contact-input-field" />
+            <p class="cfg-contact-error-msg" data-error-for="name"></p>
           </div>
 
           <div class="cfg-contact-form-group">
             <input type="email" name="email" placeholder="Email*" required class="cfg-contact-input-field" />
+            <p class="cfg-contact-error-msg" data-error-for="email"></p>
           </div>
 
           <div class="cfg-contact-form-group">
             <input type="tel" name="phone" placeholder="Phone (optional)" class="cfg-contact-input-field" />
+            <p class="cfg-contact-error-msg" data-error-for="phone"></p>
           </div>
 
           <div class="cfg-contact-form-group">
             <input type="url" name="website" placeholder="Website (optional)" class="cfg-contact-input-field" />
+            <p class="cfg-contact-error-msg" data-error-for="website"></p>
           </div>
 
           <span class="cfg-contact-services-label">Services that interest you*</span>
+          <p class="cfg-contact-error-msg" data-error-for="services"></p>
           <div class="cfg-contact-services-flex-container">
-            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="shopify" /> <span class="custom-box"></span> Shopify</label>
-            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="wordpress" /> <span class="custom-box"></span> WordPress</label>
-            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="laravel" /> <span class="custom-box"></span> PHP/Laravel</label>
-            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="magento" /> <span class="custom-box"></span> Magento</label>
-            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="webdesign" /> <span class="custom-box"></span> Web Design</label>
-            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="accessibility" /> <span class="custom-box"></span> Web Accessibility Audit</label>
-            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="ga4" /> <span class="custom-box"></span> Google Analytics 4 Audit</label>
-            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="seo" /> <span class="custom-box"></span> Organic Search</label>
-            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="advertising" /> <span class="custom-box"></span> Digital Advertising</label>
-            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="cro" /> <span class="custom-box"></span> Conversion Optimization</label>
-            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="email" /> <span class="custom-box"></span> Email Marketing</label>
-            <label class="cfg-contact-checkbox-label"><input type="checkbox" name="services" value="other" /> <span class="custom-box"></span> Other</label>
+            <label class="cfg-contact-checkbox-label" tabindex="0" role="checkbox" aria-checked="false"><input type="checkbox" name="services" value="shopify" tabindex="-1" /> <span class="custom-box"></span> Shopify</label>
+            <label class="cfg-contact-checkbox-label" tabindex="0" role="checkbox" aria-checked="false"><input type="checkbox" name="services" value="wordpress" tabindex="-1" /> <span class="custom-box"></span> WordPress</label>
+            <label class="cfg-contact-checkbox-label" tabindex="0" role="checkbox" aria-checked="false"><input type="checkbox" name="services" value="laravel" tabindex="-1" /> <span class="custom-box"></span> PHP/Laravel</label>
+            <label class="cfg-contact-checkbox-label" tabindex="0" role="checkbox" aria-checked="false"><input type="checkbox" name="services" value="magento" tabindex="-1" /> <span class="custom-box"></span> Magento</label>
+            <label class="cfg-contact-checkbox-label" tabindex="0" role="checkbox" aria-checked="false"><input type="checkbox" name="services" value="webdesign" tabindex="-1" /> <span class="custom-box"></span> Web Design</label>
+            <label class="cfg-contact-checkbox-label" tabindex="0" role="checkbox" aria-checked="false"><input type="checkbox" name="services" value="accessibility" tabindex="-1" /> <span class="custom-box"></span> Web Accessibility Audit</label>
+            <label class="cfg-contact-checkbox-label" tabindex="0" role="checkbox" aria-checked="false"><input type="checkbox" name="services" value="ga4" tabindex="-1" /> <span class="custom-box"></span> Google Analytics 4 Audit</label>
+            <label class="cfg-contact-checkbox-label" tabindex="0" role="checkbox" aria-checked="false"><input type="checkbox" name="services" value="seo" tabindex="-1" /> <span class="custom-box"></span> Organic Search</label>
+            <label class="cfg-contact-checkbox-label" tabindex="0" role="checkbox" aria-checked="false"><input type="checkbox" name="services" value="advertising" tabindex="-1" /> <span class="custom-box"></span> Digital Advertising</label>
+            <label class="cfg-contact-checkbox-label" tabindex="0" role="checkbox" aria-checked="false"><input type="checkbox" name="services" value="cro" tabindex="-1" /> <span class="custom-box"></span> Conversion Optimization</label>
+            <label class="cfg-contact-checkbox-label" tabindex="0" role="checkbox" aria-checked="false"><input type="checkbox" name="services" value="email" tabindex="-1" /> <span class="custom-box"></span> Email Marketing</label>
+            <label class="cfg-contact-checkbox-label" tabindex="0" role="checkbox" aria-checked="false"><input type="checkbox" name="services" value="other" tabindex="-1" /> <span class="custom-box"></span> Other</label>
           </div>
 
           <div class="cfg-contact-form-group">
             <textarea name="story" rows="5" placeholder="Please share details of your story & project requirements*" required class="cfg-contact-textarea-field"></textarea>
+            <p class="cfg-contact-error-msg" data-error-for="story"></p>
           </div>
 
           <div class="cfg-contact-form-group">
             <input type="text" name="source" placeholder="How did you hear about CueForGood?*" required class="cfg-contact-input-field " />
+            <p class="cfg-contact-error-msg" data-error-for="source"></p>
           </div>
 
           <div class="cfg-contact-captcha-placeholder">
-            <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+            <div id="cfg-recaptcha"></div>
+            <p class="cfg-contact-error-msg" data-error-for="captcha"></p>
           </div>
+
+          <p class="cfg-contact-error-msg" data-error-for="api"></p>
 
           <button type="submit" class="cfg-contact-submit-btn">Submit</button>
         </form>
@@ -84,3 +94,265 @@ import clock from '../assets/page.contact/clock.png'
     </div>
   </div>
 </Layout>
+
+<script is:inline>
+  window.onRecaptchaLoad = function () {
+    window.__recaptchaApiLoaded = true;
+    if (typeof window.__cfgTryRenderRecaptcha === "function") {
+      window.__cfgTryRenderRecaptcha();
+    }
+  };
+</script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer is:inline></script>
+
+<script>
+  const RECAPTCHA_SITE_KEYS = {
+    live: "6LdBkNkrAAAAAO-sEEAMX5Y3Ag0BFLl5vkzUAHJZ",
+    staging: "6Lf_zZYrAAAAAFYDbqnVwpnfLTFW8GcT9blHDdjm",
+  };
+
+  const SERVICE_LABELS = {
+    shopify: "Shopify",
+    wordpress: "WordPress",
+    laravel: "PHP/Laravel",
+    magento: "Magento",
+    webdesign: "Web Design",
+    accessibility: "Web Accessibility Audit",
+    ga4: "Google Analytics 4 Audit",
+    seo: "Organic Search",
+    advertising: "Digital Advertising",
+    cro: "Conversion Optimization",
+    email: "Email Marketing",
+    other: "Other",
+  };
+
+  function getHostConfig() {
+    const host = window.location.host;
+    const isLive = host === "www.cueforgood.com" || host === "cueforgood.com";
+    return {
+      apiUrl: isLive ? "https://apilive.cueforgood.com" : "https://apistaging.cueforgood.com",
+      autoResponderUrl: isLive ? "https://apilive.cueforgood.com/" : "https://apistaging.cueforgood.com/",
+      hubspotUrl: isLive
+        ? "https://api.hsforms.com/submissions/v3/integration/submit/6881310/17ba0bc5-cdb9-414d-8b21-c27686b8e77f"
+        : "https://api.hsforms.com/submissions/v3/integration/submit/6881310/78c7882f-e577-4fcf-80ff-e451b4a1b6bf",
+      recaptchaSiteKey: isLive ? RECAPTCHA_SITE_KEYS.live : RECAPTCHA_SITE_KEYS.staging,
+    };
+  }
+
+  function validateEmail(email) {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+  function validatePhone(phone) {
+    if (phone.length < 10) return false;
+    return /^[+]*[(]?[0-9]{1,3}[)]?[-\s./0-9]*$/.test(phone);
+  }
+
+  function validateWebsite(url) {
+    return /^(?:https?:\/\/)?(?!www\.)[A-Za-z0-9_-]+\.+[A-Za-z0-9.\/%&=?_:;-]+$/.test(url);
+  }
+
+  const config = getHostConfig();
+  const form = document.getElementById("cfg-contact-form");
+
+  if (form) {
+    let widgetId = null;
+
+    function renderCaptcha() {
+      const el = document.getElementById("cfg-recaptcha");
+      if (window.grecaptcha && el && widgetId === null) {
+        widgetId = window.grecaptcha.render(el, { sitekey: config.recaptchaSiteKey, theme: "dark" });
+      }
+    }
+
+    window.__cfgTryRenderRecaptcha = renderCaptcha;
+    if (window.__recaptchaApiLoaded) renderCaptcha();
+
+    function setFieldError(fieldName, message) {
+      const errorEl = form.querySelector(`[data-error-for="${fieldName}"]`);
+      if (errorEl) errorEl.textContent = message || "";
+    }
+
+    function clearErrors() {
+      form.querySelectorAll("[data-error-for]").forEach((el) => {
+        el.textContent = "";
+      });
+    }
+
+    const nameInput = form.querySelector('[name="name"]');
+    const emailInput = form.querySelector('[name="email"]');
+    const phoneInput = form.querySelector('[name="phone"]');
+    const websiteInput = form.querySelector('[name="website"]');
+    const storyInput = form.querySelector('[name="story"]');
+    const sourceInput = form.querySelector('[name="source"]');
+    const submitBtn = form.querySelector(".cfg-contact-submit-btn");
+
+    phoneInput.addEventListener("input", () => {
+      const value = phoneInput.value.trim();
+      setFieldError(
+        "phone",
+        value && !validatePhone(value) ? "Please enter a valid phone number with country code." : ""
+      );
+    });
+
+    websiteInput.addEventListener("input", () => {
+      const value = websiteInput.value.trim();
+      setFieldError("website", value && !validateWebsite(value) ? "Please enter a valid domain name. example.com" : "");
+    });
+
+    form.querySelectorAll(".cfg-contact-checkbox-label").forEach((label) => {
+      const checkbox = label.querySelector('input[type="checkbox"]');
+      if (!checkbox) return;
+
+      const syncAriaChecked = () => label.setAttribute("aria-checked", String(checkbox.checked));
+      syncAriaChecked();
+      checkbox.addEventListener("change", syncAriaChecked);
+
+      label.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+          event.preventDefault();
+          checkbox.checked = !checkbox.checked;
+          checkbox.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+      });
+    });
+
+    function resetCaptcha() {
+      if (widgetId !== null && window.grecaptcha) window.grecaptcha.reset(widgetId);
+    }
+
+    function fail(message) {
+      setFieldError("api", message || "Something went wrong. Please try again.");
+      resetCaptcha();
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit";
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      clearErrors();
+
+      let hasError = false;
+
+      const name = nameInput.value.trim();
+      if (!name) {
+        setFieldError("name", "Please enter name");
+        hasError = true;
+      }
+
+      const email = emailInput.value.trim();
+      if (!email || !validateEmail(email.toLowerCase())) {
+        setFieldError("email", "Please enter a valid email");
+        hasError = true;
+      }
+
+      const phone = phoneInput.value.trim();
+      if (phone && !validatePhone(phone)) {
+        setFieldError("phone", "Please enter a valid phone number with country code.");
+        hasError = true;
+      }
+
+      const website = websiteInput.value.trim();
+      if (website && !validateWebsite(website)) {
+        setFieldError("website", "Please enter a valid domain name. example.com");
+        hasError = true;
+      }
+
+      const services = Array.from(form.querySelectorAll('input[name="services"]:checked')).map((el) => el.value);
+      if (services.length === 0) {
+        setFieldError("services", "Please select at least one service");
+        hasError = true;
+      }
+
+      const story = storyInput.value.trim();
+      if (!story) {
+        setFieldError("story", "Please enter details about your requirements");
+        hasError = true;
+      }
+
+      const source = sourceInput.value.trim();
+      if (!source) {
+        setFieldError("source", "Please let us know how you heard about CueForGood");
+        hasError = true;
+      }
+
+      const recaptchaToken = widgetId !== null && window.grecaptcha ? window.grecaptcha.getResponse(widgetId) : "";
+      if (!recaptchaToken) {
+        setFieldError("captcha", "Please complete the CAPTCHA");
+        hasError = true;
+      }
+
+      if (hasError) {
+        const firstError = Array.from(form.querySelectorAll("[data-error-for]")).find((el) => el.textContent);
+        if (firstError) firstError.scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+
+      try {
+        const captchaPayload = new FormData();
+        captchaPayload.append("google_recaptcha_token", recaptchaToken);
+
+        const captchaRes = await fetch(`${config.apiUrl}/recaptcha_validate.php`, {
+          method: "POST",
+          body: captchaPayload,
+        });
+        const captchaData = await captchaRes.json();
+
+        if (!captchaData || !captchaData.success) {
+          fail(captchaData && captchaData.message ? captchaData.message : "Captcha validation failed.");
+          return;
+        }
+
+        const hubspotPayload = {
+          submittedAt: Date.now(),
+          fields: [
+            { name: "email", value: email },
+            { name: "firstname", value: name },
+            { name: "phone", value: phone },
+            { name: "website", value: website },
+            { name: "hearabout", value: source },
+            { name: "services", value: services.map((s) => SERVICE_LABELS[s] || s).join(",") },
+            { name: "about", value: story },
+          ],
+        };
+
+        const hubspotRes = await fetch(config.hubspotUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(hubspotPayload),
+        });
+        const hubspotData = await hubspotRes.json();
+
+        if (hubspotData.inlineMessage !== "Thanks for submitting the form.") {
+          fail("Something went wrong submitting the form.");
+          return;
+        }
+
+        const autoResponderPayload = new FormData();
+        autoResponderPayload.append("email", email);
+        autoResponderPayload.append("name", name);
+
+        const autoRes = await fetch(`${config.autoResponderUrl}contact_us_auto_responder.php`, {
+          method: "POST",
+          body: autoResponderPayload,
+        });
+        const autoData = await autoRes.json();
+
+        if (!autoData.success) {
+          fail(autoData.message || "Something went wrong.");
+          return;
+        }
+
+        window.location.href = "/thankyou";
+      } catch (err) {
+        console.error("Contact form submission error:", err);
+        fail("Something went wrong. Please try again.");
+      }
+    });
+  }
+</script>
