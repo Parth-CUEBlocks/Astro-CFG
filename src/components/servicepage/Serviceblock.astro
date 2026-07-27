@@ -1,0 +1,59 @@
+---
+// src/components/Testimonials.astro
+import { client } from "../../../lib/contentful"; 
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+
+const response = await client.getEntries({
+  content_type: "servicePageServiceBlocks"
+});
+
+const data = response.items;
+const casestudy = (data as any[]) || [];
+ console.log(casestudy);
+---
+<section class="services-matrix-section">
+      <div class="container-inner">
+        {casestudy.map((item)=>{
+        const title = item.fields?.department;
+        const shortDescriptionBelowHeading = item.fields?.shortDescriptionBelowHeading;
+        const departmentServices = item.fields?.departmentServices ? documentToHtmlString(item.fields.departmentServices as any)  : "";
+        const buttonLabel = item.fields?.buttonLabel;
+        const buttonurl = item.fields?.buttonUrl;
+        const tags = item.fields?.tags as any[] || [];
+        const Image = item.fields?.image as any;
+        const ImageURL = Image?.fields?.file?.url;
+        return(
+          <div class="service-block">
+          <div class="service-row">
+            <div class="service-content-col">
+              {tags && tags.length > 0 && (
+                <div class="cfg-case-tags">
+                  {tags.map((tag) => (
+                    <span class="service-pill pill-accessibility">{tag}</span>
+                  ))}
+                </div>
+              )}
+             
+              <h2>{title}</h2>
+              <p class="service-desc">{shortDescriptionBelowHeading}</p>
+              
+              <div class="description-data"  set:html={departmentServices} />
+              {buttonLabel &&
+              <div class="action-btn-wrap">
+                <a href={buttonurl} class="btn-outline-cta">{buttonLabel}</a>
+              </div>
+              }
+            </div>
+            <div class="service-image-col">
+              <div class="showcase-image-wrap">
+                 <img src={`https:${ImageURL}`} alt={title} class="showcase-img" loading="lazy"  />
+              </div>
+            </div>
+          </div>
+        </div>
+        )
+      })}
+      </div>
+    </section>
+
+

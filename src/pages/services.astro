@@ -8,6 +8,8 @@ import designImg from '../assets/Page.services/ourserv-design.png';
 import codeImg from '../assets/Page.services/ourserv-dev.png';
 import marketingImg from '../assets/Page.services/ourserv-market.png';
 import webImg from '../assets/Page.services/ourserv-web.png';
+import ServiceHeroSection from '../components/servicepage/ServiceHeroSection.astro';
+import Serviceblock from '../components/servicepage/Serviceblock.astro';
 
 
 const designItems = [
@@ -48,148 +50,8 @@ const marketingItems = [
   <section class="services-page">
     
     <!-- Hero Section -->
-    <section class="services-hero">
-      <div class="container-inner">
-        <div class="hero-split-grid">
-          <div class="hero-text-col">
-            <h1>Our Services</h1>
-            <p class="hero-lead">
-              CueForGood partners with purpose-led brands, B Corps, nonprofits, and socially conscious businesses to create digital experiences that drive growth and meaningful impact.
-            </p>
-            <p class="hero-lead-secondary">
-              We work across e-commerce and beyond, helping brands connect with audiences through design, development, and marketing that reflect their values.
-            </p>
-            
-            <div class="intro-philosophy">
-              <h2>Understanding Your Needs</h2>
-              <p>Every project begins with a deep dive into your mission, goals, and challenges. We assess your digital footprint, uncover opportunities for impact, and co-create a strategy that aligns with your brand values, sustainability objectives, and growth ambitions.</p>
-            </div>
-          </div>
-          
-          <div class="hero-graphic-col">
-            <div class="hero-image-field">
-              <img src={heroimg.src} alt="Isometric Cubes Representation Graphic" class="page-hero-img" />
-            </div>
-          </div>
-        </div>
-
-        <div class="pillar-block">
-          <p class="hero-focus">We believe we are very strong in the following 3 areas of e-commerce</p>
-          <h2 class="pillar-main-statement">Design. Code. Marketing.</h2>
-          <p class="pillar-subtext">We may start our relationship with one of the 3 key services, but we excel when we can collaborate with you from the initial planning to the launch and beyond.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Body Matrix Layout -->
-    <section class="services-matrix-section">
-      <div class="container-inner">
-
-        <!-- DESIGN SECTION -->
-        <div class="service-block">
-          <div class="service-row">
-            <div class="service-content-col">
-              <span class="service-pill pill-design">DESIGN</span>
-              <h2>Design</h2>
-              <p class="service-desc">Your brand's visual and interactive identity sets the tone for trust and engagement. We create intuitive, accessible, and visually striking designs that embody your mission and convert visitors into loyal supporters.</p>
-              
-              <ul class="service-list">
-                {designItems.map((item) => <li><span class="dash">—</span> {item}</li>)}
-              </ul>
-            </div>
-            <div class="service-image-col">
-              <div class="showcase-image-wrap">
-                <img src={designImg.src} alt="Design Projects Showcase" class="showcase-img" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CODE & DEVELOPMENT SECTION -->
-        <div class="service-block">
-          <div class="service-row">
-            <div class="service-content-col">
-              <span class="service-pill pill-code">CODE</span>
-              <h2>Development Across Platforms</h2>
-              <p class="service-desc">From simple builds to complex integrations, we craft scalable, high‑performance websites and stores that deliver seamless user experiences, with site speed and web accessibility built in from the start.</p>
-              
-              <ul class="service-list platforms-list">
-                {codePlatforms.map((platform) => (
-                  <li>
-                    <span class="dash">—</span> <span><strong>{platform.name}</strong> – {platform.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div class="service-image-col">
-              <div class="showcase-image-wrap">
-                <img src={codeImg.src} alt="Development Infrastructure Showcase" class="showcase-img" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- WEB ACCESSIBILITY SECTION -->
-        <div class="service-block">
-          <div class="service-row">
-            <div class="service-content-col">
-              <span class="service-pill pill-accessibility">WEB ACCESSIBILITY</span>
-              <h2>Web Accessibility</h2>
-              <p class="service-desc">Digital experiences designed for everyone, built to inspire change. Our web accessibility services help brands meet WCAG 2.1, ADA, and EAA compliance without compromising voice or visual identity.</p>
-              
-              <ul class="service-list">
-                {accessibilityBullets.map((bullet) => <li><span class="dash">—</span> {bullet}</li>)}
-              </ul>
-              
-              <div class="action-btn-wrap">
-                <a href="#" class="btn-outline-cta">BOOK A FREE ACCESSIBILITY CONSULTATION</a>
-              </div>
-            </div>
-            <div class="service-image-col">
-              <div class="showcase-image-wrap">
-                <img src={webImg.src} alt="Accessibility Audit Interface Dashboard" class="showcase-img" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- MARKETING & BEYOND SECTION -->
-        <div class="service-block marketing-block">
-          <div class="service-row">
-            <div class="service-content-col">
-              <span class="service-pill pill-marketing">MARKETING</span>
-              <h2>Marketing & Audience Growth</h2>
-              <p class="service-desc">We develop and execute campaigns that elevate your visibility, increase conversions, and inspire repeat engagement.</p>
-              
-              <ul class="service-list inline-bold-list">
-                {marketingItems.map((item) => {
-                  const parts = item.split(' – ');
-                  return parts.length > 1 ? (
-                    <li><span class="dash">—</span> <span><strong>{parts[0]}</strong> – {parts[1]}</span></li>
-                  ) : (
-                    <li><span class="dash">—</span> {item}</li>
-                  );
-                })}
-              </ul>
-
-              <!-- eCommerce and Beyond (Positioned directly under marketing lists inside the left column) -->
-              <div class="beyond-retail-block">
-                <h2>eCommerce and Beyond</h2>
-                <p>
-                  Our expertise extends to platforms and projects outside of online retail, including advocacy campaigns, nonprofit portals, community hubs, and custom applications. Whether you're scaling a product line, launching a social cause, or improving accessibility, we adapt our approach to your unique goals.
-                </p>
-              </div>
-            </div>
-            <div class="service-image-col">
-              <div class="showcase-image-wrap align-bottom-graphic">
-                <img src={marketingImg.src} alt="Marketing and Brand Purpose Illustration" class="showcase-img" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
+   <ServiceHeroSection/>
+    <Serviceblock/>
 
     <!-- Center Card Contact CTA Banner -->
     <section class="impact-cta-section">

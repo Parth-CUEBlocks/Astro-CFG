@@ -9,18 +9,20 @@ import '../styles/header.less';
 import '../styles/footer.less';
 
 const { title = "CueForGood | eCommerce Agency for Impact Brands" } = Astro.props;
+const { description = "eCommerce digital agency aligning competence with purpose." } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="eCommerce digital agency aligning competence with purpose." />
+		<title>{title}</title>
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
