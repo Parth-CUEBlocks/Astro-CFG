@@ -73,40 +73,60 @@ import '../styles/career.less';
           <h2>WE ARE HIRING<br />AT CueForGood</h2>
         </div>
 
-        <div class="cfg-career-listings-panel">
-          <div class="cfg-career-job-title">Email Marketing Specialist</div>
-          <div class="cfg-career-job-title">Business Development Specialist</div>
-          <div class="cfg-career-job-title">Shopify Developer</div>
-          <div class="cfg-career-job-title">Senior Shopify Developer</div>
-          <div class="cfg-career-job-title">(QA) Quality Analyst</div>
+        <div class="cfg-career-listings-panel" id="cfg-career-listings">
+          <button type="button" class="cfg-career-job-title" data-job-index="0">Email Marketing Specialist</button>
+          <button type="button" class="cfg-career-job-title" data-job-index="1">Business Development Specialist</button>
+          <button type="button" class="cfg-career-job-title" data-job-index="2">Shopify Developer</button>
+          <button type="button" class="cfg-career-job-title" data-job-index="3">Senior Shopify Developer</button>
+          <button type="button" class="cfg-career-job-title" data-job-index="4">(QA) Quality Analyst</button>
         </div>
       </section>
+
+      <!-- JOB DETAILS MODAL -->
+      <div class="cfg-career-job-modal-overlay" id="cfg-career-job-modal" hidden>
+        <div class="cfg-career-job-modal" role="dialog" aria-modal="true" aria-labelledby="cfg-career-job-modal-heading">
+          <button type="button" class="cfg-career-job-modal-close" id="cfg-career-job-modal-close" aria-label="Close job details">&times;</button>
+          <h2 class="cfg-career-job-modal-heading" id="cfg-career-job-modal-heading"></h2>
+          <div class="cfg-career-job-modal-description"></div>
+          <h4>What will you be doing?</h4>
+          <ul class="cfg-career-job-modal-responsibilities"></ul>
+          <h4>What skills and experience do you need?</h4>
+          <ul class="cfg-career-job-modal-skills"></ul>
+          <p class="cfg-career-job-modal-msg"></p>
+          <button type="button" class="cfg-career-submit-btn cfg-career-job-modal-apply" id="cfg-career-job-modal-apply">Apply Now</button>
+          <p class="cfg-career-job-modal-email">Or email us your CV at <a href="mailto:careers@cueforgood.com">careers@cueforgood.com</a></p>
+        </div>
+      </div>
 
       <!-- JOB APPLICATION FORM -->
       <section class="cfg-career-form-block">
         <h2>Apply Now!</h2>
         <p class="cfg-career-mandatory-notice">(* Indicates Mandatory Fields)</p>
 
-        <form class="cfg-career-application-form" action="#" method="POST" enctype="multipart/form-data">
+        <form class="cfg-career-application-form" action="#" method="POST" enctype="multipart/form-data" novalidate id="cfg-career-form">
           <div class="cfg-career-form-grid">
             <div class="cfg-career-input-group">
               <label for="name">Name*</label>
               <input type="text" id="name" name="name" placeholder="Enter your name" required class="cfg-career-input-field" />
+              <p class="cfg-career-error-msg" data-error-for="name"></p>
             </div>
 
             <div class="cfg-career-input-group">
               <label for="email">Email*</label>
               <input type="email" id="email" name="email" placeholder="Enter your email" required class="cfg-career-input-field" />
+              <p class="cfg-career-error-msg" data-error-for="email"></p>
             </div>
 
             <div class="cfg-career-input-group">
               <label for="phone">Phone*</label>
               <input type="tel" id="phone" name="phone" placeholder="Enter your phone" required class="cfg-career-input-field" />
+              <p class="cfg-career-error-msg" data-error-for="phone"></p>
             </div>
 
             <div class="cfg-career-input-group">
               <label for="job">Job*</label>
               <input type="text" id="job" name="job" placeholder="Enter Job title" required class="cfg-career-input-field" />
+              <p class="cfg-career-error-msg" data-error-for="job"></p>
             </div>
           </div>
 
@@ -115,23 +135,19 @@ import '../styles/career.less';
               <label>Attachment (.png, .pdf, .txt, .doc)*</label>
               <span style="font-size: 13px; color: #94a3b8;">Max size allowed-2 MB</span>
               <div class="cfg-career-file-wrapper">
-                <input type="file" name="resume" accept=".png, .pdf, .txt, .doc" required />
+                <input type="file" id="resume" name="resume" accept=".png, .pdf, .txt, .doc" required />
               </div>
+              <p class="cfg-career-error-msg" data-error-for="resume"></p>
             </div>
 
             <div class="cfg-career-captcha-wrapper">
-              <div class="cfg-career-captcha-box">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <input type="checkbox" id="captcha-check" style="width: 24px; height: 24px;" />
-                  <label for="captcha-check" style="font-size: 14px; color: #ffffff;">I'm not a robot</label>
-                </div>
-                <div style="text-align: center; font-size: 10px; color: #94a3b8;">
-                  <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA Security" width="24" height="24" /><br />
-                  reCAPTCHA
-                </div>
-              </div>
+              <div id="cfg-career-recaptcha"></div>
+              <p class="cfg-career-error-msg" data-error-for="captcha"></p>
             </div>
           </div>
+
+          <p class="cfg-career-error-msg" data-error-for="api"></p>
+          <p class="cfg-career-success-msg" data-success></p>
 
           <div class="cfg-career-submit-wrapper">
             <button type="submit" class="cfg-career-submit-btn">Submit</button>
@@ -142,3 +158,375 @@ import '../styles/career.less';
     </div>
   </div>
 </Layout>
+
+<script is:inline>
+  window.onCareerRecaptchaLoad = function () {
+    window.__careerRecaptchaApiLoaded = true;
+    if (typeof window.__cfgTryRenderCareerRecaptcha === "function") {
+      window.__cfgTryRenderCareerRecaptcha();
+    }
+  };
+</script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onCareerRecaptchaLoad&render=explicit" async defer is:inline></script>
+
+<script>
+  const RECAPTCHA_SITE_KEYS = {
+    live: "6LdBkNkrAAAAAO-sEEAMX5Y3Ag0BFLl5vkzUAHJZ",
+    staging: "6Lf_zZYrAAAAAFYDbqnVwpnfLTFW8GcT9blHDdjm",
+  };
+
+  const ALLOWED_RESUME_EXTENSIONS = [".png", ".pdf", ".txt", ".doc", ".docx"];
+  const MAX_RESUME_SIZE_BYTES = 2 * 1024 * 1024;
+
+  // Exact-match only. Do not switch this to `.includes("cueforgood.com")` —
+  // staging hosts like dev.cueforgood.com also contain that substring and must
+  // never be treated as live.
+  const LIVE_HOSTS = ["www.cueforgood.com", "cueforgood.com"];
+
+  function getHostConfig() {
+    const host = window.location.host;
+    const isLive = LIVE_HOSTS.includes(host);
+    return {
+      apiUrl: isLive ? "https://apilive.cueforgood.com" : "https://apistaging.cueforgood.com",
+      submitUrl: isLive ? "https://apilive.cueforgood.com/" : "https://apistaging.cueforgood.com/",
+      recaptchaSiteKey: isLive ? RECAPTCHA_SITE_KEYS.live : RECAPTCHA_SITE_KEYS.staging,
+    };
+  }
+
+  function validateEmail(email) {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+  function validatePhone(phone) {
+    if (phone.length < 10) return false;
+    return /^[+]*[(]?[0-9]{1,3}[)]?[-\s./0-9]*$/.test(phone);
+  }
+
+  const config = getHostConfig();
+  const form = document.getElementById("cfg-career-form");
+
+  if (form) {
+    let widgetId = null;
+
+    function renderCaptcha() {
+      const el = document.getElementById("cfg-career-recaptcha");
+      if (window.grecaptcha && el && widgetId === null) {
+        widgetId = window.grecaptcha.render(el, { sitekey: config.recaptchaSiteKey, theme: "dark" });
+      }
+    }
+
+    window.__cfgTryRenderCareerRecaptcha = renderCaptcha;
+    if (window.__careerRecaptchaApiLoaded) renderCaptcha();
+
+    function setFieldError(fieldName, message) {
+      const errorEl = form.querySelector(`[data-error-for="${fieldName}"]`);
+      if (errorEl) errorEl.textContent = message || "";
+    }
+
+    function clearErrors() {
+      form.querySelectorAll("[data-error-for]").forEach((el) => {
+        el.textContent = "";
+      });
+    }
+
+    const nameInput = form.querySelector('[name="name"]');
+    const emailInput = form.querySelector('[name="email"]');
+    const phoneInput = form.querySelector('[name="phone"]');
+    const jobInput = form.querySelector('[name="job"]');
+    const resumeInput = form.querySelector('[name="resume"]');
+    const submitBtn = form.querySelector(".cfg-career-submit-btn");
+    const successEl = form.querySelector("[data-success]");
+
+    // Placeholder copy — replace each entry with the real job posting content
+    // before this goes live.
+    const JOB_LISTINGS = [
+      {
+        title: "Email Marketing Specialist",
+        description: [
+          "We're looking for an Email Marketing Specialist to plan, build, and optimize email campaigns for our eCommerce clients.",
+        ],
+        responsibilities: [
+          "Design and execute email marketing campaigns across the client portfolio",
+          "Segment audiences and set up automated flows (welcome, abandoned cart, post-purchase)",
+          "Analyze campaign performance and iterate on subject lines, content, and send times",
+        ],
+        skills: [
+          "Hands-on experience with an ESP such as Klaviyo or Mailchimp",
+          "Strong writing skills and attention to detail",
+          "Comfort working with performance data and A/B test results",
+        ],
+        closingMessage: "Sound like you? We'd love to hear from you.",
+      },
+      {
+        title: "Business Development Specialist",
+        description: [
+          "We're looking for a Business Development Specialist to help grow our client base of purpose-driven eCommerce brands.",
+        ],
+        responsibilities: [
+          "Identify and qualify new business opportunities",
+          "Build and maintain relationships with prospective clients",
+          "Collaborate with the marketing team on outreach and proposals",
+        ],
+        skills: [
+          "Prior experience in B2B sales or business development",
+          "Excellent communication and relationship-building skills",
+          "Familiarity with the eCommerce or digital agency space",
+        ],
+        closingMessage: "Sound like you? We'd love to hear from you.",
+      },
+      {
+        title: "Shopify Developer",
+        description: [
+          "We're looking for a Shopify Developer to build and customize storefronts for our eCommerce clients.",
+        ],
+        responsibilities: [
+          "Develop and customize Shopify themes and apps",
+          "Troubleshoot and resolve storefront issues",
+          "Collaborate with designers and project managers on client requirements",
+        ],
+        skills: [
+          "Experience with Shopify Liquid, HTML, CSS, and JavaScript",
+          "Understanding of Shopify's theme and app architecture",
+          "Ability to debug and optimize storefront performance",
+        ],
+        closingMessage: "Sound like you? We'd love to hear from you.",
+      },
+      {
+        title: "Senior Shopify Developer",
+        description: [
+          "We're looking for a Senior Shopify Developer to lead complex storefront builds and mentor junior developers.",
+        ],
+        responsibilities: [
+          "Architect and lead custom Shopify Plus development projects",
+          "Review code and mentor junior developers on the team",
+          "Work directly with clients on technical requirements and solutions",
+        ],
+        skills: [
+          "Several years of hands-on Shopify/Shopify Plus development experience",
+          "Strong grasp of Liquid, JavaScript, and API integrations",
+          "Experience leading or mentoring within a development team",
+        ],
+        closingMessage: "Sound like you? We'd love to hear from you.",
+      },
+      {
+        title: "(QA) Quality Analyst",
+        description: [
+          "We're looking for a Quality Analyst to help us ship reliable, well-tested work across our client projects.",
+        ],
+        responsibilities: [
+          "Write and execute test plans for web and eCommerce projects",
+          "Log, track, and verify bug fixes with the development team",
+          "Perform cross-browser and cross-device testing",
+        ],
+        skills: [
+          "Experience with manual QA testing methodologies",
+          "Attention to detail and strong bug-reporting skills",
+          "Familiarity with eCommerce platforms is a plus",
+        ],
+        closingMessage: "Sound like you? We'd love to hear from you.",
+      },
+    ];
+
+    const jobModalOverlay = document.getElementById("cfg-career-job-modal");
+    const jobModalHeading = document.getElementById("cfg-career-job-modal-heading");
+    const jobModalDescription = jobModalOverlay.querySelector(".cfg-career-job-modal-description");
+    const jobModalResponsibilities = jobModalOverlay.querySelector(".cfg-career-job-modal-responsibilities");
+    const jobModalSkills = jobModalOverlay.querySelector(".cfg-career-job-modal-skills");
+    const jobModalMsg = jobModalOverlay.querySelector(".cfg-career-job-modal-msg");
+    const jobModalClose = document.getElementById("cfg-career-job-modal-close");
+    const jobModalApply = document.getElementById("cfg-career-job-modal-apply");
+    let lastFocusedJobTrigger = null;
+    let currentJobTitle = "";
+
+    function renderJobList(container, items) {
+      container.innerHTML = "";
+      items.forEach((text) => {
+        const li = document.createElement("li");
+        li.textContent = text;
+        container.appendChild(li);
+      });
+    }
+
+    function handleJobModalKeydown(event) {
+      if (event.key === "Escape") closeJobModal();
+    }
+
+    function openJobModal(job, trigger) {
+      currentJobTitle = job.title;
+      jobModalHeading.textContent = job.title;
+      jobModalDescription.innerHTML = "";
+      job.description.forEach((text) => {
+        const p = document.createElement("p");
+        p.textContent = text;
+        jobModalDescription.appendChild(p);
+      });
+      renderJobList(jobModalResponsibilities, job.responsibilities);
+      renderJobList(jobModalSkills, job.skills);
+      jobModalMsg.textContent = job.closingMessage;
+
+      lastFocusedJobTrigger = trigger || null;
+      jobModalOverlay.hidden = false;
+      jobModalClose.focus();
+      document.addEventListener("keydown", handleJobModalKeydown);
+    }
+
+    function closeJobModal() {
+      jobModalOverlay.hidden = true;
+      document.removeEventListener("keydown", handleJobModalKeydown);
+      if (lastFocusedJobTrigger) lastFocusedJobTrigger.focus();
+    }
+
+    document.querySelectorAll(".cfg-career-job-title").forEach((button) => {
+      button.addEventListener("click", () => {
+        const job = JOB_LISTINGS[Number(button.dataset.jobIndex)];
+        if (job) openJobModal(job, button);
+      });
+    });
+
+    jobModalClose.addEventListener("click", closeJobModal);
+    jobModalOverlay.addEventListener("click", (event) => {
+      if (event.target === jobModalOverlay) closeJobModal();
+    });
+
+    jobModalApply.addEventListener("click", () => {
+      jobInput.value = currentJobTitle;
+      closeJobModal();
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+      jobInput.focus();
+    });
+
+    phoneInput.addEventListener("input", () => {
+      const value = phoneInput.value.trim();
+      setFieldError(
+        "phone",
+        value && !validatePhone(value) ? "Please enter a valid phone number with country code." : ""
+      );
+    });
+
+    function resetCaptcha() {
+      if (widgetId !== null && window.grecaptcha) window.grecaptcha.reset(widgetId);
+    }
+
+    function fail(message) {
+      setFieldError("api", message || "Something went wrong. Please try again.");
+      resetCaptcha();
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit";
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      clearErrors();
+      successEl.textContent = "";
+
+      let hasError = false;
+
+      const name = nameInput.value.trim();
+      if (!name) {
+        setFieldError("name", "Please enter your name");
+        hasError = true;
+      }
+
+      const email = emailInput.value.trim();
+      if (!email || !validateEmail(email.toLowerCase())) {
+        setFieldError("email", "Please enter a valid email");
+        hasError = true;
+      }
+
+      const phone = phoneInput.value.trim();
+      if (!phone) {
+        setFieldError("phone", "Please enter your phone number");
+        hasError = true;
+      } else if (!validatePhone(phone)) {
+        setFieldError("phone", "Please enter a valid phone number with country code.");
+        hasError = true;
+      }
+
+      const job = jobInput.value.trim();
+      if (!job) {
+        setFieldError("job", "Please enter the job title");
+        hasError = true;
+      }
+
+      const resumeFile = resumeInput.files && resumeInput.files[0];
+      if (!resumeFile) {
+        setFieldError("resume", "Please attach your resume");
+        hasError = true;
+      } else {
+        const lowerName = resumeFile.name.toLowerCase();
+        const hasAllowedExtension = ALLOWED_RESUME_EXTENSIONS.some((ext) => lowerName.endsWith(ext));
+        if (!hasAllowedExtension) {
+          setFieldError("resume", "Please attach a .png, .pdf, .txt or .doc file");
+          hasError = true;
+        } else if (resumeFile.size > MAX_RESUME_SIZE_BYTES) {
+          setFieldError("resume", "File size must be under 2 MB");
+          hasError = true;
+        }
+      }
+
+      const recaptchaToken = widgetId !== null && window.grecaptcha ? window.grecaptcha.getResponse(widgetId) : "";
+      if (!recaptchaToken) {
+        setFieldError("captcha", "Please complete the CAPTCHA");
+        hasError = true;
+      }
+
+      if (hasError) {
+        const firstError = Array.from(form.querySelectorAll("[data-error-for]")).find((el) => el.textContent);
+        if (firstError) firstError.scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+
+      try {
+        const captchaPayload = new FormData();
+        captchaPayload.append("google_recaptcha_token", recaptchaToken);
+
+        const captchaRes = await fetch(`${config.apiUrl}/recaptcha_validate.php`, {
+          method: "POST",
+          body: captchaPayload,
+        });
+        const captchaData = await captchaRes.json();
+
+        if (!captchaData || !captchaData.success) {
+          fail(captchaData && captchaData.message ? captchaData.message : "Captcha validation failed.");
+          return;
+        }
+
+        const applicationPayload = new FormData();
+        applicationPayload.append("email", email);
+        applicationPayload.append("name", name);
+        applicationPayload.append("jobtitle", job);
+        applicationPayload.append("mobilephone", phone);
+        applicationPayload.append("attachment", resumeFile);
+
+        const submitRes = await fetch(config.submitUrl, {
+          method: "POST",
+          body: applicationPayload,
+        });
+        const submitData = await submitRes.json();
+
+        if (submitRes.status !== 200) {
+          fail(submitData && submitData.message ? submitData.message : "Something went wrong submitting your application.");
+          return;
+        }
+
+        form.reset();
+        resetCaptcha();
+        successEl.textContent = submitData && submitData.message ? submitData.message : "Application submitted successfully!";
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submitted";
+        setTimeout(() => {
+          submitBtn.textContent = "Submit";
+          successEl.textContent = "";
+        }, 5000);
+      } catch (err) {
+        console.error("Career form submission error:", err);
+        fail("Something went wrong. Please try again.");
+      }
+    });
+  }
+</script>

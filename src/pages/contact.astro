@@ -126,9 +126,14 @@ import clock from '../assets/page.contact/clock.png'
     other: "Other",
   };
 
+  // Exact-match only. Do not switch this to `.includes("cueforgood.com")` —
+  // staging hosts like dev.cueforgood.com also contain that substring and must
+  // never be treated as live.
+  const LIVE_HOSTS = ["www.cueforgood.com", "cueforgood.com"];
+
   function getHostConfig() {
     const host = window.location.host;
-    const isLive = host === "www.cueforgood.com" || host === "cueforgood.com";
+    const isLive = LIVE_HOSTS.includes(host);
     return {
       apiUrl: isLive ? "https://apilive.cueforgood.com" : "https://apistaging.cueforgood.com",
       autoResponderUrl: isLive ? "https://apilive.cueforgood.com/" : "https://apistaging.cueforgood.com/",
