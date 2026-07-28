@@ -1,0 +1,72 @@
+---
+// src/components/Testimonials.astro
+import { client } from "../../../lib/contentful"; 
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+
+const response = await client.getEntries({
+  content_type: "shopifyPageServiceBlocks"
+});
+
+const data = response.items;
+const casestudy = (data as any[]) || [];
+//  console.log(casestudy);
+---
+<section class="services-matrix-section">
+      <div class="container-inner">
+        {casestudy.map((item)=>{
+        const title = item.fields?.department;
+        const title2 = item.fields?.rightHeadingForTwoColumn;
+        const className = item.fields?.className;
+        const shortDescriptionBelowHeading = item.fields?.shortDescriptionBelowHeading;
+        const departmentServices = item.fields?.departmentServices ? documentToHtmlString(item.fields.departmentServices as any)  : "";
+        const detailedBlockRightForTwoColumn = item.fields?.detailedBlockRightForTwoColumn ? documentToHtmlString(item.fields.detailedBlockRightForTwoColumn as any)  : "";
+        const buttonLabel = item.fields?.buttonLabel;
+        const buttonurl = item.fields?.buttonUrl;
+        const buttonLabel2 = item.fields?.buttonLabelRight;
+        const buttonurl2 = item.fields?.buttonUrlRight;
+        const tags = item.fields?.tags as any[] || [];
+        const Image = item.fields?.image as any;
+        const ImageURL = Image?.fields?.file?.url;
+        const Image2 = item.fields?.imageLeftForTwoColumn as any;
+        const ImageURL2 = Image2?.fields?.file?.url;
+        return(
+          <div class={`cfg-service-row ${className || ''}`}>
+              <div class="cfg-service-img">
+                {title2 && <h2>{title2}</h2>}
+                {tags && tags.length > 0 && (
+                  <div class="cfg-case-tags">
+                    {tags.map((tag) => (
+                      <span class="service-pill pill-accessibility">{tag}</span>
+                    ))}
+                  </div>
+                )}
+                {ImageURL && <img src={`https:${ImageURL}`} alt={title} class="showcase-img" loading="lazy"  />}
+                {detailedBlockRightForTwoColumn && <div class="description-data"  set:html={detailedBlockRightForTwoColumn} />}
+                 
+                {buttonLabel2 &&
+                <div class="action-btn-wrap">
+                  <a href={buttonurl2} class="cfg-service-btn">{buttonLabel2}</a>
+                </div>
+                }
+              </div>
+
+            <div class="cfg-service-details">
+              {title && <h2>{title}</h2>}
+              {ImageURL2 && <img src={`https:${ImageURL2}`} alt={title} class="showcase-img showcase-img2" loading="lazy"  />}
+              {shortDescriptionBelowHeading && <p class="service-desc">{shortDescriptionBelowHeading}</p>}
+              
+              {departmentServices && <div class="description-data"  set:html={departmentServices} />}
+              {buttonLabel &&
+              <div class="action-btn-wrap">
+                <a href={buttonurl} class="cfg-service-btn">{buttonLabel}</a>
+              </div>
+              }
+            </div>
+            
+        </div>
+        )
+      })}
+      </div>
+    </section>
+
+
