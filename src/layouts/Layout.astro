@@ -10,6 +10,7 @@ import '../styles/footer.less';
 
 const { title = "CueForGood | eCommerce Agency for Impact Brands" } = Astro.props;
 const { description = "eCommerce digital agency aligning competence with purpose." } = Astro.props;
+import favicon from '../assets/favicon.ico';
 ---
 
 <!doctype html>
@@ -19,8 +20,8 @@ const { description = "eCommerce digital agency aligning competence with purpose
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" href={favicon} />
+		
 		<meta name="generator" content={Astro.generator} />
 		
 

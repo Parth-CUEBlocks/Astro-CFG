@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/case-study.less';
+import logo from '../../assets/page.case-study/atg_logo.svg';
+import hero_below from '../../assets/page.case-study/atg-conversiontop.png';
+---
+
+<Layout title="Shopify Agency for B Corps & Purpose-Driven Brands | CueForGood">
+  <section class="case-study-hero">
+    <div class="content-container">
+      <span class="category-label">Case Study</span>
+
+      <div class="logo-wrapper">
+        <img 
+          src={logo.src} 
+          alt="All That Grows Logo" 
+          class="brand-logo"
+        />
+      </div>
+      <h1 class="main-heading">
+        AllThatGrows Achieves 2.97x ROAS &amp; 500+ Conversions with Google Ads
+      </h1>
+      <p class="sub-heading">
+        Focusing on the 3 B's of Marketing - Building Awareness, Brand Consideration, and Bringing Conversions
+      </p>
+    </div>
+    <div class="illustration-wrapper">
+      <img 
+        src={hero_below.src} 
+        alt="Floral Illustration" 
+        class="bottom-illustration"
+      />
+    </div>
+  </section>
+</Layout>
