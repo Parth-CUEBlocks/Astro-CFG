@@ -75,14 +75,72 @@
     object-fit: contain;
 }
 
-/* Tablet & Mobile Responsiveness */
+.process-section {
+    background-color: #171c28;
+    color: #ffffff;
+    padding: 80px 0px 100px;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.process-section .process-container {
+    max-width: 1290px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+.process-section .process-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.process-section .process-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.process-section .process-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: end;
+}
+
+.process-section .process-num {
+    grid-area: 1 / 1;
+    font-family: 'Lato', sans-serif;
+    font-size: 140px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.15);
+    line-height: 0.85;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+    margin: 0;
+    transform: translateX(-10px);
+}
+
+.process-section .process-text {
+    grid-area: 1 / 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 160%;
+    color: #aab3c0;
+    z-index: 2;
+    margin: 0;
+}
+
 @media (max-width: 768px) {
     .case-study-hero {
         padding-top: 136px;
     }
 
     .case-study-hero .content-container {
-        padding: 0px 16px;
+        padding: 0px 15px;
     }
 
     .case-study-hero .category-label {
@@ -107,5 +165,32 @@
 
     .case-study-hero .illustration-wrapper {
         padding: 0 15px;
+    }
+
+    .process-section {
+        padding: 50px 0px 60px;
+    }
+
+    .process-section .process-container {
+        padding: 0px 15px;
+    }
+
+    .process-section .process-title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .process-section .process-list {
+        gap: 40px;
+    }
+
+    .process-section .process-num {
+        font-size: 120px;
+        transform: translateX(-5px);
+    }
+
+    .process-section .process-text {
+        font-size: 15px;
+        line-height: 150%;
     }
 }
