@@ -9,9 +9,16 @@ import shopifylogo from '../../assets/page.shopify/shopify-logo.png';
 import shopify_hero from '../../assets/page.shopify/shopify_hero_b.png';
 import DiamondDesigns from '../../assets/page.shopify/DiamondDesigns.png';
 import retro_mobile from '../../assets/page.shopify/retro_mobile.png';
+
+import { getSeoMetadata } from '../../../lib/seo';
+
+const { title, description } = await getSeoMetadata(Astro.url.pathname, {
+  title: "Our Services | CueForGood",
+  description: "eCommerce digital agency aligning competence with purpose.",
+});
 ---
 
-<Layout title="Shopify Agency for B Corps & Purpose-Driven Brands | CueForGood">
+<Layout title={title} description={description}>
   <div class="cfg-shopify-outer-wrapper">
     <div class="cfg-shopify-inner-container">
 
