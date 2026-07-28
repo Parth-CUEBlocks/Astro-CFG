@@ -9,12 +9,13 @@ const response = await client.getEntries({
 
 const data = response.items;
 const casestudy = (data as any[]) || [];
- console.log(casestudy);
+//  console.log(casestudy);
 ---
 <section class="services-matrix-section">
       <div class="container-inner">
         {casestudy.map((item)=>{
         const title = item.fields?.department;
+        const className = item.fields?.className;
         const shortDescriptionBelowHeading = item.fields?.shortDescriptionBelowHeading;
         const departmentServices = item.fields?.departmentServices ? documentToHtmlString(item.fields.departmentServices as any)  : "";
         const buttonLabel = item.fields?.buttonLabel;
@@ -23,7 +24,7 @@ const casestudy = (data as any[]) || [];
         const Image = item.fields?.image as any;
         const ImageURL = Image?.fields?.file?.url;
         return(
-          <div class="service-block">
+          <div class={`service-block ${className || ''}`}>
           <div class="service-row">
             <div class="service-content-col">
               {tags && tags.length > 0 && (

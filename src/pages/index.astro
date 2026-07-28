@@ -9,10 +9,15 @@ import blog1 from '../assets/blog1.png';
 import Whoweare from '../components/homepage/Whoweare.astro';
 import Homecasestudy from '../components/homepage/Homecasestudy.astro';
 import Homepageblogs from '../components/homepage/Homepageblogs.astro';
+import { getSeoMetadata } from '../../lib/seo';
 
+const { title, description } = await getSeoMetadata(Astro.url.pathname, {
+  title: "CueForGood | eCommerce Agency for B Corps, Sustainable & Purpose Driven Brands",
+  description: "CueForGood is your eCommerce Agency from Chandigarh, India. We leverage eCommerce for a global audience and love working with Ethical, Earth-Friendly & Purpose Driven Brands.",
+});
 ---
 
-<Layout title="CueForGood | eCommerce Agency for B Corps, Sustainable & Purpose Driven Brands">
+<Layout title={title} description={description}>
   
   <HomepageHero/>
   <Whoweare/>

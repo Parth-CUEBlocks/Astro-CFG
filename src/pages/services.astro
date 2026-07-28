@@ -3,54 +3,22 @@
 import Layout from '../layouts/Layout.astro';
 import '../styles/services.less';
 
-import heroimg from '../assets/Page.services/ourserv-1.png';
-import designImg from '../assets/Page.services/ourserv-design.png';
-import codeImg from '../assets/Page.services/ourserv-dev.png';
-import marketingImg from '../assets/Page.services/ourserv-market.png';
-import webImg from '../assets/Page.services/ourserv-web.png';
 import ServiceHeroSection from '../components/servicepage/ServiceHeroSection.astro';
 import Serviceblock from '../components/servicepage/Serviceblock.astro';
 
+import { getSeoMetadata } from '../../lib/seo';
 
-const designItems = [
-  "eCommerce & Web Design",
-  "UI/UX Development",
-  "Sustainable Web Design",
-  "Conversion Rate Optimization (CRO) focused Web Design",
-  "Wireframes & Prototyping",
-  "Illustration & Iconography"
-];
-
-const codePlatforms = [
-  { name: "Shopify", text: "Store builds from scratch, theme customisations, feature enhancements, Shopify Plus optimization." },
-  { name: "Magento", text: "Full setup, migration, performance optimisation." },
-  { name: "PHP", text: "Custom e‑commerce and complex development." },
-  { name: "Wordpress", text: "Flexible, content‑rich sites that scale with your needs." },
-  { name: "WooCommerce", text: "Tailored site builds, integrations, and optimisations." },
-  { name: "BigCommerce", text: "Store setups, seamless integrations, and advanced customization." }
-];
-
-const accessibilityBullets = [
-  "Advance your mission by making your digital spaces usable and inclusive for all",
-  "Improve SEO through clean, accessible code",
-  "Reduce legal and reputational risks",
-  "Comprehensive audits, remediation guidance, and ongoing monitoring"
-];
-
-const marketingItems = [
-  "Paid Search – Data‑driven targeting for qualified traffic.",
-  "Organic Search – Long‑term SEO/GEO strategies for consistent organic visibility & growth.",
-  "Email Marketing – Automated, personalised journeys for retention and revenue.",
-  "Conversion Rate Optimisation (CRO)",
-  "Story‑driven Copywriting for impact‑driven brands."
-];
+const { title, description } = await getSeoMetadata(Astro.url.pathname, {
+  title: "Our Services | CueForGood",
+  description: "eCommerce digital agency aligning competence with purpose.",
+});
 ---
 
-<Layout title="Our Services | CueForGood" description="CueForGood partners with purpose-led brands, B Corps, nonprofits, and socially conscious businesses to create digital experiences that drive growth and meaningful impact. We work across e-commerce and beyond, helping brands connect with audiences through design, development, and marketing that reflect their values.">
+<Layout title={title} description={description}>
   <section class="services-page">
     
     <!-- Hero Section -->
-   <ServiceHeroSection/>
+    <ServiceHeroSection/>
     <Serviceblock/>
 
     <!-- Center Card Contact CTA Banner -->
@@ -58,11 +26,10 @@ const marketingItems = [
       <div class="container-inner">
         <div class="impact-card">
           <h2>Make Us Part of the Impact</h2>
-          <p>Please <a href="#" class="inline-cta-link">share details</a> of your story & project requirements</p>
+          <p>Please <a href="/contact" class="inline-cta-link">share details</a> of your story & project requirements</p>
         </div>
       </div>
     </section>
-
 
   </section>
 </Layout>
