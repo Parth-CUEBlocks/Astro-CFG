@@ -26,12 +26,15 @@ import TeampageTopbanners from "../components/teampage/TeampageTopbanners.astro"
 import TeampageBottomBanner from "../components/teampage/TeampageBottomBanner.astro";
 import TeamMembers from "../components/teampage/TeamMembers.astro";
 // import Testimonials from "../components/homepage/Testimonials.astro";
+import { getSeoMetadata } from '../../lib/seo';
 
+const { title, description } = await getSeoMetadata(Astro.url.pathname, {
+  title: "Our Services | CueForGood",
+  description: "eCommerce digital agency aligning competence with purpose.",
+});
 ---
 
-<Layout
-  title="CueForGood Team | The Specialists Helping Businesses Become a Force for Good"
->
+<Layout title={title} description={description}>
   <section class="team-page-container">
     
     <TeampageTopbanners/>
