@@ -13,7 +13,7 @@ import clock from '../assets/page.contact/clock.png'
         <h1 class="cfg-contact-heading">Let's start the conversation!</h1>
         <p class="cfg-contact-text">
           Please fill the following form or send us an email at <a href="mailto:letstalk@cueforgood.com" class="cfg-contact-email-link">letstalk@cueforgood.com</a>.
-          <button type="button" class="cfg-contact-copy-btn"><span class="cfg-icon"><svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Copy Icon"><path d="M2.39988 2.4V0.6C2.39988 0.268632 2.66851 0 2.99988 0H10.1999C10.5313 0 10.7999 0.268632 10.7999 0.6V9C10.7999 9.33138 10.5313 9.6 10.1999 9.6H8.39988V11.3995C8.39988 11.7311 8.12994 12 7.7958 12H0.603996C0.270354 12 0 11.7332 0 11.3995L0.00155997 3.00052C0.00161997 2.66887 0.271584 2.4 0.605652 2.4H2.39988ZM1.20145 3.6L1.20011 10.8H7.19988V3.6H1.20145ZM3.59988 2.4H8.39988V8.4H9.59988V1.2H3.59988V2.4Z" fill="#676767"></path></svg></span> Copy Email</button>
+          <button type="button" class="cfg-contact-copy-btn" id="cfg-contact-copy-btn" data-default-label="Copy Email" data-copied-label="Copied!"><span class="cfg-icon"><svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Copy Icon"><path d="M2.39988 2.4V0.6C2.39988 0.268632 2.66851 0 2.99988 0H10.1999C10.5313 0 10.7999 0.268632 10.7999 0.6V9C10.7999 9.33138 10.5313 9.6 10.1999 9.6H8.39988V11.3995C8.39988 11.7311 8.12994 12 7.7958 12H0.603996C0.270354 12 0 11.7332 0 11.3995L0.00155997 3.00052C0.00161997 2.66887 0.271584 2.4 0.605652 2.4H2.39988ZM1.20145 3.6L1.20011 10.8H7.19988V3.6H1.20145ZM3.59988 2.4H8.39988V8.4H9.59988V1.2H3.59988V2.4Z" fill="#676767"></path></svg></span><span class="cfg-contact-copy-btn-label">Copy Email</span></button>
         </p>
         <p class="cfg-contact-mandatory-notice">(* indicates mandatory fields)</p>
 
@@ -157,6 +157,38 @@ import clock from '../assets/page.contact/clock.png'
 
   function validateWebsite(url) {
     return /^(?:https?:\/\/)?(?!www\.)[A-Za-z0-9_-]+\.+[A-Za-z0-9.\/%&=?_:;-]+$/.test(url);
+  }
+
+  const copyBtn = document.getElementById("cfg-contact-copy-btn");
+  if (copyBtn) {
+    const copyLabel = copyBtn.querySelector(".cfg-contact-copy-btn-label");
+    let copyResetTimeout = null;
+
+    copyBtn.addEventListener("click", async () => {
+      const email = "letstalk@cueforgood.com";
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          const textarea = document.createElement("textarea");
+          textarea.value = email;
+          textarea.style.position = "fixed";
+          textarea.style.opacity = "0";
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textarea);
+        }
+
+        if (copyLabel) copyLabel.textContent = copyBtn.dataset.copiedLabel;
+        clearTimeout(copyResetTimeout);
+        copyResetTimeout = setTimeout(() => {
+          if (copyLabel) copyLabel.textContent = copyBtn.dataset.defaultLabel;
+        }, 2000);
+      } catch (err) {
+        console.error("Copy to clipboard failed:", err);
+      }
+    });
   }
 
   const config = getHostConfig();
