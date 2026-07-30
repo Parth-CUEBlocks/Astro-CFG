@@ -3,24 +3,28 @@
 import { client } from "../../../lib/contentful"; 
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
+const rawPath = Astro.url.pathname;
+const currentUrl = rawPath.replace(/\/$/, '') || '/';
 
 const responsetitle = await client.getEntries({
-  content_type: "ourApproachTitleMagentoPage"
+  content_type: "shopifyPageTopSection",
+  'fields.pageUrl': currentUrl,
 });
-const data1 = responsetitle.items;
+const data1 = responsetitle.items[0]?.fields?.ourApproachHeading as any ;
 
 const response = await client.getEntries({
-  content_type: "ourApproachMagentoPage"
+  content_type: "ourApproachShopifyPage",
+  'fields.pageUrl': currentUrl
 });
 const data = response.items;
 const approach = (data as any[]) || [];
-  // console.log(data1);
+  //  console.log(data1);
 ---
       <section class="cfg-approach-section">
 
         <div class="main-heading text-center">
-          <h2 class="cfg-section-heading">{data1[0]?.fields?.title}</h2>
-          {data1[0]?.fields?.description && <p>{data1[0]?.fields?.description}</p>}
+          <h2 class="cfg-section-heading">{data1?.fields?.title}</h2>
+          {data1?.fields?.description && <p>{data1?.fields?.description}</p>}
         </div>
 
         <div class="cfg-approach-grid">
