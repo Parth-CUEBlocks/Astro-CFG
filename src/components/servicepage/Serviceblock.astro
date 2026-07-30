@@ -1,13 +1,17 @@
 ---
 // src/components/Testimonials.astro
-import { client } from "../../../lib/contentful"; 
+import { client } from "../../../lib/contentful";
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
-const response = await client.getEntries({
-  content_type: "servicePageServiceBlocks"
-});
-
-const data = response.items;
+let data: any[] = [];
+try {
+  const response = await client.getEntries({
+    content_type: "servicePageServiceBlocks"
+  });
+  data = response.items;
+} catch (error) {
+  console.error("Serviceblock Contentful fetch error:", error);
+}
 const casestudy = (data as any[]) || [];
 //  console.log(casestudy);
 ---
