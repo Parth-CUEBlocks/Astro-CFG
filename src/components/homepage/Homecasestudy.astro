@@ -1,17 +1,18 @@
 ---
 // src/components/Testimonials.astro
-import { client } from "../../../lib/contentful"; 
+import { client } from "../../../lib/contentful";
 
-const response = await client.getEntries({
-  content_type: "homepageCaseStudy"
-});
+let data: any[] = [];
+try {
+  const response = await client.getEntries({
+    content_type: "homepageCaseStudy"
+  });
+  data = response.items;
+} catch (error) {
+  console.error("Homecasestudy Contentful fetch error:", error);
+}
 
-// 1. Get the fields from the first entry
-const data = response.items;
-
-// 2. Access the 'testmonials' reference field (using the API schema's spelling)
 const casestudy = (data as any[]) || [];
-// console.log(casestudy);
 ---
 
 <section class="cfg-cases-viewport">
@@ -21,10 +22,9 @@ const casestudy = (data as any[]) || [];
         const websiteName = item.fields?.caseStudyWebsiteName;
         const description = item.fields?.description;
         const buttonlabel = item.fields?.buttonLabel;
-        const buttonurl = item.fields?.buttonUrl;
         const tags = item.fields?.tags as any[] || [];
         return(
-          <a href={buttonurl} class="cfg-case-card cfg-card-lavender" style={`background-color: ${item.fields?.backgroundColor}`}>
+          <a href="/coming-soon" class="cfg-case-card cfg-card-lavender" style={`background-color: ${item.fields?.backgroundColor}`}>
             <div class="cfg-card-content">
               <span class="cfg-case-eyebrow">{title}</span>
               <h2 class="cfg-case-client">{websiteName}</h2>
