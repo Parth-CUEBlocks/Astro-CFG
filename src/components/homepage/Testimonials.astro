@@ -27,21 +27,23 @@ const testimonialsList = (data as any[]) || [];
       <div class="swiper-wrapper">
         {testimonialsList.map((item) => {
           // Extract data from individual reference items
-          const description = item.fields?.description ;
-          const clientName = item.fields?.clientName;
-          const websiteLogo = item.fields?.websiteLogo.fields?.file?.url;
-          const websiteLogoalt = item.fields?.websiteLogo.fields?.title;
+          const description = item?.fields?.description ;
+          const clientName = item?.fields?.clientName;
+          const websiteLogo = item?.fields?.websiteLogo?.fields?.file?.url;
+          const websiteLogoalt = item?.fields?.websiteLogo?.fields?.title;
           
           return (
             <div class="swiper-slide">
-              <p class="cfg-testimonial-text">
+              {description && <p class="cfg-testimonial-text">
                 {description}
               </p>
-              <p class="cfg-testimonial-author">
+              }
+             {clientName && <p class="cfg-testimonial-author">
                 {clientName}
               </p>
+              }
               <div class="cfg-testimonial-brand">
-                <img src={`https:${websiteLogo}`} alt={websiteLogoalt} loading="lazy" />
+                {websiteLogo && <img src={`https:${websiteLogo}`} alt={websiteLogoalt} loading="lazy" />}
               </div>
             </div>
           );

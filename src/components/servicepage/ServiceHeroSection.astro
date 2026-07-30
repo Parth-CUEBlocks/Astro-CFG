@@ -2,42 +2,52 @@
 import { client } from "../../../lib/contentful"; 
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
+const rawPath = Astro.url.pathname;
+const currentUrl = rawPath.replace(/\/$/, '') || '/';
+
 const response = await client.getEntries({
-  content_type: "servicePageTopSection"
+  content_type: "shopifyPageTopSection",
+  'fields.pageUrl': currentUrl,
 });
 
+
 const data = response.items[0]?.fields;
-// console.log(data);
+//  console.log(data);
 // Instead of mapping over an array, convert the whole rich text block into HTML string
 const topSectionParagraph1 = data?.topSectionParagraph1 ? documentToHtmlString(data.topSectionParagraph1 as any)  : "";
+const topSectionParagraph2 = data?.topSectionParagraph2 ? documentToHtmlString(data.topSectionParagraph2 as any)  : "";
 const Image = data?.topSectionImage as any;
 const ImageURL = Image?.fields?.file?.url;
+const Labelimg = data?.serviceLabelImage as any;
+const LabelimgURL = Labelimg?.fields?.file?.url;
 ---
-
-  <section class="services-hero">
-      <div class="container-inner">
-        <div class="hero-split-grid">
-          <div class="hero-text-col">
-            <h1>{data?.heading}</h1>
-            <div class="hero-lead" set:html={topSectionParagraph1} />
+      {data?.heading &&
+      <section class="cfg-shopify-hero">
+        <div class="cfg-hero-grid">
+          <div class="cfg-hero-content">
+            <div class="flex-hero"><h1 class="cfg-hero-title">{data?.heading}</h1>
+              {LabelimgURL && <img src={`https:${LabelimgURL}`} alt="shopify logo"/>}
+            </div>
+            <h2 class="cfg-hero-subtitle">{data?.subHeading}</h2>
+            <div class="cfg-hero-desc" set:html={topSectionParagraph1} />
+            {data?.buttonLabel && 
+            <a id="first-focus-element" class="btn main_cta focus-visible" href={`${data?.buttonUrl}`}>{data?.buttonLabel}</a>
+            }
             
-            <div class="intro-philosophy">
-              <h2>{data?.subHeading}</h2>
-              <p>{data?.topSectionParagraph2}</p>
-            </div>
           </div>
-          
-          <div class="hero-graphic-col">
-            <div class="hero-image-field">
-              <img src={`https:${ImageURL}`} alt="Isometric Cubes Representation Graphic" class="page-hero-img" loading="eager" fetchpriority="high" />
-            </div>
+          <div class="cfg-hero-media">
+            {ImageURL && <img src={`https:${ImageURL}`} alt="Shopify Expert & Certifications Graphic" class="cfg-hero-total-img" loading="eager" fetchpriority="high" />}
           </div>
-        </div>
 
-        <div class="pillar-block">
-          <p class="hero-focus">{data?.heroBelowSectionParagraph1}</p>
-          <h2 class="pillar-main-statement">{data?.heroBelowSectionHeading}</h2>
-          <p class="pillar-subtext">{data?.heroBelowSectionParagraph2}</p>
         </div>
-      </div>
-  </section>
+        {topSectionParagraph2  && <div class="ethical_Organizations " set:html={topSectionParagraph2} />}
+       
+
+      </section>
+      }
+
+      
+
+  
+
+  

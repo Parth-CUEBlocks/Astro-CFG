@@ -5,12 +5,12 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 
 const responsetitle = await client.getEntries({
-  content_type: "ourApproachTitleShopifyPage"
+  content_type: "ourApproachTitlePhpPage"
 });
 const data1 = responsetitle.items;
 
 const response = await client.getEntries({
-  content_type: "ourApproachShopifyPage"
+  content_type: "ourApproachPhpPage"
 });
 const data = response.items;
 const approach = (data as any[]) || [];
