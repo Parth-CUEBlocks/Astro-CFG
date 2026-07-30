@@ -1,0 +1,119 @@
+.cfg-thankyou-page {
+  background-color: #171c28;
+  color: #aab3c0;
+  font-family: 'Lato', sans-serif;
+  padding: 140px 20px 100px;
+}
+
+.cfg-thankyou-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cfg-thankyou-upper {
+  margin-bottom: 40px;
+}
+
+.cfg-thankyou-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+}
+
+.cfg-thankyou-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: #e0e5ec;
+  margin: 0 0 20px;
+}
+
+.cfg-thankyou-text {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 930px;
+  margin: 0 auto 16px;
+  color: #aab3c0;
+}
+
+.cfg-thankyou-bold {
+  font-size: 18px;
+  font-weight: 500;
+  color: #e0e5ec;
+  margin: 68px auto 0;
+}
+
+.cfg-thankyou-blocks {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 40px;
+  text-align: left;
+}
+
+.cfg-thankyou-block {
+  flex: 1 1 31%;
+  max-width: 31%;
+}
+
+.cfg-thankyou-block-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cfg-thankyou-block-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #e0e5ec;
+  margin: 20px 0 5px;
+}
+
+.cfg-thankyou-block a {
+  color: #aab3c0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: #e0e5ec;
+  }
+}
+
+@media (max-width: 768px) {
+  .cfg-thankyou-page {
+    padding: 100px 20px 60px;
+  }
+
+  .cfg-thankyou-heading {
+    font-size: 24px;
+  }
+
+  .cfg-thankyou-text {
+    font-size: 14px;
+  }
+
+  .cfg-thankyou-bold {
+    font-size: 14px;
+    margin-top: 30px;
+  }
+
+  .cfg-thankyou-blocks {
+    flex-direction: column;
+  }
+
+  .cfg-thankyou-block {
+    max-width: 100%;
+  }
+
+  .cfg-thankyou-block-img {
+    border: 1px solid #2a3040;
+  }
+
+  .cfg-thankyou-block-heading {
+    font-size: 20px;
+  }
+}

@@ -1,35 +1,41 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import '../styles/thankyou.less';
+import smileIcon from '../assets/page.thankyou/smile-icon.png';
+import thankTeam from '../assets/page.thankyou/thnk-1.jpg';
+import thankWork from '../assets/page.thankyou/thnk-2.jpg';
+import thankServices from '../assets/page.thankyou/ourServices.jpg';
 ---
 
 <Layout title="Thank You | CueForGood">
-  <div class="cfg-thankyou-wrapper">
-    <h1>Thank you for reaching out!</h1>
-    <p>We've received your message and will get back to you shortly.</p>
-    <a href="/">Back to Home</a>
-  </div>
+  <section class="cfg-thankyou-page">
+    <div class="cfg-thankyou-container">
+
+      <div class="cfg-thankyou-upper">
+        <img src={smileIcon.src} alt="" class="cfg-thankyou-icon" />
+        <h1 class="cfg-thankyou-heading">Thank you for providing the details.</h1>
+        <p class="cfg-thankyou-text">Your inquiry has been received, and our sales team will promptly respond via email.</p>
+        <p class="cfg-thankyou-bold">In the meantime, please feel free to explore the following:</p>
+      </div>
+
+      <div class="cfg-thankyou-blocks">
+        <div class="cfg-thankyou-block">
+          <img src={thankTeam.src} alt="Our Team" class="cfg-thankyou-block-img" />
+          <h2 class="cfg-thankyou-block-heading">Our Kick-ass Team</h2>
+          <a href="/team" class="focus-visible" aria-label="Read more about our team">Read More</a>
+        </div>
+        <div class="cfg-thankyou-block">
+          <img src={thankWork.src} alt="Case Studies" class="cfg-thankyou-block-img" />
+          <h2 class="cfg-thankyou-block-heading">Our Work</h2>
+          <a href="/coming-soon" class="focus-visible" aria-label="Read more about our work">Read More</a>
+        </div>
+        <div class="cfg-thankyou-block">
+          <img src={thankServices.src} alt="Our Services" class="cfg-thankyou-block-img" />
+          <h2 class="cfg-thankyou-block-heading">Our Services</h2>
+          <a href="/coming-soon" class="focus-visible" aria-label="Read more about our services">Read More</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
 </Layout>
-
-<style>
-  .cfg-thankyou-wrapper {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 160px 20px 100px;
-    text-align: center;
-  }
-
-  .cfg-thankyou-wrapper h1 {
-    font-size: 34px;
-    margin-bottom: 15px;
-  }
-
-  .cfg-thankyou-wrapper p {
-    font-size: 18px;
-    margin-bottom: 25px;
-  }
-
-  .cfg-thankyou-wrapper a {
-    color: inherit;
-    text-decoration: underline;
-  }
-</style>
