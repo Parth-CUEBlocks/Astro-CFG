@@ -1,8 +1,11 @@
 ---
 import ServicesMegaMenu from './ServicesMegaMenu.astro';
 import MobileHeader from './MobileHeader.astro';
-import '../styles/header.less'; 
-import '../styles/mobile-header.less'; 
+import { isNavActive } from '../utils/nav.js';
+import '../styles/header.less';
+import '../styles/mobile-header.less';
+
+const currentPath = Astro.url.pathname;
 ---
 <div class="announcementbar desk-h"><div class="notification-top">"Leveraging eCommerce for Purpose"</div></div>
 <header class="site-header ">
@@ -16,18 +19,18 @@ import '../styles/mobile-header.less';
     </a>
     
     <nav class="nav-menu">
-      <a href="/">Cue for Good</a>
-      <a href="/team">Team</a>
-      
+      <a href="/" class={isNavActive(currentPath, '/') ? 'active' : ''} aria-current={isNavActive(currentPath, '/') ? 'page' : undefined}>Cue for Good</a>
+      <a href="/team" class={isNavActive(currentPath, '/team') ? 'active' : ''} aria-current={isNavActive(currentPath, '/team') ? 'page' : undefined}>Team</a>
+
       <div class="menu-item has-mega-menu">
-        <a href="/services">Services</a>
+        <a href="/services" class={isNavActive(currentPath, '/services') ? 'active' : ''} aria-current={isNavActive(currentPath, '/services') ? 'page' : undefined}>Services</a>
         <ServicesMegaMenu />
       </div>
 
-      <a href="/work">Our Work</a>
-      <a href="/career">Join CFG</a>
-      <a href="/blog">Blog</a>
-      <a href="/contact">Contact Us</a>
+      <a href="/work" class={isNavActive(currentPath, '/work') ? 'active' : ''} aria-current={isNavActive(currentPath, '/work') ? 'page' : undefined}>Our Work</a>
+      <a href="/career" class={isNavActive(currentPath, '/career') ? 'active' : ''} aria-current={isNavActive(currentPath, '/career') ? 'page' : undefined}>Join CFG</a>
+      <a href="/blog" class={isNavActive(currentPath, '/blog') ? 'active' : ''} aria-current={isNavActive(currentPath, '/blog') ? 'page' : undefined}>Blog</a>
+      <a href="/contact" class={isNavActive(currentPath, '/contact') ? 'active' : ''} aria-current={isNavActive(currentPath, '/contact') ? 'page' : undefined}>Contact Us</a>
     </nav>
     
     <div class="social-links">

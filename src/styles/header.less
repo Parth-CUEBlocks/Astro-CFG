@@ -124,11 +124,16 @@
       &:hover {
         color: @header-text;
       }
+
+      &.active {
+        color: @header-text;
+        font-weight: 700;
+      }
     }
 
     /* Nested Mega Menu Triggers */
     .has-mega-menu {
-      position: static; 
+      position: static;
 
       &:hover {
         .mega-menu {
