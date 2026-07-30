@@ -1,17 +1,18 @@
 ---
 // src/components/Testimonials.astro
-import { client } from "../../../lib/contentful"; 
+import { client } from "../../../lib/contentful";
 
-const response = await client.getEntries({
-  content_type: "homepageTestimonials"
-});
+let data: any[] = [];
+try {
+  const response = await client.getEntries({
+    content_type: "homepageTestimonials"
+  });
+  data = response.items;
+} catch (error) {
+  console.error("Testimonials Contentful fetch error:", error);
+}
 
-// 1. Get the fields from the first entry
-const data = response.items;
-
-// 2. Access the 'testmonials' reference field (using the API schema's spelling)
 const testimonialsList = (data as any[]) || [];
-// console.log(testimonialsList);
 ---
 
 <section class="cfg-testimonial-viewport">
@@ -29,8 +30,8 @@ const testimonialsList = (data as any[]) || [];
           // Extract data from individual reference items
           const description = item.fields?.description ;
           const clientName = item.fields?.clientName;
-          const websiteLogo = item.fields?.websiteLogo.fields?.file?.url;
-          const websiteLogoalt = item.fields?.websiteLogo.fields?.title;
+          const websiteLogo = item.fields?.websiteLogo?.fields?.file?.url;
+          const websiteLogoalt = item.fields?.websiteLogo?.fields?.title;
           
           return (
             <div class="swiper-slide">

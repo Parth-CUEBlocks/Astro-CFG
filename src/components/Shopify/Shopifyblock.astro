@@ -1,15 +1,19 @@
 ---
 // src/components/Testimonials.astro
-import { client } from "../../../lib/contentful"; 
+import { client } from "../../../lib/contentful";
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
-const response = await client.getEntries({
-  content_type: "shopifyPageServiceBlocks"
-});
+let data: any[] = [];
+try {
+  const response = await client.getEntries({
+    content_type: "shopifyPageServiceBlocks"
+  });
+  data = response.items;
+} catch (error) {
+  console.error("Shopifyblock Contentful fetch error:", error);
+}
 
-const data = response.items;
 const casestudy = (data as any[]) || [];
-//  console.log(casestudy);
 ---
 <section class="services-matrix-section">
       <div class="container-inner">

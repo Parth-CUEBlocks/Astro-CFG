@@ -1,33 +1,36 @@
 ---
-import {client} from "../../../lib/contentful"; 
+import {client} from "../../../lib/contentful";
 import small from '../../assets/homeicon.svg';
-// import HeroData from "../components/Herodata";
 import block from '../../assets/block.svg';
 
-const response =await client.getEntries({
-  content_type: "homepageHeroBanner"
-});
-
-const data = response.items[0].fields;
+let data: any = undefined;
+try {
+  const response = await client.getEntries({
+    content_type: "homepageHeroBanner"
+  });
+  data = response.items[0]?.fields;
+} catch (error) {
+  console.error("HomepageHero Contentful fetch error:", error);
+}
 
 ---
 
 
 <section class="cfg-purpose-viewport">
-  
+
     <div class="cfg-purpose-container">
       <p class="cfg-statement-eyebrow desk-h">
-        <span class="cfg-quote-symbol">“</span>{data.subTitle}<span class="cfg-quote-symbol">”</span>
+        <span class="cfg-quote-symbol">“</span>{data?.subTitle}<span class="cfg-quote-symbol">”</span>
       </p>
       <h1 class="cfg-statement-headline">
-        {data.mainTitle}
+        {data?.mainTitle}
       </h1>
       <div class="cfg-experience-row">
-        <span class="cfg-experience-badge">{data.belowDetails}</span>
+        <span class="cfg-experience-badge">{data?.belowDetails}</span>
         <span ><img src={small.src} alt="Small Icon" /></span>
-        <span class="cfg-experience-badge">{data.experts}</span>
+        <span class="cfg-experience-badge">{data?.experts}</span>
       </div>
       <div class="block-homepage"><img src={block.src} alt="Block Icon" /></div>
-    </div> 
+    </div>
   </section>
   

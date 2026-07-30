@@ -1,16 +1,21 @@
 ---
 
-import { client } from "../../lib/contentful"; 
+import { client } from "../../lib/contentful";
 
-const response = await client.getEntries({
-  content_type: "footerClutch" 
-});
+let data: any = undefined;
+try {
+  const response = await client.getEntries({
+    content_type: "footerClutch"
+  });
+  data = response.items[0]?.fields;
+} catch (error) {
+  console.error("FooterClutch Contentful fetch error:", error);
+}
 
-const data = response.items[0]?.fields as any;
- const url = data?.clutchUrl;
+const url = data?.clutchUrl;
 const imageUrl = data?.clutchImage?.fields?.file?.url;
-// console.log(data);
 ---
+{url && imageUrl && (
  <div class="fixed-clutch" >
           <a href={url}
             target="_blank"
@@ -21,6 +26,7 @@ const imageUrl = data?.clutchImage?.fields?.file?.url;
 
           </a>
         </div>
+)}
 <style>
 .fixed-clutch { 
   position: fixed;

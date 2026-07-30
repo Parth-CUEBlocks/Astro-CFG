@@ -1,15 +1,18 @@
 ---
 
-import { client } from "../../lib/contentful"; 
+import { client } from "../../lib/contentful";
 
-const response = await client.getEntries({
-  content_type: "footerPartnerLogo" 
-});
-
-const data = response.items;
+let data: any[] = [];
+try {
+  const response = await client.getEntries({
+    content_type: "footerPartnerLogo"
+  });
+  data = response.items;
+} catch (error) {
+  console.error("footer-carousel Contentful fetch error:", error);
+}
 
 const logolist = (data as any[]) || [];
-// console.log(logolist);
 ---
  <div class=" partners-swiper">
       <div class="swiper-wrapper elements-align-center">
@@ -17,8 +20,8 @@ const logolist = (data as any[]) || [];
           // Extract data from individual reference items
           const url = item.fields?.partnerLogoUrl;
           const width = item.fields?.width;
-          const websiteLogo = item.fields?.partnerLogo.fields?.file?.url;
-          const websiteLogoalt = item.fields?.partnerLogo.fields?.title;
+          const websiteLogo = item.fields?.partnerLogo?.fields?.file?.url;
+          const websiteLogoalt = item.fields?.partnerLogo?.fields?.title;
           
           return (
             <div class="swiper-slide partner-logo shopify">

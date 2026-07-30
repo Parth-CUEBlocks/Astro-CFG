@@ -1,13 +1,17 @@
 ---
 import Homepagecarousal from './Homepagecarousal.astro';
-import { client } from "../../../lib/contentful"; 
+import { client } from "../../../lib/contentful";
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
-const response = await client.getEntries({
-  content_type: "whatWeDo"
-});
-
-const data = response.items[0]?.fields;
+let data: any = undefined;
+try {
+  const response = await client.getEntries({
+    content_type: "whatWeDo"
+  });
+  data = response.items[0]?.fields;
+} catch (error) {
+  console.error("Whoweare Contentful fetch error:", error);
+}
 
 // Instead of mapping over an array, convert the whole rich text block into HTML string
 const serviceBlockHtml = data?.serviceBlock ? documentToHtmlString(data.serviceBlock as any)  : "";

@@ -19,22 +19,22 @@ import clock from '../assets/page.contact/clock.png'
 
         <form action="#" method="POST" novalidate id="cfg-contact-form">
           <div class="cfg-contact-form-group">
-            <input type="text" name="name" placeholder="Name*" required class="cfg-contact-input-field" />
+            <input type="text" name="name" placeholder="Name*" required class="cfg-contact-input-field" aria-label="Name (required)" />
             <p class="cfg-contact-error-msg" data-error-for="name"></p>
           </div>
 
           <div class="cfg-contact-form-group">
-            <input type="email" name="email" placeholder="Email*" required class="cfg-contact-input-field" />
+            <input type="email" name="email" placeholder="Email*" required class="cfg-contact-input-field" aria-label="Email (required)" />
             <p class="cfg-contact-error-msg" data-error-for="email"></p>
           </div>
 
           <div class="cfg-contact-form-group">
-            <input type="tel" name="phone" placeholder="Phone (optional)" class="cfg-contact-input-field" />
+            <input type="tel" name="phone" placeholder="Phone (optional)" class="cfg-contact-input-field" aria-label="Phone (optional)" />
             <p class="cfg-contact-error-msg" data-error-for="phone"></p>
           </div>
 
           <div class="cfg-contact-form-group">
-            <input type="url" name="website" placeholder="Website (optional)" class="cfg-contact-input-field" />
+            <input type="url" name="website" placeholder="Website (optional)" class="cfg-contact-input-field" aria-label="Website (optional)" />
             <p class="cfg-contact-error-msg" data-error-for="website"></p>
           </div>
 
@@ -56,12 +56,12 @@ import clock from '../assets/page.contact/clock.png'
           </div>
 
           <div class="cfg-contact-form-group">
-            <textarea name="story" rows="5" placeholder="Please share details of your story & project requirements*" required class="cfg-contact-textarea-field"></textarea>
+            <textarea name="story" rows="5" placeholder="Please share details of your story & project requirements*" required class="cfg-contact-textarea-field" aria-label="Please share details of your story and project requirements (required)"></textarea>
             <p class="cfg-contact-error-msg" data-error-for="story"></p>
           </div>
 
           <div class="cfg-contact-form-group">
-            <input type="text" name="source" placeholder="How did you hear about CueForGood?*" required class="cfg-contact-input-field " />
+            <input type="text" name="source" placeholder="How did you hear about CueForGood?*" required class="cfg-contact-input-field " aria-label="How did you hear about CueForGood? (required)" />
             <p class="cfg-contact-error-msg" data-error-for="source"></p>
           </div>
 

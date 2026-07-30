@@ -1,20 +1,29 @@
 ---
 // src/components/Testimonials.astro
-import { client } from "../../../lib/contentful"; 
+import { client } from "../../../lib/contentful";
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
+let data1: any[] = [];
+try {
+  const responsetitle = await client.getEntries({
+    content_type: "ourApproachTitleShopifyPage"
+  });
+  data1 = responsetitle.items;
+} catch (error) {
+  console.error("ShopifyOurApproach (title) Contentful fetch error:", error);
+}
 
-const responsetitle = await client.getEntries({
-  content_type: "ourApproachTitleShopifyPage"
-});
-const data1 = responsetitle.items;
+let data: any[] = [];
+try {
+  const response = await client.getEntries({
+    content_type: "ourApproachShopifyPage"
+  });
+  data = response.items;
+} catch (error) {
+  console.error("ShopifyOurApproach Contentful fetch error:", error);
+}
 
-const response = await client.getEntries({
-  content_type: "ourApproachShopifyPage"
-});
-const data = response.items;
 const approach = (data as any[]) || [];
-  // console.log(data1);
 ---
       <section class="cfg-approach-section">
 

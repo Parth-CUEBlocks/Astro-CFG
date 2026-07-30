@@ -1,17 +1,18 @@
 ---
 // src/components/Testimonials.astro
-import { client } from "../../../lib/contentful"; 
+import { client } from "../../../lib/contentful";
 
-const response = await client.getEntries({
-  content_type: "homepageCaseStudy"
-});
+let data: any[] = [];
+try {
+  const response = await client.getEntries({
+    content_type: "homepageCaseStudy"
+  });
+  data = response.items;
+} catch (error) {
+  console.error("Homecasestudy Contentful fetch error:", error);
+}
 
-// 1. Get the fields from the first entry
-const data = response.items;
-
-// 2. Access the 'testmonials' reference field (using the API schema's spelling)
 const casestudy = (data as any[]) || [];
-// console.log(casestudy);
 ---
 
 <section class="cfg-cases-viewport">
