@@ -3,17 +3,13 @@
 import { client } from "../../../lib/contentful"; 
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
-const rawPath = Astro.url.pathname;
-const currentUrl = rawPath.replace(/\/$/, '') || '/';
-
 const response = await client.getEntries({
-  content_type: "shopifyPageServiceBlocks",
-  'fields.pageUrl': currentUrl,
+  content_type: "phpPageServiceBlocks"
 });
 
 const data = response.items;
 const casestudy = (data as any[]) || [];
-  // console.log(casestudy);
+//  console.log(casestudy);
 ---
 <section class="services-matrix-section">
       <div class="container-inner">
@@ -29,36 +25,16 @@ const casestudy = (data as any[]) || [];
         const buttonLabel2 = item.fields?.buttonLabelRight;
         const buttonurl2 = item.fields?.buttonUrlRight;
         const tags = item.fields?.tags as any[] || [];
-        const tagsAboveHeading = item.fields?.tagsAboveHeading as any[] || [];
         const Image = item.fields?.image as any;
         const ImageURL = Image?.fields?.file?.url;
         const Image2 = item.fields?.imageLeftForTwoColumn as any;
         const ImageURL2 = Image2?.fields?.file?.url;
         return(
           <div class={`cfg-service-row ${className || ''}`}>
-            <div class="cfg-service-details">
-              {tagsAboveHeading && tagsAboveHeading.length > 0 && (
-                  <div class="cfg-case-tags">
-                    {tagsAboveHeading.map((tag) => (
-                      <span class="service-pill pill-accessibility">{tag}</span>
-                    ))}
-                  </div>
-                )}
-              {title && <h2>{title}</h2>}
-              {ImageURL2 && <img src={`https:${ImageURL2}`} alt={title} class="showcase-img showcase-img2" loading="lazy"  />}
-              {shortDescriptionBelowHeading && <p class="service-desc">{shortDescriptionBelowHeading}</p>}
-              
-              {departmentServices && <div class="description-data"  set:html={departmentServices} />}
-              {buttonLabel &&
-              <div class="action-btn-wrap">
-                <a href={buttonurl} class="cfg-service-btn">{buttonLabel}</a>
-              </div>
-              }
-            </div>
               <div class="cfg-service-img">
                 {title2 && <h2>{title2}</h2>}
                 <div class="imagewithtags">
-                {tags && tags.length > 0 && (
+                {tags && tags.length > 0 && ( 
                   <div class="cfg-case-tags">
                     {tags.map((tag) => (
                       <span class="service-pill pill-accessibility">{tag}</span>
@@ -76,7 +52,18 @@ const casestudy = (data as any[]) || [];
                 }
               </div>
 
-            
+            <div class="cfg-service-details">
+              {title && <h2>{title}</h2>}
+              {ImageURL2 && <img src={`https:${ImageURL2}`} alt={title} class="showcase-img showcase-img2" loading="lazy"  />}
+              {shortDescriptionBelowHeading && <p class="service-desc">{shortDescriptionBelowHeading}</p>}
+              
+              {departmentServices && <div class="description-data"  set:html={departmentServices} />}
+              {buttonLabel &&
+              <div class="action-btn-wrap">
+                <a href={buttonurl} class="cfg-service-btn">{buttonLabel}</a>
+              </div>
+              }
+            </div>
             
         </div>
         )

@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/shopify.less';
+
+import { getSeoMetadata } from '../../lib/seo';
+import MagentoHeroSection from '../components/Magento/MagentoHeroSection.astro';
+import MagentoOurApproach from '../components/Magento/MagentoOurApproach.astro';
+import Magentoblock from '../components/Magento/Magentoblock.astro';
+
+const { title, description } = await getSeoMetadata(Astro.url.pathname, {
+  title: "Magento Development for B Corps and Purpose-Driven Brands | CueForGood",
+  description: "Scalable Magento 2 development for B Corps and mission-led brands. From migration to custom builds, we help you create a high-performance ecommerce store aligned with your goals.",
+});
+---
+
+<Layout title={title} description={description}>
+  <div class="cfg-shopify-outer-wrapper">
+    <div class="cfg-shopify-inner-container">
+      <MagentoHeroSection/>
+     <!--  <MagentoOurApproach/> -->
+      <section class="cfg-services-section">
+        <Magentoblock/>
+
+      </section>
+
+
+    </div>
+  </div>
+</Layout>

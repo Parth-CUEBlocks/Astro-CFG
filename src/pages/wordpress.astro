@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/shopify.less';
+
+import { getSeoMetadata } from '../../lib/seo';
+import WordpressHeroSection from '../components/WordpressPage/WordpressHeroSection.astro';
+import WordpressOurApproach from '../components/WordpressPage/WordpressOurApproach.astro';
+import Wordpressblock from '../components/WordpressPage/Wordpressblock.astro';
+
+const { title, description } = await getSeoMetadata(Astro.url.pathname, {
+  title: "Custom Wordpress Development for B Corps, Earth Friendly & Purpose Driven Brands",
+  description: "From Wordpress Development to WooCommerce Customization, CueForGood offers a full range of Wordpress services. We leverage eCommerce for a global audience & love working with Earth-Friendly & Purpose Driven Brands. ",
+});
+---
+
+<Layout title={title} description={description}>
+  <div class="cfg-shopify-outer-wrapper">
+    <div class="cfg-shopify-inner-container">
+      <WordpressHeroSection/>
+      <!-- <WordpressOurApproach/>
+      <section class="cfg-services-section">
+        <Wordpressblock/>
+
+      </section> -->
+
+
+    </div>
+  </div>
+</Layout>

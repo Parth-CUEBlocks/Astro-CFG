@@ -1,7 +1,8 @@
 ---
 // src/pages/services.astro
 import Layout from '../layouts/Layout.astro';
-import '../styles/services.less';
+// import '../styles/services.less';
+import '../styles/shopify.less';
 
 import ServiceHeroSection from '../components/servicepage/ServiceHeroSection.astro';
 import Serviceblock from '../components/servicepage/Serviceblock.astro';
@@ -15,7 +16,8 @@ const { title, description } = await getSeoMetadata(Astro.url.pathname, {
 ---
 
 <Layout title={title} description={description}>
-  <section class="services-page">
+  <div class="cfg-shopify-outer-wrapper services-page">
+    <div class="cfg-shopify-inner-container">
     
     <!-- Hero Section -->
     <ServiceHeroSection/>
@@ -31,5 +33,6 @@ const { title, description } = await getSeoMetadata(Astro.url.pathname, {
       </div>
     </section>
 
-  </section>
+  </div>
+  </div>
 </Layout>

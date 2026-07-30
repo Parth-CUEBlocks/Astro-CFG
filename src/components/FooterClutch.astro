@@ -3,15 +3,16 @@
 import { client } from "../../lib/contentful"; 
 
 const response = await client.getEntries({
-  content_type: "footerClutch" 
+  content_type: "homepageHeroBanner" 
 });
 
-const data = response.items[0]?.fields as any;
- const url = data?.clutchUrl;
-const imageUrl = data?.clutchImage?.fields?.file?.url;
-// console.log(data);
+const data = response?.items[0]?.fields as any;
+ const url = data?.footerClutchUrl;
+const imageUrl = data?.footerClutchImage?.fields?.file?.url;
+//  console.log(data);
 ---
- <div class="fixed-clutch" >
+        {imageUrl &&
+        <div class="fixed-clutch" >
           <a href={url}
             target="_blank"
             rel="noopener noreferrer"
@@ -21,6 +22,7 @@ const imageUrl = data?.clutchImage?.fields?.file?.url;
 
           </a>
         </div>
+        }
 <style>
 .fixed-clutch { 
   position: fixed;
