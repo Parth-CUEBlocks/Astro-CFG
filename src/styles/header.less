@@ -114,7 +114,7 @@
     gap: 2rem;
 
     a {
-      font-family: 'Lato', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       color: #e0e5ec;
       text-decoration: none;
       font-size: 16px;
@@ -259,6 +259,31 @@
       color: #11141a;
     }
   }
+}
+.site-header .nav-menu > a,
+.site-header .nav-menu .menu-item.has-mega-menu a{
+  position: relative;
+  &:hover:after {
+    width: calc(100% - 20px);
+  }
+  &:after {
+    background-color: #e0e5ec;
+    bottom: -1px;
+    content: "";
+    height: 1px;
+    left: 10px;
+    position: absolute;
+    transition: all .5s ease;
+    width: 0;
+  }
+}
+.site-header .nav-menu > a.active,
+.site-header .nav-menu .menu-item.has-mega-menu a.active{
+
+  &:after {
+    width: calc(100% - 20px);
+  }
+
 }
 
 /* Media Query: Hide Desktop Layout Below Desktop Breakpoint */

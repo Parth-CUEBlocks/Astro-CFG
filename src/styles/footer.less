@@ -186,7 +186,24 @@
 }
 
 .site-footer .footer-partners-section .partners-swiper .partner-logo.swiper-slide img{
-  width: 100%;
-  // margin: 0 15px;
   max-height: 95px;
+}
+.site-footer .footer-navigation-band .footer-nav a{
+
+  position: relative;
+
+  &:after {
+    background: #e0e5ecfc;
+    bottom: -1px;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: relative;
+    position: absolute;
+    transition: all .5s ease;
+    width: 0;
+  }
+  &:hover:after {
+    width: 100%;
+  }
 }
