@@ -1,40 +1,18 @@
-html, body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  font-family: 'Lato', sans-serif;
-}
-
-h1 {
-  font-family: 'Montserrat', sans-serif;
-}
-
 .cfg-coming-soon {
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #171c28;
   color: #aab3c0;
-  padding: 40px 20px;
+  padding: 140px 20px 100px;
   box-sizing: border-box;
-}
-
-.cfg-coming-soon:focus {
-  outline: none;
 }
 
 .cfg-coming-soon-inner {
   max-width: 640px;
   text-align: center;
-}
-
-.cfg-coming-soon-logo {
-  display: inline-block;
-  margin-bottom: 30px;
+  margin: 0 auto;
 }
 
 .cfg-coming-soon-eyebrow {
@@ -101,6 +79,10 @@ h1 {
 }
 
 @media (max-width: 576px) {
+  .cfg-coming-soon {
+    padding: 100px 20px 60px;
+  }
+
   .cfg-coming-soon-heading {
     font-size: 28px;
   }

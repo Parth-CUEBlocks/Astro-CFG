@@ -23,6 +23,7 @@ const posts = (data as any[]) || [];
           // Extract data from individual reference items
           const description = item.fields?.description ;
           const postTitle = item.fields?.postTitle;
+          const postUrl = item.fields?.postUrl;
           const postImage = item.fields?.postImage?.fields?.file?.url;
           const postImageAlt = item.fields?.postImage?.fields?.title;
 
@@ -33,7 +34,7 @@ const posts = (data as any[]) || [];
                 </div>
                 <h3 class="cfg-blog-title">{postTitle}</h3>
                 <p class="cfg-blog-excerpt">{description}</p>
-                <a href="/coming-soon" class="cfg-blog-btn">Read Full Post</a>
+                <a href={postUrl} target="_blank" rel="noopener noreferrer" class="cfg-blog-btn">Read Full Post</a>
               </article>
           );
         })}
