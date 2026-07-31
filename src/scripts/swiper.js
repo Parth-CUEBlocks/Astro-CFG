@@ -83,7 +83,7 @@ function initSliders() {
 
     if (document.querySelector('.partners-swiper')) {
     new Swiper('.partners-swiper', {
-      modules: [Autoplay, A11y],
+      modules: [Pagination, Autoplay, A11y],
       loop: true,
       slidesPerView: 2,
       slidesPerGroup: 1,
@@ -91,6 +91,10 @@ function initSliders() {
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
       },
       breakpoints: {
         640: {
