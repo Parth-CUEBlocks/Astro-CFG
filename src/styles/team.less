@@ -60,18 +60,20 @@ section.team-banner img.mob {
     margin: 0 auto;
 
     .team-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      column-gap: 2rem;
-      row-gap: 4.5rem;
+      text-align: center;
       width: 100%;
+      font-size: 0; /* collapse inline-level whitespace gaps between cards */
 
       .team-card-wrapper {
-        background: transparent;
-        text-align: center;
-        display: flex;
+        display: inline-flex;
         flex-direction: column;
         align-items: center;
+        vertical-align: top;
+        width: calc(25% - 32px);
+        margin: 0 16px 4.5rem;
+        background: transparent;
+        text-align: center;
+        font-size: 1rem;
 
         .avatar-container {
           width: 242px; 
@@ -196,6 +198,12 @@ section.team-banner.team-banner-bottom {
 }
 
 /* Fluid Viewport Balancing Engine */
+@media (max-width: 992px) {
+  .team-page-container .team-grid-section .team-cards-grid .team-card-wrapper {
+    width: calc(33.333% - 32px);
+  }
+}
+
 @media (max-width: 768px) {
   .team-page-container {
     padding: 55px 0 0;
@@ -212,9 +220,9 @@ section.team-banner.team-banner-bottom {
       }
     }
 
-    .team-grid-section .team-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 30px;
+    .team-grid-section .team-cards-grid .team-card-wrapper {
+        width: calc(50% - 16px);
+        margin: 0 8px 30px;
     }
 
     .join-team-banner {
