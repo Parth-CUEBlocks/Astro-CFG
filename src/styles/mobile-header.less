@@ -81,7 +81,7 @@ body.no-scroll {
   left: 0;
   width: 100%;
   background-color: #171c28;
-  padding: 8px 24px 40px 24px;
+  padding: 8px 24px 90px;
   height: calc(100vh - 70px);
   overflow-y: auto;
   z-index: 1000;
@@ -117,6 +117,11 @@ body.no-scroll {
   margin-bottom: 14px;
 }
 
+.nav-link.active,
+.nav-header-item.active {
+  font-weight: 700;
+}
+
 /* Services Sub-links */
 .sub-services-list {
   display: flex;
@@ -138,6 +143,11 @@ body.no-scroll {
 .sub-nav-link .arrow {
   color: #8e95a5;
   font-size: 14px;
+}
+
+.sub-nav-link.active {
+  color: #00e396;
+  font-weight: 600;
 }
 
 /* Consultation Button */
@@ -180,6 +190,19 @@ body.no-scroll {
 
 .mobile-social-links a:hover {
   opacity: 1;
+}
+.mobile-nav-drawer {
+    height: calc(100vh - 100px);
+    padding: 25px 24px 100px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    overflow-y: auto;
+    box-shadow: 0 10px 25px #0006;
+}
+header.site-header.scrolled .mobile-nav-drawer{
+  height:calc(100vh - 70px);
 }
 
 /* Screen size adjustments */

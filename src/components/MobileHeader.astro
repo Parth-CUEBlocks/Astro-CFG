@@ -1,5 +1,7 @@
 ---
+import { isNavActive } from '../utils/nav.js';
 
+const currentPath = Astro.url.pathname;
 ---
 
 <div class="mobile-header-container">
@@ -45,9 +47,9 @@
   <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
     <div class="drawer-content">
       <div class="mobile-nav-menu">
-        <a href="/" class="nav-link">Cue for Good</a>
-        <a href="/team" class="nav-link">Team</a>
-        <div class="nav-link nav-header-item">Services</div>
+        <a href="/" class={`nav-link ${isNavActive(currentPath, '/cue-for-good') ? 'active' : ''}`} aria-current={isNavActive(currentPath, '/cue-for-good') ? 'page' : undefined}>Cue for Good</a>
+        <a href="/team" class={`nav-link ${isNavActive(currentPath, '/team') ? 'active' : ''}`} aria-current={isNavActive(currentPath, '/team') ? 'page' : undefined}>Team</a>
+        <div class={`nav-link nav-header-item ${isNavActive(currentPath, '/services') ? 'active' : ''}`}>Services</div>
 
         <!-- Services Sub-navigation Links -->
         <div class="sub-services-list">
@@ -63,29 +65,29 @@
           <a href="/wordpress" class="sub-nav-link">
             <span class="arrow">&rarr;</span> Wordpress
           </a>
-          <a href="/paid-ads" class="sub-nav-link">
+          <a href="/" class="sub-nav-link">
             <span class="arrow">&rarr;</span> Paid Digital Advertising
           </a>
-          <a href="/seo" class="sub-nav-link">
+          <a href="/" class="sub-nav-link">
             <span class="arrow">&rarr;</span> Organic Search
           </a>
-          <a href="/geo" class="sub-nav-link">
+          <a href="/" class="sub-nav-link">
             <span class="arrow">&rarr;</span> Generative Engine Optimization
           </a>
-          <a href="/accessibility" class="sub-nav-link">
+          <a href="/" class="sub-nav-link">
             <span class="arrow">&rarr;</span> Web Accessibility
           </a>
-          <a href="/email-marketing" class="sub-nav-link">
+          <a href="/" class="sub-nav-link">
             <span class="arrow">&rarr;</span> Email marketing
           </a>
 
-          <a href="/consultation" class="cta-button">Book a Free Consultation</a>
+          <a href="/contact" class="cta-button">Book a Free Consultation</a>
         </div>
 
-        <a href="/work" class="nav-link nav-link-bold">Our Work</a>
-        <a href="/career" class="nav-link">Join CFG</a>
-        <a href="/blog" class="nav-link">Blog</a>
-        <a href="/contact" class="nav-link">Contact Us</a>
+        <a href="/work" class={`nav-link ${isNavActive(currentPath, '/work') ? 'active' : ''}`} aria-current={isNavActive(currentPath, '/work') ? 'page' : undefined}>Our Work</a>
+        <a href="/career" class={`nav-link ${isNavActive(currentPath, '/career') ? 'active' : ''}`} aria-current={isNavActive(currentPath, '/career') ? 'page' : undefined}>Join CFG</a>
+        <a href="/" class={`nav-link ${isNavActive(currentPath, '/blog') ? 'active' : ''}`} aria-current={isNavActive(currentPath, '/blog') ? 'page' : undefined}>Blog</a>
+        <a href="/contact" class={`nav-link ${isNavActive(currentPath, '/contact') ? 'active' : ''}`} aria-current={isNavActive(currentPath, '/contact') ? 'page' : undefined}>Contact Us</a>
       </div>
 
       <!-- Social Links Footnote -->

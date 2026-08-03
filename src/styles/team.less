@@ -5,11 +5,14 @@
 .team-page-container * {
   box-sizing: border-box;
 }
+section.team-banner img.mob {
+    display: none;
+}
 
 .team-page-container {
   background-color: #171c28; 
   color: #e0e5ec;
-  padding: 86px 0 0;
+  padding: 90px 0 0;
   font-family: 'Lato', sans-serif;
   min-height: 100vh;
   width: 100%;
@@ -45,6 +48,7 @@
       line-height: 1.3;
       margin: 0 auto;
       max-width: 510px;
+      font-family: 'Montserrat', sans-serif;
     }
   }
 
@@ -56,18 +60,20 @@
     margin: 0 auto;
 
     .team-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      column-gap: 2rem;
-      row-gap: 4.5rem;
+      text-align: center;
       width: 100%;
+      font-size: 0; /* collapse inline-level whitespace gaps between cards */
 
       .team-card-wrapper {
-        background: transparent;
-        text-align: center;
-        display: flex;
+        display: inline-flex;
         flex-direction: column;
         align-items: center;
+        vertical-align: top;
+        width: calc(25% - 32px);
+        margin: 0 16px 4.5rem;
+        background: transparent;
+        text-align: center;
+        font-size: 1rem;
 
         .avatar-container {
           width: 242px; 
@@ -114,6 +120,7 @@
             margin: 0;
             font-weight: 400;
             letter-spacing: 0;
+            font-family: 'Montserrat';
           }
         }
       }
@@ -191,6 +198,12 @@ section.team-banner.team-banner-bottom {
 }
 
 /* Fluid Viewport Balancing Engine */
+@media (max-width: 992px) {
+  .team-page-container .team-grid-section .team-cards-grid .team-card-wrapper {
+    width: calc(33.333% - 32px);
+  }
+}
+
 @media (max-width: 768px) {
   .team-page-container {
     padding: 55px 0 0;
@@ -207,14 +220,14 @@ section.team-banner.team-banner-bottom {
       }
     }
 
-    .team-grid-section .team-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 30px;
+    .team-grid-section .team-cards-grid .team-card-wrapper {
+        width: calc(50% - 16px);
+        margin: 0 8px 30px;
     }
 
     .join-team-banner {
-      margin-top: 6rem;
-      padding-top: 4rem;
+      margin-top: 0;
+      padding: 70px 15px;
       h2 { font-size: 1.8rem; }
     }
   }
@@ -227,5 +240,9 @@ section.team-banner.team-banner-bottom {
   }
   .team-page-container .team-grid-section .team-cards-grid .team-card-wrapper .card-meta .role-text {
     font-size: 12px;
+  }
+  section.team-banner img.mob{
+    display: block;
+    padding-top: 30px;
   }
 }

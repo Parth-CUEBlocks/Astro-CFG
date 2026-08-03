@@ -13,6 +13,7 @@ body {
   font-family: lato, system-ui, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  background-color: #171c28;
 }
 
 
@@ -146,6 +147,7 @@ body {
 
       @media (min-width: 768px) {
         font-size: 1.35rem;
+        width: 70%;
       }
     }
 
@@ -377,4 +379,15 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
       }
     }
   }
+}
+
+
+@media(max-width:767px){
+  .cfg-testimonial-text{
+    width: 70%;
+  }
+}
+
+.cfg-testimonial-container .swiper-slide img{
+    width: auto;
 }

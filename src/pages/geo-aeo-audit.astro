@@ -1,0 +1,365 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/geo-audit.less';
+---
+
+<Layout title="Shopify Agency for B Corps & Purpose-Driven Brands | CueForGood">
+  <div class="geo-audit-page geo-aeo-audit">
+    <section class="hero">
+      <div class="hero-orb-r"></div>
+      <div class="hero-orb-l"></div>
+      <div class="hero-inner">
+        <div class="eyebrow">Free GEO / AEO Visibility Audit</div>
+        <h1>
+          Is your B Corp being<br />
+          <em>cited by AI</em> - or<br />
+          <span class="accent">invisible to it?</span>
+        </h1>
+        <p class="hero-sub">
+          We'll run your brand across ChatGPT, Gemini, Claude, Perplexity, and Google AI Overview and send you a full visibility report within 48 hours. Real data, derived directly from the top AI platforms.
+        </p>
+        <div class="engine-row">
+          <span class="pill">ChatGPT</span><span class="dot-sep"></span>
+          <span class="pill">Gemini</span><span class="dot-sep"></span>
+          <span class="pill">Claude</span><span class="dot-sep"></span>
+          <span class="pill">Perplexity</span><span class="dot-sep"></span>
+          <span class="pill">Google AI Overview</span>
+        </div>
+        <a href="#audit-form" class="hero-cta">
+          Request Your Free Audit
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8l5 5 5-5" /></svg>
+        </a>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="stat"><div class="stat-n">5</div><div class="stat-l">AI Engines Audited</div></div>
+      <div class="stat"><div class="stat-n">48h</div><div class="stat-l">Report Turnaround</div></div>
+      <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Free, No Strings</div></div>
+      <div class="stat"><div class="stat-n">B2B</div><div class="stat-l">Business Emails Only</div></div>
+    </div>
+
+    <section class="how-bg">
+      <div class="inner">
+        <span class="sec-label">The Process</span>
+        <h2 class="sec-h2">Three steps to knowing<br />exactly where you stand</h2>
+        <p class="sec-sub">No tools to install, no accounts to create. Share your details and we handle everything.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-ico">📋</div>
+            <h3>You fill the form</h3>
+            <p>Share your B Corp website URL, brand name, and 5–7 queries you'd like to be visible for in AI-generated answers. Takes about three minutes.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-ico">🤖</div>
+            <h3>We run the audit</h3>
+            <p>Our tool queries all five AI engines with your prompts and records every mention, citation, and competitor that appears in the responses.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-ico">📬</div>
+            <h3>Report lands in your inbox</h3>
+            <p>Within 48 hours you receive a detailed report showing your visibility score, per-engine breakdown, competitor leaderboard, and recommendations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="inner">
+        <span class="sec-label">What's Included</span>
+        <h2 class="sec-h2">Everything you need<br />to understand and act</h2>
+        <div class="deliv-grid">
+          <div class="deliv"><div class="deliv-ico">📊</div><div><h4>Overall Visibility Score</h4><p>A 0–100 score across all five engines with a Low / Moderate / Strong tier.</p></div></div>
+          <div class="deliv"><div class="deliv-ico">⚙️</div><div><h4>Per-Engine Breakdown</h4><p>Mention and citation rates per platform - know where you're strong and where you're missing.</p></div></div>
+          <div class="deliv"><div class="deliv-ico">🔍</div><div><h4>Query-by-Query Detail</h4><p>For every query you submitted, we show which engines mentioned you and which competitors appeared.</p></div></div>
+          <div class="deliv"><div class="deliv-ico">🏆</div><div><h4>Competitor Leaderboard</h4><p>See which brands AI engines are recommending instead of yours, ranked by total appearances.</p></div></div>
+          <div class="deliv"><div class="deliv-ico">💡</div><div><h4>Prioritised Recommendations</h4><p>Four concrete action areas: content, citations, competitor gaps, and ongoing tracking strategy.</p></div></div>
+          <div class="deliv"><div class="deliv-ico">📄</div><div><h4>Shareable HTML Report</h4><p>A clean, self-contained file you can share with your team or present to stakeholders as-is.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-sec" id="audit-form">
+      <div class="inner">
+        <div class="form-layout">
+
+          <!-- LEFT -->
+          <div class="form-left">
+            <span class="sec-label">Request Your Audit</span>
+            <h2 class="sec-h2">
+              Find out if AI is working<br />
+              <em>for you or against you</em>
+            </h2>
+            <p class="sec-sub">
+              We work with B Corps, sustainable, and purpose-driven brands.
+            </p>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="form-card">
+
+            <!-- FORM -->
+            <div id="fc">
+              <div class="card-title">Tell us about your B Corp brand</div>
+
+              <form id="geo-form" novalidate>
+
+                <div class="f-row">
+                  <div class="field">
+                    <label for="name">Full Name *</label>
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      placeholder="Jane Smith"
+                      required
+                    />
+                    <div class="field-error" id="err-name"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="email">Work Email *</label>
+                    <input
+                      id="email"
+                      type="email"
+                      name="email"
+                      placeholder="jane@bcorpname.com"
+                      required
+                    />
+                    <div class="field-error" id="err-email"></div>
+                  </div>
+                </div>
+
+                <div class="f-row">
+                  <div class="field">
+                    <label for="website">Website URL *</label>
+                    <input
+                      id="website"
+                      type="url"
+                      name="website"
+                      placeholder="https://www.bcorpname.com"
+                      required
+                    />
+                    <div class="field-error" id="err-website"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="brand_name">Brand Name *</label>
+                    <input
+                      id="brand_name"
+                      type="text"
+                      name="brand_name"
+                      placeholder="Your B Corp brand name"
+                      required
+                    />
+                    <div class="field-error" id="err-brand_name"></div>
+                  </div>
+                </div>
+
+                <div class="field margin-bottom">
+                  <label for="queries">Your GEO Queries <span class="req">*</span></label>
+                  <div class="q-note">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="6" /><path d="M7 6.5v4M7 4.5h.01" /></svg>
+                    Enter 5-10 questions someone might ask an AI that you want your brand to appear in. One per line (10 questions max).
+                  </div>
+                  <textarea
+                    id="queries"
+                    name="queries"
+                    placeholder="e.g. Which Shopify agencies work with sustainable brands?&#10;What are some reputable wordpress agencies that work with B Corps?&#10;Which brands make vegan tubing mascara suitable for sensitive eyes?"
+                    required
+                  ></textarea>
+                  <div class="field-error" id="err-queries"></div>
+                </div>
+
+                <!-- Honeypot -->
+                <input type="hidden" name="_gotcha" />
+                <p class="legal left">This is a complimentary audit offered in good faith and available to B Corps only. Please submit one request per organisation - each audit is individually produced and duplicate submissions will not be processed</p>
+
+                <!-- BUTTON -->
+                <button
+                  type="submit"
+                  class="submit-btn"
+                  id="submit-btn"
+                >
+                  Request My Free Audit →
+                </button>
+                <p class="legal">
+                  By submitting you agree to receive your audit report by email. We won't add you to any list without consent. <a href="https://cueforgood.com/privacy-policy/" target="_blank">Privacy policy</a>.
+                </p>
+
+                <!-- ERROR MESSAGE -->
+                <div class="form-error" id="form-error-msg" style="display: none;"></div>
+
+              </form>
+            </div>
+
+            <!-- SUCCESS -->
+            <div class="success" id="fok" style="display: none;">
+              <div class="suc-ico">🌿</div>
+              <div class="suc-title">You're in the queue!</div>
+              <p class="suc-text">
+                We've received your request. Your GEO/AEO audit will land in your inbox within 48 hours.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  const form = document.getElementById("geo-form") as HTMLFormElement | null;
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement | null;
+  const formContainer = document.getElementById("fc");
+  const successContainer = document.getElementById("fok");
+  const globalErrorMsg = document.getElementById("form-error-msg");
+
+  const freeDomains = [
+    "gmail.com", "yahoo.com", "hotmail.com", "outlook.com",
+    "icloud.com", "aol.com", "live.com", "protonmail.com",
+    "me.com", "mail.com", "yahoo.co.uk", "yahoo.co.in",
+    "ymail.com", "gmx.com"
+  ];
+
+  const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+
+  const isBusinessEmail = (email: string) => {
+    const domain = email.trim().toLowerCase().split("@").pop() || "";
+    return !freeDomains.includes(domain);
+  };
+
+  const validateUrl = (value: string) => {
+    try {
+      const url = new URL(value.trim());
+      return url.protocol === "http:" || url.protocol === "https:";
+    } catch {
+      return false;
+    }
+  };
+
+  const getWeb3FormsKey = () => {
+    const host = window.location.hostname;
+    if (host === "localhost" || host === "127.0.0.1") return "046dad32-63ae-4f43-8f9c-8cc68fecc772";
+    if (host === "astro-cfg.netlify.app") return "4a150225-84ba-4d0b-b613-2f25db55b690";
+    if (host === "cueforgood.com" || host === "www.cueforgood.com") return "3cb47b46-48c4-425a-9e3d-1854f722ec54";
+    return "046dad32-63ae-4f43-8f9c-8cc68fecc772";
+  };
+
+  const clearErrors = () => {
+    ["name", "email", "website", "brand_name", "queries"].forEach((id) => {
+      const el = document.getElementById(`err-${id}`);
+      if (el) el.textContent = "";
+    });
+    if (globalErrorMsg) {
+      globalErrorMsg.textContent = "";
+      globalErrorMsg.style.display = "none";
+    }
+  };
+
+  const setError = (id: string, msg: string) => {
+    const el = document.getElementById(`err-${id}`);
+    if (el) el.textContent = msg;
+  };
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      clearErrors();
+
+      const nameVal = (form.querySelector('[name="name"]') as HTMLInputElement)?.value.trim() || "";
+      const emailVal = (form.querySelector('[name="email"]') as HTMLInputElement)?.value.trim() || "";
+      const websiteVal = (form.querySelector('[name="website"]') as HTMLInputElement)?.value.trim() || "";
+      const brandVal = (form.querySelector('[name="brand_name"]') as HTMLInputElement)?.value.trim() || "";
+      const queriesVal = (form.querySelector('[name="queries"]') as HTMLTextAreaElement)?.value.trim() || "";
+
+      const queryCount = queriesVal
+        .split(/\r?\n/)
+        .map((line) => line.trim())
+        .filter(Boolean).length;
+
+      let hasError = false;
+
+      if (!nameVal) { setError("name", "Please enter your full name."); hasError = true; }
+
+      if (!emailVal) {
+        setError("email", "Please enter your work email address.");
+        hasError = true;
+      } else if (!validateEmail(emailVal)) {
+        setError("email", "Please enter a valid email address.");
+        hasError = true;
+      } else if (!isBusinessEmail(emailVal)) {
+        setError("email", "Please use your business email address, not a free provider.");
+        hasError = true;
+      }
+
+      if (!websiteVal) {
+        setError("website", "Please enter your website URL.");
+        hasError = true;
+      } else if (!validateUrl(websiteVal)) {
+        setError("website", "Enter a valid website URL starting with http:// or https://.");
+        hasError = true;
+      }
+
+      if (!brandVal) { setError("brand_name", "Please enter your brand name."); hasError = true; }
+
+      if (!queriesVal) {
+        setError("queries", "Please enter 5-10 GEO queries.");
+        hasError = true;
+      } else if (queryCount < 5) {
+        setError("queries", "Please enter at least 5 questions.");
+        hasError = true;
+      } else if (queryCount > 10) {
+        setError("queries", "Please enter no more than 10 questions.");
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Submitting...";
+      }
+
+      try {
+        const formData = new FormData(form);
+        formData.append("access_key", getWeb3FormsKey());
+        formData.append("meta[environment]", window.location.href);
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          if (formContainer) formContainer.style.display = "none";
+          if (successContainer) successContainer.style.display = "block";
+          form.reset();
+        } else {
+          if (globalErrorMsg) {
+            globalErrorMsg.textContent = data.message || "Unable to submit your request. Please try again later.";
+            globalErrorMsg.style.display = "block";
+          }
+        }
+      } catch (error) {
+        console.error(error);
+        if (globalErrorMsg) {
+          globalErrorMsg.textContent = "Submission failed. Please check your connection and try again.";
+          globalErrorMsg.style.display = "block";
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Request My Free Audit →";
+        }
+      }
+    });
+  }
+</script>

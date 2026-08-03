@@ -114,7 +114,7 @@
     gap: 2rem;
 
     a {
-      font-family: 'Lato', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       color: #e0e5ec;
       text-decoration: none;
       font-size: 16px;
@@ -124,11 +124,16 @@
       &:hover {
         color: @header-text;
       }
+
+      &.active {
+        color: @header-text;
+        font-weight: 700;
+      }
     }
 
     /* Nested Mega Menu Triggers */
     .has-mega-menu {
-      position: static; 
+      position: static;
 
       &:hover {
         .mega-menu {
@@ -187,7 +192,7 @@
     align-items: flex-start;
     gap: 30px;
     width: 100%;
-    max-width: 1440px; 
+    max-width: 1053px; 
     margin: 0 auto;
   }
 
@@ -201,37 +206,84 @@
   .mega-menu-column {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
+    min-width: 230px;
 
     a {
       color: @header-muted;
-      font-family: 'Lato', sans-serif;
       text-decoration: none;
-      font-size: 1.1rem;
-      transition: color 0.2s ease;
+      font-size: 16px;
+      transition: all .5s ease;
+      padding: 4px 10px;
+      position: relative;
+      font-weight: 400;
+      font-family: Montserrat, sans-serif;
+      color:#e0e5ec;
 
       &:hover {
-        color: @header-text;
+        color: #171c28;
+      }
+      &::after {
+        bottom: -1px;
+        content: "";
+        height: 1px;
+        left: 22px;
+        position: absolute;
+        transition: all .5s ease;
+        width: 0;
+        height: 100%;
+        left: 0;
+        z-index: -1;
+      }
+      &:hover:after{
+        width: 100%;
+        background-color: #e0e5ec;
       }
     }
   }
 
   /* Consultation Button Outline Variant */
-  .btn-consultation {
+  a.btn-consultation {
     display: inline-block;
     padding: 12px 24px;
-    border: 1px solid @header-text;
+    border: 2px solid @header-text;
     color: @header-text;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     font-weight: 500;
     transition: background 0.2s ease, color 0.2s ease;
+    margin-top: 68px;
 
     &:hover {
       background-color: @header-text;
       color: #11141a;
     }
   }
+}
+.site-header .nav-menu > a,
+.site-header .nav-menu > .menu-item.has-mega-menu > a{
+  position: relative;
+  &:hover:after {
+    width: calc(100% - 20px);
+  }
+  &:after {
+    background-color: #e0e5ec;
+    bottom: -1px;
+    content: "";
+    height: 1px;
+    left: 10px;
+    position: absolute;
+    transition: all .5s ease;
+    width: 0;
+  }
+}
+.site-header .nav-menu > a.active,
+.site-header .nav-menu > .menu-item.has-mega-menu > a.active{
+
+  &:after {
+    width: calc(100% - 20px);
+  }
+
 }
 
 /* Media Query: Hide Desktop Layout Below Desktop Breakpoint */

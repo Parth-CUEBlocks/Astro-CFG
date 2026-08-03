@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, A11y } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -9,7 +9,7 @@ function initSliders() {
   // --- 1. Existing Generic/Top Slider ---
   if (document.querySelector('.swiper')) {
     new Swiper('.swiper', {
-      modules: [Navigation, Pagination, Autoplay],
+      modules: [Navigation, Pagination, Autoplay, A11y],
       loop: true,
       autoplay: {
         delay: 3000,
@@ -29,7 +29,7 @@ function initSliders() {
   // --- 2. New Testimonial Slider (Completely Separate) ---
   if (document.querySelector('.testimonial-swiper')) {
     new Swiper('.testimonial-swiper', {
-      modules: [Navigation, Pagination, Autoplay],
+      modules: [Navigation, Pagination, Autoplay, A11y],
       loop: true,
       slidesPerView: 1, 
       spaceBetween: 30, 
@@ -57,7 +57,7 @@ function initSliders() {
   // --- 3. New Partners Logo Ticker Slider ---
   // if (document.querySelector('.partners-swiper')) {
   //   new Swiper('.partners-swiper', {
-  //     modules: [Autoplay],
+  //     modules: [Autoplay, A11y],
   //     loop: true,
   //     // spaceBetween: 30,
   //     slidesPerView: 2,
@@ -83,7 +83,7 @@ function initSliders() {
 
     if (document.querySelector('.partners-swiper')) {
     new Swiper('.partners-swiper', {
-      modules: [Autoplay],
+      modules: [Pagination, Autoplay, A11y],
       loop: true,
       slidesPerView: 2,
       slidesPerGroup: 1,
@@ -91,6 +91,10 @@ function initSliders() {
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
       },
       breakpoints: {
         640: {
