@@ -22,9 +22,10 @@ const casestudy = (data as any[]) || [];
         const websiteName = item.fields?.caseStudyWebsiteName;
         const description = item.fields?.description;
         const buttonlabel = item.fields?.buttonLabel;
+        const buttonurl = item.fields?.buttonUrl;
         const tags = item.fields?.tags as any[] || [];
         return(
-          <a href="/coming-soon" class="cfg-case-card cfg-card-lavender" style={`background-color: ${item.fields?.backgroundColor}`}>
+          <a href={buttonurl} class="cfg-case-card cfg-card-lavender" style={`background-color: ${item.fields?.backgroundColor}`}>
             <div class="cfg-card-content">
               <span class="cfg-case-eyebrow">{title}</span>
               <h2 class="cfg-case-client">{websiteName}</h2>
