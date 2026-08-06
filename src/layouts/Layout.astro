@@ -41,6 +41,18 @@ import favicon from '../assets/favicon.ico';
 		</main>
 
 		<Footer />
+		<script> 
+			function handleResponsiveElements() {
+			if (window.innerWidth > 768) {
+				document.querySelectorAll('.div-mobile').forEach(element => element.remove());
+			} else {
+				document.querySelectorAll('.div-desktop').forEach(element => element.remove());
+			}
+			}
+
+			document.addEventListener('DOMContentLoaded', handleResponsiveElements);
+			window.addEventListener('resize', handleResponsiveElements);
+		</script>
 	</body>
 </html>
 
