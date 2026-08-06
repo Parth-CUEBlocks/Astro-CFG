@@ -1,0 +1,300 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyCta from '../../components/CaseStudyCta.astro';
+import '../../styles/case-study.less';
+import '../../styles/case-studies/allthatgrows.less';
+
+import atgHero from '../../assets/case-study/allthatgrows/atg_hero_b.png';
+import quoteIcon from '../../assets/case-study/allthatgrows/quote_icon.png';
+import quotesImg from '../../assets/case-study/allthatgrows/quotes_b_atg.png';
+import storyImg from '../../assets/case-study/allthatgrows/The_story_b.png';
+import iconWebsite from '../../assets/case-study/allthatgrows/complete_website_design_b.png';
+import iconResponsive from '../../assets/case-study/allthatgrows/responsive_theme_development_b.png';
+import iconMarketing from '../../assets/case-study/allthatgrows/comprehensive_marketing_campaign_b.png';
+import iconPackaging from '../../assets/case-study/allthatgrows/different_categories_packaging_b.png';
+import websiteImg from '../../assets/case-study/allthatgrows/atg-website-img.png';
+import appLeftImg from '../../assets/case-study/allthatgrows/atg-app-left-img.png';
+import appRightImg from '../../assets/case-study/allthatgrows/atg-app-right-img.png';
+import appImage1 from '../../assets/case-study/allthatgrows/atg-app-image.png';
+import appImage2 from '../../assets/case-study/allthatgrows/atg-app-image-2.png';
+import appImage3 from '../../assets/case-study/allthatgrows/atg-app-image-3.png';
+import packagingImg from '../../assets/case-study/allthatgrows/packaging.png';
+import growKitImg from '../../assets/case-study/allthatgrows/grow-kit.png';
+import seedKitImg from '../../assets/case-study/allthatgrows/seed-kit.png';
+import starsImg from '../../assets/case-study/allthatgrows/stars_b.gif';
+
+const title = "Marketing, Design & Branding Case - All That Grows | CueForGood";
+const description = "AllThatGrows is a leading ecommerce store centered around the cause #GrowYourOwnFood. Read the Case Study on how CueForGood helped incorporate the brand's vision in its site design and marketing.";
+---
+
+<Layout title={title} description={description}>
+  <div class="case-study-page atg-page">
+
+    <section class="cs-hero">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1>ALLTHATGROWS</h1>
+        <img src={atgHero.src} alt="AllThatGrows" class="cs-hero-img" />
+        <p class="cs-hero-subheading">
+          Brand identity, packaging and marketing campaigns for AllThatGrows, a line of non-hybrid, non-GMO seed varieties
+        </p>
+      </div>
+    </section>
+
+    <section class="cs-stats">
+      <div class="container">
+        <div class="cs-stats-row">
+          <div class="cs-stat">
+            <h3>82.28%</h3>
+            <p>YEAR ON YEAR GROWTH IN REVENUE</p>
+          </div>
+          <div class="cs-stat">
+            <h3>32.50%</h3>
+            <p>INCREASE IN THE NUMBER OF ORDERS</p>
+          </div>
+        </div>
+        <p class="cs-stats-note">*Comparing Jan 19 - Nov 19 with the same period in 2018.</p>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="blue" />
+
+    <section class="cs-testimonial">
+      <div class="container">
+        <div class="cs-testimonial-row">
+          <div class="cs-testimonial-col">
+            <img src={quoteIcon.src} alt="" class="cs-testimonial-quote-icon" />
+            <p>
+              "The breadth of experienced teams pulled in by CueForGood to realize the AllThatGrows website and packaging was just simply amazing. They were very helpful, friendly and professional to work with. Clear and constant communication with very precise deliverables helped us plan the launch very efficiently.
+            </p>
+          </div>
+          <div class="cs-testimonial-col cs-testimonial-col-right">
+            <p>
+              The store set up is effortlessly easy for my team to understand and work on every day. The website and the packaging tell our ever-evolving story beautifully - exactly what we were looking for."
+            </p>
+            <p class="cs-testimonial-author">
+              <strong>Karan Mahajan,</strong> Co-Founder<br />
+              <em>AllThatGrows</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <div class="top-details">
+          <h2 class="heading_main">The story</h2>
+          <p>
+            AllThatGrows, the eCommerce store committed to the cause of #GrowYourOwnFood, made its debut in Jan 2017. From the outset, AllThatgrows was centred around creating sustainable and self-sufficient home gardens.
+          </p>
+        </div>
+
+        <div class="atg-story-row">
+          <div class="atg-story-text">
+            <p>
+              The idea of growing zucchini, tomatoes, beans, gourds etc is still foreign to most Indian households for lack of time in some cases and a dearth of awareness in others. There are very few products as overlooked as a packet of seeds.
+            </p>
+            <p>
+              With a passion for growing things, AllThatGrows team wanted to promote and preserve the agricultural and culinary heritage while parallelly introducing new gardening concepts in India.
+            </p>
+          </div>
+          <div class="atg-story-media">
+            <img src={storyImg.src} alt="AllThatGrows" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-process">
+      <div class="container">
+        <div class="cs-process-card">
+          <p class="cs-process-intro">
+            The <strong>CueForGood</strong> team closely worked with the co-founders of AllThatGrows to incorporate the vision of the brand into the website design and user experience. The brand identity for AllThatGrows was then conceptualized and implemented to convey the product as natural, pure and authentic.
+          </p>
+          <ul class="cs-process-grid">
+            <li>
+              <img src={iconWebsite.src} alt="" />
+              <p>complete website design and development and implementation.</p>
+            </li>
+            <li>
+              <img src={iconResponsive.src} alt="" />
+              <p>responsive theme development</p>
+            </li>
+            <li>
+              <img src={iconMarketing.src} alt="" />
+              <p>comprehensive marketing campaigns</p>
+            </li>
+            <li>
+              <img src={iconPackaging.src} alt="" />
+              <p>different categories of packaging</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <div class="top-details">
+          <h2 class="heading_main">Challenges</h2>
+          <p>
+            Since the brand was devout to educating the customer about the much-neglected significance of preserving local heirloom seed varieties and an earth-conscious lifestyle, the graphic/packaging identity of the brand and the marketing, both paid and organic, needed to emphasize the product as natural, pure and authentic.
+          </p>
+        </div>
+
+        <div class="cs-challenges-grid">
+          <div class="cs-challenge-block">
+            <span class="cs-challenge-num">01</span>
+            <p>Identifying and developing a uniquely specific palette of colours that represent the spirit of growing one's one food</p>
+          </div>
+          <div class="cs-challenge-block">
+            <span class="cs-challenge-num">03</span>
+            <p>Working with the marketing team to discern a very specific set of audience and customer persona that can become the potential customer base for the brand</p>
+          </div>
+          <div class="cs-challenge-block">
+            <span class="cs-challenge-num">02</span>
+            <p>Designing and building the brand's identity with regards to the website and the packaging centred around the soulful connection to nature</p>
+          </div>
+          <div class="cs-challenge-block">
+            <span class="cs-challenge-num">04</span>
+            <p>Creating highly usable, searchable and customizable pages that can result in clear conversions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-advantage">
+      <div class="container">
+        <div class="top-details">
+          <h3 class="heading_main">The CueForGood Advantage</h3>
+          <p class="sub-dec">
+            Our team worked closely with the brand on creating an identity that contributed to integrated marketing and communication strategy which positions the brand as a wholesome gardening brand.
+          </p>
+        </div>
+
+        <div class="cs-advantage-row">
+          <div class="cs-advantage-media">
+            <img src={websiteImg.src} alt="AllThatGrows" />
+          </div>
+          <div class="cs-advantage-text">
+            <h4>Website designing &amp; development:</h4>
+            <p>
+              The homepage of the website was designed to incorporate the 'seasonality' element which is a major factor in sales or this particular product. The look and feel of the website were designed for visual cohesion across different pages. USPs, call to actions, sign up boxes were implemented to stand out for increased user engagement.
+            </p>
+            <p>
+              Our inspiration during the design and development of the website was the user's journey, or in this case, the gardener's journey. Hence the navigation needed to appeal to the gardener's looking specific information about different categories of seeds.
+            </p>
+          </div>
+        </div>
+
+        <div class="cs-advantage-row reverse">
+          <div class="cs-advantage-media atg-app-row">
+            <img src={appLeftImg.src} alt="" class="atg-app-side-img" />
+            <div class="atg-phone-frame">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src={appImage1.src} alt="AllThatGrows app" /></div>
+                  <div class="swiper-slide"><img src={appImage2.src} alt="AllThatGrows app" /></div>
+                  <div class="swiper-slide"><img src={appImage3.src} alt="AllThatGrows app" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <img src={appRightImg.src} alt="" class="atg-app-side-img" />
+          </div>
+          <div class="cs-advantage-text">
+            <h4>The How to Grow App</h4>
+            <p>
+              To guide customers through the gardening process, we created a "How to grow" app - which provided easy access to all relevant information in one place.
+            </p>
+            <p>
+              We developed a user-centric experience that highlighted the brand's extensive gardening expertise and crafted a highly visual and easy to navigate and fully responsive website.
+            </p>
+          </div>
+        </div>
+
+        <div class="cs-advantage-row">
+          <div class="cs-advantage-media">
+            <div class="atg-packaging-images">
+              <img src={packagingImg.src} alt="Seed packet packaging" class="active" data-tab="seed-packet" />
+              <img src={growKitImg.src} alt="Grow kit packaging" data-tab="grow-kit" />
+              <img src={seedKitImg.src} alt="Seed kit packaging" data-tab="seed-kit" />
+            </div>
+          </div>
+          <div class="cs-advantage-text">
+            <h4>Packaging</h4>
+            <p>
+              To launch and start shipping, the brand needed versatile packaging solutions to serve the variety of product categories. Further, the seeds require cool and dry storage to stay usable. The earthy aesthetic and raw texture of kraft paper was used in packaging to embrace the au naturale look for the brand.
+            </p>
+            <ul class="atg-packaging-tabs" id="atg-packaging-tabs">
+              <li><button type="button" class="active" data-target="seed-packet">seed packet</button></li>
+              <li><button type="button" data-target="grow-kit">grow kit</button></li>
+              <li><button type="button" data-target="seed-kit">seed kit</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="atg-marketing-row">
+          <div class="atg-marketing-col">
+            <h4>Marketing Automation &amp; Email Marketing</h4>
+            <p>
+              A brand-specific messaging on MailChimp for subscribers was used to deliver the right communication at the right time. With marketing automation and a host of newsletters including behavioural, promotional, informative, we were able to build a strong audience base and keep them engaged.
+            </p>
+          </div>
+          <div class="atg-marketing-col">
+            <h4>Campaign Management</h4>
+            <p>
+              Targeted on capturing the new and old audience, we implemented a comprehensive ad campaign for the brand with Adwords, Digital Advertising, Blogging, Category Text, FB/Instagram Ads to spread the word. The digital communication for the different campaigns was centred around elementary copy highlighting the benefits of the product and authentic imagery to build credibility.
+            </p>
+          </div>
+        </div>
+
+        <div class="cs-result">
+          <div class="container">
+            <div class="top-details">
+              <h2><strong>Result:</strong> A Successful Digital Store Inspired by Nature</h2>
+              <p>The month on month growth, irrespective of the highly volatile nature of the seed industry</p>
+              <img src={starsImg.src} alt="" class="cs-result-icon" />
+            </div>
+            <div class="cs-result-grid">
+              <div>
+                <p>Post website development, customers could find the brand easily and as a result the offline orders increased by <strong>74%</strong>.</p>
+                <p>A <strong>32.50%</strong> increase in orders in 2019 (Jan-Nov), compared to the same period in 2018.</p>
+                <p>Email marketing has emerged as the <strong>3rd best</strong> revenue channel, after paid campaigns and organic searches.</p>
+              </div>
+              <div>
+                <p>A constant year on year growth in revenue with a <strong>82.28%</strong> increase in 2019 (Jan - Nov) when compared to the same period in 2018.</p>
+                <p>An increase of <strong>71.42%</strong> in new users through organic search, in 2019 (Jan-Nov), compared to the same period in 2018.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <CaseStudyCta variant="lavender" />
+
+  </div>
+</Layout>
+
+<script>
+  import '../../scripts/swiper.js';
+
+  const tabButtons = document.querySelectorAll('#atg-packaging-tabs button');
+  const tabImages = document.querySelectorAll('.atg-packaging-images img');
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-target');
+
+      tabButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      tabImages.forEach((img) => {
+        img.classList.toggle('active', img.getAttribute('data-tab') === target);
+      });
+    });
+  });
+</script>

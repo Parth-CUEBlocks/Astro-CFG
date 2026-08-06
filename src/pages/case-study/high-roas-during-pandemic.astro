@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyCta from '../../components/CaseStudyCta.astro';
+import '../../styles/case-study.less';
+
+import logo from '../../assets/case-study/high-roas-during-pandemic/logo.svg';
+import hero from '../../assets/case-study/high-roas-during-pandemic/hero.png';
+import ceo from '../../assets/case-study/high-roas-during-pandemic/ceo.jpg';
+import story from '../../assets/case-study/high-roas-during-pandemic/story.png';
+import services from '../../assets/case-study/high-roas-during-pandemic/services.png';
+import challenge from '../../assets/case-study/high-roas-during-pandemic/challenge.png';
+import footer from '../../assets/case-study/high-roas-during-pandemic/footer.png';
+
+const stats = [
+  { num: "3.27x", label: "Overall ROAS" },
+  { num: "60,012", label: "Average Clicks" },
+  { num: "39,94,569", label: "Average Impressions" },
+];
+
+const challenges = [
+  { title: "Zeroing in on the potential customer base", text: "Discerning a specific set of audience and customer persona was a challenge since we had absolutely no previous data at our disposal. The joyous challenge of working on a brand from the ground up!" },
+  { title: "Minimal brand awareness", text: "When we started out back in 2019, we realized that there were almost no searches with the brand name. And if the consumer isn't aware of the brand and what it offers, we can't expect them to make a purchase." },
+  { title: "Customer retention", text: "Being a new venture, we understood building customer loyalty would be a little hard at least in the initial phase." },
+  { title: "Competitive niche", text: "A highly competitive niche that it has been, kitchen gardening as an industry saw its peak during COVID-19. Catching the customers' eye, thus, became a challenge." },
+  { title: "IOS 14 Update", text: "After the June 2021 iOS 14 update, tracking users and how they interact with ads has become a struggle. As a result, marketers don't have the exact numbers regarding conversions, reach, impressions, and likewise. The update has made it difficult to target audiences, track conversions, and optimise ads." },
+];
+
+const whatWeDid = [
+  { title: "Established the goal hierarchy", text: "Setting a vision to have a million organic Facebook followers isn't wrong, expecting to get them in a year with a limited budget is. Because it's a goal that is unlikely to be achieved, setting realistic goals becomes essential. We, therefore, established SMART (Specific, Measurable, Attainable, Relevant, & Time-bound) short-term goals; keeping the bigger picture in mind." },
+  { title: "Gave brand awareness a boost", text: "Because AllThatGrows was a new brand in the market, we targeted the audience based on their interests which included vegetable farming, plant nursery, roof gardening, and more. We creamed off the interest to bring the audience from TOF (top of the funnel) to BOF (bottom of the funnel)." },
+  { title: "Pre-launched facebook ads", text: "To drive maximum relevant traffic, we ran post engagement campaigns with discounts and offers flashing on them. A strategy of pre-launching Facebook ads 4-5 days before the weekly sale was executed." },
+  { title: "Amplified post engagement", text: "Engagement campaigns were run so the prospects could land on our Facebook and Instagram pages, thereby engaging with our posts. The whole idea behind this was to use this audience for retargeting purposes." },
+  { title: "Maximised sales by spending less", text: "We worked on retargeting campaigns based on “cart abandoned” and were successful in bringing more sales by spending less. We also created lookalike audiences by decoding the interests of the brand's online visitors on the website, Facebook, & Instagram." },
+  { title: "Managed the budget to amplify sales", text: "Once the campaigns started giving the desired results, we increased the budget by 60% to reach new audiences and remarketed to the old. This was done after careful consideration and proper analysis." },
+];
+---
+
+<Layout
+  title="Case Study on Allthatgrows | High ROAS during Pandemic"
+  description="Read our case study on how AllThatGrows retained a ROAS of 3.27X on Paid campaigns throughout the pandemic with CueForGood."
+>
+  <div class="case-study-page">
+
+    <section class="cs-hero">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1 style="font-size: 32px;">ALL THAT GROWS</h1>
+        <p class="cs-hero-subheading">How CueForGood helped AllThatGrows maintain an average ROAS of <strong>3.27x</strong> through Facebook/ Instagram ads, over 3 years despite the pandemic and the iOS14 update.</p>
+        <img class="cs-hero-img" src={hero.src} alt="Seed Planet" style="max-width: 340px;" />
+      </div>
+    </section>
+
+    <section class="cs-stats-multi">
+      <div class="container">
+        <div class="cs-stats-multi-grid">
+          {stats.map((s) => (
+            <div class="cs-stats-multi-item text-center">
+              <div class="cs-stats-multi-num">{s.num}</div>
+              <p>{s.label}</p>
+            </div>
+          ))}
+        </div>
+        <p class="cs-note" style="text-align: center; color: #7c8494; margin-top: 30px;"><strong>Note:</strong> Results have been calculated using the data spanning 3 years, from April 2019 to August 2021.</p>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="blue" />
+
+    <section class="cs-advantage" style="padding-top: 90px;">
+      <div class="container">
+        <div class="cs-advantage-row">
+          <div class="cs-advantage-text">
+            <h2 class="heading_main">About the Client</h2>
+            <p>AllThatGrows is an e-commerce store that provides superior quality seeds of various vegetables, herbs, fruits, microgreens, and flowers. With the sole aim of creating sustainable and self-sufficient homegardens, this digital store inspired by nature has been supplying non-GMO, non-hybrid, open-pollinated, and heirloom seeds since 2017.</p>
+            <p>For more information, visit <a href="https://www.allthatgrows.in/" target="_blank" rel="noopener" style="color: #e0e5ec; text-decoration: underline;">www.AllThatGrows.in</a></p>
+          </div>
+          <div class="cs-advantage-media">
+            <img src={ceo.src} alt="ATG" />
+          </div>
+        </div>
+
+        <div class="cs-advantage-row reverse">
+          <div class="cs-advantage-media">
+            <img src={story.src} alt="ATG story" />
+          </div>
+          <div class="cs-advantage-text">
+            <h2 class="heading_main">Story</h2>
+            <p>The CueForGood team has been working with AllThatGrows right from when it made its debut in January 2017. From conceptualising product packaging, website designing, and email marketing to running paid campaigns, we have been offering integrated marketing and communication strategies to help the brand grow from scratch.</p>
+          </div>
+        </div>
+
+        <div class="cs-advantage-row">
+          <div class="cs-advantage-text">
+            <h2 class="heading_main">Services we've &amp; continue to offer</h2>
+            <ul style="padding-left: 20px; margin: 0;">
+              <li style="font-size: 16px; line-height: 1.8; color: #aab3c0;">Product Packaging</li>
+              <li style="font-size: 16px; line-height: 1.8; color: #aab3c0;">Website Design + Development (Shopify)</li>
+              <li style="font-size: 16px; line-height: 1.8; color: #aab3c0;">Marketing Automation &amp; Email Marketing</li>
+              <li style="font-size: 16px; line-height: 1.8; color: #aab3c0;">How To Grow App Development + Management</li>
+              <li style="font-size: 16px; line-height: 1.8; color: #aab3c0;">Marketplace Management (Amazon, Flipkart, &amp; Shopclues)</li>
+              <li style="font-size: 16px; line-height: 1.8; color: #aab3c0;">Campaign Management (Adwords, Organic Search, Blogging, FB/Instagram Ads)</li>
+            </ul>
+          </div>
+          <div class="cs-advantage-media">
+            <img src={services.src} alt="ATG Service" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 60px 0;">
+      <div class="container">
+        <div class="cs-dual-column">
+          <div class="cs-dual-col" style="gap: 0;">
+            <div>
+              <h2 class="heading_main">Goal</h2>
+              <p>Charging up online seed sales through Facebook and Instagram ad campaigns</p>
+            </div>
+          </div>
+          <div class="cs-dual-col" style="gap: 0;">
+            <div>
+              <h2 class="heading_main">Strategy</h2>
+              <p>See, Think, Do</p>
+              <p>This strategy involves creating ad campaigns with different targeting techniques for each stage of the marketing funnel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 40px 0 90px;">
+      <div class="container">
+        <h2 class="heading_main text-center">Challenges</h2>
+        <div class="cs-challenges-grid" style="margin-top: 40px;">
+          {challenges.map((c) => (
+            <div class="cs-challenge-item">
+              <h3>{c.title}</h3>
+              <p>{c.text}</p>
+            </div>
+          ))}
+          <div class="cs-challenge-item">
+            <img src={challenge.src} alt="ATG Service" style="width: 100%; height: auto;" />
+          </div>
+        </div>
+
+        <h2 class="heading_main text-center" style="margin-top: 80px;">What We Did</h2>
+        <div class="cs-challenges-grid" style="margin-top: 40px;">
+          {whatWeDid.map((c) => (
+            <div class="cs-challenge-item">
+              <h3>{c.title}</h3>
+              <p>{c.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="lavender" />
+
+    <section class="cs-stats-multi" style="padding-top: 90px;">
+      <div class="container">
+        <div class="cs-stats-multi-grid">
+          {stats.map((s) => (
+            <div class="cs-stats-multi-item text-center">
+              <div class="cs-stats-multi-num">{s.num}</div>
+              <p>{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section text-center" style="padding: 40px 0 0;">
+      <div class="container">
+        <p style="font-size: 18px;">Want to maximise your ROAS? Reach out to us at <a href="mailto:letstalk@cueforgood.com" style="color: #ffffff; text-decoration: underline;">letstalk@cueforgood.com</a> and we'll get back to you with how we can help your business grow.</p>
+        <img src={footer.src} alt="ATG Microgreen Kit" style="max-width: 340px; margin: 30px auto 0;" />
+      </div>
+    </section>
+
+  </div>
+</Layout>

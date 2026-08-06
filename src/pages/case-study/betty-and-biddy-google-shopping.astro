@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyCta from '../../components/CaseStudyCta.astro';
+import '../../styles/case-study.less';
+
+import logo from '../../assets/case-study/betty-and-biddy-google-shopping/logo.svg';
+import heroCart from '../../assets/case-study/betty-and-biddy-google-shopping/hero-cart.png';
+import heroShopping from '../../assets/case-study/betty-and-biddy-google-shopping/hero-shopping.png';
+import approach from '../../assets/case-study/betty-and-biddy-google-shopping/approach.png';
+import challenge from '../../assets/case-study/betty-and-biddy-google-shopping/challenge.jpg';
+
+const stats = [
+  { pct: 100, label: "1607%", sub: "Increase in traffic" },
+  { pct: 100, label: "1772%", sub: "Increase in conversions" },
+  { pct: 100, label: "1699%", sub: "Increase in revenue" },
+];
+
+const challenges = [
+  "Promote individual products while comparing prices with the competitors.",
+  "Promote individual products by ranking them on product search.",
+  "Reach a larger audience through Google Shopping Engine.",
+];
+---
+
+<Layout
+  title="Case Study for Google Shopping Engines - Betty And Biddy"
+  description="Case study on how CueForGood' Google Shopping Campaigns have been delivering consistent results for Betty and Biddy. Increased Revenue, more traffic, higher engagement."
+>
+  <div class="case-study-page" style="--cs-radial-color: #8e3fb0; --cs-radial-track: #e9e2ea;">
+
+    <section class="cs-hero">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1><img src={logo.src} alt="Betty and Biddy logo" style="max-width: 240px; height: auto;" /></h1>
+        <p class="cs-hero-subheading">How CueForGood' Google Shopping Campaigns have been delivering consistent results for Betty and Biddy.</p>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap; margin: 40px 0;">
+          <img src={heroCart.src} alt="Bitty and Biddy Cart" style="max-width: 420px; width: 100%; height: auto;" />
+          <img src={heroShopping.src} alt="Bitty and Biddy shop" style="max-width: 320px; width: 100%; height: auto;" />
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-radial-stats">
+      <div class="container">
+        <div class="cs-radial-stats-row">
+          {stats.map((s) => (
+            <div class="cs-radial-stat">
+              <div class="cs-radial-ring" style={`--pct: ${s.pct};`}><span>{s.label}</span></div>
+              <p>{s.sub}</p>
+            </div>
+          ))}
+        </div>
+        <p class="cs-note" style="text-align: center; color: #7c8494; margin-top: 30px;"><strong>NOTE:</strong> Comparing the results of Google Shopping Engine from November 2017 to September 2020</p>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="blue" />
+
+    <section class="cs-section text-center" style="padding: 60px 0;">
+      <div class="container">
+        <p style="max-width: 900px; margin: 0 auto 20px; font-size: 16px;">Betty and Biddy is an online store that carries a wide range of fast fashion jewelry - from necklaces, bracelets, earrings, rings to pendants, and more. They knew that to succeed in this uber-competitive market of fashion jewelry you have to be as hard as a jewel and twice as bright.</p>
+        <p style="max-width: 900px; margin: 0 auto; font-size: 16px;">They partnered with CueForGood in 2017 to start Google Shopping Campaigns. Increased Revenue, more traffic, higher engagement:<br />It's been all that and more since then.</p>
+      </div>
+    </section>
+
+    <section class="cs-advantage" style="padding-top: 0;">
+      <div class="container">
+        <div class="cs-advantage-row">
+          <div class="cs-advantage-text">
+            <h2 class="heading_main">Our Approach</h2>
+            <p>Unlike several other advertising channels, Google Shopping Engine ads are supported by product pictures, prices, and reviews (if any). To add to this, they allow the user to compare the product pricing and reviews with others instantly. Hence, these ads become a great source of relevant traffic for stores with quality products.</p>
+            <p>Not only this, as the traffic is usually highly relevant, there are more chances of conversion. Data Feed Optimization (DFO) is very important to dominate the competition on the Google Shopping Engine.</p>
+            <p>The ever-growing demand for fast-jewelry online opened the doors of opportunity for Betty and Biddy. Nowadays, people prefer shopping on their mobile phones from the comfort of their homes than actually visiting the stores. Therefore, It was a point of paramount significance that every potential customer should be able to locate Betty and Biddy's products on the top of the Search Engine with ease.</p>
+            <p>The Google Shopping Engine is how a majority of users search the web. Supplying optimized product data feeds to Google Shopping Engine can help online retailers grow by generating sterling traffic and revenue.</p>
+            <p>By including all the requirements of the Google Shopping Engine and updating the feed whenever there is a price change, a product goes out of stock, or a new product is added to the site.</p>
+          </div>
+          <div class="cs-advantage-media">
+            <img src={approach.src} alt="Bitty-biddy Approach" />
+          </div>
+        </div>
+
+        <div class="cs-advantage-row">
+          <div class="cs-advantage-media">
+            <img src={challenge.src} alt="Bitty-biddy challenges" />
+          </div>
+          <div class="cs-advantage-text">
+            <h2 class="heading_main">Challenges</h2>
+            <p>This project brought a lot of Google Shopping Engine challenges in our way that we combated with the team's expertise and extensive knowledge.<br />The goal was to manage the data feed of products for better performance and to achieve this we had to:</p>
+            <ul style="list-style: none; padding: 0; margin: 20px 0;">
+              {challenges.map((c) => (
+                <li style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                  <span style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background-color: #8e3fb0;"></span>
+                  <span>{c}</span>
+                </li>
+              ))}
+            </ul>
+            <p>To increase the traffic on Betty and Biddy's website, our priority was to feed product information to the Shopping Engine for a comprehensive approach. To ensure that each product is in the right place for the right consumer we reviewed product catalogs, configured fields, created custom attributes, specific titles, meta descriptions, and ensured proper categorization.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="lavender" />
+
+    <section class="cs-section" style="padding: 60px 0;">
+      <div class="container">
+        <h2 class="heading_main">Results</h2>
+        <p style="font-size: 16px;">Fast forward three years and the collaboration is still going strong. Over the past three years, the overall traffic has increased by <strong style="color: #e0e5ec;">1607.77%</strong>, conversions by <strong style="color: #e0e5ec;">1772.00%</strong>, and revenue by <strong style="color: #e0e5ec;">1699.02%.</strong> Betty and Biddy are still taking a shine to the results we have achieved.</p>
+        <p style="font-size: 16px;">Write to us at <a href="mailto:letstalk@cueforgood.com" style="color: #e0e5ec; text-decoration: underline;">letstalk@cueforgood.com</a> to understand how we can add value to your business.</p>
+      </div>
+    </section>
+
+  </div>
+</Layout>

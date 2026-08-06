@@ -1,0 +1,123 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyCta from '../../components/CaseStudyCta.astro';
+import '../../styles/case-study.less';
+
+import door1 from '../../assets/case-study/merging-blog-pages-seo/door1.png';
+import door2 from '../../assets/case-study/merging-blog-pages-seo/door2.png';
+import door3 from '../../assets/case-study/merging-blog-pages-seo/door3.png';
+import logo from '../../assets/case-study/merging-blog-pages-seo/logo.png';
+import graph from '../../assets/case-study/merging-blog-pages-seo/graph.jpg';
+import dogWindow from '../../assets/case-study/merging-blog-pages-seo/dog-window.jpg';
+import bottom from '../../assets/case-study/merging-blog-pages-seo/bottom.png';
+
+const themes = [
+  { theme: "Blog posts about Pet door training", blogs: "Blog 1 (Parent Blog)\nBlog 2\nBlog 3" },
+  { theme: "Blog posts about Pet door Security", blogs: "Blog 1 (Parent Blog)\nBlog 2\nBlog 3" },
+  { theme: "Blog posts about Pet door Electronic Pet doors", blogs: "Blog 1 (Parent Blog)\nBlog 2\nBlog 3" },
+];
+---
+
+<Layout
+  title="Case Study on Merging Blogs for SEO | An increase of +106.94% Organic sessions"
+  description="The SEO case study on increasing the organic sessions of buyer-focused blog posts by 106.94%. Merging & improving the right blog posts helped achieve the results."
+>
+  <div class="case-study-page">
+
+    <section class="cs-hero">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1 style="font-family: 'Courier New', monospace; letter-spacing: 2px;">PETDOORS.COM</h1>
+        <p class="cs-hero-subheading">How merging revenue-driven blog posts lead to <strong>106.94%</strong> increase in organic sessions for PetDoors.com</p>
+        <p class="cs-hero-subheading" style="max-width: 900px; margin-top: 30px;">PetDoors.com stocks one of the world's largest selections of built-to-last, weather-tight pet doors. The company already has 500,000 pet owners on board, providing the most suitable door for dogs &amp; cats of all sizes.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 20px 0 60px;">
+      <div class="container">
+        <p style="max-width: 900px; margin: 0 auto 16px; font-size: 16px; text-align: center;">Their plethora of experience in the industry has made them understand pet doors more than anyone else in the world. To add to this, the company is well aware of the nuances of how blogs can help gain market share in organic traffic. As a result, they've been consistently covering all nitty-gritty of information around pet doors via their blogs.</p>
+        <p style="max-width: 900px; margin: 0 auto; font-size: 16px; text-align: center;">However, when someone publishes content over a long period of time, content pieces with overlapping information can occur naturally. These overlapping content led to a rise in visibility of one content piece while the other pieces faded in the shadow.</p>
+
+        <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap; margin: 50px 0 30px;">
+          <img src={door1.src} alt="PetDoors" style="max-width: 130px; width: 100%; height: auto;" />
+          <img src={door2.src} alt="PetDoors" style="max-width: 130px; width: 100%; height: auto;" />
+          <img src={door3.src} alt="PetDoors" style="max-width: 180px; width: 100%; height: auto;" />
+        </div>
+        <div style="text-align: center;">
+          <a href="https://www.petdoors.com/" target="_blank" rel="noopener">
+            <img src={logo.src} alt="PetDoors" style="max-width: 200px; margin: 0 auto;" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-testimonial" style="padding: 70px 0; text-align: center;">
+      <div class="container">
+        <p style="max-width: 900px; margin: 0 auto; font-size: 26px; line-height: 1.6; color: #e0e5ec;">To derive maximum benefit from their blog posts, CueForGood assisted Petdoors.com to merge and optimize their blog posts with overlapping content.</p>
+      </div>
+    </section>
+
+    <section class="cs-section text-center" style="padding: 60px 0;">
+      <div class="container">
+        <h2 class="heading_main">Results</h2>
+        <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 15px;">Petdoors Experienced</p>
+        <div style="border-top: 1px solid #2a3142; max-width: 900px; margin: 30px auto 0; padding-top: 40px; text-align: left;">
+          <p style="font-size: 28px; line-height: 1.5;"><strong style="color: #e0e5ec;">106.94%</strong> increase in Sessions from their Revenue-driven blog posts</p>
+          <img src={graph.src} alt="PetDoors" style="width: 100%; height: auto; margin-top: 20px;" />
+        </div>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="blue" />
+
+    <section class="cs-section" style="padding: 90px 0;">
+      <div class="container">
+        <h2 class="heading_main text-center" style="margin-bottom: 50px;">What We Did</h2>
+        <div class="cs-dual-column">
+          <div class="cs-dual-col" style="gap: 0;">
+            <div>
+              <h3 style="font-size: 24px; font-weight: 700; color: #e0e5ec; margin: 0 0 16px;">Prioritization of the blog posts</h3>
+              <p>The importance of prioritization in SEO is often overlooked when there's a flurry of activities &amp; you are frantically ticking off the things while hoping for some initial results to kick in.</p>
+              <p>As a part of our process here, blog posts were grouped under themes. The themes were provided by the client, as they were the best source of information on what resonates the most with pet doors. For e.g</p>
+              <img src={dogWindow.src} alt="PetDoors" style="width: 100%; height: auto; margin-top: 16px;" />
+            </div>
+          </div>
+          <div class="cs-dual-col">
+            <div class="cs-data-table">
+              <div class="cs-data-table-row cs-data-table-head">
+                <div class="cs-data-table-cell">Themes</div>
+                <div class="cs-data-table-cell">Blog posts to be merged</div>
+              </div>
+              {themes.map((t) => (
+                <div class="cs-data-table-row">
+                  <div class="cs-data-table-cell">{t.theme}</div>
+                  <div class="cs-data-table-cell" style="white-space: pre-line;">{t.blogs}</div>
+                </div>
+              ))}
+            </div>
+            <div>
+              <h3 style="font-size: 24px; font-weight: 700; color: #e0e5ec; margin: 30px 0 16px;">Adding &amp; Retaining the right keywords</h3>
+              <p>Picking a parent blog post and merging the rest of related (underperforming) blogs was the first step. The second step was to be wary of keyword placement. All keywords that were ranking well were untouched. Instead, we added semantically related keywords and synonymous versions of high ranking keywords while merging.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 70px;">
+          <h2 class="heading_main text-center">An important exception</h2>
+          <p class="text-center" style="max-width: 900px; margin: 0 auto 40px; font-size: 16px;">Please note, not all blog posts are a right fit for merging. A blog performing well on its own might have its performance compromised when merged and hence, before qualifying any blog for merging, you should make an exception for the following:</p>
+          <div class="cs-callout-row">
+            <div class="cs-callout-box">Blog posts doing well in Social Media or newsletters</div>
+            <div class="cs-callout-box">Blog posts that are part of buying funnel (even with less number of Sessions)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="lavender" />
+
+    <div style="text-align: center; padding: 0;">
+      <img src={bottom.src} alt="PetDoors" style="width: 100%; height: auto; display: block;" />
+    </div>
+
+  </div>
+</Layout>

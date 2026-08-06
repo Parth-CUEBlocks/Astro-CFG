@@ -1,0 +1,225 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyCta from '../../components/CaseStudyCta.astro';
+import '../../styles/case-study.less';
+
+import heroPlants from '../../assets/case-study/google-shopping-ansel-and-ivy/hero-plants.png';
+import about from '../../assets/case-study/google-shopping-ansel-and-ivy/about.jpg';
+import challenge from '../../assets/case-study/google-shopping-ansel-and-ivy/challenge.jpg';
+import footerPlants from '../../assets/case-study/google-shopping-ansel-and-ivy/footer-plants.png';
+import iconTraffic from '../../assets/case-study/google-shopping-ansel-and-ivy/icon-traffic.svg';
+import iconRevenue from '../../assets/case-study/google-shopping-ansel-and-ivy/icon-revenue.svg';
+import iconHouse from '../../assets/case-study/google-shopping-ansel-and-ivy/icon-house.svg';
+import iconTime from '../../assets/case-study/google-shopping-ansel-and-ivy/icon-time.svg';
+import iconUsers from '../../assets/case-study/google-shopping-ansel-and-ivy/icon-users.svg';
+
+const stats = [
+  { pct: 12.35, label: "Of Total Revenue" },
+  { pct: 15.18, label: "Of Total Conversions" },
+  { pct: 13.04, label: "Of Total Traffic" },
+];
+
+const platforms = [
+  { icon: iconTraffic, label: "3rd Best Traffic Generating Platform" },
+  { icon: iconRevenue, label: "3rd Best Revenue Generating Platform" },
+];
+
+const whatWeDid = [
+  { icon: iconHouse, label: "At the right place" },
+  { icon: iconTime, label: "At the right time" },
+  { icon: iconUsers, label: "For the right customers" },
+];
+
+const challenges = [
+  { title: "Competitive niche", text: "The e-commerce market's growth momentum for gardening products in the USA is forecasted to accelerate at a compound annual growth rate (CAGR) of 9.64%. This prediction indicates how saturated this niche is." },
+  { title: "No previous data to help", text: "Since we were starting from scratch, we had no previous data looking at which we could optimize the Google Shopping ads." },
+  { title: "Insufficient contact information", text: "Contact information on the website is important to set up the Google Merchant Center (GMC) account. Because the website didn't have enough contact information displayed, we had to ask the client to make the requisite changes." },
+];
+
+const hereShow = [
+  { title: "Market analysis", text: "After putting heads together, we found that the online gardening industry is the most competitive in the USA and that it will continue to boom. Research showed us a growing number of gardening brands that were marketing on CSEs. Our hunt for a platform that could give Ansel & Ivy both sales and an increased ROI ended with Google Shopping Product Ads as we foresaw this unexplored marketing platform bringing promising results." },
+  { title: "GMC account set up", text: "Google Merchant Center (GMC) account helps get the product info into Google, making it available to shoppers across Google. Since the website didn't have their contact information displayed, we requested them to mention it upfront so GMC could be created with ease. While, earlier, Google's Insufficient Contact Information Policy stated having two forms of contact information as mandatory, it has now been reduced to one (starting Aug 2021)." },
+];
+---
+
+<Layout
+  title="Case Study on Google Shopping | Ansel & Ivy"
+  description="Read our Google Shopping Case Study on how CueForGood improved Ansel & Ivy's Google Shopping Campaign to generate 12.35% of total revenue."
+>
+  <div class="case-study-page" style="--cs-radial-color: #b8ccc1; --cs-radial-track: #eee5d3;">
+
+    <section class="cs-hero">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1 style="letter-spacing: 4px; font-size: 32px;">ANSEL &amp; IVY</h1>
+        <p class="cs-hero-subheading">How CueForGood helped Ansel &amp; Ivy turn Google Shopping into third best traffic &amp; revenue source - 12.35% of total revenue and 15.18% of total conversions.</p>
+        <img class="cs-hero-img" src={heroPlants.src} alt="Ansel and Ivy" style="max-width: 420px;" />
+      </div>
+    </section>
+
+    <section class="cs-radial-stats">
+      <div class="container">
+        <div class="cs-radial-stats-row">
+          {stats.map((s) => (
+            <div class="cs-radial-stat">
+              <div class="cs-radial-ring" style={`--pct: ${s.pct};`}><span>{s.pct}%</span></div>
+              <p>{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="blue" />
+
+    <section class="cs-icon-row">
+      <div class="container">
+        <p class="cs-icon-row-intro">Google Shopping, for Ansel &amp; Ivy, Is now the</p>
+        <ul class="cs-icon-row-grid">
+          {platforms.map((p) => (
+            <li>
+              <img src={p.icon.src} alt="" aria-hidden="true" />
+              <h4>{p.label}</h4>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 40px 0;">
+      <div class="container">
+        <p class="cs-note" style="text-align: center; color: #7c8494;"><strong>Note:</strong> Measuring the performance from August 2020 till September 2021 as we started working on the project from 22 July 2020 onwards.</p>
+      </div>
+    </section>
+
+    <section class="cs-advantage" style="padding-top: 0;">
+      <div class="container">
+        <div class="cs-advantage-row">
+          <div class="cs-advantage-text">
+            <h2 class="heading_main">About the Client</h2>
+            <p>Ansel &amp; Ivy is an eCommerce shop that delivers a healthy range of indoor/outdoor houseplants along with ceramic pots, watering cans, and other accessories at affordable prices. Their Google Shopping Platform boasts of around 450 products (including all variants).</p>
+          </div>
+          <div class="cs-advantage-media">
+            <img src={about.src} alt="About the Client" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 60px 0;">
+      <div class="container">
+        <h2 class="heading_main">Background</h2>
+        <p style="font-size: 16px;">After developing Ansel &amp; Ivy's website and migrating the same from Magento to Shopify, our team at CueForGood looked for ways to generate more sales for the company. While analysing the brand, we noticed its absence from the Google Shopping Platform. Considering the aesthetics, product range, competitors, and market growth, it was clearly a missed opportunity.</p>
+        <p style="font-size: 16px;">We, therefore, advised the client to try Google Shopping for amplified traffic, sales, and ROI for at least 3 months. Starting 22 July 2020, we experienced striking returns on the ad spent within 3 months. Consequently, the client decided to continue working on the channel which has now made its way to becoming one of the top traffic &amp; revenue-generating sources for the website.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 40px 0 90px;">
+      <div class="container">
+        <h2 class="heading_main text-center">Challenges</h2>
+        <div class="cs-challenges-grid" style="margin-top: 40px;">
+          {challenges.map((c) => (
+            <div class="cs-challenge-item">
+              <h3>{c.title}</h3>
+              <p>{c.text}</p>
+            </div>
+          ))}
+          <div class="cs-challenge-item">
+            <img src={challenge.src} alt="Ansel & Ivy Service" style="width: 100%; height: auto;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-icon-row">
+      <div class="container">
+        <h2 class="heading_main" style="margin-bottom: 10px;">What We Did</h2>
+        <p class="cs-icon-row-intro">We ensured that the products offered by Ansel &amp; Ivy appeared</p>
+        <ul class="cs-icon-row-grid">
+          {whatWeDid.map((p) => (
+            <li>
+              <img src={p.icon.src} alt="" aria-hidden="true" />
+              <h4>{p.label}</h4>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 40px 0 90px;">
+      <div class="container">
+        <h2 class="heading_main text-center">Here's How</h2>
+        <div class="cs-challenges-grid" style="margin-top: 40px;">
+          {hereShow.map((c) => (
+            <div class="cs-challenge-item">
+              <h3>{c.title}</h3>
+              <p>{c.text}</p>
+            </div>
+          ))}
+          <div class="cs-challenge-item">
+            <h3>Product feed optimization</h3>
+            <p>Since product feed is at the centre of the Google Shopping campaigns, its optimization is essential so the listing ads can be displayed for relevant shopper search queries. For this, we took the following steps:</p>
+            <ul style="margin: 10px 0 0; padding-left: 20px;">
+              <li>Reviewed the product catalogue.</li>
+              <li>Configured fields.</li>
+              <li>Created custom fields.</li>
+              <li>Made sure images were high-quality.</li>
+              <li>Used long-tail &amp; short-tail keywords in titles &amp; descriptions.</li>
+              <li>Ensured proper categorization for each product in the Data Feed.</li>
+            </ul>
+          </div>
+          <div class="cs-challenge-item">
+            <h3>Attribute specifications</h3>
+            <p>We ensured that we had correct and sufficient data in all possible attributes to help Google display accurate product listings for relevant search queries.</p>
+          </div>
+          <div class="cs-challenge-item">
+            <h3>404 error fixation</h3>
+            <p>We checked each product URL to ensure no 404 errors or out-of-stock products. This was important to offer shoppers the best ad-to-landing page experience.</p>
+          </div>
+          <div class="cs-challenge-item">
+            <h3>Product URL customization</h3>
+            <p>In order to track visits through Product Listing ads (PLA) in Google Analytics, we customized the product URLs and added tracking parameters to them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="lavender" />
+
+    <section class="cs-result">
+      <div class="container">
+        <h2 class="heading_main">Results</h2>
+        <p style="font-size: 20px; margin-bottom: 40px;">Starting 22 July 2020, Google Shopping has benefited Ansel &amp; Ivy By</p>
+        <div class="cs-radial-stats-row">
+          {stats.map((s) => (
+            <div class="cs-radial-stat">
+              <div class="cs-radial-ring" style={`--pct: ${s.pct};`}><span>{s.pct}%</span></div>
+              <p>{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-icon-row" style="padding-top: 40px;">
+      <div class="container">
+        <ul class="cs-icon-row-grid">
+          {platforms.map((p) => (
+            <li>
+              <img src={p.icon.src} alt="" aria-hidden="true" />
+              <h4>{p.label}</h4>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-section text-center" style="padding: 40px 0 0;">
+      <div class="container">
+        <p style="font-size: 18px;">Want to give your online sales a boost? We're right here to help. Get in touch with us at <a href="mailto:letstalk@cueforgood.com" style="color: #ffffff; text-decoration: underline;">letstalk@cueforgood.com</a> to know how we can add value to your business.</p>
+        <img src={footerPlants.src} alt="Ansel and Ivy" style="max-width: 420px; margin: 30px auto 0;" />
+      </div>
+    </section>
+
+  </div>
+</Layout>

@@ -1,0 +1,81 @@
+.ddu-page {
+  --cs-radial-color: #8c2d5a;
+  --cs-radial-track: #ffffff;
+
+  .cs-hero-logo-card {
+    display: inline-block;
+    background-color: #f4f0ee;
+    padding: 20px 40px;
+    margin: 0 auto 30px;
+  }
+
+  .cs-hero-logo-card img {
+    max-width: 160px;
+    height: auto;
+    display: block;
+  }
+
+  .ddu-heading-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .ddu-heading-accent .ddu-accent-bar {
+    display: inline-block;
+    width: 220px;
+    height: 26px;
+    background-color: #f4f0ee;
+  }
+
+  .cs-numbered-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .cs-numbered-list-item {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+  .cs-numbered-list-item .cs-numbered-list-num {
+    flex-shrink: 0;
+    font-size: 56px;
+    font-weight: 800;
+    color: #8c2d5a;
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+    min-width: 70px;
+  }
+
+  .cs-numbered-list-item h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #e0e5ec;
+    margin: 0 0 10px;
+  }
+
+  .cs-numbered-list-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #aab3c0;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .ddu-heading-accent .ddu-accent-bar {
+      width: 100px;
+    }
+
+    .cs-numbered-list-item {
+      gap: 16px;
+    }
+
+    .cs-numbered-list-item .cs-numbered-list-num {
+      font-size: 36px;
+      min-width: 44px;
+    }
+  }
+}

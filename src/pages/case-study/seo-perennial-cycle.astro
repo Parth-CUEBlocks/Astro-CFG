@@ -1,0 +1,141 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyCta from '../../components/CaseStudyCta.astro';
+import '../../styles/case-study.less';
+
+import logo from '../../assets/case-study/seo-perennial-cycle/logo.png';
+import heroBike from '../../assets/case-study/seo-perennial-cycle/hero-bike.png';
+
+const stats = [
+  { pct: 52.98, label: "Organic sessions" },
+  { pct: 67.25, label: "New users" },
+  { pct: 155.63, label: "Organic revenue" },
+];
+
+const steps = [
+  { title: "Noindexing unwanted thin and duplicate pages", text: "To improve the visibility of the website, we removed thin internal pages that were not serving any purpose and preventing the website from ranking. We identified thin/duplicate pages and added Noindex, follow tag on the website." },
+  { title: "URL Parameters", text: "The URL parameter tool within the Google Search Console can be used to specify how search engines should handle parts of the website. Faceted navigations are one of the most common ways these parameterized URLs get generated on e-commerce stores like Perennial Cycle. To control and optimize the crawling of the Perennial Cycle website, we used the URL Parameter Tool and handled the parameterized URLs that were being generated from the faceted navigation." },
+  { title: "Robots.txt", text: "As the strategy evolved, we added a Magento specific robot.txt for the site to control the bot activity on the site. This helped in keeping a tight check on the URLs being crawled and ensured that no search engine resources were being wasted." },
+];
+
+const steps2 = [
+  { title: "Meta Titles", text: "From our audit, we also found that the Meta Titles on product and category pages had the brand name 'Perennial Cycle' added in the front & back for each category. We fixed these meta titles by removing the brand name 'Perennial Cycle' from the front as it was repetitive. This minor correction lifted each page up the search results, producing better rankings overnight." },
+  { title: "Spammy Domains", text: "While working on the site we discovered that there were a few Spammy Backlinks pointing to the website. To improve organic search visibility, we rectified all the spammy domains by disavowing them using the Disavow Tool in GSC (Google Search Console)." },
+  { title: "Schema Related Issues", text: "Schema.org (also called Schema) is a semantic vocabulary of tags that is added to the HTML to improve the way search engines read and represent the page in SERPs (Search Engine Result Pages). Due to a WordPress Plugin, there was an incorrect implementation of the Organization and WebSite Schema. We rectified this issue and switched to schema.org for structured markup implementation instead of data-vocabulary. In fact, in Jan 2019, Google announced the deprecation of data vocabulary." },
+  { title: "Spider Traps", text: "A spider trap is a page that can lead a bot into a loop or iteration of pages. While crawling PerennialCycle, we detected more than 1 spider trap. We fixed these spider traps to improve the crawling on the website." },
+];
+---
+
+<Layout
+  title="Case Study on Merging Blogs for SEO | An increase of +106.94% Organic sessions"
+  description="The SEO Case Study on how PerennialCycle increased YOY Organic Revenue by 155.63% with just Elemental SEO."
+>
+  <div class="case-study-page" style="--cs-radial-color: #4a6741; --cs-radial-track: #eee5d3;">
+
+    <section class="cs-hero">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1><img src={logo.src} alt="Perennial Cycle logo" style="max-width: 240px; height: auto;" /></h1>
+        <p class="cs-hero-subheading">How PerennialCycle increased YOY Organic Revenue by <strong>155.63%</strong> with just Elemental SEO</p>
+      </div>
+    </section>
+
+    <section class="cs-radial-stats">
+      <div class="container">
+        <div class="cs-radial-stats-row">
+          {stats.map((s) => (
+            <div class="cs-radial-stat">
+              <div class="cs-radial-ring" style={`--pct: ${s.pct > 100 ? 100 : s.pct};`}><span>{s.pct}%</span></div>
+              <p>{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="blue" />
+
+    <section class="cs-hero" style="padding: 60px 0;">
+      <div class="container">
+        <img class="cs-hero-img" src={heroBike.src} alt="Perennial Cycle" style="max-width: 460px;" />
+        <p class="cs-hero-subheading" style="max-width: 900px;">Perennial Cycle's bikes, trikes &amp; accessories are known for making people's lives better by turning them into confident riders. Based in Uptown Minneapolis - the brand has nationwide appeal. Perennial Cycle's team asked us to increase their online presence by improving their site's organic visibility. This would increase the website's footprint online and help them acquire new customers and sales.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 40px 0 60px;">
+      <div class="container">
+        <h2 class="heading_main" style="display: flex; align-items: center; gap: 24px;">Objective <span style="display: inline-block; width: 220px; height: 20px; background-color: #c0503c;"></span></h2>
+        <ul style="padding-left: 20px; margin: 20px 0 0;">
+          <li style="font-size: 16px; line-height: 1.8; color: #aab3c0;">To increase the overall organic performance of the website.</li>
+          <li style="font-size: 16px; line-height: 1.8; color: #aab3c0;">To focus on their best-selling category (Brompton Products).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 0 0 40px;">
+      <div class="container">
+        <div class="cs-process-card">
+          <h2 class="heading_main">Our Process</h2>
+          <p>We started by performing an SEO audit to ensure that the Perennial Cycle's website has all the elements it needs to rank. We prioritized resolving the issues that would have the biggest impact on the website's visibility and performance.</p>
+          <p>Here are a few steps that brought success during the campaign:</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-numbered-steps">
+      <div class="container">
+        {steps.map((s, i) => (
+          <div class="cs-numbered-step">
+            <h3 class="cs-numbered-step-num">{i + 1}</h3>
+            <div style="grid-area: 1 / 1; align-self: center; padding-left: 110px;">
+              <h3 style="font-size: 22px; font-weight: 700; color: #e0e5ec; margin: 0 0 12px;">{s.title}</h3>
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #aab3c0;">{s.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="cs-testimonial cs-quote">
+      <div class="container">
+        <div class="cs-quote-lines">
+          <span class="cs-quote-line-red"></span>
+          <span class="cs-quote-line-green"></span>
+        </div>
+        <h4>&ldquo;They under-promise and over-perform. They don't glue jewels to anything, rather they speak plainly about how much time and money something will take. Then, they do it faster and better than I expect. It happens every time, and it's unbelievable to me.&rdquo;</h4>
+        <p class="cs-quote-author">Luke Breen</p>
+        <p class="cs-quote-role">Owner</p>
+      </div>
+    </section>
+
+    <section class="cs-numbered-steps">
+      <div class="container">
+        {steps2.map((s, i) => (
+          <div class="cs-numbered-step">
+            <h3 class="cs-numbered-step-num">{i + 4}</h3>
+            <div style="grid-area: 1 / 1; align-self: center; padding-left: 110px;">
+              <h3 style="font-size: 22px; font-weight: 700; color: #e0e5ec; margin: 0 0 12px;">{s.title}</h3>
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #aab3c0;">{s.text}</p>
+            </div>
+          </div>
+        ))}
+        <p style="border-top: 1px solid #2a3142; padding-top: 30px; margin-top: 20px;">
+          <a href="/case-study/google-shopping-perennial-cycle" style="font-size: 20px; font-weight: 700; color: #e0e5ec; text-decoration: underline;">Check out the results of our Google Shopping work for The Perennial Cycle.</a>
+        </p>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="lavender" />
+
+    <section class="cs-section" style="padding: 90px 0;">
+      <div class="container">
+        <div class="cs-process-card text-center">
+          <h2 class="heading_main">Results</h2>
+          <p style="max-width: 800px; margin: 0 auto 20px;">All these steps were just the tip of the iceberg. Creating a comprehensive SEO strategy for our client was the first step to driving traffic to the website. As we keep moving down the road, we are excited to see how far the Perennial Cycle continues to grow!</p>
+          <p style="max-width: 900px; margin: 0 auto;">CueForGood' SEO services address all the SEO needs for improving your website's visibility and organic performance. Write to us at <a href="mailto:letstalk@cueforgood.com" style="color: #ffffff; text-decoration: underline;">letstalk@cueforgood.com</a> for any SEO related services and take your business to new heights.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

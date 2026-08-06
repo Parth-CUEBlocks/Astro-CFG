@@ -1,0 +1,168 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyCta from '../../components/CaseStudyCta.astro';
+import '../../styles/case-study.less';
+
+import logo from '../../assets/case-study/google-shopping-perennial-cycle/logo.png';
+import bikeOutline from '../../assets/case-study/google-shopping-perennial-cycle/bike-outline.png';
+
+const stats = [
+  { pct: 100, label: "616.91%", sub: "increase in revenue", color: "#3d9b4f", down: false },
+  { pct: 25, label: "25%", sub: "decrease in Cost Per Click (CPC)", color: "#c0503c", down: true },
+  { pct: 100, label: "928.94%", sub: "increase in transactions", color: "#3d9b4f", down: false },
+  { pct: 100, label: "1413.28%", sub: "increase in traffic", color: "#3d9b4f", down: false },
+];
+
+const steps = [
+  {
+    title: "Right Products",
+    intro: "We studied the entire range of products and selected a few hot-selling ones that had a high average order value.",
+    bullets: [
+      "Broke a single campaign into multiple campaigns/ad-groups according to different categories/brands.",
+      "Increased bids for products that were fast-selling and decreased bids for the ones that were not catching everyone's eye.",
+    ],
+    closing: "As a result, the company saw an increase in traffic and a spike in Average Order Value (AOV) and overall revenue.",
+  },
+  {
+    title: "Right Search Queries",
+    intro: "The beauty of shopping engines is that they allow you to choose a set of keywords for which the shopping ads should appear. While most advertisers are aware of this, they at times are not successful in implementing the strategy of picking the right search queries with efficiency.",
+    bullets: [
+      "Conducted a search query analysis to pick the keywords that could help in optimizing the product feed.",
+      "For keywords that were bringing in significant traffic, but not resulting in corresponding conversions were just eating away the marketing budget. We added such keywords as 'negatives' and hence rejected this non-converting/non-relevant traffic altogether.",
+    ],
+  },
+  {
+    title: "Right Price",
+    intro: "Our goal here was not to pay the minimum amount for each click and get cheap traffic irrespective of its relevance. Instead, we were focussing on getting highly relevant, quality traffic at the desired CPC.",
+    bullets: [
+      "Lowered CPCs for non-profitable and low-performing products.",
+      "Moved away from “Maximise Clicks” bid strategy and opted for Manual CPC.",
+      "Based on campaign performance, we increased the shopping engine budgets to accommodate the growing relevant traffic.",
+    ],
+  },
+];
+---
+
+<Layout
+  title="Case Study for Google Shopping Campaigns - PerennialCycle"
+  description="A Case Study on how CueForGood optimized PerennialCycle's Google Shopping Campaigns to increase revenue by 616%. Click to find out more."
+>
+  <div class="case-study-page" style="--cs-radial-track: #eee5d3;">
+
+    <section class="cs-hero">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1><img src={logo.src} alt="Perennial Cycle logo" style="max-width: 200px; height: auto;" /></h1>
+        <p class="cs-hero-subheading">How CueForGood helped this Minnesota based online store for bikes, and trikes optimize Google Shopping Engine to achieve a <strong>616.91%</strong> increase in revenue.</p>
+      </div>
+    </section>
+
+    <section class="cs-radial-stats">
+      <div class="container">
+        <div class="cs-radial-stats-row">
+          {stats.map((s) => (
+            <div class="cs-radial-stat">
+              <div class={`cs-radial-stat-arrow ${s.down ? 'cs-radial-stat-arrow-down' : ''}`}></div>
+              <div class="cs-radial-ring" style={`--pct: ${s.pct}; --cs-radial-color: ${s.color};`}><span>{s.label}</span></div>
+              <p>{s.sub}</p>
+            </div>
+          ))}
+        </div>
+        <p class="cs-note" style="text-align: center; color: #7c8494; margin-top: 30px;">NOTE: Comparing the results from Google Shopping Engine for the month of Jan 2020 vs June 2020.</p>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="blue" />
+
+    <section class="cs-section text-center" style="padding: 60px 0 0;">
+      <div class="container">
+        <h2 class="heading_main">Client's Situation</h2>
+        <p style="max-width: 900px; margin: 0 auto; font-size: 16px;">As a company that focuses on bringing bikes and trikes to people's lives for good, Perennial Cycle, realized that running shopping ads has the potential to exhibit their products and engage new audiences. The brand had experimented with shopping engine ads in the past and felt it was in its best interest to engage an expert in the domain for help and establish a more substantial online presence.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 40px 0;">
+      <div class="container">
+        <div class="cs-process-card text-center">
+          <h2 class="heading_main">Strategy</h2>
+          <p style="font-weight: 700;">We started by following the three R rule:</p>
+          <h3 style="font-size: 22px; font-weight: 700; color: #e0e5ec; line-height: 1.6; margin: 20px 0 0;">Curated a set of <strong>Right Products</strong> to match the <strong>Right Search Queries</strong><br />at the <strong>Right Price (CPC)</strong></h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section text-center" style="padding: 0 0 40px;">
+      <div class="container">
+        <p>Here's how we translated this rule of thumb into tactics to drive more business:</p>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 0 0 60px;">
+      <div class="container">
+        {steps.map((s) => (
+          <div style="margin-bottom: 60px;">
+            <h2 class="heading_main" style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">{s.title} <span style="display: inline-block; width: 220px; height: 20px; background-color: #c0503c;"></span></h2>
+            <p style="font-size: 16px; margin: 16px 0;">{s.intro}</p>
+            <h3 style="font-size: 22px; font-weight: 700; color: #e0e5ec; margin: 30px 0 16px;">Our approach</h3>
+            <ul style="list-style: none; padding: 0; margin: 0 0 16px;">
+              {s.bullets.map((b) => (
+                <li style="display: flex; gap: 12px; margin-bottom: 10px; font-size: 16px; line-height: 1.6;">
+                  <span style="flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background-color: #c0503c; margin-top: 8px;"></span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+            {s.closing && <p style="font-size: 16px;">{s.closing}</p>}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="cs-testimonial cs-quote">
+      <div class="container">
+        <div class="cs-quote-lines">
+          <span class="cs-quote-line-red"></span>
+          <span class="cs-quote-line-green"></span>
+        </div>
+        <h4>&ldquo;They under-promise and over-perform. They don't glue jewels to anything, rather they speak plainly about how much time and money something will take. Then, they do it faster and better than I expect. It happens every time, and it's unbelievable to me.&rdquo;</h4>
+        <p class="cs-quote-author">Luke Breen</p>
+        <p class="cs-quote-role">Owner</p>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 40px 0;">
+      <div class="container">
+        <p><a href="/case-study/seo-perennial-cycle" style="font-size: 20px; font-weight: 700; color: #e0e5ec; text-decoration: underline;">Check out the results of our SEO work for The Perennial Cycle.</a></p>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="lavender" />
+
+    <section class="cs-section" style="padding: 90px 0;">
+      <div class="container">
+        <div class="cs-process-card">
+          <h2 class="heading_main">Results</h2>
+          <ul style="list-style: none; padding: 0; margin: 0 0 30px;">
+            <li style="display: flex; gap: 12px; margin-bottom: 14px; font-size: 16px; line-height: 1.6;">
+              <span style="flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background-color: #c0503c; margin-top: 8px;"></span>
+              <span>Shopping ads toppled Google Organic as the number one source for traffic and the most number of transactions. Also, a majority of visitors from Shopping ads consisted of new users.</span>
+            </li>
+            <li style="display: flex; gap: 12px; margin-bottom: 14px; font-size: 16px; line-height: 1.6;">
+              <span style="flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background-color: #c0503c; margin-top: 8px;"></span>
+              <span>The number of transactions from Google Shopping increased by 928.94% resulting in a 616.91% increase in revenue from the channel.</span>
+            </li>
+            <li style="display: flex; gap: 12px; margin-bottom: 14px; font-size: 16px; line-height: 1.6;">
+              <span style="flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background-color: #c0503c; margin-top: 8px;"></span>
+              <span>With a 25% decrease in Cost Per Click (CPC), we were able to increase the relevant traffic, from the channel, by 1413.28%.</span>
+            </li>
+          </ul>
+          <img src={bikeOutline.src} alt="perennialcycle cycle" style="max-width: 500px; width: 100%; height: auto; display: block; margin: 0 auto 30px;" />
+          <p style="font-size: 16px;">These results were a great encouragement for our experts assisting the client. The improvements in the KPIs were astronomical and proved the fact that with a focused optimization strategy the Google Shopping Engine channel can be a huge source of revenue generation.</p>
+          <p style="font-size: 16px;">If there's one positive take away from what has happened over the past few months due to the Covid-19 pandemic, it's that hard work and dedication always work wonders. The revenue and business wasn't impacted even during the uncertain times that the world was facing.</p>
+          <p style="font-size: 16px;">On that note, we continue to modify, test, and optimize our strategies for the client.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
