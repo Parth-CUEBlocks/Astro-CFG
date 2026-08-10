@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/shopify.less';
 
 import { getSeoMetadata } from '../../lib/seo';
-import PhpHeroSection from '../components/Php/PhpHeroSection.astro';
-import PhpOurApproach from '../components/Php/PhpOurApproach.astro';
-import Phpblock from '../components/Php/Phpblock.astro';
+import ServiceHeroSection from '../components/servicepage/ServiceHeroSection.astro';
+import Serviceblock from '../components/servicepage/Serviceblock.astro';
+import ServiceOurApproach from '../components/servicepage/ServiceOurApproach.astro';
 
 const { title, description } = await getSeoMetadata(Astro.url.pathname, {
   title: "PHP Development for B Corps & Purpose-Driven Brands | CueForGood ",
@@ -16,12 +16,12 @@ const { title, description } = await getSeoMetadata(Astro.url.pathname, {
 <Layout title={title} description={description}>
   <div class="cfg-shopify-outer-wrapper">
     <div class="cfg-shopify-inner-container">
-      <PhpHeroSection/>
-      <!-- <PhpOurApproach/>
+      <ServiceHeroSection/>
+      <ServiceOurApproach/>
       <section class="cfg-services-section">
-        <Phpblock/>
+        <Serviceblock/>
 
-      </section> -->
+      </section>
 
 
     </div>

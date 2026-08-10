@@ -1,0 +1,52 @@
+---
+// src/components/Testimonials.astro
+import { client } from "../../../lib/contentful"; 
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+
+const rawPath = Astro.url.pathname;
+const currentUrl = rawPath.replace(/\/$/, '') || '/';
+
+const responsetitle = await client.getEntries({
+  content_type: "shopifyPageTopSection",
+  'fields.pageUrl': currentUrl,
+});
+const data1 = responsetitle.items[0]?.fields?.ourApproachHeading as any ;
+
+const response = await client.getEntries({
+  content_type: "ourApproachShopifyPage",
+  'fields.pageUrl': currentUrl
+});
+const data = response.items;
+const approach = (data as any[]) || [];
+  //  console.log(data1);
+---
+      <section class="cfg-approach-section">
+
+        <div class="main-heading text-center">
+          <h2 class="cfg-section-heading">{data1?.fields?.title}</h2>
+          {data1?.fields?.description && <p>{data1?.fields?.description}</p>}
+        </div>
+
+        <div class="cfg-approach-grid">
+          {approach.map((item)=>{
+            const title = item.fields?.heading;
+            const Image = item.fields?.image as any;
+            const ImageURL = Image?.fields?.file?.url;
+            const altText = Image?.fields?.title || "Service Image";
+            const description = item.fields?.description ? documentToHtmlString(item.fields.description as any)  : "";
+            
+            return(
+              <div class="cfg-approach-card">
+                <div class="cfg-approach-icon">
+                 {ImageURL && <img src={`https:${ImageURL}`} alt={altText} class="showcase-img" loading="lazy"  />}
+                </div>
+                <h3>{title}</h3>
+                {description && <div class="description-data"  set:html={description} />}
+            </div>
+            )
+          })}
+
+        </div>
+      </section>
+
+

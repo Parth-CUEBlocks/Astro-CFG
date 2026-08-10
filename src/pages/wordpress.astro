@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/shopify.less';
 
 import { getSeoMetadata } from '../../lib/seo';
-import WordpressHeroSection from '../components/WordpressPage/WordpressHeroSection.astro';
-import WordpressOurApproach from '../components/WordpressPage/WordpressOurApproach.astro';
-import Wordpressblock from '../components/WordpressPage/Wordpressblock.astro';
+import ServiceHeroSection from '../components/servicepage/ServiceHeroSection.astro';
+import Serviceblock from '../components/servicepage/Serviceblock.astro';
+import ServiceOurApproach from '../components/servicepage/ServiceOurApproach.astro';
 
 const { title, description } = await getSeoMetadata(Astro.url.pathname, {
   title: "Custom Wordpress Development for B Corps, Earth Friendly & Purpose Driven Brands",
@@ -16,12 +16,12 @@ const { title, description } = await getSeoMetadata(Astro.url.pathname, {
 <Layout title={title} description={description}>
   <div class="cfg-shopify-outer-wrapper">
     <div class="cfg-shopify-inner-container">
-      <WordpressHeroSection/>
-      <!-- <WordpressOurApproach/>
+      <ServiceHeroSection/>
+      <ServiceOurApproach/>
       <section class="cfg-services-section">
-        <Wordpressblock/>
+        <Serviceblock/>
 
-      </section> -->
+      </section>
 
 
     </div>

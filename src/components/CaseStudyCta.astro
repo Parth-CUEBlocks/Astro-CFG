@@ -1,0 +1,17 @@
+---
+interface Props {
+  variant?: 'blue' | 'lavender';
+}
+const { variant = 'blue' } = Astro.props as Props;
+---
+<div class={`cfg-cta-banner cfg-cta-${variant}`}>
+  <div class="cfg-cta-inner">
+    <div class="cfg-cta-left">
+      <h2 class="cfg-cta-heading">Need help with your eCommerce store</h2>
+      <p class="cfg-cta-text">Please <a href="/contact" class="cfg-cta-link focus-visible">share</a> your requirements in detail</p>
+    </div>
+    <div class="cfg-cta-right">
+      <a href="/contact" class="cfg-cta-btn focus-visible">Contact us</a>
+    </div>
+  </div>
+</div>

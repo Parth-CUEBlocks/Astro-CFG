@@ -1,0 +1,180 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyCta from '../../components/CaseStudyCta.astro';
+import '../../styles/case-study.less';
+
+import hero from '../../assets/case-study/amazon-marketplace/hero.png';
+import plant from '../../assets/case-study/amazon-marketplace/plant.png';
+import appScreen from '../../assets/case-study/amazon-marketplace/app-screen.png';
+import strategyImg from '../../assets/case-study/amazon-marketplace/strategy.png';
+import challengeImg from '../../assets/case-study/amazon-marketplace/challenge.png';
+
+const challenges = [
+  { num: "01", title: "Non-Profitable FBA -", text: "Amazon offers all its e-retailers an option of storing their products in the Amazon facilities, known as “Fulfillment by Amazon', which makes the cost of shipping almost negligible. Despite using the FBA privilege, AllThatGrows continued to generate inadequate sales revenue." },
+  { num: "02", title: "Sales Conversion -", text: "AllThatGrows, like any other business, needed the sales to convert into sizeable profits in order for it to expand its reach. But that was not possible with just a few clicks and views. After all, if a customer just visits your website, looks at the product but doesn't buy anything, it doesn't serve the purpose of running a business." },
+];
+
+const processSteps = [
+  { text: "We initiated the process by establishing a Marketplace Management Program for AllThatGrows that began with an understanding of the product feed formatting on each marketplace. Starting with obtaining GTIN Exemption for the products we deal in, we moved on to add the products on the marketplace. We collected the images for each product and re-sized them according to Amazon's guidelines." },
+  { text: "Thereafter, we kept a close eye on the allocated budget, costs, and revenues, adjusting each parameter to gain a positive ROI-driven ranking for all the products. We optimized the product titles, features, descriptions in such a way that the customers could easily discern the USP of the products." },
+  { text: "Due to the low cost of the products, FBA did not prove fruitful enough for AllThatGrows. So, we decided that instead of using the Amazon facilities to store our products for shipment, we chose to ship the products on our own." },
+  { text: "Counting on our experience in various marketplaces, we started optimizing the content for AllThatGrows. Once the content gained some traction, we created paid campaigns (sponsored programs) to generate more sales revenue. Optimal keyword research was done and implemented for Amazon." },
+];
+---
+
+<Layout
+  title="Amazon Marketplace Management Strategy (Case Study of Consistent Growth)"
+  description="A detailed Amazon Marketplace Strategy for a seasonality ridden business. Read how we helped AllThatGrows generate around 1/3 rd of its paid sales from Amazon."
+>
+  <div class="case-study-page">
+
+    <section class="cs-hero">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1 style="font-family: 'Courier New', monospace; letter-spacing: 2px;">ALLTHATGROWS</h1>
+        <p class="cs-hero-subheading">How CueForGood helped AllThatGrows in leveraging the Amazon Marketplace as an additional source of consistently growing revenue</p>
+        <img class="cs-hero-img" src={hero.src} alt="Amazon" style="max-width: 620px;" />
+        <p class="cs-hero-subheading" style="max-width: 900px;">An exclusive e-commerce store on Shopify, providing pure &amp; organic seeds of various vegetables, flowers, microgreens, exotic herbs &amp; edible flowers.</p>
+        <p style="margin-top: 16px; font-size: 16px;">For more information, visit: <a href="https://www.allthatgrows.in/" target="_blank" rel="noopener" style="color: #e0e5ec; text-decoration: underline;">www.AllThatGrows.in</a></p>
+      </div>
+    </section>
+
+    <section class="cs-advantage" style="padding-top: 40px;">
+      <div class="container">
+        <div class="cs-advantage-row">
+          <div class="cs-advantage-media" style="flex: 0 0 160px;">
+            <img src={plant.src} alt="Amazon" />
+          </div>
+          <div class="cs-advantage-text">
+            <h3 style="font-size: 26px; font-weight: 800; color: #e0e5ec; margin: 0 0 10px;">42.04% increase in revenue from Amazon</h3>
+            <h3 style="font-size: 26px; font-weight: 800; color: #e0e5ec; margin: 0 0 10px;">24.50% increase in Orders</h3>
+            <p style="margin: 0;">Comparing Jan 19 - Aug 19 with previous year</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="blue" />
+
+    <section class="cs-section" style="padding: 60px 0;">
+      <div class="container">
+        <div class="top-details text-center">
+          <h2 class="heading_main">Client's Situation</h2>
+          <p>Since 2017, AllThatGrows has been offering superior quality, non-hybrid, pure, open-pollinated, GMO-free, and heirloom seeds. Stepping into unchartered territory, it was challenging to generate sales with limited brand awareness in the market. Our primary focus for AllThatGrows was to look for a platform that could give us both - sales and a positive ROI.</p>
+        </div>
+
+        <div class="cs-advantage-row" style="margin-top: 60px;">
+          <div class="cs-advantage-media">
+            <img src={appScreen.src} alt="Amazon" />
+          </div>
+          <div class="cs-advantage-text">
+            <h4 style="font-size: 24px; font-weight: 700; color: #e0e5ec; margin: 0 0 16px;">We suggested AllThatGrows to use marketplaces like Amazon, Flipkart, Shopclues and PayTm.</h4>
+            <p>AllThatGrows was ready to diversify and expand its business onto multiple Marketplaces/CSEs and needed a team that understood the business model and could help manage the needs, requirements, and updates of each marketplace.</p>
+            <p>AllThatGrows wanted to increase its prominence and visibility in different CSEs/Marketplaces, reach a wider web audience, and increase their overall sales revenue while keeping the spend within their marketing budget.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-advantage" style="padding: 0 0 90px;">
+      <div class="container">
+        <div class="cs-advantage-row reverse">
+          <div class="cs-advantage-media">
+            <img src={strategyImg.src} alt="Amazon" />
+          </div>
+          <div class="cs-advantage-text">
+            <h2 class="heading_main">Strategy</h2>
+            <p>With specific inputs from the client, AllThatGrows, we formed a detailed Marketplace Management Strategy that took care of each and every requirement of the business. Due to the diverse seasonal change in the country, the sales of seeds would often vary each month.</p>
+            <p>The cost per sale would oscillate between <strong style="color: #e0e5ec;">20% to 90%,</strong> which made the business lucrative in one month but unrewarding in the next.</p>
+            <h4 style="font-size: 22px; font-weight: 700; color: #e0e5ec; margin: 20px 0 0;">Amazon's Cost per Purchase model was ideal for a business like AllThatGrows because it gave us the liberty to pay for just the sales and not the clicks.</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 0 0 40px;">
+      <div class="container">
+        <h2 class="heading_main text-center">Challenges</h2>
+        <div class="cs-dual-column" style="margin-top: 50px;">
+          <div class="cs-dual-col">
+            {challenges.map((c) => (
+              <div style="display: flex; gap: 16px;">
+                <span style="font-size: 20px; font-weight: 800; color: #e0e5ec; flex-shrink: 0;">{c.num}</span>
+                <p><strong style="color: #e0e5ec;">{c.title}</strong> {c.text}</p>
+              </div>
+            ))}
+          </div>
+          <div class="cs-dual-col">
+            <div style="display: flex; gap: 16px;">
+              <span style="font-size: 20px; font-weight: 800; color: #e0e5ec; flex-shrink: 0;">03</span>
+              <p><strong style="color: #e0e5ec;">Brand Awareness -</strong> Being a relatively new venture, the most common obstacle that came our way with AllThatGrows was a limited brand awareness among the audience.</p>
+            </div>
+            <img src={challengeImg.src} alt="Amazon" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 60px 0;">
+      <div class="container">
+        <h2 class="heading_main text-center" style="margin-bottom: 50px;">Process Undertaken<br />by CueForGood</h2>
+        <div class="cs-icon-process-grid">
+          <div class="cs-icon-process-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M4 9v10a1 1 0 001 1h14a1 1 0 001-1V9"/><path d="M3 9a2 2 0 004 0 2 2 0 004 0 2 2 0 004 0 2 2 0 004 0"/><path d="M9 20v-6h6v6"/></svg>
+            <p>{processSteps[0].text}</p>
+          </div>
+          <div class="cs-icon-process-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4v16h18"/><path d="M7 15l4-4 3 3 5-6"/><path d="M16 8h4v4"/></svg>
+            <p>{processSteps[1].text}</p>
+          </div>
+          <div class="cs-icon-process-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11v8H2z"/><path d="M13 11h4l4 3v2h-8z"/><circle cx="6" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/></svg>
+            <p>{processSteps[2].text}</p>
+          </div>
+          <div class="cs-icon-process-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><circle cx="11" cy="14" r="3"/><path d="M13.5 16.5L16 19"/></svg>
+            <p>{processSteps[3].text}</p>
+          </div>
+        </div>
+        <p class="text-center" style="max-width: 900px; margin: 50px auto 0; font-size: 16px;">As AllThatGrows gained brand recognition, we saw a significant rise in sales conversion as well. An excellent customer support team at AllThatGrows helped in creating a unique brand identity that understood and resolved customer queries with utmost efficiency.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 0 0 60px;">
+      <div class="container">
+        <h2 class="heading_main">Successes</h2>
+        <div class="cs-dual-column">
+          <div class="cs-dual-col" style="gap: 0;">
+            <p>Over the course of the years, AllThatGrows has experienced a remarkable increase in orders and the sales revenue generated from them. Even today, CueForGood works hand-in-hand with AllThatGrows to help them in their journey of exponential growth.</p>
+          </div>
+          <div class="cs-dual-col" style="gap: 0;">
+            <p>Our data shows that our strategy of efficient optimization drove incremental conversions and revenue for AllThatGrows.</p>
+          </div>
+        </div>
+
+        <div class="cs-compare">
+          <div class="cs-compare-col">
+            <div class="cs-compare-label">AUG 2017</div>
+            <div class="cs-compare-num">242</div>
+            <div class="cs-compare-num-label">ORDERS</div>
+            <div class="cs-compare-num">41,737</div>
+            <div class="cs-compare-num-label">REVENUE</div>
+          </div>
+          <svg class="cs-compare-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+          <div class="cs-compare-col cs-compare-col-right">
+            <div class="cs-compare-label">AUG 2019</div>
+            <div class="cs-compare-num">629</div>
+            <div class="cs-compare-num-label">ORDERS</div>
+            <div class="cs-compare-num">1,26,369</div>
+            <div class="cs-compare-num-label">REVENUE</div>
+          </div>
+        </div>
+
+        <p class="text-center" style="font-size: 20px; font-weight: 700; color: #e0e5ec; margin-top: 30px;">The overall contribution generated from the paid campaigns was about <strong>1/3rd</strong> of the sales from Amazon.</p>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="lavender" />
+
+  </div>
+</Layout>

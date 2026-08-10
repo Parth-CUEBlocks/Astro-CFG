@@ -1,0 +1,208 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/case-study.less';
+import '../../styles/case-studies/seed-ecommerce-on-shopify-google-ads.less';
+
+import atgLogo from '../../assets/case-study/seed-ecommerce-on-shopify-google-ads/atg-logo-dark.svg';
+import heroIllustration from '../../assets/case-study/seed-ecommerce-on-shopify-google-ads/hero-illustration.png';
+import analysisService from '../../assets/case-study/seed-ecommerce-on-shopify-google-ads/analysis-service.png';
+
+const processSteps = [
+  "Brand awareness and conversions have been top priorities from the beginning of our strategy. We built awareness campaigns from a bottom-up approach and conversion-oriented campaigns from a top-down approach. This allowed us an effective route to reach the balancing point of building a brand while making a profit at the same time.",
+  "After facing a few hurdles and producing results in our dual hierarchy approach, we evolved our process to a more ‘converting’ approach: to build an effective ROAS.",
+  "Since many of the products are seasonal, it was crucial to understand the trend and then increase budgets for conversion campaigns. We simultaneously reduced our awareness budgets at the right time and escalated our returns. This provided us with more budget to reinvest when required.",
+  "As we improved our ROAS, we also expanded our advertising budgets towards new audiences and remarketed to existing users. This helped bring in a newer set of audiences while maintaining our ROAS.",
+];
+
+const resultSteps = [
+  "Our Google Search Ads experienced a significant conversion journey from April 2019 to February 2020, reaching an average of 300 conversions per month.",
+  "Our campaign was disrupted by the sudden impact of COVID-19, and we had to pause the campaign for the months of April and May. This time was used as an opportunity to improve and re-strategize.",
+  "The campaign was relaunched in June 2020, and with 500+ conversions, there was a remarkable uptick of 43.79% in the overall conversion rate.",
+  "2021 focused on refining data from 2020, resulting in a 72.11% increase in conversion rate, a 31.1% increase in revenue, and a 23.06% increase in transactions.",
+  "Despite the pandemic, the company managed to maintain an average of 400 conversions per month between 2021 and 2022.",
+];
+
+const ratings = [
+  { num: "5.0", label: "Quality" },
+  { num: "5.0", label: "Schedule" },
+  { num: "4.5", label: "Cost" },
+  { num: "5.0", label: "Willing to Refer" },
+  { num: "5.0", label: "Overall Score" },
+];
+---
+
+<Layout
+  title="Seed Ecommerce Store on Shopify | Google Ads Case Study"
+  description="Google Ads Case Study for AllThatGrows - a major brand in the seed industry. Read how AllThatGrows maintained a high ROAS value even after multiple years with Google Ads and CueForGood."
+>
+  <div class="case-study-page seed-atg-page">
+
+    <section class="cs-hero">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1><img src={atgLogo.src} alt="AllThatGrows logo" style="max-width: 220px; height: auto;" /></h1>
+        <p class="heading_main" style="font-size: 40px; max-width: 900px; margin: 0 auto 20px;">AllThatGrows Achieves 2.97x ROAS &amp; 500+ Conversions with Google Ads</p>
+        <p class="cs-hero-subheading">Focusing on the 3 B's of Marketing - Building Awareness, Brand Consideration, and Bringing Conversions</p>
+        <img class="cs-hero-img" src={heroIllustration.src} alt="AllThatGrows Achieves 2.97x ROAS &amp; 500+ Conversions" />
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 40px 0;">
+      <div class="container">
+        <h2 class="heading_main">Introduction</h2>
+        <p>AllThatGrows is a leading e-commerce store in India that specializes in providing a diverse range of top-quality seeds. Their journey is dedicated to providing a greener and more fulfilling gardening experience. With a commitment to promoting sustainable gardening practices, they offer an impressive collection of Non-GMO, open-pollinated, non-hybrid, and heirloom seeds.</p>
+        <p>Since ATG’s establishment in 2017, CueForGood has been their trusted partner, providing comprehensive support in various aspects of their business. From website design to effective product sales strategies, we have handled it all.</p>
+        <p>Together, the collaboration has been centered around brand building, driving targeted traffic, and optimizing conversions, ultimately transforming the audience into satisfied, paying customers.</p>
+        <p>On 19th January 2017, AllThatGrows made its first sale via Google Ads. Since then, just like their plants, they have grown substantially with their loyal customers, sales, and ROI.</p>
+      </div>
+    </section>
+
+    <section class="cs-stats-multi">
+      <div class="container">
+        <h2 class="heading_main">Statistics</h2>
+        <div class="cs-stats-multi-grid">
+          <div class="cs-stats-multi-item">
+            <span class="cs-stats-multi-over">Over</span>
+            <div class="cs-stats-multi-num">54%</div>
+            <p>Revenue from Google Ads</p>
+          </div>
+          <div class="cs-stats-multi-item">
+            <span class="cs-stats-multi-over">Over</span>
+            <div class="cs-stats-multi-num">52%</div>
+            <p>Users come from Google Ads</p>
+          </div>
+          <div class="cs-stats-multi-item">
+            <span class="cs-stats-multi-over">Over</span>
+            <div class="cs-stats-multi-num">1.6M</div>
+            <p>Users via Google Ads*</p>
+          </div>
+          <div class="cs-stats-multi-item">
+            <div class="cs-stats-multi-num">2.97x</div>
+            <p>Returns</p>
+          </div>
+          <div class="cs-stats-multi-item">
+            <div class="cs-stats-multi-num">9.17%</div>
+            <p>Increase in audience size while maintaining ROAS*</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-advantage">
+      <div class="container">
+        <div class="cs-advantage-row">
+          <div class="cs-advantage-text">
+            <h4 class="heading_main">Analysis</h4>
+            <p>Although the seeds they produced are of amazing quality, we initially faced certain challenges that made advertising AllThatGrows a positive challenge for CueForGood.</p>
+            <ol>
+              <li><strong>Starting From Scratch</strong> - As much as we at CueForGood love building a brand from the beginning, it is always difficult to do so as there are so many factors to consider. From building a story and understanding the competition to building value and a loyal customer base, it was a journey full of challenges and achievements.</li>
+              <li><strong>Effectiveness</strong> - Since most of their products are inexpensive, advertising while maintaining a profit was certainly a difficult task.</li>
+              <li><strong>Competitive Niche</strong> - Building a loyal audience was quite a struggle. With over 92,50,00,000 results appearing in Google for the keyword "urban gardening", it is a highly competitive niche. Kitchen gardens alone contributed about <a href="https://www.statista.com/statistics/1079683/india-economic-contribution-of-kitchen-gardens/#:~:text=Kitchen%20gardens%20accounted%20for%20about%2060%20billion%20Indian%20rupees%20in%20the%20Indian%20economy%20in%20fiscal%20year%202020" target="_blank" rel="noopener" title="Opens in a new window">60 billion rupees</a> to the Indian economy in the fiscal year 2020.</li>
+            </ol>
+          </div>
+          <div class="cs-advantage-media">
+            <img src={analysisService.src} alt="ATG Service" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cs-process-card">
+          <h2 class="heading_main">Our Process</h2>
+          <div class="cs-numbered-steps" style="padding: 20px 0 0;">
+            {processSteps.map((text, i) => (
+              <div class="cs-numbered-step">
+                <h3 class="cs-numbered-step-num">{i + 1}</h3>
+                <p>{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-banner cs-banner-cta" style="--cs-banner-bg: transparent; padding: 30px 0;">
+      <div class="container">
+        <p>Looking to boost your e-commerce business with expert PPC Services? Contact us today. Connect with us at - <a href="mailto:letstalk@cueforgood.com">letstalk@cueforgood.com</a></p>
+      </div>
+    </section>
+
+    <section class="cs-result">
+      <div class="container">
+        <div class="top-details">
+          <h2 class="heading_main">Results</h2>
+          <p>CueForGood have played an integral role in AllThatGrows' journey from 2017 to 2023. Initially, our collaboration began with their Shopify website creation and management, which later progressed to include Google Search Ads services.</p>
+        </div>
+        <div class="cs-numbered-steps" style="text-align: left;">
+          {resultSteps.map((text, i) => (
+            <div class="cs-numbered-step">
+              <h3 class="cs-numbered-step-num">{i + 1}</h3>
+              <p>{text}</p>
+            </div>
+          ))}
+        </div>
+        <div class="top-details" style="margin-top: 40px; text-align: left;">
+          <p style="font-weight: 700; color: #e0e5ec;">Overall, the conversion journey for Google Search Ads was successful, despite seasonal factors and competition changes.</p>
+          <ul class="customUl">
+            <li>In 2021, we increased our audience size by 9.17% compared to 2020.</li>
+            <li>2.97x Returns on Ad Spend</li>
+            <li>Over 52% of users come from Google Ads</li>
+            <li>Over 1,600,000 users visited via Google Ads</li>
+          </ul>
+          <p>As of now, our partnership has expanded significantly. We offer a comprehensive range of services, including Design and Development, PPC, SEO, Email Marketing, and Content Marketing, to cater to their evolving needs and support their continued growth.</p>
+          <p>CueForGood remain a committed and indispensable part of AllThatGrows' success story.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-testimonial cs-quote">
+      <div class="container">
+        <div class="cs-quote-lines">
+          <span class="cs-quote-line-red"></span>
+          <span class="cs-quote-line-green"></span>
+        </div>
+        <h4>&ldquo;Their company is value driven, and their employees and customers come first. I&rsquo;m very happy with them. Any customer of theirs shouldn&rsquo;t have any trouble.</h4>
+        <h4>We&rsquo;re receiving the same high quality deliverables, but at lower rates than those offered in Silicon Valley.&rdquo;</h4>
+        <p class="cs-quote-author">-Karan Mahajan</p>
+        <p class="cs-quote-role">Co-Founder, AllThatGrows</p>
+        <div class="cs-quote-icon" aria-hidden="true">
+          <svg width="210" height="164" viewBox="0 0 210 164" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.1" d="M8.30078 163.086V150.879C25.0651 144.694 38.2487 135.01 47.8516 121.826C57.4544 108.48 62.2559 94.6452 62.2559 80.3223C62.2559 77.2298 61.7676 74.9512 60.791 73.4863C60.3027 72.5098 59.6517 72.0215 58.8379 72.0215C58.0241 72.0215 56.722 72.6725 54.9316 73.9746C49.7233 77.7181 43.2129 79.5898 35.4004 79.5898C25.9603 79.5898 17.6595 75.8464 10.498 68.3594C3.49935 60.7096 0 51.6764 0 41.2598C0 30.1921 4.06901 20.5892 12.207 12.4512C20.3451 4.15039 30.3548 0 42.2363 0C55.7454 0 67.4642 5.61523 77.3926 16.8457C87.4837 27.9134 92.5293 42.8874 92.5293 61.7676C92.5293 83.7402 85.7747 103.434 72.2656 120.85C58.7565 138.265 37.4349 152.344 8.30078 163.086ZM125.732 163.086V150.879C142.497 144.694 155.68 135.01 165.283 121.826C174.886 108.48 179.688 94.6452 179.688 80.3223C179.688 77.2298 179.199 74.9512 178.223 73.4863C177.734 72.5098 177.083 72.0215 176.27 72.0215C175.456 72.0215 174.154 72.6725 172.363 73.9746C167.155 77.7181 160.645 79.5898 152.832 79.5898C143.392 79.5898 135.091 75.8464 127.93 68.3594C120.931 60.7096 117.432 51.6764 117.432 41.2598C117.432 30.1921 121.501 20.5892 129.639 12.4512C137.777 4.15039 147.786 0 159.668 0C173.177 0 184.896 5.61523 194.824 16.8457C204.915 27.9134 209.961 42.8874 209.961 61.7676C209.961 83.7402 203.206 103.434 189.697 120.85C176.188 138.265 154.867 152.344 125.732 163.086Z" fill="#4DC094"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-ratings">
+      <div class="container">
+        <h2>Ratings</h2>
+        <div class="cs-ratings-grid">
+          {ratings.map((r) => (
+            <div class="cs-rating-box">
+              <div class="cs-rating-num">{r.num}</div>
+              <p>{r.label}</p>
+            </div>
+          ))}
+        </div>
+        <p class="cs-ratings-note">Ready to blossom online? From taking root to flourishing, we can help you nurture your brand with our digital marketing services. Get in touch with us at - <a href="mailto:letstalk@cueforgood.com">letstalk@cueforgood.com</a></p>
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<style>
+  .customUl {
+    list-style: disc;
+    padding-left: 22px;
+    margin: 0 0 20px;
+  }
+  .customUl li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #aab3c0;
+    margin-bottom: 8px;
+  }
+</style>

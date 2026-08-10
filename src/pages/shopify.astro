@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/shopify.less';
 
 import { getSeoMetadata } from '../../lib/seo';
-import ShopifyHeroSection from '../components/Shopify/ShopifyHeroSection.astro';
-import ShopifyOurApproach from '../components/Shopify/ShopifyOurApproach.astro';
-import Shopifyblock from '../components/Shopify/Shopifyblock.astro';
+import ServiceHeroSection from '../components/servicepage/ServiceHeroSection.astro';
+import Serviceblock from '../components/servicepage/Serviceblock.astro';
+import ServiceOurApproach from '../components/servicepage/ServiceOurApproach.astro';
 
 const { title, description } = await getSeoMetadata(Astro.url.pathname, {
   title: "Shopify Agency for B Corps & Purpose-Driven Brands | CueForGood",
@@ -16,13 +16,11 @@ const { title, description } = await getSeoMetadata(Astro.url.pathname, {
 <Layout title={title} description={description}>
   <div class="cfg-shopify-outer-wrapper shopify-page">
     <div class="cfg-shopify-inner-container">
-      <ShopifyHeroSection/>
-      <ShopifyOurApproach/>
+      <ServiceHeroSection/>
+      <ServiceOurApproach/>
       <section class="cfg-services-section">
         <h2 class="cfg-services-title">Our Shopify Services</h2>
-
-        <Shopifyblock/>
-
+        <Serviceblock/>
       </section>
 
 

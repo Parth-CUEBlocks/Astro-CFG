@@ -1,0 +1,227 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyCta from '../../components/CaseStudyCta.astro';
+import '../../styles/case-study.less';
+
+import hero from '../../assets/case-study/site-speed-ww/hero.png';
+import hat from '../../assets/case-study/site-speed-ww/hat.png';
+import slide1 from '../../assets/case-study/site-speed-ww/slide1.jpg';
+import logo from '../../assets/case-study/site-speed-ww/logo.png';
+import approach from '../../assets/case-study/site-speed-ww/approach.png';
+import bag from '../../assets/case-study/site-speed-ww/bag.png';
+import tableBg from '../../assets/case-study/site-speed-ww/table-bg.jpg';
+
+const speedTables = [
+  {
+    title: "Home Page",
+    link: { text: "womanswork.com", href: "https://womanswork.com/" },
+    before: { first: "8.734s", repeat: "9.199s" },
+    after: { first: "2.993s", repeat: "2.395s" },
+    pct: { first: "65.73%", repeat: "73.96%" },
+  },
+  {
+    title: "Category Page",
+    link: { text: "Womens Gloves", href: "https://womanswork.com/catalog/womens-gloves/" },
+    before: { first: "9.624s", repeat: "8.930s" },
+    after: { first: "3.343s", repeat: "2.755s" },
+    pct: { first: "65.26%", repeat: "69.14%" },
+  },
+  {
+    title: "Product Page",
+    subtitle: "Purple Floral Arm Saver Gloves",
+    before: { first: "14.743s", repeat: "9.838s" },
+    after: { first: "4.920s", repeat: "3.966s" },
+    pct: { first: "66.62%", repeat: "59.68%" },
+  },
+];
+
+const recommendations = [
+  "CSS/ JS Minification (Stopped JS Bundling).",
+  "Implemented Server Cache - Redis + Memcache.",
+  "Fixed Full Page Cache (FPC) issue which ensured its proper functioning.",
+  "Switched on the production mode.",
+];
+
+const circleItems = [
+  { text: "Setting up a proper development environment including separate development and staging servers along with a versioning system. This meant all the code was first to be implemented on a staging server and tested. Only after approval from the QA and the client the code was pushed live." },
+  { text: "Upgrading Magento to the latest 2.2.5 version. There was a big gap between the existing 2.1.2 version and the upgraded 2.2.5 version. The upgrade hence helped us to introduce the latest (stabler) Magento optimization standards to the website." },
+  { text: "Upgrading server to ensure enough space for implementing caching modules." },
+  { text: "Upgrading PHP to the latest stable versions." },
+];
+---
+
+<Layout
+  title="Magento 2 Site Speed Case Study: Improving Magento Site Speed | CueForGood"
+  description="WomansWork - an online retailer of gardening accessories faced site speed issues with Magento 2. Case study- How CueForGood sped up their Magento 2 site by over 65%."
+>
+  <div class="case-study-page">
+
+    <section class="cs-hero">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1 style="font-family: 'Courier New', monospace; letter-spacing: 2px;">WOMANSWORK</h1>
+        <p class="cs-hero-subheading">How CueForGood helped WomansWork speed up their Magento 2 store</p>
+        <img class="cs-hero-img" src={hero.src} alt="Womanswork" style="max-width: 560px;" />
+        <p class="cs-hero-subheading" style="max-width: 900px;">Our team assisted this women-owned family business reduce their first load time by 65.87% and repeat view time by 67.65%.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 20px 0 60px;">
+      <div class="container">
+        <div style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#d3196f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+          <div>
+            <p style="font-size: 24px; font-weight: 700; color: #aab3c0; margin: 0 0 16px;">Average first load speed increased by <strong style="color: #d3196f;">65.87%</strong></p>
+            <p style="font-size: 24px; font-weight: 700; color: #aab3c0; margin: 0;">Average repeat view speed increased by <strong style="color: #d3196f;">67.65%</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="blue" />
+
+    <section class="cs-advantage" style="padding: 60px 0;">
+      <div class="container">
+        <div class="cs-advantage-row">
+          <div class="cs-advantage-text">
+            <h2 class="heading_main">About The Client</h2>
+            <p>WomansWork has been selling high quality gardening related accessories - gloves, tools, skin care etc., since 1986. Their love for gardening, ever available customer support and high standard of their products got them covered by magazines like Vogue, Better Homes, The O List (Oprah) and many more.</p>
+          </div>
+          <div class="cs-advantage-media">
+            <img src={hat.src} alt="Womanswork" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-advantage" style="padding: 0 0 90px;">
+      <div class="container">
+        <div class="cs-advantage-row reverse">
+          <div class="cs-advantage-media">
+            <img src={slide1.src} alt="Womanswork" />
+          </div>
+          <div class="cs-advantage-text">
+            <h2 class="heading_main">Client's Requirement</h2>
+            <p>Since upgrading to Magento 2, a slow site speed was a pressing issue for WomansWork. The long loading times were a big deterrent to a crisp and seamless user experience. With an optimally performing and a quicker website, the client aimed at leveraging the buzz they were successfully able to create with their products and novel ideas like their <a href="https://womanswork.com/about_us" target="_blank" rel="noopener" style="color: #e0e5ec; text-decoration: underline;">'Story Bank'.</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section text-center" style="padding: 0 0 60px;">
+      <div class="container">
+        <h2 class="heading_main">Results</h2>
+        <p style="max-width: 900px; margin: 0 auto; font-size: 16px;">Fixes/ recommendations made by CueForGood resulted in decreasing the pagespeed across the website, which has lead to considerable improvement to the user experience.</p>
+      </div>
+    </section>
+
+    {speedTables.map((t) => (
+      <section class="cs-section" style="padding: 0 0 70px;">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: 30px;">
+            <h3 class="heading_main" style="font-size: 28px;">{t.title}</h3>
+            {t.link && <p><a href={t.link.href} target="_blank" rel="noopener" style="color: #e0e5ec; text-decoration: underline;">{t.link.text}</a></p>}
+            {t.subtitle && <p style="color: #aab3c0;">{t.subtitle}</p>}
+          </div>
+          <div class="cs-speed-card" style={`background-image: url(${tableBg.src});`}>
+            <div class="cs-speed-card-header">
+              <span>7<sup>th</sup> June 2018</span>
+              <span>8<sup>th</sup> Jan 2019</span>
+            </div>
+            <div class="cs-speed-card-stats">
+              <div class="cs-speed-stat-block">
+                <div class="cs-speed-stat-num">{t.before.first}</div>
+                <div class="cs-speed-stat-label">FIRST VIEW</div>
+                <div class="cs-speed-stat-num">{t.before.repeat}</div>
+                <div class="cs-speed-stat-label">REPEAT VIEW</div>
+              </div>
+              <svg class="cs-speed-card-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+              <div class="cs-speed-stat-block right">
+                <div class="cs-speed-stat-num">{t.after.first}</div>
+                <div class="cs-speed-stat-label">FIRST VIEW</div>
+                <div class="cs-speed-stat-num">{t.after.repeat}</div>
+                <div class="cs-speed-stat-label">REPEAT VIEW</div>
+              </div>
+            </div>
+            <div class="cs-speed-card-decrease-label">DECREASED LOAD TIME BY</div>
+            <div class="cs-speed-card-bars">
+              <div class="cs-speed-bar-block">
+                <div class="cs-speed-bar-track"><span class="cs-speed-bar-fill" style={`width: ${t.pct.first};`}></span></div>
+                <div class="cs-speed-bar-pct">{t.pct.first}</div>
+                <div class="cs-speed-bar-sub">FIRST VIEW</div>
+              </div>
+              <div class="cs-speed-bar-block right">
+                <div class="cs-speed-bar-track"><span class="cs-speed-bar-fill" style={`width: ${t.pct.repeat};`}></span></div>
+                <div class="cs-speed-bar-pct">{t.pct.repeat}</div>
+                <div class="cs-speed-bar-sub">REPEAT VIEW</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <CaseStudyCta variant="lavender" />
+
+    <section class="cs-advantage" style="padding: 90px 0;">
+      <div class="container">
+        <h2 class="heading_main text-center" style="margin-bottom: 50px;">Our Approach</h2>
+        <div class="cs-advantage-row">
+          <div class="cs-advantage-text">
+            <img src={logo.src} alt="Womanswork" style="max-width: 140px; margin-bottom: 24px;" />
+            <p>As is the standard operating procedure at CueForGood, we broke down the requirement into smaller sub tasks - our top priority being improving the speed and performance of the website.</p>
+            <p>The following are some of the major changes made or recommended by CueForGood in order to make a positive impact on the speed and performance of WomansWork.com:</p>
+            <div class="cs-pink-list" style="margin-top: 20px;">
+              {recommendations.map((r, i) => (
+                <div class="cs-pink-list-item">
+                  <span class="cs-pink-list-num">0{i + 1}</span>
+                  <p>{r}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="cs-advantage-text">
+            <p>On analysing the health of the website through a code audit and using diagnostic tools such as Pingdom, GTmetrix and Webpage speed test, we could identify several prominent deviations from the recommended Magento best practices. We identified improvements which, if implemented correctly, could have lead to a notable change in the site speed and performance.</p>
+            <img src={approach.src} alt="Womanswork" style="width: 100%; height: auto; margin-top: 16px;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 0 0 90px;">
+      <div class="container">
+        <h2 class="heading_main text-center" style="max-width: 900px; margin: 0 auto 50px;">Other important recommendations and implementations made by CueForGood</h2>
+        <div class="cs-circle-icon-grid">
+          <div class="cs-circle-icon-item">
+            <div class="cs-circle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="14" height="8" rx="1"/><path d="M6 11h8"/><path d="M17 15l4 4"/></svg>
+            </div>
+            <p>{circleItems[0].text}</p>
+          </div>
+          <div class="cs-circle-icon-item">
+            <div class="cs-circle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/><path d="M6 19h12"/></svg>
+            </div>
+            <p>{circleItems[1].text}</p>
+          </div>
+          <div class="cs-circle-icon-item">
+            <div class="cs-circle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>
+            </div>
+            <p>{circleItems[2].text}</p>
+          </div>
+          <div class="cs-circle-icon-item">
+            <div class="cs-circle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><text x="7" y="16" font-size="7" stroke="none" fill="#171c28">PHP</text></svg>
+            </div>
+            <p>{circleItems[3].text}</p>
+          </div>
+        </div>
+        <img src={bag.src} alt="Womanswork" style="display: none;" />
+      </div>
+    </section>
+
+    <CaseStudyCta variant="blue" />
+
+  </div>
+</Layout>

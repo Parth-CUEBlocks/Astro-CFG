@@ -3,9 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/shopify.less';
 
 import { getSeoMetadata } from '../../lib/seo';
-import MagentoHeroSection from '../components/Magento/MagentoHeroSection.astro';
-import MagentoOurApproach from '../components/Magento/MagentoOurApproach.astro';
-import Magentoblock from '../components/Magento/Magentoblock.astro';
+import ServiceHeroSection from '../components/servicepage/ServiceHeroSection.astro';
+import Serviceblock from '../components/servicepage/Serviceblock.astro';
+import ServiceOurApproach from '../components/servicepage/ServiceOurApproach.astro';
+
 
 const { title, description } = await getSeoMetadata(Astro.url.pathname, {
   title: "Magento Development for B Corps and Purpose-Driven Brands | CueForGood",
@@ -16,10 +17,10 @@ const { title, description } = await getSeoMetadata(Astro.url.pathname, {
 <Layout title={title} description={description}>
   <div class="cfg-shopify-outer-wrapper">
     <div class="cfg-shopify-inner-container">
-      <MagentoHeroSection/>
-       <MagentoOurApproach/> 
+      <ServiceHeroSection/>
+      <ServiceOurApproach/>
       <section class="cfg-services-section">
-        <Magentoblock/>
+        <Serviceblock/>
 
       </section>
 

@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/case-study.less';
+import '../../styles/case-studies/seo-affiliate-marketing-diamond-industry.less';
+
+import logo from '../../assets/case-study/seo-affiliate-marketing-diamond-industry/logo.png';
+import aboutImg1 from '../../assets/case-study/seo-affiliate-marketing-diamond-industry/about-img1.png';
+import aboutImg2 from '../../assets/case-study/seo-affiliate-marketing-diamond-industry/about-img2.png';
+import aboutImg3 from '../../assets/case-study/seo-affiliate-marketing-diamond-industry/about-img3.png';
+import processImg from '../../assets/case-study/seo-affiliate-marketing-diamond-industry/process-img.png';
+import profile from '../../assets/case-study/seo-affiliate-marketing-diamond-industry/profile.png';
+import jewl2 from '../../assets/case-study/seo-affiliate-marketing-diamond-industry/jewl2.png';
+
+const radialStats = [
+  { pct: 118.84, label: "Increase in organic users" },
+  { pct: 114.14, label: "Increase in organic sessions" },
+  { pct: 169.21, label: "Increase in goal completions" },
+];
+---
+
+<Layout
+  title="The Diamond Pro | SEO Case Study"
+  description="The Diamond Pro is an affiliate marketing company educating customers on diamond jewelry purchases. Read our Case Study on how CueForGood increased their organic traffic by 118.84% through SEO."
+>
+  <div class="case-study-page dipro-page">
+
+    <section class="cs-hero">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1><img src={logo.src} alt="The Diamond Pro logo" style="max-width: 200px; height: auto;" /></h1>
+        <p class="cs-hero-subheading">Increasing Organic Users by <strong>118.84%</strong> for The Diamond Pro through Search Engine Optimization (SEO)</p>
+      </div>
+    </section>
+
+    <section class="cs-radial-stats">
+      <div class="container">
+        <div class="cs-radial-stats-row">
+          {radialStats.map((s) => (
+            <div class="cs-radial-stat">
+              <div class="cs-radial-ring" style={`--pct: ${s.pct > 100 ? 100 : s.pct};`}>
+                <span>{s.pct}%</span>
+              </div>
+              <p>{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 0 0 90px;">
+      <div class="container">
+        <p class="cs-note"><strong>Note:</strong> *The figures above are based on a comparison of data from 1st Jan 2019 - 31st Aug 2019 to 1st Jan 2021 - 31st Aug 2021</p>
+
+        <div class="cs-dual-column">
+          <div class="cs-dual-col">
+            <div>
+              <h2 class="heading_main">About the client</h2>
+              <p>Founded in 2009 by Ira Weissman, The Diamond Pro is an affiliate marketing company from Switzerland that aims to educate customers on making an informed decision before purchasing diamond jewelry, especially engagement and wedding rings.</p>
+              <p>The company has a website where interested consumers can find detailed information related to everything diamond, from diamond shape, cut &amp; certifications to detailed guides on how to make the best purchase when shopping for engagement rings of a desired budget. They also provide unbiased reviews of diamond retailers - online and offline, which helps customers pick the best suited retailer for their purchase. Their website allows visitors to contact them and get their personal queries addressed.</p>
+              <p>The client wanted to increase organic traffic and affiliate clicks on their website. In order to find opportunities, they hired CueForGood to carry out an SEO audit of the website.</p>
+            </div>
+            <div>
+              <h2 class="heading_main">Analysis</h2>
+              <p>The Diamond Pro was a leader in its space even before CueForGood started working on their website. Initially tasked with doing a comprehensive SEO audit of The Diamond Pro website, CueForGood discovered that the website was mostly in a good state, except for some technical issues.</p>
+              <p>The analysis revealed that their website needed improvement in indexing of unwanted segments. There were broken links throughout the website that needed to be fixed. There were also redirect chains, 'hreflang' tag issues, and pagination links that ended in 301. CueForGood found out that the client had lost review snippets in SERPs as well.</p>
+              <p>The client had specifically asked us to review some of their website content pages to see if they could be improved further. As a trial, CueForGood was given five existing articles from their website to suggest recommendations. Our analysis revealed that there were some content gaps that we could fill in, and with the help of their amazing copywriting team, CueForGood managed to further optimize articles that were already performing well.</p>
+            </div>
+            <div>
+              <p>We added new questions derived from relevant "People Also Ask" queries from SERPs, provided sub-sections that were not covered earlier, and added guidelines on how to answer the queries to increase visibility for their featured snippets. Our tasks later expanded to include navigational structure improvements, design, and technical help for the website. This involved developing custom plugins, integrating other plugins, website maintenance, etc.</p>
+              <p>CueForGood also actively worked with The Diamond Pro team on their GA/GTM events to help track various affiliate events on the site accurately.</p>
+            </div>
+          </div>
+          <div class="cs-dual-col">
+            <img src={aboutImg1.src} alt="About the Client" />
+            <img src={aboutImg2.src} alt="Diamond Ring" />
+            <img src={aboutImg3.src} alt="About the Client" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-banner cs-banner-cta">
+      <div class="container">
+        <h3>Don't let missed opportunities hold your business back. Get in touch with CueForGood now!</h3>
+        <a href="/contact" class="cfg-cta-btn" style="border-color: #e0e5ec; color: #e0e5ec;">Contact us</a>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding-bottom: 40px;">
+      <div class="container">
+        <h2 class="heading_main text-center">Our Process</h2>
+        <div class="cs-dual-column" style="margin-top: 40px;">
+          <div class="cs-dual-col">
+            <div>
+              <p>CueForGood conducted a comprehensive SEO audit in September 2019.</p>
+              <img src={processImg.src} alt="SEO Audit" />
+            </div>
+            <div>
+              <p>CueForGood also worked on a series of technical issues on The Diamond Pro website. These included the following:</p>
+              <ul>
+                <li>Historical URLs going through multiple 301 redirects (redirect chains)</li>
+                <li>Internal links that led to 404</li>
+                <li>Internal Links that were 301 Redirected</li>
+                <li>404 URLs found in Google Analytics</li>
+                <li>'hreflang' tag issues in GSC</li>
+                <li>Pagination links ending in 301</li>
+                <li>Removed unneeded URLs from the sitemap</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cs-dual-col">
+            <p>CueForGood worked on providing *content briefs for optimizing their existing articles. The content briefs ranged from 10 to 20 briefs a month. Initially, the content briefs were created for existing articles, but after working on 90% of the articles on the website (close to 100 articles), our team continued to provide content briefs for new topics that were not yet covered.</p>
+            <p>*Our content brief includes subtopics, guidelines on what to cover in subtopics, keywords to include in the content, on-page optimization suggestions, internal linking suggestions, anchor text suggestions, and image alt text suggestions.</p>
+            <p>As an SOP, at CueForGood, we work on an iterative keyword research program when initiating a new SEO project. The keyword research is then clustered into smaller hubs and spoken articles to increase the website's topical relevance for targeted topics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-result">
+      <div class="container">
+        <div class="top-details">
+          <h2>Results</h2>
+          <p style="font-size: 18px;">The development team at CueForGood ensured that The Diamond Pro's website health remained excellent by consistently working on website improvements and maintenance.</p>
+          <p style="font-size: 18px;">The SEO team improved the site's organic traffic by over 100% and also raise the percentage of affiliate conversions by almost 170% by addressing crucial content gaps.</p>
+          <p style="font-size: 18px;">With our experience and efforts we successfully improved the organic search performance of the website.</p>
+          <p style="font-size: 18px;">We are fortunate and proud to be associated with a brand like The Diamond Pro and add value to their business.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dipro-quote-section">
+      <div class="container">
+        <div class="dipro-quote-row">
+          <div class="dipro-quote-text">
+            <p>&ldquo;The company's traffic skyrocketed by 70%, and the click-through rate (CTR) increased by 80%, producing a large positive impact on our business. Customers can expect outstanding project management and fast response times from CueForGood.&rdquo;</p>
+            <div class="dipro-quote-author">
+              <p><strong>Mike Fried</strong></p>
+              <p>CEO - The Diamond Pro</p>
+            </div>
+          </div>
+          <div class="dipro-quote-photo">
+            <img src={profile.src} alt="Mike Fried" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dipro-rating-section">
+      <div class="container">
+        <div class="dipro-rating-row">
+          <h2>5.0</h2>
+          <div class="dipro-rating-stars">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="22" height="22" viewBox="0 0 24 24" style="display:inline-block;" fill="#f5c518"><path d="M12 .587l3.668 7.431 8.204 1.193-5.936 5.787 1.401 8.168L12 19.771l-7.337 3.395 1.401-8.168L.128 9.211l8.204-1.193z"/></svg>
+            ))}
+          </div>
+          <span class="dipro-rating-label">Overall Score</span>
+        </div>
+        <p class="dipro-rating-sub">Scheduling &nbsp;|&nbsp; Cost &nbsp;|&nbsp; Quality &nbsp;|&nbsp; Net Promoter Score(NPS)</p>
+      </div>
+    </section>
+
+    <div class="dipro-jewel-strip">
+      <img src={jewl2.src} alt="" aria-hidden="true" />
+    </div>
+
+    <section class="dipro-final-cta">
+      <div class="container">
+        <h3>Drive more relevant traffic from search engines to your site and increase conversions</h3>
+        <a href="/contact" class="cfg-cta-btn" style="border-color: #e0e5ec; color: #e0e5ec;">Contact us</a>
+        <p class="dipro-or">OR</p>
+        <p>Write to us at <a href="mailto:letstalk@cueforgood.com">letstalk@cueforgood.com</a></p>
+      </div>
+    </section>
+
+  </div>
+</Layout>

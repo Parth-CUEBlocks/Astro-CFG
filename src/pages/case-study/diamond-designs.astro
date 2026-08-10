@@ -1,0 +1,197 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyCta from '../../components/CaseStudyCta.astro';
+import '../../styles/case-study.less';
+import '../../styles/case-studies/diamond-designs.less';
+
+import logo from '../../assets/case-study/diamond-designs/logo.png';
+import aboutClient from '../../assets/case-study/diamond-designs/about-client.png';
+import iconDynamic from '../../assets/case-study/diamond-designs/icon-dynamic.png';
+import iconImage from '../../assets/case-study/diamond-designs/icon-image.png';
+import iconVideo from '../../assets/case-study/diamond-designs/icon-video.png';
+import iconCustom from '../../assets/case-study/diamond-designs/icon-custom.png';
+import iconLookalike from '../../assets/case-study/diamond-designs/icon-lookalike.png';
+
+const stats = [
+  { pct: 60.32, label: "Increase In Reach" },
+  { pct: 94.20, label: "Increase In Conversions" },
+  { pct: 61.54, label: "Increase In Link Clicks" },
+  { pct: 116.18, label: "Increase In Impressions" },
+];
+
+const challenges = [
+  { title: "Competitive niche", text: "Because salon and healthcare workwear is an industry that is fairly oversaturated in Ireland, standing out was a challenge." },
+  { title: "Limited audience interests", text: "Finding interests related to the niche was a hard nut to crack since we only had a handful of them to target at our disposal." },
+  { title: "Small target location", text: "Since Ireland is a relatively smaller market and the competition for this niche was high, it posed an issue." },
+  { title: "iOS 14 update", text: "Since the iOS 14 update allows users to opt-out of having their activity tracked, it prevents marketers (like us) from sending personalized advertising to those who opt-out. This was a challenge as tracking conversions became difficult and so did optimising the ads." },
+];
+
+const whatWeDid = [
+  { title: "Understood the client requirements & looked for scope", text: "After understanding the breadth and depth of the client's requirements, we evaluated whether Facebook and Instagram ads will prove beneficial for the business and how. Being an oversaturated industry already, we did a competitor analysis and that helped us build a failproof strategy." },
+  { title: "Elevated user engagement", text: "The data from our research revealed that the brand searches for DiamondDesigns were low. Consequently, the first step was to raise brand awareness which is why we chose to enhance user engagement by boosting potential posts." },
+  { title: "Filtered relevant audience", text: "Target audiences can be segmented into categories like interest, demographics, location, etc. We targeted the interests of our relevant audience that included nurses, healthcare professionals, salon workers, and more. After starting with broader interests, the target audience was narrowed down further." },
+  { title: "Expanded the Ad targeting", text: "To scale ad targeting, we built a lookalike audience which is an audience that is most likely to bring business because it is similar to the best existing customers." },
+  { title: "Accentuated brand loyalty", text: "Since remarketing ads have higher chances of conversions, we built remarketing and dynamic remarketing audiences to attract users who had previously engaged with the business. This fostered trust and promoted the audience with purchase intent signals in the past to convert." },
+  { title: "Experimented with the creatives", text: "Because user engagement with the ads is very important, we kept experimenting with new creatives and videos to attract customers. Right from testimonial ads to product-centric ads, we tried them all to know what works best and leveraged the same." },
+];
+
+const ads = [
+  { icon: iconDynamic, label: "Dynamic Ads" },
+  { icon: iconImage, label: "Image Ads" },
+  { icon: iconVideo, label: "Video Ads" },
+  { icon: iconCustom, label: "Custom Audiences" },
+  { icon: iconLookalike, label: "Lookalike Audiences" },
+];
+---
+
+<Layout
+  title="Case Study for Google Shopping Engines - Diamond Designs"
+  description="How CueForGood helped DiamondDesigns run Facebook and Instagram ads from scratch to boost sales in Ireland, achieving 5x Return On Ad Spend (ROAS) in merely 5 months."
+>
+  <div class="case-study-page ddu-page">
+
+    <section class="cs-hero">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <div class="cs-hero-logo-card">
+          <img src={logo.src} alt="Diamond Designs logo" />
+        </div>
+        <p class="cs-hero-subheading">How CueForGood helped DiamondDesigns run Facebook and Instagram ads from scratch to boost sales in Ireland, achieving 5x Return On Ad Spend (ROAS) in merely 5 months.</p>
+      </div>
+    </section>
+
+    <section class="cs-radial-stats">
+      <div class="container">
+        <div class="cs-radial-stats-row">
+          <div class="cs-radial-stat">
+            <div class="cs-radial-ring" style={`--pct: ${stats[0].pct};`}><span>{stats[0].pct}%</span></div>
+            <p>{stats[0].label}</p>
+          </div>
+          <div class="cs-radial-stat">
+            <div class="cs-radial-ring" style={`--pct: ${stats[1].pct};`}><span>{stats[1].pct}%</span></div>
+            <p>{stats[1].label}</p>
+          </div>
+          <div class="cs-radial-stat cs-radial-highlight">
+            <b>5x</b>
+            <span>Overall<br />ROAS</span>
+          </div>
+          <div class="cs-radial-stat">
+            <div class="cs-radial-ring" style={`--pct: ${stats[2].pct};`}><span>{stats[2].pct}%</span></div>
+            <p>{stats[2].label}</p>
+          </div>
+          <div class="cs-radial-stat">
+            <div class="cs-radial-ring" style={`--pct: ${stats[3].pct};`}><span>{stats[3].pct}%</span></div>
+            <p>{stats[3].label}</p>
+          </div>
+        </div>
+        <p class="cs-note" style="text-align: center; color: #7c8494; margin-top: 40px;"><strong>NOTE:</strong> The results have been tracked from April 2021 to August 2021.</p>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="blue" />
+
+    <section class="cs-section" style="padding: 90px 0 0;">
+      <div class="container">
+        <div class="cs-advantage-row reverse">
+          <div class="cs-advantage-media">
+            <img src={aboutClient.src} alt="Diamond Designs Approach" />
+          </div>
+          <div class="cs-advantage-text">
+            <h2 class="heading_main">About the Client</h2>
+            <p>DiamondDesigns is an eCommerce store that offers unique medical and beauty uniforms. Their comprehensive collection involves a full range of functional yet smart workwear for the salon and healthcare industry.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section text-center" style="padding: 60px 0;">
+      <div class="container">
+        <h2 class="heading_main">Background</h2>
+        <p style="max-width: 900px; margin: 0 auto; font-size: 18px;">DiamondDesigns, in pursuit of scaling its eCommerce business efficiently, decided to explore the power of social media marketing. To begin with, we suggested running paid campaigns across Facebook and Instagram</p>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 40px 0 90px;">
+      <div class="container">
+        <h2 class="heading_main ddu-heading-accent" style="margin-bottom: 50px;">Challenges <span class="ddu-accent-bar"></span></h2>
+        <div class="cs-numbered-list">
+          {challenges.map((c, i) => (
+            <div class="cs-numbered-list-item">
+              <div class="cs-numbered-list-num">{i + 1}</div>
+              <div>
+                <h3>{c.title}</h3>
+                <p>{c.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="heading_main ddu-heading-accent" style="margin: 80px 0 50px;">What We Did <span class="ddu-accent-bar"></span></h2>
+        <div class="cs-numbered-list">
+          {whatWeDid.map((c, i) => (
+            <div class="cs-numbered-list-item">
+              <div class="cs-numbered-list-num">{i + 1}</div>
+              <div>
+                <h3>{c.title}</h3>
+                <p>{c.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-icon-row" style="padding-top: 0;">
+      <div class="container">
+        <h2 class="heading_main" style="margin-bottom: 40px;">Ads &amp; Audiences Used</h2>
+        <ul class="cs-icon-row-grid">
+          {ads.map((a) => (
+            <li>
+              <img src={a.icon.src} alt="" aria-hidden="true" style="width: 64px; height: 64px;" />
+              <h4>{a.label}</h4>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="lavender" />
+
+    <section class="cs-radial-stats" style="padding-top: 90px;">
+      <div class="container">
+        <div class="cs-radial-stats-row">
+          <div class="cs-radial-stat">
+            <div class="cs-radial-ring" style={`--pct: ${stats[0].pct};`}><span>{stats[0].pct}%</span></div>
+            <p>{stats[0].label}</p>
+          </div>
+          <div class="cs-radial-stat">
+            <div class="cs-radial-ring" style={`--pct: ${stats[1].pct};`}><span>{stats[1].pct}%</span></div>
+            <p>{stats[1].label}</p>
+          </div>
+          <div class="cs-radial-stat cs-radial-highlight">
+            <b>5x</b>
+            <span>Overall<br />ROAS</span>
+          </div>
+          <div class="cs-radial-stat">
+            <div class="cs-radial-ring" style={`--pct: ${stats[2].pct};`}><span>{stats[2].pct}%</span></div>
+            <p>{stats[2].label}</p>
+          </div>
+          <div class="cs-radial-stat">
+            <div class="cs-radial-ring" style={`--pct: ${stats[3].pct};`}><span>{stats[3].pct}%</span></div>
+            <p>{stats[3].label}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section text-center" style="padding: 60px 0 90px;">
+      <div class="container">
+        <h2 class="heading_main">Conclusion</h2>
+        <p style="font-size: 18px; max-width: 900px; margin: 0 auto 10px;">Want to increase your ROAS from what you have right now? It is possible and we've shown you how!</p>
+        <p style="font-size: 18px; max-width: 900px; margin: 0 auto 10px;">In case your plate is full and you're looking for a trusted pair of hands to create a bespoke social media strategy for your business, you can get in touch with us at <a href="mailto:letstalk@cueforgood.com" style="color: #ffffff; text-decoration: underline;">letstalk@cueforgood.com</a>.</p>
+        <p style="font-size: 18px;">We'd love to help you out.</p>
+      </div>
+    </section>
+
+  </div>
+</Layout>

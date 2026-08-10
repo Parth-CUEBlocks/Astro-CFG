@@ -1,0 +1,172 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyCta from '../../components/CaseStudyCta.astro';
+import '../../styles/case-study.less';
+
+import logo from '../../assets/case-study/mobile-repairs-accessory-store-igadget/logo.png';
+import traffic from '../../assets/case-study/mobile-repairs-accessory-store-igadget/traffic.svg';
+import revenue from '../../assets/case-study/mobile-repairs-accessory-store-igadget/revenue.svg';
+import transaction from '../../assets/case-study/mobile-repairs-accessory-store-igadget/transaction.svg';
+import product1 from '../../assets/case-study/mobile-repairs-accessory-store-igadget/product1.png';
+import product2 from '../../assets/case-study/mobile-repairs-accessory-store-igadget/product2.png';
+
+const heroStats = [
+  { pct: 23.59, label: "Of total orders" },
+  { pct: 26.09, label: "Of total clicks" },
+  { pct: 19.81, label: "Of total revenue" },
+];
+
+const platforms = [
+  { icon: traffic, label: "2nd best traffic generating platform" },
+  { icon: revenue, label: "2nd best revenue generating platform" },
+  { icon: transaction, label: "2nd best transaction generating platform" },
+];
+
+const challenges = [
+  { title: "Enabling suspended GMC account", text: "Before approaching us, the client tried setting up the GMC account in October 2020. Due to certain areas being neglected, the account got suspended for misinterpretation of products. Google is pretty strict when it comes to accounts violating the Acceptable Business Policy which made getting the account approved a challenge. Nonetheless, the experts in our team delved deep to understand and eradicate the shortcomings." },
+  { title: "Enabling suspended google Ads account", text: "Even though the client tried setting up iGadget's GA account, something was amiss that led to the account getting suspended. We understand that every suspension is unique and that it requires thorough investigation. Therefore, fixing the same was a sweet challenge for us." },
+  { title: "Reducing the high cost per click", text: "The Shopping Campaign being run by the client wasn't performing well. It was set up through Shopify and the CPC was way too high - $5.50 per click. Putting together a campaign that could give the best ROI was another sweet challenge." },
+  { title: "Optimizing product feed", text: "Because the product feed is generated via API (automated feed), there are fewer chances of optimizing it. However, it is important to gain better results." },
+  { title: "Setting up smart shopping campaign", text: "The client was keen on running a Smart Shopping Campaign but the account wasn't eligible for the same. That's because the Display Network must have 50 conversions and the Search Network must have 100 conversions before Smart Shopping can be explored." },
+];
+
+const approach = [
+  { title: "Addressed the GMC suspension", text: "Google leaves no stone unturned when it comes to helping users make informed decisions. It only puts up ads that are honest, straightforward, and clear regarding the product/service being offered. We addressed the issue by making certain changes and contacted Google to review the account. iGadget's GMC account now stands approved." },
+  { title: "Addressed the Ads account suspension", text: "We dug deep and realized the lack of information as the reason behind the Google Ads Account suspension. After adding the required info and requesting Google to review the account, it was reactivated." },
+  { title: "Optimizing the shopping campaign", text: "We set up the shopping campaign through the Google Ads account and kept optimizing it to bring about the best results. From $5.50 as the CPC, we brought it down to less than $0.3." },
+  { title: "Scanning for opportunities to optimize the product feed", text: "We looked for ways to optimize the feed; all the while staying well within the boundaries drawn by GMC regarding its policies. After the implementation, we were able to generate a positive ROI for the client." },
+  { title: "Started with standard shopping campaign", text: "We suggested and started with a Standard Shopping campaign to drive more traffic and sales. Once we fulfilled the requirements and Google had adequate data on who the ideal customers were, we switched to Smart Shopping. Since then, it has been giving us great results." },
+];
+---
+
+<Layout
+  title="Mobile Accessory Store Case Study | Google Shopping Raises Revenue"
+  description="iGadget is a mobile & laptops repairs plus accessory store based in New Zealand. Read our Case Study on how iGadget pulled in 23.59% of total orders via Google Shopping."
+>
+  <div class="case-study-page">
+
+    <section class="cs-hero" style="padding-bottom: 20px;">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1><img src={logo.src} alt="iGadget logo" style="max-width: 200px; height: auto;" /></h1>
+        <p class="cs-hero-subheading">How CueForGood helped iGadget pull in 23.59% of the total orders through google shopping, making it their 2nd best revenue-generating source.</p>
+      </div>
+    </section>
+
+    <section class="cs-radial-stats">
+      <div class="container">
+        <p class="text-center" style="font-size: 20px; margin-bottom: 10px;">Google shopping helped iGadget earn</p>
+        <div class="cs-radial-stats-row">
+          {heroStats.map((s) => (
+            <div class="cs-radial-stat">
+              <div class="cs-radial-ring" style={`--pct: ${s.pct};`}>
+                <span>{s.pct}%</span>
+              </div>
+              <p>{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-icon-row">
+      <div class="container">
+        <p class="cs-icon-row-intro">For iGadget, Google shopping is now the</p>
+        <ul class="cs-icon-row-grid">
+          {platforms.map((p) => (
+            <li>
+              <img src={p.icon.src} alt="" aria-hidden="true" />
+              <h4>{p.label}</h4>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 60px 0 40px;">
+      <div class="container">
+        <p class="cs-note" style="text-align: center; color: #7c8494; margin-bottom: 40px;"><strong>Note:</strong> Measuring the performance from 25th November 2020 to July 2022</p>
+        <div class="cs-dual-column" style="align-items: center;">
+          <div class="cs-dual-col" style="gap: 0;">
+            <div>
+              <h2 class="heading_main">About the client</h2>
+              <p>iGadget is an eCommerce shop that offers an extensive range of mobiles, laptops, and tablet repair parts along with their accessories; available throughout New Zealand.</p>
+            </div>
+          </div>
+          <div class="cs-dual-col">
+            <div class="cs-product-collage">
+              <img src={product1.src} alt="About the Client" />
+              <img class="cs-product-collage-accent" src={product2.src} alt="About the Client" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="blue" />
+
+    <section class="cs-section" style="padding: 60px 0;">
+      <div class="container">
+        <div class="top-details" style="margin-bottom: 0;">
+          <h2 class="heading_main">Background</h2>
+          <p>We had been helping iGadget with their website design and development when the client discussed their GMC and google Ads account suspension. Not just this, the client also shared their concern regarding the high CPC rate. While we got the GMC account approved on 16 October 2020 and the google Ads account on 19 November 2020, we started working on the campaigns only from 24 November 2020 onwards.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 40px 0 90px;">
+      <div class="container">
+        <h2 class="heading_main text-center">Challenges</h2>
+        <div class="cs-challenges-grid" style="margin-top: 40px;">
+          {challenges.map((c) => (
+            <div class="cs-challenge-item">
+              <h3>{c.title}</h3>
+              <p>{c.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 0 0 60px;">
+      <div class="container">
+        <h2 class="heading_main text-center">Approach</h2>
+        <div class="cs-challenges-grid" style="margin-top: 40px;">
+          {approach.map((c) => (
+            <div class="cs-challenge-item">
+              <h3>{c.title}</h3>
+              <p>{c.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="lavender" />
+
+    <section class="cs-result" style="padding-bottom: 40px;">
+      <div class="container">
+        <h2 class="heading_main">Results</h2>
+        <p style="font-size: 20px; margin-bottom: 40px;">Google shopping has helped iGadget acquire</p>
+        <div class="cs-radial-stats-row">
+          {heroStats.map((s) => (
+            <div class="cs-radial-stat">
+              <div class="cs-radial-ring" style={`--pct: ${s.pct};`}>
+                <span>{s.pct}%</span>
+              </div>
+              <p>Of the total {s.label.replace('Of total ', '')}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section text-center" style="padding: 20px 0 90px;">
+      <div class="container">
+        <p style="font-size: 22px; font-weight: 700; color: #e0e5ec; margin-bottom: 20px;">All this has been achieved in less than a year, precisely months.</p>
+        <p style="font-size: 18px;">Want to make more sales using google shopping Ads? Get in touch with at <a href="mailto:letstalk@cueforgood.com" style="color: #ffffff; text-decoration: underline;">letstalk@cueforgood.com</a> to discover strategies that directly align with your business goals.</p>
+      </div>
+    </section>
+
+  </div>
+</Layout>

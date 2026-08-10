@@ -32,8 +32,10 @@ const casestudy = (data as any[]) || [];
         const tagsAboveHeading = item.fields?.tagsAboveHeading as any[] || [];
         const Image = item.fields?.image as any;
         const ImageURL = Image?.fields?.file?.url;
+        const altText = Image?.fields?.title || "Service Image";
         const Image2 = item.fields?.imageLeftForTwoColumn as any;
         const ImageURL2 = Image2?.fields?.file?.url;
+        const altText2 = Image2?.fields?.title || "Service Image";
         return(
           <div class={`cfg-service-row ${className || ''}`}>
             <div class="cfg-service-details">
@@ -45,7 +47,7 @@ const casestudy = (data as any[]) || [];
                   </div>
                 )}
               {title && <h2>{title}</h2>}
-              {ImageURL2 && <img src={`https:${ImageURL2}`} alt={title} class="showcase-img showcase-img2" loading="lazy"  />}
+              {ImageURL2 && <img src={`https:${ImageURL2}`} alt={altText} class="showcase-img showcase-img2" loading="lazy"  />}
               {shortDescriptionBelowHeading && <p class="service-desc">{shortDescriptionBelowHeading}</p>}
               
               {departmentServices && <div class="description-data"  set:html={departmentServices} />}
@@ -65,7 +67,7 @@ const casestudy = (data as any[]) || [];
                     ))}
                   </div>
                 )}
-                {ImageURL && <img src={`https:${ImageURL}`} alt={title} class="showcase-img" loading="lazy"  />}
+                {ImageURL && <img src={`https:${ImageURL}`} alt={altText2} class="showcase-img" loading="lazy"  />}
                 </div>
                 {detailedBlockRightForTwoColumn && <div class="description-data"  set:html={detailedBlockRightForTwoColumn} />}
                  

@@ -1,0 +1,173 @@
+.atg-page {
+  --atg-accent: #45bb8d;
+
+  .cs-stat h3 {
+    color: var(--atg-accent);
+  }
+
+  .cs-challenge-num {
+    color: var(--atg-accent) !important;
+  }
+
+  .cs-result-grid strong {
+    color: var(--atg-accent);
+  }
+
+  /* The Story */
+  .atg-story-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .atg-story-text {
+    flex: 1 1 50%;
+  }
+
+  .atg-story-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #aab3c0;
+    margin: 0 0 16px;
+  }
+
+  .atg-story-media {
+    flex: 1 1 50%;
+    text-align: center;
+  }
+
+  .atg-story-media img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Packaging tabs */
+  .atg-packaging-tabs {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 24px 0 0;
+    padding: 0;
+  }
+
+  .atg-packaging-tabs button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #aab3c0;
+    cursor: pointer;
+  }
+
+  .atg-packaging-tabs button.active {
+    color: var(--atg-accent);
+    text-decoration: underline;
+  }
+
+  .atg-packaging-images {
+    position: relative;
+    text-align: center;
+  }
+
+  .atg-packaging-images img {
+    display: none;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .atg-packaging-images img.active {
+    display: block;
+  }
+
+  /* How to grow app phone frame */
+  .atg-app-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+  }
+
+  .atg-app-side-img {
+    flex: 0 0 auto;
+    max-width: 140px;
+    display: none;
+  }
+
+  @media (min-width: 993px) {
+    .atg-app-side-img {
+      display: block;
+    }
+  }
+
+  .atg-phone-frame {
+    width: 290px;
+    max-width: 100%;
+    border: 15px solid #f5f5f5;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .atg-phone-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Marketing two-column */
+  .atg-marketing-row {
+    display: flex;
+    gap: 60px;
+    padding: 80px 0;
+  }
+
+  .atg-marketing-col h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #e0e5ec;
+    margin: 0 0 16px;
+  }
+
+  .atg-marketing-col p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #aab3c0;
+  }
+
+  .cs-result {
+    background-image: url(../../assets/case-study/allthatgrows/flower_b_back.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    padding: 80px 0 380px;
+  }
+
+  @media (max-width: 992px) {
+    .cs-result {
+      padding: 50px 0 240px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cs-result {
+      padding: 30px 0 160px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .atg-story-row,
+    .atg-marketing-row {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .atg-app-row {
+      flex-direction: column;
+    }
+  }
+}
