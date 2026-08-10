@@ -19,7 +19,7 @@ const currentPath = Astro.url.pathname;
     </a>
     
     <nav class="nav-menu">
-      <a href="/" class={isNavActive(currentPath, '/cue-for-good') ? 'active' : ''} aria-current={isNavActive(currentPath, '/cue-for-good') ? 'page' : undefined}>Cue for Good</a>
+      <a href="/cue-for-good" class={isNavActive(currentPath, '/cue-for-good') ? 'active' : ''} aria-current={isNavActive(currentPath, '/cue-for-good') ? 'page' : undefined}>Cue for Good</a>
       <a href="/team" class={isNavActive(currentPath, '/team') ? 'active' : ''} aria-current={isNavActive(currentPath, '/team') ? 'page' : undefined}>Team</a>
 
       <div class="menu-item has-mega-menu">

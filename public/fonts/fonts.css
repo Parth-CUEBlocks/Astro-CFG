@@ -1,0 +1,41 @@
+@font-face {
+    font-family: "Gotham";
+    src: url("Gotham-Light.eot");
+    src: url("Gotham-Light.eot?#iefix") format("embedded-opentype"), url("Gotham-Light.woff2") format("woff2"), url("Gotham-Light.woff") format("woff"), url("Gotham-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url("Gotham-Medium.eot");
+    src: url("Gotham-Medium.eot?#iefix") format("embedded-opentype"), url("Gotham-Medium.woff2") format("woff2"), url("Gotham-Medium.woff") format("woff"), url("Gotham-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+     
+@font-face {
+    font-family: "Gotham";
+    src: url("Gotham-Book.eot");
+    src: url("Gotham-Book.eot?#iefix") format("embedded-opentype"), url("Gotham-Book.woff2") format("woff2"), url("Gotham-Book.woff") format("woff"), url("Gotham-Book.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url("Gotham-Thin.eot");
+    src: url("Gotham-Thin.eot?#iefix") format("embedded-opentype"), url("Gotham-Thin.woff2") format("woff2"), url("Gotham-Thin.woff") format("woff"), url("Gotham-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}   
+
+@font-face {
+    font-family: 'oswalddemibold';
+    src: url('oswald-demibold-webfont.woff2') format('woff2'),
+        url('oswald-demibold-webfont.woff') format('woff'),
+        url('oswald-demibold-webfont.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

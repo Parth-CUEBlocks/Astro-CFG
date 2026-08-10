@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/cue-for-good.less';
+
+import heroVideo from '../assets/page.cue-for-good/video-cfg.mp4';
+import defaultCertLogo from '../assets/page.cue-for-good/b-corp.png';
+
+const certs = [
+  {
+    id: 'b-corps',
+    name: 'B Corps',
+    text: 'B Corp Certification is a designation that a business is meeting high standards of verified performance, accountability, and transparency on factors from employee benefits and charitable giving to supply chain practices and input materials. "We won\'t stop until all business is a force for good."'
+  },
+  {
+    id: 'c2c',
+    name: 'Cradle 2 Cradle',
+    text: 'Cradle to Cradle Certified is a globally recognized measure of safer, more sustainable products made for the circular economy.'
+  },
+  {
+    id: 'climate-neutral',
+    name: 'Climate Neutral',
+    text: 'Climate Neutral Certified brands meet rigorous standards for measuring, reducing, and offsetting all of their carbon emissions.'
+  },
+  {
+    id: 'leaping-bunny',
+    name: 'Leaping Bunny',
+    text: 'The Leaping Bunny logo is the gold standard for cruelty-free cosmetics, personal care, and household products.'
+  },
+  {
+    id: 'safer-choice',
+    name: 'EPA Safer Choice',
+    text: 'EPA Safer Choice helps consumers identify products that contain safer chemical ingredients without sacrificing quality or performance.'
+  },
+  {
+    id: 'ewg-verified',
+    name: 'EWG verified',
+    text: 'EWG Verified recognizes products that meet EWG’s strictest standards for health and safety, avoiding chemicals of concern.'
+  },
+  {
+    id: 'made-safe',
+    name: 'Made Safe',
+    text: 'Made Safe certification signifies that products are made entirely with ingredients not known or suspected to cause human health harm.'
+  },
+  {
+    id: 'b1g1',
+    name: 'B1G1',
+    text: 'B1G1 helps purpose-driven businesses embed social impact directly into their everyday transactions.'
+  },
+  {
+    id: 'usda-biopreferred',
+    name: 'USDA BioPreferred',
+    text: 'USDA BioPreferred program increases the development, purchase, and use of biobased products derived from renewable agricultural materials.'
+  },
+  {
+    id: 'one-percent',
+    name: '1% for the planet',
+    text: '1% for the Planet members commit to donating at least 1% of annual sales to environmental non-profits.'
+  }
+];
+---
+
+<Layout title="Shopify Agency for B Corps & Purpose-Driven Brands | CueForGood">
+  <section class="cue-hero banner_cb" aria-label="Hero">
+    <div class="video-container" aria-hidden="true">
+      <video autoplay muted loop playsinline class="background-video">
+        <source src={heroVideo} type="video/mp4" />
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="title-top"><strong>CUE</strong> FOR</span>
+        <span class="title-bottom">GOOD</span>
+      </h1>
+      <p class="hero-subtitle">Leveraging eCommerce for purpose</p>
+
+      <span class="scroll-down">
+        <a href="#certifications-section" id="first-focus-element" aria-label="Scroll to next section">
+          <span class="circle" aria-hidden="true">
+            <strong></strong>
+          </span>
+          Scroll down
+        </a>
+      </span>
+    </div>
+  </section>
+
+  <section class="certifications-section" id="certifications-section" tabindex="-1">
+    <div class="cert-container">
+      <h2 class="cert-heading">eCommerce Agency for brands certified as:</h2>
+
+      <div class="cert-grid" role="tablist" aria-label="Brand Certifications">
+        {certs.map((cert, index) => (
+          <button
+            type="button"
+            class={`cert-card ${index === 0 ? 'active' : ''}`}
+            role="tab"
+            aria-selected={index === 0 ? "true" : "false"}
+            aria-controls="cert-detail-panel"
+            id={`tab-${cert.id}`}
+            data-title={cert.name}
+            data-text={cert.text}
+          >
+            <div class="cert-icon-wrapper">
+              <img src={defaultCertLogo.src} alt={cert.name} class="cert-logo" />
+            </div>
+            <span class="cert-name">{cert.name}</span>
+          </button>
+        ))}
+      </div>
+
+      <div class="cert-detail-box" id="cert-detail-panel" role="tabpanel" aria-labelledby="tab-b-corps" aria-live="polite">
+        <h3 class="cert-detail-title" id="cert-detail-title">{certs[0].name}</h3>
+        <p class="cert-detail-text" id="cert-detail-text">{certs[0].text}</p>
+      </div>
+
+      <hr class="cert-divider" />
+    </div>
+  </section>
+
+  <section class="ethos-section" aria-label="Our Ethos">
+    <div class="ethos-container">
+      <h2 class="ethos-heading">
+        CueForGood is driven by the ethos of 'service' & making a positive impact in this world.
+      </h2>
+      <p class="ethos-text">
+        As part of the 'Cue for Good' initiative, we consciously work with brands, companies, eCommerce businesses, start-ups as well as purpose-driven organizations that care about making more than just mere profits.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const certButtons = document.querySelectorAll('.cert-card');
+  const detailTitle = document.getElementById('cert-detail-title');
+  const detailText = document.getElementById('cert-detail-text');
+  const detailPanel = document.getElementById('cert-detail-panel');
+
+  certButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      certButtons.forEach((b) => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const title = btn.getAttribute('data-title');
+      const text = btn.getAttribute('data-text');
+
+      if (detailTitle && title) {
+        detailTitle.textContent = title;
+      }
+
+      if (detailText && text) {
+        detailText.textContent = text;
+      }
+
+      if (detailPanel && btn.id) {
+        detailPanel.setAttribute('aria-labelledby', btn.id);
+      }
+    });
+  });
+</script>
