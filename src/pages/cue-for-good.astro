@@ -4,6 +4,7 @@ import '../styles/cue-for-good.less';
 
 import heroVideo from '../assets/page.cue-for-good/video-cfg.mp4';
 import defaultCertLogo from '../assets/page.cue-for-good/b-corp.png';
+import cfgPageIcon1 from '../assets/page.cue-for-good/cfg-page-icon1.svg';
 
 const certs = [
   {
@@ -56,6 +57,17 @@ const certs = [
     name: '1% for the planet',
     text: '1% for the Planet members commit to donating at least 1% of annual sales to environmental non-profits.'
   }
+];
+
+const industries = [
+  { title: 'Health, Wellness & Nutrition' },
+  { title: 'Biohacking' },
+  { title: 'Farm to Table' },
+  { title: 'Zero Waste' },
+  { title: 'Vegan & Cruelty-Free' },
+  { title: 'Clean Energy & Environment' },
+  { title: 'Ethical & Sustainably sourced products/services' },
+  { title: 'Startups with innovative solutions to world problems' }
 ];
 ---
 
@@ -127,6 +139,25 @@ const certs = [
       <p class="ethos-text">
         As part of the 'Cue for Good' initiative, we consciously work with brands, companies, eCommerce businesses, start-ups as well as purpose-driven organizations that care about making more than just mere profits.
       </p>
+    </div>
+  </section>
+
+  <section class="industries-section" aria-label="Industries We Serve">
+    <div class="industries-container">
+      <h2 class="industries-heading">
+        We aim to be the wind in the sails of socially-responsible companies that offer products and services in any of the following industries:
+      </h2>
+
+      <ul class="industries-grid">
+        {industries.map((item) => (
+          <li class="industry-item">
+            <div class="industry-icon-wrapper">
+              <img src={cfgPageIcon1.src} alt="" class="industry-icon" aria-hidden="true" />
+            </div>
+            <span class="industry-title">{item.title}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 </Layout>

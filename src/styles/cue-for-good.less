@@ -57,7 +57,7 @@ html {
   font-size: 50px;
   font-weight: 400;
   text-transform: uppercase;
-  font-family: 'Gotham';
+  font-family: 'Gotham', sans-serif;
 }
 
 .cue-hero .title-top strong {
@@ -70,13 +70,13 @@ html {
   font-weight: 300;
   line-height: 1;
   text-transform: uppercase;
-  font-family: 'Gotham';
+  font-family: 'Gotham', sans-serif;
 }
 
 .cue-hero .hero-subtitle {
   font-size: 24px;
   font-weight: 500;
-  font-family: 'Gotham';
+  font-family: 'Gotham', sans-serif;
 }
 
 .cue-hero .scroll-down {
@@ -238,7 +238,7 @@ html {
   font-weight: 500;
   line-height: 1.4;
   color: #aab3c0;
-  font-family: Gotham;
+  font-family: 'Gotham', sans-serif;
 }
 
 .cert-divider {
@@ -250,9 +250,9 @@ html {
 /* Ethos Section */
 .ethos-section {
   background-color: #171c28;
-  padding: 80px 0 100px;
+  padding: 8px 0 80px;
   text-align: center;
-  color: #ffffff;
+  color: #e0e5ec;
 }
 
 .ethos-container {
@@ -263,12 +263,12 @@ html {
 }
 
 .ethos-heading {
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 1.35;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 24px;
-  color: #ffffff;
+  margin-bottom: 16px;
+  color: #e0e5ec;
   font-family: 'Gotham', sans-serif;
   max-width: 1050px;
   margin-left: auto;
@@ -276,16 +276,86 @@ html {
 }
 
 .ethos-text {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
-  line-height: 1.55;
-  color: #aab3c0;
+  line-height: 1.4;
   font-family: 'Gotham', sans-serif;
-  max-width: 1120px;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
+  color: #e0e5ec;
+}
+
+/* Industries Section */
+.industries-section {
+  background-color: #171c28;
+  color: #ffffff;
+  padding-top: 90px;
+  padding-bottom: 110px;
+  font-family: 'Gotham', sans-serif;
+}
+
+.industries-container {
+  width: 100%;
+  padding: 0 15px;
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+.industries-heading {
+  font-size: 33px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.35;
+  color: #e0e5ec;
+  font-family: 'Gotham', sans-serif;
+  max-width: 1150px;
+  margin: 0 auto 75px auto;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.industry-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 0 75px 0;
+  padding: 0 10px 0 30px;
+  border-right: 1px solid #dcdcdc;
+}
+
+.industry-item:nth-child(4n) {
+  border-right: none;
+}
+
+.industry-icon-wrapper {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.industry-icon {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.industry-title {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #aab3c0;
+  font-family: 'Gotham', sans-serif;
 }
 
 @media (max-width: 1024px) {
@@ -366,7 +436,7 @@ html {
   }
 
   .certifications-section {
-    padding: 40px 0;
+    padding: 40px 0 28px;
   }
 
   .cert-grid {
@@ -379,23 +449,57 @@ html {
 
   .cert-detail-title {
     font-size: 20px;
+    margin-bottom: 10px;
   }
 
   .cert-detail-text {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .ethos-section {
-    padding: 50px 0 70px;
+    padding: 0 0 70px;
   }
 
   .ethos-heading {
-    font-size: 22px;
+    font-size: 28px;
+    line-height: 1.2;
     margin-bottom: 16px;
   }
 
+  .cert-detail-box{
+    margin-bottom: 33px;
+  }
   .ethos-text {
-    font-size: 15px;
+    font-size: 16px;
+    color: #e0e5ec;
+  }
+  .cert-name{
+    display: none;
+  }
+
+  /* Responsive Industries Section */
+  .industries-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .industries-heading {
+    font-size: 28px;
+    margin-bottom: 60px;
+  }
+
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .industry-item {
+    margin: 0 0 45px 0;
+    padding: 0 10px 0 2px;
+    border-right: none;
+  }
+
+  .industry-title {
+    font-size: 16px;
   }
 }
 
@@ -407,7 +511,7 @@ html {
   }
 
   .cert-card {
-    width: calc(50% - 8px);
+    width: calc(33% - 8px);
   }
 }
 
