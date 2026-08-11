@@ -5,6 +5,7 @@ import '../styles/cue-for-good.less';
 import heroVideo from '../assets/page.cue-for-good/video-cfg.mp4';
 import defaultCertLogo from '../assets/page.cue-for-good/b-corp.png';
 import cfgPageIcon1 from '../assets/page.cue-for-good/cfg-page-icon1.svg';
+import cfgLogo from '../assets/cfg-logo.svg';
 
 const certs = [
   {
@@ -68,6 +69,20 @@ const industries = [
   { title: 'Clean Energy & Environment' },
   { title: 'Ethical & Sustainably sourced products/services' },
   { title: 'Startups with innovative solutions to world problems' }
+];
+
+const services = [
+  'Shopify',
+  'Magento',
+  'Woo/WordPress',
+  'Core PHP',
+  'Creative Design',
+  'Organic Search/SEO',
+  'Paid Advertising',
+  'Content Services',
+  'Conversion Rate Optimization',
+  'Email Marketing',
+  'Analytics'
 ];
 ---
 
@@ -160,38 +175,79 @@ const industries = [
       </ul>
     </div>
   </section>
+
+  <section class="services-section service_weoffer" aria-label="Services We Offer">
+    <div class="services-container container">
+      <h2 class="heading-cb">Services we offer</h2>
+      <h6 class="services-subtitle">
+        Empowering the altruists to have a greater impact by leveraging digital & eCommerce
+      </h6>
+      <p class="services-intro">
+        As an eCommerce Agency, we offer the following areas of expertise.
+      </p>
+
+      <div class="services-content-wrapper">
+        <div class="services-logo-col">
+          <img src={cfgLogo.src} alt="Cue for Good Logo" class="services-logo" />
+        </div>
+        <ul class="services-grid services-inn-cb">
+          {services.map((service) => (
+            <li class="service-item">{service}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  
 </Layout>
 
 <script>
-  const certButtons = document.querySelectorAll('.cert-card');
+  const certButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('.cert-card'));
   const detailTitle = document.getElementById('cert-detail-title');
   const detailText = document.getElementById('cert-detail-text');
   const detailPanel = document.getElementById('cert-detail-panel');
 
-  certButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      certButtons.forEach((b) => {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
-      });
+  function activateTab(btn: HTMLButtonElement) {
+    certButtons.forEach((b) => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+      b.setAttribute('tabindex', '-1');
+    });
 
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    btn.setAttribute('tabindex', '0');
+    btn.focus();
 
-      const title = btn.getAttribute('data-title');
-      const text = btn.getAttribute('data-text');
+    const title = btn.getAttribute('data-title');
+    const text = btn.getAttribute('data-text');
 
-      if (detailTitle && title) {
-        detailTitle.textContent = title;
+    if (detailTitle && title) detailTitle.textContent = title;
+    if (detailText && text) detailText.textContent = text;
+    if (detailPanel && btn.id) detailPanel.setAttribute('aria-labelledby', btn.id);
+  }
+
+  certButtons.forEach((btn, index) => {
+    btn.addEventListener('click', () => activateTab(btn));
+
+    btn.addEventListener('keydown', (e: KeyboardEvent) => {
+      let targetIndex = index;
+
+      if (e.key === 'ArrowRight') {
+        targetIndex = (index + 1) % certButtons.length;
+      } else if (e.key === 'ArrowLeft') {
+        targetIndex = (index - 1 + certButtons.length) % certButtons.length;
+      } else if (e.key === 'Home') {
+        targetIndex = 0;
+      } else if (e.key === 'End') {
+        targetIndex = certButtons.length - 1;
+      } else {
+        return;
       }
 
-      if (detailText && text) {
-        detailText.textContent = text;
-      }
-
-      if (detailPanel && btn.id) {
-        detailPanel.setAttribute('aria-labelledby', btn.id);
-      }
+      e.preventDefault();
+      activateTab(certButtons[targetIndex]);
     });
   });
 </script>
