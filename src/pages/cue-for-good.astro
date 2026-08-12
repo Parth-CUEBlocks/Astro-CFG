@@ -6,57 +6,30 @@ import heroVideo from '../assets/page.cue-for-good/video-cfg.mp4';
 import defaultCertLogo from '../assets/page.cue-for-good/b-corp.png';
 import cfgPageIcon1 from '../assets/page.cue-for-good/cfg-page-icon1.svg';
 import cfgLogo from '../assets/cfg-logo.svg';
+import OurClients from '../components/OurClients.astro';
+
+import learningRX from '../assets/page.cue-for-good/learningRX.png';
 
 const certs = [
   {
     id: 'b-corps',
-    name: 'B Corps',
-    text: 'B Corp Certification is a designation that a business is meeting high standards of verified performance, accountability, and transparency on factors from employee benefits and charitable giving to supply chain practices and input materials. "We won\'t stop until all business is a force for good."'
+    name: 'B Corp',
+    text: 'Certified B Corporations are businesses that meet the highest standards of verified social and environmental performance, public transparency, and legal accountability to balance profit and purpose.'
   },
   {
-    id: 'c2c',
-    name: 'Cradle 2 Cradle',
-    text: 'Cradle to Cradle Certified is a globally recognized measure of safer, more sustainable products made for the circular economy.'
+    id: '1-percent',
+    name: '1% for the Planet',
+    text: 'Members donate at least 1% of annual sales to environmental non-profits to assist in tackling our planet’s most pressing environmental issues.'
   },
   {
     id: 'climate-neutral',
     name: 'Climate Neutral',
-    text: 'Climate Neutral Certified brands meet rigorous standards for measuring, reducing, and offsetting all of their carbon emissions.'
+    text: 'Climate Neutral Certified brands measure, reduce, and offset all carbon emissions, taking immediate accountability for their greenhouse gas footprint.'
   },
   {
-    id: 'leaping-bunny',
-    name: 'Leaping Bunny',
-    text: 'The Leaping Bunny logo is the gold standard for cruelty-free cosmetics, personal care, and household products.'
-  },
-  {
-    id: 'safer-choice',
-    name: 'EPA Safer Choice',
-    text: 'EPA Safer Choice helps consumers identify products that contain safer chemical ingredients without sacrificing quality or performance.'
-  },
-  {
-    id: 'ewg-verified',
-    name: 'EWG verified',
-    text: 'EWG Verified recognizes products that meet EWG’s strictest standards for health and safety, avoiding chemicals of concern.'
-  },
-  {
-    id: 'made-safe',
-    name: 'Made Safe',
-    text: 'Made Safe certification signifies that products are made entirely with ingredients not known or suspected to cause human health harm.'
-  },
-  {
-    id: 'b1g1',
-    name: 'B1G1',
-    text: 'B1G1 helps purpose-driven businesses embed social impact directly into their everyday transactions.'
-  },
-  {
-    id: 'usda-biopreferred',
-    name: 'USDA BioPreferred',
-    text: 'USDA BioPreferred program increases the development, purchase, and use of biobased products derived from renewable agricultural materials.'
-  },
-  {
-    id: 'one-percent',
-    name: '1% for the planet',
-    text: '1% for the Planet members commit to donating at least 1% of annual sales to environmental non-profits.'
+    id: 'fair-trade',
+    name: 'Fair Trade Certified',
+    text: 'Fair Trade Certified products ensure sustainable livelihoods, safe working conditions, and fair prices for farmers and workers globally.'
   }
 ];
 
@@ -83,6 +56,44 @@ const services = [
   'Conversion Rate Optimization',
   'Email Marketing',
   'Analytics'
+];
+
+const testimonials = [
+  {
+    logo: learningRX?.src || cfgPageIcon1.src,
+    logoAlt: 'AllThatGrows Logo',
+    quote: "“The website design is phenomenal, and customers constantly rave about the packaging and design. Customers also like the functionality, which is something that's helped set our business apart from competitors. Their company is value driven, and their employees and customers come first. I'm very happy with them. Any customer of theirs shouldn't have any trouble. In terms of our PPC and comparison shopping campaigns, they're doing exceptionally well. We're happy with where we're at with them. We're receiving the same high quality deliverables, but at lower rates than those offered in Silicon Valley.”",
+    linkText: 'AllThatGrows.in',
+    url: 'https://www.allthatgrows.in'
+  },
+  {
+    logo: learningRX?.src || cfgPageIcon1.src,
+    logoAlt: 'Badabon Harvest Logo',
+    quote: "“I found their pure professionalism and passion for doing what they believe is best for the client to be most impressive. They went above and beyond what we initially thought they'd be doing. I've never seen this level of professionalism in other developers I've worked with. That was very impressive, and I'd recommend them to everyone just for this.”",
+    linkText: 'BadabonHarvest.bio',
+    url: 'https://badabonharvest.bio'
+  },
+  {
+    logo: learningRX?.src || cfgPageIcon1.src,
+    logoAlt: 'LearningRx Logo',
+    quote: "“We have worked with CueForGood and have done probably hundreds of projects with them. We have been consistently impressed with their professionalism, reliability, quality of work and extensive expertise in a wide span of technologies and services. LearningRx is a Franchise system with more than 70 Franchised locations, and CueForGood has helped us meet the many demands and challenges of building a technology infrastructure to support multiple locations.\n\nAs we bring new ideas and technology demands to the table, they are consistently able to take on new challenges with ease and expertise. They consistently deliver work on-time, on-budget and with the highest levels of quality.\n\nIn addition, CueForGood is a pleasure to work with as a team—they are friendly, easy to communicate with, highly professional and have the highest level of work ethics and values. I highly recommend CueForGood!.”",
+    linkText: 'LearningRx.com',
+    url: 'https://www.learningrx.com'
+  },
+  {
+    logo: learningRX?.src || cfgPageIcon1.src,
+    logoAlt: 'Ansel & Ivy Logo',
+    quote: "“Their technical competence is strong. If you present them with a broad or specific idea around a feature that you want to be developed, they have a keen ability to go and find solutions to that problem. That was refreshing for us because we didn't have the time to go and show them how a feature should be implemented. Their team was able to execute solutions based on our ideas. Overall, we're happy with what CueForGood did. We asked them to build a complex e-commerce platform with a lot of rules. They delivered a product that was not only to specification but also went above and beyond.”",
+    linkText: 'AnselAndIvy.com',
+    url: 'https://anselandivy.com'
+  },
+  {
+    logo: learningRX?.src || cfgPageIcon1.src,
+    logoAlt: 'DAO Labs Logo',
+    quote: "“They're a great group to work with for precision, speed, and affordability. They are a tremendous value for what they provide, and they're typically pretty fast. That's why we continue to work with them. Their CEO & founder was very passionate about our company and our product, and there was pretty strong chemistry from that perspective. He was very complimentary of the brand and demonstrated an incredible enthusiasm and motivation to help us achieve our goals.”",
+    linkText: 'Mydaolabs.com',
+    url: 'https://mydaolabs.com'
+  }
 ];
 ---
 
@@ -190,16 +201,47 @@ const services = [
         <div class="services-logo-col">
           <img src={cfgLogo.src} alt="Cue for Good Logo" class="services-logo" />
         </div>
-        <ul class="services-grid services-inn-cb">
-          {services.map((service) => (
-            <li class="service-item">{service}</li>
-          ))}
-        </ul>
+        
+        <div class="services-main-content">
+          <ul class="services-grid services-inn-cb">
+            {services.map((service) => (
+              <li class="service-item">{service}</li>
+            ))}
+          </ul>
+
+          <div class="contactus-area btm-cont">
+            <h2 class="heading-cb">Please share details of your story & project requirements</h2>
+            <a href="#contact" class="contactus-btn">Contact us</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  
+  <OurClients/>
+
+  <section class="testimonials-section" aria-label="Client Testimonials">
+    <div class="testimonials-container">
+      <h2 class="heading-cb">Client Testimonials</h2>
+      <h6 class="testimonials-subtitle">Some good words</h6>
+
+      <div class="testimonials-grid">
+        {testimonials.map((item) => (
+          <div class="test-block">
+            <div class="client-logo-wrapper">
+              <img src={item.logo} alt={item.logoAlt} class="client-logo" />
+            </div>
+            <p class="quote-text">{item.quote}</p>
+            {item.linkText && (
+              <a href={item.url} target="_blank" rel="noopener noreferrer" class="client-link">
+                {item.linkText}
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <script>

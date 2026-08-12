@@ -5,10 +5,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-function initSliders() {
-  // --- 1. Existing Generic/Top Slider ---
-  if (document.querySelector('.swiper')) {
-    new Swiper('.swiper', {
+export function initSliders() {
+  // 1. Generic Top Slider
+  if (document.querySelector('.swiper:not(.testimonial-swiper):not(.partners-swiper):not(.clients-swiper)')) {
+    new Swiper('.swiper:not(.testimonial-swiper):not(.partners-swiper):not(.clients-swiper)', {
       modules: [Navigation, Pagination, Autoplay, A11y],
       loop: true,
       autoplay: {
@@ -26,22 +26,22 @@ function initSliders() {
     });
   }
 
-  // --- 2. New Testimonial Slider (Completely Separate) ---
+  // 2. Testimonial Slider
   if (document.querySelector('.testimonial-swiper')) {
     new Swiper('.testimonial-swiper', {
       modules: [Navigation, Pagination, Autoplay, A11y],
       loop: true,
-      slidesPerView: 1, 
-      spaceBetween: 30, 
+      slidesPerView: 1,
+      spaceBetween: 30,
       autoplay: {
-        delay: 4000, 
+        delay: 4000,
         disableOnInteraction: false,
       },
       breakpoints: {
         768: {
           slidesPerView: 2,
           spaceBetween: 40,
-        }
+        },
       },
       navigation: {
         nextEl: '.testimonial-next',
@@ -54,34 +54,8 @@ function initSliders() {
     });
   }
 
-  // --- 3. New Partners Logo Ticker Slider ---
-  // if (document.querySelector('.partners-swiper')) {
-  //   new Swiper('.partners-swiper', {
-  //     modules: [Autoplay, A11y],
-  //     loop: true,
-  //     // spaceBetween: 30,
-  //     slidesPerView: 2,
-  //     slidesPerGroup: 1, 
-  //     watchSlidesProgress: true, // Prevents elements from rendering with out-of-bounds offsets
-  //     autoplay: {
-  //       delay: 3000, 
-  //       disableOnInteraction: false,
-  //     },
-  //     breakpoints: {
-  //       640: {
-  //         slidesPerView: 2,
-  //         slidesPerGroup: 1,
-  //         spaceBetween: 30,
-  //       },
-  //       992: {
-  //         slidesPerView: 5, 
-  //         slidesPerGroup: 1, 
-  //       }
-  //     }
-  //   });
-  // }
-
-    if (document.querySelector('.partners-swiper')) {
+  // 3. Partners Logo Ticker Slider
+  if (document.querySelector('.partners-swiper')) {
     new Swiper('.partners-swiper', {
       modules: [Pagination, Autoplay, A11y],
       loop: true,
@@ -111,9 +85,77 @@ function initSliders() {
       watchOverflow: true,
     });
   }
+
+  // 4. Our Clients Slider
+  const clientsContainer = document.querySelector('.clients-swiper');
+  if (clientsContainer) {
+    const titleEl = document.getElementById('active-client-title');
+    const descEl = document.getElementById('active-client-desc');
+
+    function updateActiveClient(swiper) {
+      swiper.slides.forEach((s) => s.classList.remove('active-client'));
+
+      const activeSlide = swiper.slides[swiper.activeIndex];
+      if (!activeSlide) return;
+
+      activeSlide.classList.add('active-client');
+
+      const title = activeSlide.getAttribute('data-title') || '';
+      const desc = activeSlide.getAttribute('data-description') || '';
+
+      if (titleEl) titleEl.textContent = title ? `${title}:` : '';
+      if (descEl) descEl.textContent = desc;
+    }
+
+    const clientSwiper = new Swiper('.clients-swiper', {
+      modules: [Navigation, Pagination, Autoplay, A11y],
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      navigation: {
+        nextEl: '.client-next',
+        prevEl: '.client-prev',
+      },
+      pagination: {
+        el: '.clients-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 3,
+          centeredSlides: false,
+          slidesPerGroup: 1,
+        },
+        992: {
+          slidesPerView: 5,
+          centeredSlides: false,
+          slidesPerGroup: 1,
+        },
+      },
+      on: {
+        init: function () {
+          updateActiveClient(this);
+        },
+        slideChange: function () {
+          updateActiveClient(this);
+        },
+      },
+    });
+
+    clientsContainer.addEventListener('click', (e) => {
+      const slide = e.target.closest('.client-slide');
+      if (slide && clientSwiper) {
+        const slideIndex = Array.from(clientSwiper.slides).indexOf(slide);
+        if (slideIndex !== -1) {
+          clientSwiper.slideTo(slideIndex);
+        }
+      }
+    });
+  }
 }
 
-// Execution lifecycle wrappers
+// Lifecycle Handlers
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initSliders);
 } else {

@@ -1,0 +1,396 @@
+---
+import cfgPageIcon1 from '../assets/page.cue-for-good/allthatgrows_logo.png';
+
+// Static client dataset expanded to 12 items using the imported icon
+const clients = [
+  {
+    title: "Allthatgrows",
+    description: "We are a company that brings you the best, most healthful, and nourishing seeds. Our experience of producing and supplying superior quality seeds spans over a decade.",
+    logoUrl: cfgPageIcon1,
+    logoAlt: "All That Grows Logo",
+    url: "https://www.allthatgrows.in"
+  },
+  {
+    title: "Perennial Cycle",
+    description: "Specialists in folding bikes, cargo bikes, and commuter cycling gear tailored for everyday urban transportation and sustainable travel.",
+    logoUrl: cfgPageIcon1,
+    logoAlt: "Perennial Cycle Logo",
+    url: "https://www.perennialcycle.com"
+  },
+  {
+    title: "LearningRx",
+    description: "One-on-one brain training programs designed to target and strengthen weak cognitive skills for children and adults looking to succeed.",
+    logoUrl: cfgPageIcon1,
+    logoAlt: "LearningRx Logo",
+    url: "https://www.learningrx.com"
+  },
+  {
+    title: "Alzheimer's Speaks",
+    description: "An advocacy brand providing resources, support, and awareness to transform dementia care culture globally through media and education.",
+    logoUrl: cfgPageIcon1,
+    logoAlt: "Alzheimer's Speaks Logo",
+    url: "https://www.alzheimersspeaks.com"
+  },
+  {
+    title: "Al-Anon Family Groups",
+    description: "A global mutual support program offering hope, guidance, and help to families and friends affected by loved ones with alcoholism.",
+    logoUrl: cfgPageIcon1,
+    logoAlt: "Al-Anon Family Groups Logo",
+    url: "https://al-anon.org"
+  },
+  {
+    title: "Madulf",
+    description: "Our range of ready-to-cook products is 100% vegan, without any preservatives or additives, convenient to make, and tastes incredible – perfect for the conscious consumer.",
+    logoUrl: cfgPageIcon1,
+    logoAlt: "Madulf Logo",
+    url: "https://example.com"
+  },
+  {
+    title: "DAO Labs",
+    description: "We deliver modern wellness solutions through the wisdom of traditional Chinese medicine and the healing powers of natural herbal products.",
+    logoUrl: cfgPageIcon1,
+    logoAlt: "DAO Labs Logo",
+    url: "https://mydaolabs.com"
+  },
+  {
+    title: "EcoHarvest",
+    description: "Leading innovator in regenerative agriculture practices, helping local farmers produce nutrient-dense crops while restoring soil health.",
+    logoUrl: cfgPageIcon1,
+    logoAlt: "EcoHarvest Logo",
+    url: "https://example.com"
+  },
+  {
+    title: "Urban Mobility",
+    description: "Pioneering eco-friendly electric micro-mobility options for modern cities to reduce congestion and carbon footprints.",
+    logoUrl: cfgPageIcon1,
+    logoAlt: "Urban Mobility Logo",
+    url: "https://example.com"
+  },
+  {
+    title: "MindPulse",
+    description: "Empowering mental wellness through accessible digital therapy, daily mindfulness routines, and community-backed support networks.",
+    logoUrl: cfgPageIcon1,
+    logoAlt: "MindPulse Logo",
+    url: "https://example.com"
+  },
+  {
+    title: "OceanClean",
+    description: "A global initiative utilizing advanced technology to extract plastic debris from river systems before it enters oceans.",
+    logoUrl: cfgPageIcon1,
+    logoAlt: "OceanClean Logo",
+    url: "https://example.com"
+  },
+  {
+    title: "BioNourish",
+    description: "Crafting organic, plant-based nutritional supplements designed to boost everyday energy and sustain long-term bodily vitality.",
+    logoUrl: cfgPageIcon1,
+    logoAlt: "BioNourish Logo",
+    url: "https://example.com"
+  }
+];
+---
+
+<section class="our-clients-section">
+  <div class="clients-container">
+    <h2 class="heading-cb">Our Clients</h2>
+    <h6 class="services-subtitle">Good Company we keep</h6>
+    <p class="services-intro">We proudly serve the following brands and causes:</p>
+
+    <!-- Slider Outer Area -->
+    <div class="clients-slider-outer">
+      <div class="swiper clients-swiper">
+        <div class="swiper-wrapper">
+          {clients.map((item, index) => (
+            <div 
+              class={`swiper-slide client-slide ${index === 0 ? 'active-client' : ''}`}
+              data-title={item.title}
+              data-description={item.description}
+            >
+              <div class="logo-card">
+                {item.url && (
+                  <a 
+                    href={item.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="external-link-icon" 
+                    aria-label={`Visit ${item.title} website`}
+                    onclick="event.stopPropagation();"
+                  >
+                    <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                )}
+                <img src={item.logoUrl.src || item.logoUrl} alt={item.logoAlt} loading="lazy" class="client-logo" />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Side Navigation Arrows -->
+        <button class="client-arrow client-prev" aria-label="Previous Slide">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="client-arrow client-next" aria-label="Next Slide">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Client Dynamic Text Details -->
+    <div class="client-details-box">
+      <h4 class="client-active-title" id="active-client-title">
+        {clients[0]?.title ? `${clients[0].title}:` : ''}
+      </h4>
+      <p class="client-active-desc" id="active-client-desc">
+        {clients[0]?.description || ''}
+      </p>
+    </div>
+
+    <!-- Bottom Pagination Dots -->
+    <div class="clients-pagination swiper-pagination"></div>
+  </div>
+</section>
+
+<script src="../scripts/swiper.js"></script>
+
+<style>
+  .our-clients-section {
+    background-color: #171c28;
+    color: #e0e5ec;
+    padding: 60px 0 80px 0;
+    font-family: 'Gotham', sans-serif, system-ui;
+    overflow: hidden;
+  }
+
+  .clients-container {
+    max-width: 1075px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  h2.heading-cb {
+    color: #e0e5ec;
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    line-height: 1.1;
+  }
+
+  h6.services-subtitle {
+    color: #aab3c0;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 30px 0;
+    line-height: 1.3;
+  }
+
+  p.services-intro {
+    color: #aab3c0;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 40px 0;
+    line-height: 1.3;
+  }
+
+  .clients-slider-outer {
+    position: relative;
+    margin-bottom: 35px;
+  }
+
+  .clients-swiper {
+    position: relative;
+    padding: 15px 0 25px 0;
+  }
+
+  /* Base Slide Styling */
+  .client-slide {
+    height: 150px;
+    background-color: #7b8898;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    opacity: 0.65;
+    transition: background-color 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Mobile-only peek width */
+  @media (max-width: 767px) {
+    .client-slide {
+      width: 78% !important;
+    }
+  }
+
+  /* Desktop Settings */
+  @media (min-width: 768px) {
+    .client-slide {
+      background-color: #dbe2ea;
+      opacity: 1;
+    }
+  }
+
+  .logo-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .client-logo {
+    max-width: 85%;
+    max-height: 75px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.75;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+  }
+
+  .client-slide:hover .client-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  .client-slide.active-client {
+    background-color: #ffffff !important;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+    opacity: 1 !important;
+    z-index: 5;
+  }
+
+  .client-slide.active-client .client-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  .client-slide.active-client::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ffffff;
+    z-index: 10;
+  }
+
+  .external-link-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: #2d3748;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .external-link-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .client-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #1a202c;
+    cursor: pointer;
+    z-index: 20;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .client-prev {
+    left: 6px;
+  }
+
+  .client-next {
+    right: 6px;
+  }
+
+  .client-details-box {
+    margin-bottom: 30px;
+    min-height: 110px;
+  }
+
+  h4.client-active-title {
+    color: #e0e5ec;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+  }
+
+  p.client-active-desc {
+    color: #aab3c0;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .clients-pagination {
+    position: static !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  :global(.clients-pagination .swiper-pagination-bullet) {
+    background: #aab3c0;
+    opacity: 0.6;
+    width: 10px;
+    height: 10px;
+    margin: 0 !important;
+    transition: all 0.3s ease;
+  }
+
+  :global(.clients-pagination .swiper-pagination-bullet-active) {
+    background: #8bb2d9 !important;
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  @media (max-width: 767px) {
+    h6.services-subtitle {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    p.services-intro {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    h4.client-active-title {
+      font-size: 18px;
+    }
+
+    p.client-active-desc {
+      font-size: 16px;
+    }
+
+    .clients-swiper {
+      overflow: visible !important;
+    }
+  }
+</style>

@@ -140,7 +140,6 @@ html {
   }
 }
 
-/* Certifications Section */
 .certifications-section {
   background-color: #171c28;
   color: #ffffff;
@@ -230,7 +229,8 @@ html {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 14px;
-  color: #ffffff;
+  color: #e0e5ec;
+  font-family: 'Gotham', sans-serif;
 }
 
 .cert-detail-text {
@@ -247,7 +247,6 @@ html {
   margin: 0;
 }
 
-/* Ethos Section */
 .ethos-section {
   background-color: #171c28;
   padding: 8px 0 80px;
@@ -287,7 +286,6 @@ html {
   color: #e0e5ec;
 }
 
-/* Services We Offer Section */
 .services-section {
   background-color: #171c28;
   color: #e0e5ec;
@@ -328,7 +326,6 @@ html {
   font-family: 'Gotham', sans-serif;
 }
 
-/* Dark Container Card matching reference design */
 .services-content-wrapper {
   border-radius: 4px;
   display: flex;
@@ -350,15 +347,18 @@ html {
   display: block;
 }
 
+.services-main-content {
+  padding: 40px 40px 0 60px;
+  background-color: #141924;
+}
+
 .services-grid {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   list-style: none;
-  padding: 40px 40px 0 60px;
   margin: 0;
-  background-color: #141924;
 }
 
 .services-grid .service-item {
@@ -383,12 +383,50 @@ html {
   border-right: none;
 }
 
-/* Industries Section */
+.contactus-area.btm-cont {
+  padding: 50px 0px 0px;
+  background-color: transparent;
+  display: inline-block;
+  padding: 50px 0;
+  width: 100%;
+  border-top: 1px solid #292e3b;
+}
+
+.contactus-area.btm-cont .heading-cb {
+  color: #E0E5EC;
+  font-size: 28px;
+  font-family: 'Gotham', sans-serif;
+  margin: 0px 0px 4px 0px;
+}
+
+.contactus-btn {
+  display: inline-block;
+  color: #E0E5EC;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Gotham', sans-serif;
+  margin: 20px 0px 0px 0px;
+  padding: 25px 10px;
+  border: 5px solid #E0E5EC;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  max-width: 220px;
+  width: 100%;
+}
+
+.contactus-btn:hover,
+.contactus-btn:focus-visible {
+  background-color: #E0E5EC;
+  color: #171c28;
+}
+
 .industries-section {
   background-color: #171c28;
   color: #ffffff;
   padding-top: 90px;
-  padding-bottom: 110px;
+  padding-bottom: 0;
   font-family: 'Gotham', sans-serif;
 }
 
@@ -432,8 +470,8 @@ html {
 }
 
 .industry-icon-wrapper {
-  width: 80px;
-  height: 80px;
+  width: auto;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -450,8 +488,93 @@ html {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.35;
-  color: #e0e5ec;
+  color: #aab3c0;
   font-family: 'Gotham', sans-serif;
+}
+
+.testimonials-section {
+  background-color: #171c28;
+  color: #e0e5ec;
+  padding: 60px 0 80px 0;
+  font-family: 'Gotham', sans-serif;
+}
+
+.testimonials-container {
+  width: 100%;
+  padding: 0 15px;
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+.testimonials-section h2.heading-cb {
+  font-size: 34px;
+  font-weight: 700;
+  color: #e0e5ec;
+  margin: 0 0 4px 0;
+  font-family: 'Gotham', sans-serif;
+}
+
+.testimonials-section h6.testimonials-subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+  color: #aab3c0;
+  margin: 0 0 30px 0;
+  font-family: 'Gotham', sans-serif;
+}
+
+.testimonials-grid {
+  column-count: 2;
+  column-gap: 20px;
+}
+
+.test-block {
+  background-color: #e0e5ec;
+  padding: 35px 30px;
+  margin-bottom: 20px;
+  break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.client-logo-wrapper {
+  margin-bottom: 25px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.test-block .client-logo {
+  max-height: 54px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.test-block p.quote-text {
+  color: #171c28;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.45;
+  margin: 0 0 25px 0;
+  font-family: 'Gotham', sans-serif;
+  white-space: pre-line;
+}
+
+.test-block a.client-link {
+  color: #171c28;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Gotham', sans-serif;
+}
+
+.test-block a.client-link:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 1024px) {
@@ -580,7 +703,6 @@ html {
     display: none;
   }
 
-  /* Responsive Services Section */
   .services-section {
     padding: 50px 0;
   }
@@ -598,11 +720,11 @@ html {
   .services-content-wrapper {
     flex-direction: column;
     gap: 24px;
-    padding: 24px 20px;
+    padding: 0;
   }
 
   .services-logo-col {
-    width: 120px;
+    display: none;
   }
 
   .services-grid {
@@ -617,10 +739,23 @@ html {
     border-right: none;
   }
 
-  /* Responsive Industries Section */
+  .contactus-area.btm-cont {
+    padding: 30px 0px 0px;
+  }
+
+  .contactus-area.btm-cont .heading-cb {
+    font-size: 18px;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .contactus-btn {
+    font-size: 24px;
+    margin: 20px 0px 0px 0px;
+    padding: 25px 10px;
+  }
+
   .industries-section {
     padding-top: 60px;
-    padding-bottom: 60px;
   }
 
   .industries-heading {
@@ -636,10 +771,45 @@ html {
     margin: 0 0 45px 0;
     padding: 0 10px 0 2px;
     border-right: none;
+    align-items: center;
   }
 
   .industry-title {
     font-size: 16px;
+    text-align: center;
+  }
+
+  .cert-heading {
+    font-size: 16px;
+  }
+
+  .services-main-content {
+    padding: 0;
+  }
+
+  .testimonials-grid {
+    column-count: 1;
+  }
+
+  .testimonials-section h2.heading-cb {
+    font-size: 28px;
+  }
+
+  .testimonials-section h6.testimonials-subtitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .test-block {
+    padding: 35px 30px;
+  }
+
+  .test-block p.quote-text {
+    font-size: 18px;
+  }
+
+  .test-block a.client-link {
+    font-size: 22px;
   }
 }
 
