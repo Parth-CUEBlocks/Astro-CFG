@@ -35,7 +35,7 @@ const portfolioCards1 = (data2 as any[]) || [];
     
     <section class="brand-matrix-belt">
       <div class="container-inner">
-        {data?.ourWorkTopHeading && <h3>{data?.ourWorkTopHeading}</h3>}
+        {data?.ourWorkTopHeading && <h1>{data?.ourWorkTopHeading}</h1>}
         {data?.ourWorkTopParagraph && <h5>{data?.ourWorkTopParagraph}</h5>}
         <div class="logos-work"> 
           <div class="div-mobile"><img class="" src={`https:${ourWorkMobileBanner}`} alt="client logos in mobile" loading="eager" fetchpriority="high"/></div>
@@ -46,9 +46,9 @@ const portfolioCards1 = (data2 as any[]) || [];
 
     <section class="case-studies-intro">
       <div class="container-inner">
+         {data?.ourWorkCaseStudyHeading && <h2>{data?.ourWorkCaseStudyHeading}</h2>}
         <div class="intro-split-layout">
           <div class="left-heading-col">
-           {data?.ourWorkCaseStudyHeading && <h2>{data?.ourWorkCaseStudyHeading}</h2>}
            {data?.ourWorkCaseStudyParagraphLeft && <p>{data?.ourWorkCaseStudyParagraphLeft}</p>}
           </div>
           <div class="right-context-col">
@@ -69,7 +69,7 @@ const portfolioCards1 = (data2 as any[]) || [];
             <div class={`project-row-card ${index % 2 === 1 ? 'row-reversed' : ''}`}>
               
               <div class="card-content-side">
-                <h2>{card?.fields?.caseStudyTitle}</h2>
+                <h2 class="heading_main">{card?.fields?.caseStudyTitle}</h2>
                 {tags && tags.length > 0 && (
                   <div class="badge-row-container">
                     {tags.map((tag) => (

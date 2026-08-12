@@ -1,12 +1,12 @@
+@import "./variables.less";
+
 .cfg-shopify-outer-wrapper {
   width: 100%;
   background-color: #171c28;
-  font-family: 'Lato', sans-serif;
   color: #a0aec0;
   padding-top: 120px;
   padding-bottom: 40px;
 }
-
 .cfg-shopify-inner-container {
   max-width: 1290px;
   margin-left: auto;
@@ -14,72 +14,85 @@
   padding-left: 15px;
   padding-right: 15px;
 }
-
 .cfg-shopify-hero {
-  padding-top: 40px;
-  padding-bottom: 60px;
-  border-bottom: 1px solid #292e3b;
+  padding-top: 0px;
+  padding-bottom: 120px;
 }
-
 .cfg-hero-grid {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 48px;
+  gap:172px;
 }
-
 .cfg-hero-content {
   flex: 1;
   max-width: 580px;
 }
-
 .cfg-hero-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 38px;
-  font-weight: 800;
-  line-height: 1.18;
-  color: #e0e5ec;
-  letter-spacing: -0.5px;
-  margin: 0px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #e0e5ec;
+    margin: 0px;
+    padding-bottom: 16px;
 }
-
 .cfg-hero-subtitle {
-  font-family: 'Montserrat', sans-serif;
   font-size: 21px;
   font-weight: 700;
   color: #e0e5ec;
-  margin-top: 20px;
+  margin:0px;
 }
-
 .cfg-hero-desc {
-  font-family: 'Lato', sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #aab3c0;
-  margin: 20px 0 0;
+  line-height:140%;
+  p{
+    margin-bottom: 15px;
+    + p {
+      margin-bottom: 40px;
+    }
+    
+  }
+  h2{
+      font-size: 28px;
+      font-weight: 700;
+      padding-bottom: 14px;
+      line-height: 140%;
+      color:#fff;
+    }
+}
+.ethical_Organizations {
+    padding-top: 65px;
+     h2 {
+      color:#bfddfb;
+      font-family: Lato;
+      font-size: 72px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      padding-bottom: 24px;
+      line-height: 140%;
+    }
+    p{
+      max-width: 760px;
+    }
 }
 
 .cfg-hero-media {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
 }
-
-.cfg-hero-total-img {
-  width: 100%;
-  max-width: 580px;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
 .cfg-approach-section {
   padding-top: 60px;
   padding-bottom: 90px;
 }
 
+.services-page .badge-row-container {
+    margin-bottom: 5px;
+    .tech-badge {
+      font-size: 10px;
+      padding: 4px 12px;
+    }
+}
 .cfg-section-heading {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 34px;
   font-weight: 800;
   text-align: center;
@@ -119,7 +132,7 @@
 }
 
 .cfg-approach-card h3 {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 23px;
   font-weight: 600;
   margin-top: 0px;
@@ -141,7 +154,7 @@
 }
 
 .cfg-services-title {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 32px;
   font-weight: 800;
   text-align: center;
@@ -175,7 +188,7 @@
 }
 
 .cfg-service-details h3 {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 34px;
   font-weight: 800;
   line-height: 1.25;
@@ -186,7 +199,7 @@
 
 
 .cfg-service-callout {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 15px;
   color: #a0aec0;
   margin-bottom: 28px !important;
@@ -194,7 +207,7 @@
 
 .cfg-service-btn {
   color: #e0e5ec;
-  font-family: 'Montserrat', sans-serif;
+  
   letter-spacing: 1px;
   border: 4px solid #e0e5ec;
   font-weight: 600;
@@ -270,7 +283,7 @@
 }
 
 .cfg-cta-text h2 {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 28px;
   font-weight: 800;
   color: #171c28;
@@ -290,7 +303,7 @@
   border: 2px solid #171c28;
   color: #171c28;
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 14px;
   font-weight: 700;
   border-radius: 0px;
@@ -330,7 +343,7 @@
 }
 
 .cfg-wp-purpose-title {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 34px;
   font-weight: 800;
   line-height: 42px;
@@ -368,7 +381,7 @@
 }
 
 .cfg-wp-purpose-item strong {
-  font-family: 'Montserrat', sans-serif;
+  
   font-weight: 700;
   color: #e0e5ec;
 }
@@ -402,7 +415,7 @@
 }
 
 .cfg-feature-card-title {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 34px;
   font-weight: 800;
   line-height: 1.25;
@@ -440,7 +453,7 @@
 }
 
 .cfg-accessibility-title {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 34px;
   font-weight: 800;
   line-height: 1.25;
@@ -483,7 +496,7 @@
 }
 
 .cfg-accessibility-item strong {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 18px;
   font-weight: 700;
   color: #e0e5ec;
@@ -522,7 +535,7 @@
 }
 
 .cfg-accessibility-quote {
-  font-family: 'Montserrat', sans-serif;
+  
   font-style: italic;
   font-size: 18px;
   line-height: 1.5;
@@ -541,7 +554,7 @@
 }
 
 .cfg-regulations-title {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 34px;
   font-weight: 800;
   line-height: 1.25;
@@ -576,7 +589,7 @@
 }
 
 .cfg-regulation-card-title {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 22px;
   font-weight: 700;
   line-height: 1.35;
@@ -635,7 +648,7 @@
 }
 
 .cfg-process-title {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 34px;
   font-weight: 800;
   line-height: 1.25;
@@ -672,14 +685,14 @@
 }
 
 .cfg-step-num {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 20px;
   font-weight: 700;
   color: #aab3c0;
 }
 
 .cfg-step-title {
-  font-family: 'Montserrat', sans-serif;
+  
   font-size: 20px;
   font-weight: 700;
   color: #e0e5ec;

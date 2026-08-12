@@ -8,11 +8,15 @@
 img {
     max-width: 100%;
 }
+.heading_main{
+  font-size: 34px;
+  @media (max-width:767px) {
+    font-size: 24px;
+  }
+}
 .work-showcase-page {
-  background-color: #0d111a; /* Exact rich deep dark navy/slate hue background from screenshots */
-  color: #ffffff;
-  font-family: 'Lato', sans-serif;
-  padding: 0 0 10rem 0; /* Adjusted to 0 at top to let the brand belt sit flush with the header */
+  background-color: #171c28; 
+  padding: 0 0 20px 0; /* Adjusted to 0 at top to let the brand belt sit flush with the header */
   width: 100%;
 
   .container-inner {
@@ -29,6 +33,7 @@ img {
     background-color: #555d6b; /* Precise lighter gray-slate banner background */
     padding: 120px 0;
     width: 100%;
+    padding-bottom: 50px;
 
     .logo-flexible-grid {
       padding-top: 35px;
@@ -83,33 +88,38 @@ img {
      2. Case Studies Text Header Block
      ========================================================================== */
   .case-studies-intro {
-    padding: 8rem 0 5rem 0;
+    padding-top:100px;
     width: 100%;
-
-    .intro-split-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 5rem;
-      align-items: start;
-
-      h2 {
-        font-size: 2.8rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        margin: 0 0 1.5rem 0;
+    @media (max-width: 767px) {
+      padding-top: 50px;
+    }
+    h2 {
+        font-size: 34px;
+        font-weight: 700;
+        margin: 0 0 20px 0;
         color: #ffffff;
+        @media (max-width: 767px) {
+          font-size: 24px;
+        }
       }
+    .intro-split-layout {
+      display: flex;
+      gap: 80px;
+      align-items: start;
+      > div{
+        max-width: calc(50% - 40px);
+        @media (max-width: 767px) {
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+     }
+      
 
-      p {
-        font-size: 1.15rem;
-        line-height: 1.65;
-        color: rgba(255, 255, 255, 0.6);
-        margin: 0;
-      }
-
-      .right-context-col {
-        padding-top: 4.5rem; /* Syncs description paragraphs visually across the layout grid */
-      }
+      
     }
   }
 
@@ -117,74 +127,79 @@ img {
      3. Core Alternating Row Grid System (Dynamic 12-Card Loop Support)
      ========================================================================== */
   .work-cards-section {
-    margin-top: 2rem;
-
+    margin-top: 70px;
+    @media (max-width: 767px) {
+      margin-top: 60px;
+    }
     .cards-stack {
       display: flex;
       flex-direction: column;
-      gap: 8rem; /* Clean structural space between looping project card rows */
+      gap: 100px; 
+      @media (max-width: 767px) {
+       gap: 60px;
+      }
     }
 
     .project-row-card {
-      display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 4.5rem;
+      display: flex;
+      gap: 80px;
       align-items: center;
       width: 100%;
-
+      @media (max-width: 992px) {
+        gap: 40px;
+      }
+      @media (max-width: 767px) {
+        flex-direction: column-reverse;
+        gap: 20px;
+      }
       /* Text Column Details Layout */
       .card-content-side {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-
+        flex:0 0 calc(50% - 40px);
+        @media (max-width: 992px) {
+        flex:0 0 calc(50% - 20px);
+        }
+        @media (max-width: 767px) {
+        flex:0 0 100%;
+        }
         h2 {
-          font-size: 2.5rem;
-          font-weight: 800;
-          letter-spacing: -0.02em;
-          margin: 0 0 1.2rem 0;
+          
+          margin-bottom: 15px;
           color: #ffffff;
         }
 
-        .badge-row-container {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.6rem;
-          margin-bottom: 1.8rem;
-
-          .tech-badge {
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 0.05em;
-            color: #0d111a;
-            background-color: #10b981; /* Precise high-visibility green tag badge from your reference link */
-            padding: 0.4rem 0.85rem;
-            border-radius: 2px;
-          }
-        }
+       
 
         .project-headline-desc {
-          font-size: 1.35rem;
-          font-weight: 400;
-          line-height: 1.55;
-          color: rgba(255, 255, 255, 0.8);
-          margin: 0 0 2.2rem 0;
-          max-width: 440px;
+          font-size:23px;
+          font-weight: 500;
+          @media (max-width: 767px) {
+              font-size:18px;
+            }
         }
 
         .action-btn-wrapper {
           .btn-read-more {
+            border: 4px solid #e0e5ec;
+            color: #e0e5ec;
             display: inline-block;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: #ffffff;
-            text-decoration: none;
-            letter-spacing: 0.05em;
-            border: 2px solid #ffffff; /* Sharp crisp white ghost outline button action */
-            padding: 0.85rem 2.2rem;
-            background: transparent;
-            transition: background-color 0.2s ease, color 0.2s ease;
+            font-weight: 600;
+            margin-top: 20px;
+            max-width: 100%;
+            min-width: 200px;
+            padding: 22px 30px;
+            position: relative;
+            text-align: center;
             text-transform: uppercase;
+            transition: all .5s ease;
+            text-decoration: none;
+            @media (max-width: 767px) {
+                border: 3px solid #e0e5ec;
+                min-width: 160px;
+                padding: 14px;
+            }
             &:hover {
               background-color: #ffffff;
               color: #0d111a;
@@ -195,94 +210,31 @@ img {
 
       /* Media/Visual Asset Container Column */
       .card-media-side {
-        width: 100%;
-
-        .image-crop-box {
-          width: 100%;
-          aspect-ratio: 16 / 10;
-          border-radius: 4px;
-          overflow: hidden;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-
-          img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-          }
-        }
-
-        &:hover .image-crop-box img {
-          transform: scale(1.02);
+        flex: 0 0 calc(50% - 40px);
+        @media (max-width: 767px) {
+         flex: 0 0 100%;
         }
       }
 
       /* Target Alternating Flip Engine via class indicator conditional rules */
       &.row-reversed {
-        grid-template-columns: 1.1fr 1fr;
-
-        .card-content-side {
-          grid-column: 2;
-        }
-
-        .card-media-side {
-          grid-column: 1;
-          grid-row: 1;
+        flex-direction: row-reverse;
+        @media (max-width: 767px) {
+          flex-direction: column-reverse;
         }
       }
     }
   }
 }
 
+.logos-work {
+    padding-top: 35px;
+}
 /* ==========================================================================
      4. Fluid Adaptive Media Query System
      ========================================================================== */
-@media (max-width: 992px) {
-  .work-showcase-page {
-    .brand-matrix-belt .logo-flexible-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem 1.5rem;
-    }
 
-    .case-studies-intro {
-      padding: 5rem 0 3rem 0;
-      .intro-split-layout {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        
-        .right-context-col {
-          padding-top: 0;
-        }
-      }
-    }
-
-    .work-cards-section {
-      .cards-stack {
-        gap: 5rem;
-      }
-
-      .project-row-card,
-      .project-row-card.row-reversed {
-        grid-template-columns: 1fr; /* Drop cleanly into full-width layout grids on responsive viewports */
-        gap: 2.5rem;
-
-        .card-content-side,
-        .card-media-side {
-          grid-column: auto !important;
-          grid-row: auto !important;
-        }
-
-        .card-content-side {
-          h2 { font-size: 2.2rem; }
-          .project-headline-desc { font-size: 1.2rem; }
-        }
-      }
-    }
-  }
-}
-
-.work-showcase-page .brand-matrix-belt h3{
+.work-showcase-page .brand-matrix-belt h1{
     font-family: Montserrat;
     font-size: 34px;
     font-style: normal;
@@ -290,20 +242,18 @@ img {
     line-height: 140%;
     padding-bottom: 4px;
     color: #fff;
+    @media (max-width: 767px) {
+        font-size: 28px;
+      }
 }
 .work-showcase-page .brand-matrix-belt h5 {
     color: #fff;
     font-family: Montserrat;
     font-size: 18px;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 140%;
-}
-@media (max-width: 576px) {
-  .work-showcase-page .brand-matrix-belt {
-    padding: 3rem 0;
-    .logo-flexible-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+    @media (max-width: 767px) {
+        font-size: 15px;
+      }
 }

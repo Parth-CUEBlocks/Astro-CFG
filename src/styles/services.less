@@ -1,680 +1,216 @@
-/* src/styles/services.less */
 @import "./variables.less";
 
-.services-page,
-.services-page * {
-  box-sizing: border-box;
-}
-
-.services-page {
-  background-color: #171c28;
-  color: #aab3c0;
+.cfg-shopify-outer-wrapper {
   width: 100%;
-  overflow-x: hidden;
-
-  .container-inner {
-    width: 100%;
-    max-width: 1290px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-
-  /* --- Hero Design Layout Architecture --- */
-  .services-hero {
-    padding: 200px 0 120px 0;
-
-    .hero-split-grid {
-      display: flex;
-      gap: 172px;
-      align-items: flex-start;
-
-      >* {
-        &:nth-child(1) {
-          flex: 545px 0 0;
-        }
-
-        &:nth-child(2) {
-          flex: 1;
-        }
-      }
-    }
-
-    h1 {
-      line-height: 1.1;
-      font-family: Lato;
-      font-size: 40px;
-      font-style: normal;
-      font-weight: 800;
-      line-height: 100%;
-      margin: 0;
-      padding-bottom: 16px;
-      padding-top: 21px;
-    }
-
-    .hero-lead {
-      font-size: 18px;
-      color: #aab3c0;
-      line-height: 1.4;
-      margin: 0 0 40px 0;
-    }
-
-    .hero-lead p {
-      margin-bottom: 15px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    .intro-philosophy {
-      max-width: 680px;
-
-      h2 {
-        font-size: 28px;
-        font-weight: 700;
-        margin: 0 0 30px 0;
-        letter-spacing: -0.02em;
-      }
-
-      p {
-        font-size: 18px;
-        color: #aab3c0;
-        line-height: 1.4;
-        margin: 0;
-      }
-    }
-
-    .hero-graphic-col {
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
-      padding-top: 1rem;
-
-      .hero-image-field {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-
-        .page-hero-img {
-          display: block;
-          height: auto;
-          width: auto;
-        }
-      }
-    }
-
-    .pillar-block {
-      padding-top: 80px;
-
-      .hero-focus {
-        font-size: 18px;
-        color: #aab3c0;
-        margin: 0 0;
-      }
-
-      .pillar-main-statement {
-        font-size: 72px;
-        font-weight: 700;
-        line-height: 1;
-        margin: 0 0 24px 0;
-        color: #bfddfb;
-        font-family: Lato;
-      }
-
-      .pillar-subtext {
-        color: #aab3c0;
-        margin: 0;
-        font-family: Montserrat;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 1.5;
-        max-width: 761px;
-      }
-    }
-  }
-
-  /* --- Two Column Feature Grid Layout System --- */
-  .services-matrix-section {
-    padding: 2rem 0;
-
-    .service-block {
-      margin-bottom: 150px;
-
-      &:last-child {
-        margin-bottom: 4rem;
-      }
-    }
-
-    .service-row {
-      display: flex;
-      gap: 5px;
-      align-items: flex-start;
-
-      .service-content-col {
-        flex: 0 630px;
-
-        // Brand identification label pills
-        .service-pill {
-          display: inline-block;
-          color: #171c28;
-          background: #1aeb9f;
-          font-size: 10px;
-          font-weight: 800;
-          letter-spacing: 2px;
-          line-height: 140%;
-          margin: 0 0 5px;
-          padding: 3px 13px 2px;
-          font-family: lato, sans-serif;
-        }
-
-        h2 {
-          font-size: 28px;
-          font-weight: 700;
-          margin: 0 0 18px 0;
-          line-height: 1.4;
-          color: #e0e5ec;
-          font-family: Lato, sans-serif;
-        }
-
-        .service-desc {
-          font-size: 18px;
-          line-height: 1.4;
-          color: #aab3c0;
-          font-weight: 300;
-          margin: 0 0;
-        }
-
-        // Feature and capability details arrays
-        .service-list {
-          list-style: none;
-          padding: 0;
-          margin: 40px 0 0;
-
-          li {
-            font-size: 16px;
-            color: #aab3c0;
-            line-height: 1.8;
-            font-family: Montserrat;
-            padding-bottom: 10px;
-            font-weight: 500;
-            display: flex;
-            align-items: flex-start;
-
-            .dash {
-              color: #aab3c0;
-              margin-right: 12px;
-              flex-shrink: 0;
-            }
-
-            strong {
-              color: #bfddfb;
-              font-weight: 700;
-            }
-          }
-        }
-
-        .action-btn-wrap {
-          margin-top: 3rem;
-
-          .btn-outline-cta {
-            text-decoration: none;
-            font-size: 18px;
-            letter-spacing: 0.02em;
-            border: 4px solid #e0e5ec;
-            color: #e0e5ec;
-            display: inline-block;
-            font-weight: 600;
-            margin-top: 20px;
-            max-width: 100%;
-            min-width: 200px;
-            padding: 22px 30px;
-            position: relative;
-            text-align: center;
-            text-transform: uppercase;
-            transition: all .5s ease;
-
-            &:hover {
-              background: #fff;
-              color: #171c28;
-              border-color: #fff;
-            }
-          }
-        }
-
-        // Nested block formatting matching Screenshot 4 layout
-        .beyond-retail-block {
-          margin-top: 5rem;
-          padding-top: 1px;
-
-          h2 {
-            font-size: 28px;
-            font-weight: 700;
-            margin: 0 0 18px 0;
-            line-height: 1.4;
-            color: #e0e5ec;
-            font-family: Lato, sans-serif;
-          }
-
-          p {
-            color: #aab3c0;
-            margin: 0;
-            font-size: 18px;
-            color: #aab3c0;
-            line-height: 1.4;
-          }
-        }
-      }
-
-      .service-image-col {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-
-        .showcase-image-wrap {
-          width: 100%;
-          overflow: hidden;
-
-          .showcase-img {
-            display: block;
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: cover;
-          }
-
-
-        }
-      }
-    }
-  }
-
-  /* --- Action CTA Banner Layout (Light Minimalist Container) --- */
-  .impact-cta-section {
-    padding: 0 0 150px;
-
-    .impact-card {
-      background: #e1f0ff;
-      padding: 57px 0 64px;
-      text-align: center;
-
-      h2 {
-        margin: 0 0 8px 0;
-        line-height: 1.4;
-        color: #e0e5ec;
-        font-family: Lato, sans-serif;
-        font-size: 34px;
-        font-style: normal;
-        font-weight: 800;
-        text-align: center;
-        color: #171c28;
-      }
-
-      p {
-        margin: 0;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-        text-align: center;
-        font-family: Montserrat;
-        color: #171c28;
-      }
-
-      .inline-cta-link {
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 130%;
-        text-align: center;
-        font-family: Montserrat;
-        color: #171c28;
-      }
-    }
-  }
-
-  /* --- Testimonial Content Block Layout System --- */
-  .client-speak-section {
-    background: #171c28;
-    padding: 4rem 0 8rem 0;
-
-    .section-eyebrow {
-      font-size: 2.6rem;
-      color: #aab3c0;
-      display: block;
-      text-align: center;
-      margin-bottom: 4rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .slider-viewport {
-      max-width: 1050px;
-      margin: 0 auto;
-    }
-
-    .slider-track {
-      display: flex;
-      flex-direction: column;
-      gap: 6rem;
-    }
-
-    .slide {
-      width: 100%;
-      text-align: center;
-
-      blockquote {
-        font-size: 1.55rem;
-        line-height: 1.7;
-        font-weight: 400;
-        color: #aab3c0;
-        margin: 0 0 2rem 0;
-        padding: 0;
-      }
-
-      .author-info {
-        strong {
-          display: block;
-          font-size: 1.2rem;
-          margin-bottom: 0.25rem;
-          font-weight: 700;
-          color: #aab3c0;
-        }
-
-        span {
-          font-size: 1rem;
-          color: rgba(255, 255, 255, 0.4);
-        }
-      }
-    }
-  }
+  background-color: #171c28;
+  color: #a0aec0;
+  padding-top: 120px;
+  padding-bottom: 40px;
 }
-
-.services-page .services-matrix-section .service-block.marketing-block .service-row .service-image-col .showcase-image-wrap .showcase-img {
-  max-height: unset;
-  object-fit: cover;
+.cfg-shopify-inner-container {
+  max-width: 1290px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
-
-h3 {
-  font-family: 'Montserrat', sans-serif;
+.cfg-shopify-hero {
+  padding-top: 0px;
+  padding-bottom: 120px;
+}
+.cfg-hero-grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap:172px;
+}
+.cfg-hero-content {
+  flex: 1;
+  max-width: 580px;
+}
+.cfg-hero-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #e0e5ec;
+    margin: 0px;
+    padding-bottom: 16px;
+}
+.cfg-hero-subtitle {
   font-size: 21px;
   font-weight: 700;
   color: #e0e5ec;
-  margin-top: 20px;
+  margin:0px;
+}
+.cfg-hero-desc {
+  line-height:140%;
+  p{
+    margin-bottom: 15px;
+    + p {
+      margin-bottom: 40px;
+    }
+    
+  }
+  h2{
+      font-size: 28px;
+      font-weight: 700;
+      padding-bottom: 14px;
+      line-height: 140%;
+      color:#fff;
+    }
+}
+.ethical_Organizations {
+    padding-top: 65px;
+     h2 {
+      color:#bfddfb;
+      font-family: Lato;
+      font-size: 72px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      padding-bottom: 24px;
+      line-height: 140%;
+    }
+    p{
+      max-width: 760px;
+    }
+} 
+
+.cfg-hero-media {
+  flex: 1;
+  display: flex;
+}
+/****Approach Section****/
+.cfg-approach-section {
+  padding-top: 60px;
+  padding-bottom: 90px;
 }
 
-p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #aab3c0;
-  margin: 20px 0 0;
+.services-page .badge-row-container {
+    margin-bottom: 5px;
+    .tech-badge {
+      font-size: 10px;
+      padding: 4px 12px;
+    }
 }
-
-ul li,
-ol li {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #aab3c0;
-}
-
-ul li p,
-ol li p {
-  margin-top: 10px;
-}
-
-a.btn {
-  font-weight: 600;
-  margin-top: 20px;
-  max-width: 100%;
-  min-width: 200px;
-  padding: 22px 30px;
-  position: relative;
+.cfg-section-heading {
+  
+  font-size: 34px;
+  font-weight: 800;
   text-align: center;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  transition: all .5s ease;
   color: #e0e5ec;
-  border: 4px solid #e0e5ec;
-  display: inline-block;
-  text-decoration: none;
-
-  &:hover {
-    background-color: #e0e5ec;
-    color: #171c28;
-  }
 }
-.services-matrix-section{
 
-    h2{
-      font-size: 23px;
-      font-weight: 600;
-      margin-top: 0px;
-      margin-bottom: 12px;
-      color: #e0e5ec;
-      text-transform: capitalize;
-      font-family: 'Montserrat', sans-serif;
-    }
-
+.cfg-approach-grid {
+  display: flex;
+  gap: 24px;
+  padding-top: 30px;
 }
-.cfg-case-tags {
+
+.cfg-approach-card {
+  flex: 1;
+  background-color: #212633;
+  padding: 44px 28px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cfg-approach-card:hover {
+  scale: 1.05;
+}
+
+.cfg-approach-icon {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.cfg-approach-icon img {
+  width: 115px;
+  height: 115px;
+  object-fit: contain;
+}
+
+.cfg-approach-card h3 {
+  
+  font-size: 23px;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 12px;
+  color: #e0e5ec;
+  text-transform: capitalize;
+}
+
+.cfg-approach-card p {
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  color: #aab3c0;
+  line-height: 1.6;
+  margin: 0px;
+}
+
+/*****repeat blocks******/
+.services-matrix-section .container-inner {
     display: flex;
-    align-items: center;
-    gap: 5px;
-    position: absolute;
-    top: 21%;
-    left: 1%;
+    flex-direction: column;
+    row-gap: 150px;
 }
-.cfg-case-tags span{
-    background: #1aeb9f;
-    color: #171c28;
-    display: inline-block;
-    font-family: Montserrat, monospace;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 3px 10px;
-    text-transform: uppercase;
+.cfg-service-row {
+  display: flex;
+  gap: 60px;
 }
-
-/* --- Responsive Layout Breakpoints System --- */
-@media (max-width: 992px) {
-  .services-page {
-    .services-hero {
-      padding: 4rem 15px 35px;
-
-      .hero-split-grid {
-        flex-direction: column;
-        gap: 24px;
-
-        >* {
-
-          &:nth-child(1),
-          &:nth-child(2) {
-            flex: none;
-            width: 100%;
-          }
-        }
-      }
-
-      h1 {
-        color: #e0e5ec;
-        font-size: 28px;
-        font-weight: 800;
-        padding-bottom: 10px;
-      }
-
-      .hero-lead,
-      .hero-lead-secondary {
-        font-size: 15px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 140%;
-        font-family: Montserrat;
-      }
-
-      .pillar-block .pillar-main-statement {
-        font-size: 60px;
-        margin-bottom: 18px;
-      }
-    }
-
-    .services-matrix-section {
-      .service-block {
-        margin-bottom: 60px;
-      }
-
-      .service-row {
-        flex-direction: column;
-        gap: 32px;
-
-        .service-content-col,
-        .service-image-col {
-          flex: none;
-          width: 100%;
-        }
-
-        .service-image-col {
-          justify-content: center;
-        }
-      }
-    }
-
-    .impact-cta-section .impact-card {
-      padding: 30px 15px;
-
-      h2 {
-        font-size: 24px;
-        margin-bottom: 0;
-      }
-
-      p {
-        font-size: 15px;
-      }
-    }
-
-    .client-speak-section {
-      .section-eyebrow {
-        font-size: 2rem;
-        margin-bottom: 3rem;
-      }
-
-      .slide blockquote {
-        font-size: 1.35rem;
-      }
-    }
-  }
-
-  .services-page .services-hero .intro-philosophy h2 {
-    font-size: 24px;
+.cfg-service-details {
+  flex: 1;
+  h2{
     color: #e0e5ec;
-    margin-bottom: 8px;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    padding-bottom: 18px;
   }
-
-  .service-section .service-inner .servicein .h1-p {
-    padding-bottom: 40px;
+  p{
+    line-height: 140%;
   }
-
-  .services-page .services-hero .intro-philosophy p {
-    font-size: 15px;
-    font-family: Montserrat;
-  }
-
-  .services-page .services-hero .hero-graphic-col .hero-image-field .page-hero-img {
-    max-width: 310px;
-  }
-
-  .services-page .services-hero .hero-graphic-col .hero-image-field {
-    justify-content: flex-start;
-  }
-
-  .services-page .services-hero .pillar-block .hero-focus {
-    font-size: 15px;
-  }
-
-  .services-page .services-hero .pillar-block .pillar-subtext {
-    font-size: 15px;
-  }
-
-  .services-page .services-matrix-section {
-    padding: 0;
-  }
-
-  .services-page .services-matrix-section .service-row .service-content-col .service-list li {
-    font-size: 15px;
-    padding-bottom: 0;
-  }
-
-  .services-page .services-matrix-section .service-row .service-content-col .service-desc {
-    font-size: 15px;
-    font-family: Montserrat;
-  }
-
-  .services-page .services-matrix-section .service-row .service-content-col .service-list {
-    margin: 28px 0 0;
-  }
-
-  .services-page .services-matrix-section .service-row .service-content-col .service-list li {
-    padding-bottom: 10px;
-  }
-
-  .services-page .services-matrix-section .service-row .service-content-col .action-btn-wrap {
-    margin-top: 0;
-  }
-
-  .services-page .services-matrix-section .service-row .service-content-col .action-btn-wrap .btn-outline-cta {
-    margin-top: 20px;
-  }
-
-  .services-page .services-matrix-section .service-row .service-content-col .beyond-retail-block {
-    margin-top: 5px;
-  }
-
-  .services-page .services-matrix-section .service-row .service-content-col .beyond-retail-block p {
-    font-size: 15px;
-  }
-
-  .services-page .container-inner {
-    padding: 0;
-  }
-
-  .services-page .services-matrix-section .service-row {
-    padding: 0 15px;
-  }
-
-  .cfg-testimonial-text {
-    width: 75%;
-  }
-}
-
-@media (max-width: 576px) {
-  .services-page {
-    .services-hero .pillar-block .pillar-main-statement {
-      font-size: 60px;
-    }
-
-    .services-matrix-section .service-row .service-content-col {
-      h2 {
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 140%;
-        padding-bottom: 10px;
-        margin: 0;
-      }
-
-      .beyond-retail-block h2 {
-        font-size: 24px;
-        margin-bottom: 0;
-      }
-
-      .action-btn-wrap .btn-outline-cta {
-        width: 100%;
-        text-align: center;
-        padding: 1rem;
+  .description-data {
+    padding-top: 24px;
+    ul{
+      li{
+        font-size: 16px;
+        font-style: normal;
+        line-height: 180%;
+        padding-left: 20px;
+        position: relative;
+        list-style: none;
+        font-weight: 500;
+        &:before{
+          background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxIiBmaWxsPSJub25lIiB2aWV3Qm94PSIwIDAgMTAgMSI+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEiIGZpbGw9IiNCQ0JDQkMiLz48L3N2Zz4=);
+          background-repeat: no-repeat;
+          background-size: 10px;
+          content: "";
+          height: 1px;
+          left: 0;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 10px;
+        }
+        p{
+            font-size: 16px;
+            line-height: 180%;
+            font-weight: 500;
+          }
       }
     }
   }
 }
+.cfg-service-img {
+  flex: 1;
+  img{
+    width: 100%;
+  }
+}
+
+
+
