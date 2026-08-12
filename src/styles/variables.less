@@ -12,7 +12,9 @@
 @header-text: #e0e5ec;      // White logo/social text
 @header-muted: #aab3c0;     // Secondary gray links
 @header-green: #2def7d;     // Vibrant logo loop green
-
+img{
+    max-width: 100%;
+}
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
@@ -43,3 +45,27 @@ body {
     }
     }
 }
+.btn-read-more {
+            border: 4px solid #e0e5ec;
+            color: #e0e5ec;
+            display: inline-block;
+            font-weight: 600;
+            margin-top: 20px;
+            max-width: 100%;
+            min-width: 200px;
+            padding: 22px 30px;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            transition: all .5s ease;
+            text-decoration: none;
+            @media (max-width: 767px) {
+                border: 3px solid #e0e5ec;
+                min-width: 160px;
+                padding: 14px;
+            }
+            &:hover {
+              background-color: #ffffff;
+              color: #0d111a;
+            }
+          }
