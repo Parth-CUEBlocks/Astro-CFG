@@ -73,12 +73,13 @@ import '../styles/career.less';
           <h2>WE ARE HIRING<br />AT CueForGood</h2>
         </div>
 
+        <!--
+          Job title buttons are rendered dynamically by the script below,
+          fetched from the same Google Apps Script sheet the Gatsby site uses.
+          This placeholder is replaced as soon as the fetch resolves.
+        -->
         <div class="cfg-career-listings-panel" id="cfg-career-listings">
-          <button type="button" class="cfg-career-job-title" data-job-index="0">Email Marketing Specialist</button>
-          <button type="button" class="cfg-career-job-title" data-job-index="1">Business Development Specialist</button>
-          <button type="button" class="cfg-career-job-title" data-job-index="2">Shopify Developer</button>
-          <button type="button" class="cfg-career-job-title" data-job-index="3">Senior Shopify Developer</button>
-          <button type="button" class="cfg-career-job-title" data-job-index="4">(QA) Quality Analyst</button>
+          <p class="cfg-career-listings-loading">Loading open positions…</p>
         </div>
       </section>
 
@@ -175,6 +176,13 @@ import '../styles/career.less';
     staging: "6Lf_zZYrAAAAAFYDbqnVwpnfLTFW8GcT9blHDdjm",
   };
 
+  // Same Google Apps Script sheet endpoints the Gatsby career page reads
+  // job openings from, split by live vs staging host.
+  const SHEET_URLS = {
+    live: "https://script.google.com/macros/s/AKfycbz8111ZSW0xSpGVfTzs4LsC4UTtjvMQgAuIbGN2-Ey5Kw-_SjPViQeamJBh6HztVKnn-A/exec",
+    staging: "https://script.google.com/macros/s/AKfycbx6cvf3MLEG0wyk6QZOKRrFAp63rnI2gudhhOUhLJtES1UlMN6Ilgd9hxgehcibXzN5/exec",
+  };
+
   const ALLOWED_RESUME_EXTENSIONS = [".png", ".pdf", ".txt", ".doc", ".docx"];
   const MAX_RESUME_SIZE_BYTES = 2 * 1024 * 1024;
 
@@ -190,6 +198,7 @@ import '../styles/career.less';
       apiUrl: isLive ? "https://apilive.cueforgood.com" : "https://apistaging.cueforgood.com",
       submitUrl: isLive ? "https://apilive.cueforgood.com/" : "https://apistaging.cueforgood.com/",
       recaptchaSiteKey: isLive ? RECAPTCHA_SITE_KEYS.live : RECAPTCHA_SITE_KEYS.staging,
+      sheetUrl: isLive ? SHEET_URLS.live : SHEET_URLS.staging,
     };
   }
 
@@ -207,6 +216,141 @@ import '../styles/career.less';
   const config = getHostConfig();
   const form = document.getElementById("cfg-career-form");
 
+  // ---------------------------------------------------------------------
+  // Job vacancies — fetched from the sheet API, same source as Gatsby's
+  // `jobsVacancies` state. Each item is expected to look like:
+  // { jobName, jobDescription, jobResponsibility, jobSkills, jobMsg }
+  // ---------------------------------------------------------------------
+  let jobsVacancies = [];
+
+  function setListFromText(container, content) {
+    container.innerHTML = "";
+    if (!content) return;
+
+    // If the sheet cell already contains HTML list markup, trust it as-is.
+    if (/<li[\s>]/i.test(content)) {
+      container.innerHTML = content;
+      return;
+    }
+
+    // Otherwise treat it as newline-separated plain text and build <li>s.
+    content
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .forEach((line) => {
+        const li = document.createElement("li");
+        li.textContent = line;
+        container.appendChild(li);
+      });
+  }
+
+  const jobModalOverlay = document.getElementById("cfg-career-job-modal");
+  const jobModalHeading = document.getElementById("cfg-career-job-modal-heading");
+  const jobModalDescription = jobModalOverlay.querySelector(".cfg-career-job-modal-description");
+  const jobModalResponsibilities = jobModalOverlay.querySelector(".cfg-career-job-modal-responsibilities");
+  const jobModalSkills = jobModalOverlay.querySelector(".cfg-career-job-modal-skills");
+  const jobModalMsg = jobModalOverlay.querySelector(".cfg-career-job-modal-msg");
+  const jobModalClose = document.getElementById("cfg-career-job-modal-close");
+  const jobModalApply = document.getElementById("cfg-career-job-modal-apply");
+  let lastFocusedJobTrigger = null;
+  let currentJobTitle = "";
+
+  function handleJobModalKeydown(event) {
+    if (event.key === "Escape") closeJobModal();
+  }
+
+  function openJobModal(job, trigger) {
+    currentJobTitle = job.jobName || "";
+    jobModalHeading.textContent = job.jobName || "";
+    // Description comes from the sheet as (possibly HTML) rich text.
+    jobModalDescription.innerHTML = job.jobDescription || "";
+    setListFromText(jobModalResponsibilities, job.jobResponsibility);
+    setListFromText(jobModalSkills, job.jobSkills);
+    jobModalMsg.innerHTML = job.jobMsg || "";
+
+    lastFocusedJobTrigger = trigger || null;
+    jobModalOverlay.hidden = false;
+    jobModalClose.focus();
+    document.addEventListener("keydown", handleJobModalKeydown);
+  }
+
+  function closeJobModal() {
+    jobModalOverlay.hidden = true;
+    document.removeEventListener("keydown", handleJobModalKeydown);
+    if (lastFocusedJobTrigger) lastFocusedJobTrigger.focus();
+  }
+
+  jobModalClose.addEventListener("click", closeJobModal);
+  jobModalOverlay.addEventListener("click", (event) => {
+    if (event.target === jobModalOverlay) closeJobModal();
+  });
+
+  jobModalApply.addEventListener("click", () => {
+    if (!form) return;
+    const jobInput = form.querySelector('[name="job"]');
+    if (jobInput) {
+      jobInput.value = currentJobTitle;
+      jobInput.focus();
+    }
+    closeJobModal();
+    form.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  function renderJobListings() {
+    const listingsPanel = document.getElementById("cfg-career-listings");
+    if (!listingsPanel) return;
+
+    listingsPanel.innerHTML = "";
+
+    if (!jobsVacancies.length) {
+      const emptyMsg = document.createElement("p");
+      emptyMsg.className = "cfg-career-listings-empty";
+      emptyMsg.textContent = "No open positions right now. Check back soon!";
+      listingsPanel.appendChild(emptyMsg);
+      return;
+    }
+
+    jobsVacancies.forEach((job, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "cfg-career-job-title";
+      button.dataset.jobIndex = String(index);
+      button.setAttribute("aria-label", `Job title: ${job.jobName}`);
+      button.textContent = job.jobName;
+      button.addEventListener("click", () => openJobModal(job, button));
+      listingsPanel.appendChild(button);
+    });
+  }
+
+  async function loadJobVacancies() {
+    const listingsPanel = document.getElementById("cfg-career-listings");
+
+    try {
+      const res = await fetch(config.sheetUrl);
+      const data = await res.json();
+      jobsVacancies = Array.isArray(data) ? data : [];
+    } catch (err) {
+      console.error("Error fetching job vacancies:", err);
+      jobsVacancies = [];
+      if (listingsPanel) {
+        listingsPanel.innerHTML = "";
+        const errorMsg = document.createElement("p");
+        errorMsg.className = "cfg-career-listings-empty";
+        errorMsg.textContent = "Couldn't load open positions right now. Please try again later.";
+        listingsPanel.appendChild(errorMsg);
+      }
+      return;
+    }
+
+    renderJobListings();
+  }
+
+  loadJobVacancies();
+
+  // ---------------------------------------------------------------------
+  // Application form (unchanged)
+  // ---------------------------------------------------------------------
   if (form) {
     let widgetId = null;
 
@@ -238,164 +382,6 @@ import '../styles/career.less';
     const resumeInput = form.querySelector('[name="resume"]');
     const submitBtn = form.querySelector(".cfg-career-submit-btn");
     const successEl = form.querySelector("[data-success]");
-
-    // Placeholder copy — replace each entry with the real job posting content
-    // before this goes live.
-    const JOB_LISTINGS = [
-      {
-        title: "Email Marketing Specialist",
-        description: [
-          "We're looking for an Email Marketing Specialist to plan, build, and optimize email campaigns for our eCommerce clients.",
-        ],
-        responsibilities: [
-          "Design and execute email marketing campaigns across the client portfolio",
-          "Segment audiences and set up automated flows (welcome, abandoned cart, post-purchase)",
-          "Analyze campaign performance and iterate on subject lines, content, and send times",
-        ],
-        skills: [
-          "Hands-on experience with an ESP such as Klaviyo or Mailchimp",
-          "Strong writing skills and attention to detail",
-          "Comfort working with performance data and A/B test results",
-        ],
-        closingMessage: "Sound like you? We'd love to hear from you.",
-      },
-      {
-        title: "Business Development Specialist",
-        description: [
-          "We're looking for a Business Development Specialist to help grow our client base of purpose-driven eCommerce brands.",
-        ],
-        responsibilities: [
-          "Identify and qualify new business opportunities",
-          "Build and maintain relationships with prospective clients",
-          "Collaborate with the marketing team on outreach and proposals",
-        ],
-        skills: [
-          "Prior experience in B2B sales or business development",
-          "Excellent communication and relationship-building skills",
-          "Familiarity with the eCommerce or digital agency space",
-        ],
-        closingMessage: "Sound like you? We'd love to hear from you.",
-      },
-      {
-        title: "Shopify Developer",
-        description: [
-          "We're looking for a Shopify Developer to build and customize storefronts for our eCommerce clients.",
-        ],
-        responsibilities: [
-          "Develop and customize Shopify themes and apps",
-          "Troubleshoot and resolve storefront issues",
-          "Collaborate with designers and project managers on client requirements",
-        ],
-        skills: [
-          "Experience with Shopify Liquid, HTML, CSS, and JavaScript",
-          "Understanding of Shopify's theme and app architecture",
-          "Ability to debug and optimize storefront performance",
-        ],
-        closingMessage: "Sound like you? We'd love to hear from you.",
-      },
-      {
-        title: "Senior Shopify Developer",
-        description: [
-          "We're looking for a Senior Shopify Developer to lead complex storefront builds and mentor junior developers.",
-        ],
-        responsibilities: [
-          "Architect and lead custom Shopify Plus development projects",
-          "Review code and mentor junior developers on the team",
-          "Work directly with clients on technical requirements and solutions",
-        ],
-        skills: [
-          "Several years of hands-on Shopify/Shopify Plus development experience",
-          "Strong grasp of Liquid, JavaScript, and API integrations",
-          "Experience leading or mentoring within a development team",
-        ],
-        closingMessage: "Sound like you? We'd love to hear from you.",
-      },
-      {
-        title: "(QA) Quality Analyst",
-        description: [
-          "We're looking for a Quality Analyst to help us ship reliable, well-tested work across our client projects.",
-        ],
-        responsibilities: [
-          "Write and execute test plans for web and eCommerce projects",
-          "Log, track, and verify bug fixes with the development team",
-          "Perform cross-browser and cross-device testing",
-        ],
-        skills: [
-          "Experience with manual QA testing methodologies",
-          "Attention to detail and strong bug-reporting skills",
-          "Familiarity with eCommerce platforms is a plus",
-        ],
-        closingMessage: "Sound like you? We'd love to hear from you.",
-      },
-    ];
-
-    const jobModalOverlay = document.getElementById("cfg-career-job-modal");
-    const jobModalHeading = document.getElementById("cfg-career-job-modal-heading");
-    const jobModalDescription = jobModalOverlay.querySelector(".cfg-career-job-modal-description");
-    const jobModalResponsibilities = jobModalOverlay.querySelector(".cfg-career-job-modal-responsibilities");
-    const jobModalSkills = jobModalOverlay.querySelector(".cfg-career-job-modal-skills");
-    const jobModalMsg = jobModalOverlay.querySelector(".cfg-career-job-modal-msg");
-    const jobModalClose = document.getElementById("cfg-career-job-modal-close");
-    const jobModalApply = document.getElementById("cfg-career-job-modal-apply");
-    let lastFocusedJobTrigger = null;
-    let currentJobTitle = "";
-
-    function renderJobList(container, items) {
-      container.innerHTML = "";
-      items.forEach((text) => {
-        const li = document.createElement("li");
-        li.textContent = text;
-        container.appendChild(li);
-      });
-    }
-
-    function handleJobModalKeydown(event) {
-      if (event.key === "Escape") closeJobModal();
-    }
-
-    function openJobModal(job, trigger) {
-      currentJobTitle = job.title;
-      jobModalHeading.textContent = job.title;
-      jobModalDescription.innerHTML = "";
-      job.description.forEach((text) => {
-        const p = document.createElement("p");
-        p.textContent = text;
-        jobModalDescription.appendChild(p);
-      });
-      renderJobList(jobModalResponsibilities, job.responsibilities);
-      renderJobList(jobModalSkills, job.skills);
-      jobModalMsg.textContent = job.closingMessage;
-
-      lastFocusedJobTrigger = trigger || null;
-      jobModalOverlay.hidden = false;
-      jobModalClose.focus();
-      document.addEventListener("keydown", handleJobModalKeydown);
-    }
-
-    function closeJobModal() {
-      jobModalOverlay.hidden = true;
-      document.removeEventListener("keydown", handleJobModalKeydown);
-      if (lastFocusedJobTrigger) lastFocusedJobTrigger.focus();
-    }
-
-    document.querySelectorAll(".cfg-career-job-title").forEach((button) => {
-      button.addEventListener("click", () => {
-        const job = JOB_LISTINGS[Number(button.dataset.jobIndex)];
-        if (job) openJobModal(job, button);
-      });
-    });
-
-    jobModalClose.addEventListener("click", closeJobModal);
-    jobModalOverlay.addEventListener("click", (event) => {
-      if (event.target === jobModalOverlay) closeJobModal();
-    });
-
-    jobModalApply.addEventListener("click", () => {
-      jobInput.value = currentJobTitle;
-      closeJobModal();
-      form.scrollIntoView({ behavior: "smooth", block: "start" });
-      jobInput.focus();
-    });
 
     phoneInput.addEventListener("input", () => {
       const value = phoneInput.value.trim();
