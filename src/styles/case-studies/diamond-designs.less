@@ -36,28 +36,37 @@
 
   .cs-numbered-list-item {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     align-items: flex-start;
+    align-items: center;
   }
 
   .cs-numbered-list-item .cs-numbered-list-num {
     flex-shrink: 0;
-    font-size: 56px;
-    font-weight: 800;
     color: #8c2d5a;
     line-height: 1;
     min-width: 70px;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-image: linear-gradient(180deg, #712856, transparent);
+    background-repeat: repeat;
+    background-size: 100%;
+    font-family: Lato;
+    font-size: 100px;
+    font-weight: 700;
   }
 
   .cs-numbered-list-item h3 {
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 400;
     color: #e0e5ec;
     margin: 0 0 10px;
   }
 
   .cs-numbered-list-item p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     color: #aab3c0;
     margin: 0;
@@ -76,5 +85,75 @@
       font-size: 36px;
       min-width: 44px;
     }
+  }
+}
+
+p.cs-note a {
+  color: #e0e5ec;
+}
+
+.cs-hero .cs-hero-subheading {
+  font-size: 18px;
+  max-width: 990px;
+}
+
+.cs-radial-highlight b {
+  font-size: 72px;
+  margin: 0;
+}
+
+.cs-radial-highlight span {
+  font-size: 24px;
+}
+
+.cs-icon-row {
+  background-color: transparent;
+}
+
+.cs-icon-row-grid {
+  gap: 0;
+}
+
+.cs-icon-row-grid img {
+  max-height: unset;
+}
+
+.cs-icon-row-grid h4 {
+  font-weight: 300;
+  color: #aab3c0;
+
+}
+
+.cs-icon-row-grid li {
+  flex: 1 1 20%;
+}
+
+@media (max-width: 768px) {
+  .cs-hero .cs-hero-subheading {
+    font-size: 15px;
+  }
+
+  .cs-radial-stat.cs-radial-highlight {
+    width: 100%;
+  }
+
+  .ddu-page .cs-numbered-list-item {
+    position: relative;
+    padding-top: 40px;
+  }
+
+  .ddu-page .cs-numbered-list-item .cs-numbered-list-num {
+    font-size: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .ddu-page .cs-numbered-list-item p {
+    font-size: 15px;
+  }
+
+  .cs-icon-row-grid li {
+    flex: 1 1 50%;
   }
 }

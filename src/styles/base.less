@@ -410,3 +410,90 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 .cfg-testimonial-container .swiper-slide img{
     width: auto;
 }
+
+.contactus-area {
+    flex-direction: column;
+    padding: 57px 0 64px;
+    row-gap: 8px;
+    align-items: center;
+    background-color: #e1f0ff;
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+    color: #171c28;
+    @media (max-width:767px){
+      padding: 30px 15px 35px;
+      text-align: center;
+    }
+    h2{
+      color: #171c28;
+      font-size: 34px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 140%;
+      text-align: center;
+      @media (max-width:767px){
+        font-size: 24px;
+      }
+    }
+    p,a{
+      color: #171c28;
+      font-weight: 500;
+      line-height: 130%;
+    }
+}
+
+.contactus-area.btm-cont {
+  padding: 50px 0px 0px;
+  background-color: transparent;
+  display: inline-block;
+  padding: 50px 0;
+  width: 100%;
+  border-top: 1px solid #292e3b;
+}
+
+.contactus-area.btm-cont .heading-cb {
+  color: #E0E5EC;
+  font-size: 28px;
+  font-family: 'Gotham', sans-serif;
+  margin: 0px 0px 4px 0px;
+}
+
+.contactus-btn {
+  display: inline-block;
+  color: #E0E5EC;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Gotham', sans-serif;
+  margin: 20px 0px 0px 0px;
+  padding: 25px 10px;
+  border: 5px solid #E0E5EC;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  max-width: 220px;
+  width: 100%;
+}
+
+.contactus-btn:hover,
+.contactus-btn:focus-visible {
+  background-color: #E0E5EC;
+  color: #171c28;
+}
+@media (max-width: 768px) {
+  .contactus-area.btm-cont {
+    padding: 30px 0px 0px;
+  }
+
+  .contactus-area.btm-cont .heading-cb {
+    font-size: 18px;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .contactus-btn {
+    font-size: 24px;
+    margin: 20px 0px 0px 0px;
+    padding: 25px 10px;
+  }
+}
