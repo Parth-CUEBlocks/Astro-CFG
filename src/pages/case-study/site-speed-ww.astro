@@ -157,6 +157,9 @@ const circleItems = [
               </div>
             </div>
           </div>
+          {t.title === "Product Page" && (
+            <img src={bag.src} alt="Womanswork" style="max-width: 160px; display: block; margin: 30px auto 0;" />
+          )}
         </div>
       </section>
     ))}
@@ -217,7 +220,6 @@ const circleItems = [
             <p>{circleItems[3].text}</p>
           </div>
         </div>
-        <img src={bag.src} alt="Womanswork" style="display: none;" />
       </div>
     </section>
 

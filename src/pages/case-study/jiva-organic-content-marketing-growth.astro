@@ -1,0 +1,121 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/case-study.less';
+
+import logo from '../../assets/case-study/jiva-organic-content-marketing-growth/logo.svg';
+import about from '../../assets/case-study/jiva-organic-content-marketing-growth/about.png';
+import stats from '../../assets/case-study/jiva-organic-content-marketing-growth/stats.jpg';
+
+const processSteps = [
+  { title: "Discontinuation of Redirection:", text: "We advised the client to discontinue redirecting blogs from their website, Jiva.ag, to Medium.com. This change aimed to encourage readers to visit the client's website directly for a more engaging experience." },
+  { title: "Mentioning Dual Publication:", text: "Instead of solely publishing blogs on Medium, we recommended a dual publication strategy. Jiva continued to post blogs on their website and included a mention at the end of each blog, informing readers that the content was also available on Medium.com. With this approach, we aim to provide readers with flexibility in choosing their preferred platform." },
+  { title: "Canonical Links:", text: "For blogs that had already been posted on Medium, we changed the canonical links in Medium and pointed them to the respective Jiva posts. This ensured that search engines considered the blogs on Jiva as canon articles and displayed them on search results. In addition, blogs on Medium would enjoy engagement from the Medium's platform. This step was crucial in building the client's authority and ensuring that search engine traffic was directed to their website." },
+  { title: "Crafting Content Briefs", text: "We also crafted content briefs for the client by thoroughly researching the topics for additional blogs related to their target keywords. These content briefs served as guidelines for their writers to create additional content overall." },
+];
+
+const results = [
+  { title: "Impressive Organic Traffic Growth", text: "Following successful technical checks and content briefs, the client achieved a remarkable increase in organic traffic through the blogs. From April 1, 2023, to September 30, 2023, organic traffic has surged by an astounding 354.27% compared to the previous six months. This exponential growth demonstrates the effectiveness of our content and optimization efforts." },
+  { title: "Increased Website Traffic", text: "By discontinuing the redirection of blogs and actively promoting dual publication, the client experienced a significant increase in traffic generated from search engines." },
+  { title: "Increased Organic Visibility", text: "The overall work done on blogs resulted in Jiva now showing up in search results for several target keywords. The site didn't appear in the top 100 for any of the target keywords except the branded keywords before CueForGood started working on it." },
+];
+---
+
+<Layout
+  title="Case Study For Organic Content Marketing Growth - Jiva.ag"
+  description="Empowering Jiva's mission: CueForGood' strategy led to a 354% boost in organic traffic, enhancing Jiva's digital footprint and aiding farmers worldwide."
+>
+  <div class="case-study-page">
+
+    <section class="cs-hero">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1><img src={logo.src} alt="Jiva logo" style="max-width: 200px; height: auto;" /></h1>
+        <p class="heading_main" style="font-size: 32px; max-width: 800px; margin: 0 auto 20px;">CueForGood Transforming Blogging Results:</p>
+        <p class="cs-hero-subheading">An Astounding 354.27% Organic Traffic Surge in Just 6 Months</p>
+      </div>
+    </section>
+
+    <section class="cs-advantage" style="padding-top: 40px;">
+      <div class="container">
+        <div class="cs-advantage-row">
+          <div class="cs-advantage-text">
+            <h2 class="heading_main">About the Client</h2>
+            <p>Headquartered in Indonesia, Jiva is on a remarkable mission to enhance the livelihoods of smallholder farmers on a global scale.</p>
+            <p>With determination to their mission and a profound understanding of farmers and their communities, Jiva develops innovative products and services that cater to the unique challenges faced by farmers in the field.</p>
+            <p>Jiva, through its app, provides farmers with no-cost advances for agricultural inputs, access to high-quality supplies through its e-commerce store, and personalized AI-powered advice to improve crop quality and yield.</p>
+            <p>Their impact has expanded to multiple countries, demonstrating their strong commitment to empowering farmers and driving positive change in the agricultural sector.</p>
+          </div>
+          <div class="cs-advantage-media">
+            <img src={about.src} alt="Jiva" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 60px 0 0;">
+      <div class="container">
+        <h2 class="heading_main">Analysis</h2>
+        <p>As commendable as Jiva's mission is, it faces the challenge of visibility in the online landscape. Jiva wanted to improve its online presence and rankings for specific agricultural terms.</p>
+        <p>Additionally, the client aimed to strengthen its brand recognition for terms like "Jiva" and "Jiva Indonesia."</p>
+        <p>To achieve this, the client has been publishing blogs both on Medium.com and their website -Jiva.ag. The blogs posted on Jiva.ag were redirected to Medium blogs.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 60px 0 0;">
+      <div class="container">
+        <div class="cs-process-card">
+          <h2 class="heading_main">Our Process</h2>
+          <p>CueForGood performed an analysis of the client's website. Being a small website with only 5-7 main pages about the company, we informed the client about how they need to focus on content to reach their goals. We created a content strategy and identified that their blogs published on Medium.com were generating little to no traffic to their website.</p>
+          <p>Recognizing the need for a more effective approach, we recommended and implemented the following steps as part of our process:</p>
+
+          <div class="cs-numbered-steps" style="padding: 20px 0 0;">
+            {processSteps.map((s, i) => (
+              <div class="cs-numbered-step">
+                <h3 class="cs-numbered-step-num">{i + 1}</h3>
+                <div style="grid-area: 1 / 1; align-self: center; padding-left: 110px;">
+                  <p style="font-weight: 700; color: #e0e5ec; margin: 0 0 8px;">{s.title}</p>
+                  <p style="margin: 0;">{s.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-banner cs-banner-cta" style="--cs-banner-bg: transparent; padding: 40px 0;">
+      <div class="container">
+        <p>Ready to test your blog's potential with our proven strategies? Get in touch today at - <a href="mailto:letstalk@cueforgood.com">letstalk@cueforgood.com</a></p>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 40px 0 60px;">
+      <div class="container">
+        <h2 class="heading_main">Results</h2>
+        <p>Our strategic shift in content publication proved successful. After a few months, the website saw an increase in organic traffic, with the client's overall visibility increasing for the main keywords and related topics.</p>
+
+        <div class="cs-numbered-steps">
+          {results.map((r, i) => (
+            <div class="cs-numbered-step">
+              <h3 class="cs-numbered-step-num">{i + 1}</h3>
+              <div style="grid-area: 1 / 1; align-self: center; padding-left: 110px;">
+                <p style="font-weight: 700; color: #e0e5ec; margin: 0 0 8px;">{r.title}</p>
+                <p style="margin: 0;">{r.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <img src={stats.src} alt="Jiva stat" style="width: 100%; height: auto; border-radius: 8px; margin-top: 30px;" />
+      </div>
+    </section>
+
+    <section class="cs-section text-center" style="padding: 0 0 90px;">
+      <div class="container">
+        <p style="font-size: 18px; color: #e0e5ec;">Optimize your blog's performance and boost your organic traffic. Let's discuss how our strategies can work for your brand.</p>
+        <p style="font-size: 16px;">Contact us today at - <a href="mailto:letstalk@cueforgood.com" style="color: #ffffff; text-decoration: underline;">letstalk@cueforgood.com</a></p>
+      </div>
+    </section>
+
+  </div>
+</Layout>
