@@ -7,8 +7,8 @@ import 'swiper/css/pagination';
 
 export function initSliders() {
   // 1. Generic Top Slider
-  if (document.querySelector('.swiper:not(.testimonial-swiper):not(.partners-swiper):not(.clients-swiper)')) {
-    new Swiper('.swiper:not(.testimonial-swiper):not(.partners-swiper):not(.clients-swiper)', {
+  if (document.querySelector('.swiper:not(.testimonial-swiper):not(.partners-swiper):not(.clients-swiper):not(.perks-swiper)')) {
+    new Swiper('.swiper:not(.testimonial-swiper):not(.partners-swiper):not(.clients-swiper):not(.perks-swiper)', {
       modules: [Navigation, Pagination, Autoplay, A11y],
       loop: true,
       autoplay: {
@@ -151,6 +151,38 @@ export function initSliders() {
           clientSwiper.slideTo(slideIndex);
         }
       }
+    });
+  }
+
+  // 5. "We Care - Here's How" Perks Slider
+  if (document.querySelector('.perks-swiper')) {
+    new Swiper('.perks-swiper', {
+      modules: [Pagination, Autoplay, A11y],
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.perks-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 32,
+        },
+      },
+      a11y: {
+        prevSlideMessage: 'Previous perk',
+        nextSlideMessage: 'Next perk',
+      },
     });
   }
 }

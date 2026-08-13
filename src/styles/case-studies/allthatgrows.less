@@ -96,12 +96,6 @@
     display: none;
   }
 
-  @media (min-width: 993px) {
-    .atg-app-side-img {
-      display: block;
-    }
-  }
-
   .atg-phone-frame {
     width: 290px;
     max-width: 100%;
@@ -145,19 +139,18 @@
     padding: 80px 0 380px;
   }
 
+  /* Media Queries */
+  @media (min-width: 993px) {
+    .atg-app-side-img {
+      display: block;
+    }
+  }
+
   @media (max-width: 992px) {
     .cs-result {
       padding: 50px 0 240px;
     }
-  }
 
-  @media (max-width: 767px) {
-    .cs-result {
-      padding: 30px 0 160px;
-    }
-  }
-
-  @media (max-width: 992px) {
     .atg-story-row,
     .atg-marketing-row {
       flex-direction: column;
@@ -165,23 +158,119 @@
   }
 
   @media (max-width: 767px) {
+    .cs-result {
+      padding: 30px 0 160px;
+    }
+
     .atg-app-row {
       flex-direction: column;
     }
   }
 }
+
+/* Global / Un-nested Base Styles */
 .cs-stat p {
-    font-size: 24px;
+  font-size: 24px;
 }
+
 .cs-stat {
-    align-items: center;
+  align-items: center;
 }
-.cs-testimonial-quote-icon{
+
+.cs-testimonial-quote-icon {
   width: auto;
 }
-.atg-page .atg-story-text p{
+
+.atg-page .atg-story-text p {
   font-size: 18px;
 }
-.cs-process-grid p{
+
+.cs-process-grid p {
   font-size: 18px;
+}
+
+.cs-stats-note {
+  text-align: center;
+}
+
+.cs-testimonial-col-right {
+  padding-top: 75px;
+}
+
+.cs-process-grid img {
+  width: auto;
+  height: auto;
+}
+
+.cs-advantage {
+  padding: 0;
+}
+
+.case-study-page .heading_main {
+  text-align: center;
+}
+
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {
+  background: #f5f5f5;
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.atg-page .atg-packaging-images img {
+  max-width: 450px;
+}
+
+.atg-page .atg-packaging-tabs button {
+  font-size: 18px;
+}
+
+.atg-page .atg-marketing-col p {
+  font-size: 18px;
+}
+
+.cs-result h2 {
+  text-align: center;
+  font-size: 27px;
+}
+
+.cs-result .top-details p {
+  text-align: center;
+  font-size: 28px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.cs-result-icon{
+  width: auto;
+}
+
+@media (max-width: 900px) {
+  .cs-stat {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cs-section .top-details p,
+  .atg-page .atg-story-text p{
+    font-size: 15px;
+  }
+  .cs-process-grid p,
+  .cs-advantage .sub-dec{
+    font-size: 15px;
+  }
+  .cs-advantage-row, .cs-advantage-row.reverse{
+    flex-direction: column-reverse;
+  }
+  .cs-advantage-text {
+    padding-top: 20px;
+  }
+  .atg-page .atg-marketing-col p{
+    font-size: 15px;
+  }
+  .cs-result h2 {
+    font-size: 22px;
+  }
+  .cs-result-grid p, section.cs-result p{
+    font-size: 15px;
+  }
 }
