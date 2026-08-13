@@ -1,0 +1,209 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/case-study.less';
+import '../../styles/case-study-modern.less';
+
+import hero from '../../assets/case-study/moving-legacy-php-site-to-laravel-react/hero.png';
+import challenge from '../../assets/case-study/moving-legacy-php-site-to-laravel-react/challenge.png';
+import screen1 from '../../assets/case-study/moving-legacy-php-site-to-laravel-react/screen1.png';
+import screen2 from '../../assets/case-study/moving-legacy-php-site-to-laravel-react/screen2.png';
+import screen3 from '../../assets/case-study/moving-legacy-php-site-to-laravel-react/screen3.png';
+import logo from '../../assets/case-study/moving-legacy-php-site-to-laravel-react/logo.svg';
+
+const icon = {
+  gauge: `<circle cx="12" cy="12" r="10"/><path d="M12 12l4-4"/><path d="M12 6v0"/>`,
+  shield: `<path d="M12 2l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>`,
+  accessibility: `<circle cx="12" cy="4" r="1.5"/><path d="M4 8h16"/><path d="M12 8v13"/><path d="M8 12l4-2 4 2"/><path d="M9 21l3-6 3 6"/>`,
+  rocket: `<path d="M14 3c3 0 6 2 7 5-3 1-5 4-5 7l-4 4-3-3 4-4c0-3 3-5 6-5-1-3-3-5-5-5z"/><path d="M7 14l-3 6 6-3"/>`,
+  wand: `<path d="M4 20l10-10"/><path d="M14 10l6-6"/><path d="M15 4h2M19 8v2M9 3v2M5 9H3"/>`,
+  sparkles: `<path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/><path d="M19 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/>`,
+  bar: `<path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/>`,
+  check: `<circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/>`,
+  external: `<path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 13v6a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h6"/>`,
+};
+---
+
+<Layout
+  title="Case Study for Moving Legacy PHP to Laravel & React"
+  description="Case Study: See how we moved a legacy PHP site to Laravel and React. An inside look at the migration of Switch, outlining the strategy, execution, and outcome of a massive modernization project."
+>
+  <main class="scs-root">
+
+    <div class="scs-hero">
+      <div class="scs-container scs-hero-inner">
+        <div class="scs-content">
+          <h1 class="scs-title">Luxury Rentals, Rebuilt for Performance</h1>
+          <p class="scs-lead">Switch is a subscription platform for renting authentic designer jewelry and handbags. Members choose pieces from luxury brands, pay a flat monthly fee, and swap as often as they like. The platform manages authentication, shipping, exchanges, and features a rent-to-own pathway.</p>
+          <div class="scs-badges">
+            <span class="scs-badge" set:html={`<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${icon.gauge}</svg> Faster UX`} />
+            <span class="scs-badge" set:html={`<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${icon.shield}</svg> Hardened Security`} />
+            <span class="scs-badge" set:html={`<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${icon.accessibility}</svg> ADA Compliance`} />
+          </div>
+        </div>
+        <div class="scs-hero-image">
+          <div class="scs-hero-box">
+            <img src={hero.src} alt="Joinswitch website" class="radius-25" style="width: 100%; height: auto;" />
+            <div class="extra-links-outer">
+              <a class="exteranl-link" href="https://joinswitch.com/" target="_blank" rel="noopener">Visit Website
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icon.external} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scs-metrics">
+      <div class="scs-container scs-metrics-grid">
+        <article class="scs-card">
+          <div class="scs-card-header" style="font-size: 16px; font-weight: 400;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icon.rocket} /> Performance</div>
+          <div class="scs-card-body">
+            <p class="scs-card-title">Snappier Loads</p>
+            <p class="scs-card-text">Optimized code, queries, and caching for faster page and API responses.</p>
+          </div>
+        </article>
+        <article class="scs-card">
+          <div class="scs-card-header" style="font-size: 16px; font-weight: 400;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icon.shield} /> Security</div>
+          <div class="scs-card-body">
+            <p class="scs-card-title">Hardened Stack</p>
+            <p class="scs-card-text">Framework upgrades and best practices across auth, payments, and PII.</p>
+          </div>
+        </article>
+        <article class="scs-card">
+          <div class="scs-card-header" style="font-size: 16px; font-weight: 400;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icon.accessibility} /> Accessibility</div>
+          <div class="scs-card-body">
+            <p class="scs-card-title">Score ~20 → 75</p>
+            <p class="scs-card-text">Semantic structure, contrast, focus states, labels, and keyboard flows.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div id="challenge" class="scs-section">
+      <div class="scs-container scs-two-col">
+        <div class="scs-content">
+          <h2>Challenge</h2>
+          <p class="scs-paragraph">Elevate speed, security, accessibility, and overall performance without disrupting the brand experience-or ongoing subscription operations.</p>
+          <ul class="scs-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icon.check} /> Modernize a legacy PHP codebase into a maintainable, scalable foundation.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icon.check} /> Improve load times, SEO health, and accessibility compliance (ADA/WCAG).</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icon.check} /> Harden security around authentication, payments, and user data.</li>
+          </ul>
+        </div>
+        <div>
+          <img src={challenge.src} alt="speed, security, accessibility" class="radius-25" style="width: 100%; height: auto;" />
+        </div>
+      </div>
+    </div>
+
+    <div id="approach" class="scs-section scs-alt">
+      <div class="scs-container">
+        <h2>Approach</h2>
+        <div class="scs-approach-grid">
+          <div class="scs-card scs-card--flat">
+            <div class="scs-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icon.wand} /> Backend Modernization</div>
+            <div class="scs-card-body">
+              <p>Migrated core application to <strong>Laravel</strong> for security, maintainability, and performance.</p>
+              <p>Optimized database queries, added caching, and introduced clear domain boundaries.</p>
+              <p>Implemented robust testing and CI to support future growth.</p>
+            </div>
+          </div>
+          <div class="scs-card scs-card--flat">
+            <div class="scs-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icon.sparkles} /> Frontend Experience</div>
+            <div class="scs-card-body">
+              <p>Delivered a fast, responsive UI with <strong>React</strong> (via <strong>Inertia.js</strong> pattern).</p>
+              <p>Improved navigation, advanced filters, wishlists, gift subscriptions, and waitlists.</p>
+              <p>Refined product cards, collection pages, and checkout flows for conversion.</p>
+            </div>
+          </div>
+          <div class="scs-card scs-card--flat">
+            <div class="scs-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icon.shield} /> Security &amp; Compliance</div>
+            <div class="scs-card-body">
+              <p>Applied best practices for auth, payments (<strong>Stripe</strong>), and PII handling.</p>
+              <p>Framework upgrades, dependency audits, and secure headers / rate limiting.</p>
+              <p>Accessibility improvements toward ADA/WCAG alignment.</p>
+            </div>
+          </div>
+          <div class="scs-card scs-card--flat">
+            <div class="scs-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icon.bar} /> SEO &amp; Analytics</div>
+            <div class="scs-card-body">
+              <p>Structured metadata, improved crawlability, and performance budgets.</p>
+              <p>Enhanced tracking for <strong>Meta</strong> and <strong>Google Ads</strong> to inform campaigns and ROI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="results" class="scs-section">
+      <div class="scs-container">
+        <h2>Results</h2>
+        <div class="scs-results-grid">
+          <div class="scs-card scs-card--simple">
+            <div class="scs-card-header">Faster, Smoother Journeys</div>
+            <div class="scs-card-body"><p>Reduced perceived latency with better caching and query tuning; improved Core Web Vitals.</p></div>
+          </div>
+          <div class="scs-card scs-card--simple">
+            <div class="scs-card-header">Accessibility Gains</div>
+            <div class="scs-card-body"><p>Accessibility score improved from ~20 to ~75 through semantic HTML, focus order, and contrast fixes.</p></div>
+          </div>
+          <div class="scs-card scs-card--simple">
+            <div class="scs-card-header">Security &amp; Stability</div>
+            <div class="scs-card-body"><p>Stronger protections around auth and payments; more resilient infra and deploys.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact" class="scs-contact">
+      <div class="scs-container scs-contact-inner">
+        <div>
+          <h2>Have a similar challenge?</h2>
+          <p class="scs-paragraph">Let's migrate legacy code, boost performance, and unlock growth-without disrupting your users.</p>
+        </div>
+        <div>
+          <a class="scs-btn scs-btn--inverse" href="/contact">Start a conversation</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="tech" class="scs-section scs-alt">
+      <div class="scs-container">
+        <h2>Tech Stack</h2>
+        <div class="tech-list">
+          <div class="tech-item">Laravel</div>
+          <div class="tech-item">Inertia.js</div>
+          <div class="tech-item">React</div>
+          <div class="tech-item">Stripe</div>
+          <div class="tech-item">CDN</div>
+          <div class="tech-item">MySQL/Postgres</div>
+          <div class="tech-item">Redis (cache/queues)</div>
+          <div class="tech-item">CI/CD</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="cs-quote" style="padding: 70px 0;">
+      <div class="scs-container">
+        <div class="cs-quote-lines">
+          <span class="cs-quote-line-red"></span>
+          <span class="cs-quote-line-green"></span>
+        </div>
+        <h4 style="max-width: 900px; margin: 0 auto 20px; font-size: 22px; color: #e0e5ec; line-height: 1.5;">&ldquo;They were extremely organised, communicated very effectively, and met all of the deadlines. They were extremely clear about what they needed from us to complete these projects in a timely manner. I can't disclose exact metrics, but I can say that we have been growing consistently. They can handle complex tasks that are less than straight forward. Whenever we've needed to figure out a solution, they've demonstrated creativity.&rdquo;</h4>
+        <p class="cs-quote-author">Elliott Darvish</p>
+        <img src={logo.src} alt="JoinSwitch Logo" style="max-width: 140px; margin: 16px auto 0; display: block;" />
+      </div>
+    </section>
+
+    <div class="scs-section" style="border-bottom: 0;">
+      <div class="scs-container">
+        <div class="scs-screens">
+          <div class="scs-screen"><img src={screen1.src} alt="Joinswitch website" /></div>
+          <div class="scs-screen"><img src={screen2.src} alt="Joinswitch website" /></div>
+          <div class="scs-screen"><img src={screen3.src} alt="Joinswitch website" /></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</Layout>

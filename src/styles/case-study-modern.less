@@ -1,0 +1,395 @@
+/* Modern case-study design system (scs-*) shared across newer case studies
+   (JoinSwitch, Divorce Harmony, JIVA) — ported from _joinswitch_casestudy.less */
+
+.scs-root {
+  --muted: #aab3c0;
+  --soft: #171c28;
+  background-color: #171c28;
+  color: #e0e5ec;
+  font-family: 'Lato', sans-serif;
+}
+
+.scs-root h1,
+.scs-root h2,
+.scs-root h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.scs-container {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Hero */
+.scs-hero {
+  border-bottom: 1px solid #3e3e3e;
+  padding-top: 130px;
+}
+
+.scs-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding: 56px 0;
+}
+
+.scs-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.scs-title {
+  font-size: 32px;
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 700;
+  color: #e0e5ec;
+}
+
+.scs-lead {
+  margin-top: 16px;
+  color: var(--muted);
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+.scs-badges {
+  margin-top: 18px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.scs-badge {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #ffffff;
+  font-size: 13px;
+  color: #000;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.scs-badge svg {
+  width: 16px;
+  height: auto;
+  stroke: #000;
+}
+
+.scs-hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scs-hero-box {
+  width: 100%;
+}
+
+.radius-25 {
+  border-radius: 25px;
+}
+
+.extra-links-outer {
+  display: flex;
+  justify-content: end;
+  padding-top: 3px;
+  padding-right: 15px;
+}
+
+.exteranl-link {
+  font-size: 12px;
+  line-height: 1;
+  color: #e0e5ec;
+  border-bottom: 1px solid #cfcfcf;
+  padding-bottom: 0px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.exteranl-link svg {
+  width: 11px;
+  height: auto;
+}
+
+.exteranl-link:hover {
+  border-bottom: 1px solid transparent;
+}
+
+/* Metrics */
+.scs-metrics {
+  border-bottom: 1px solid #3e3e3e;
+}
+
+.scs-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 22px 0;
+}
+
+.scs-card {
+  background: #212633;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.scs-card-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.scs-card-header svg {
+  width: 20px;
+  height: auto;
+}
+
+.scs-card-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  color: #e0e5ec;
+}
+
+.scs-card-text {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* Sections */
+.scs-section {
+  padding: 40px 0;
+  border-bottom: 1px solid #3e3e3e;
+}
+
+.scs-alt {
+  background: var(--soft);
+}
+
+.scs-container h2 {
+  margin: 0 0 25px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #e0e5ec;
+}
+
+.scs-two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.scs-two-col h2 {
+  margin-bottom: 15px;
+}
+
+.scs-paragraph {
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 690px;
+}
+
+.scs-list {
+  margin-top: 16px;
+  padding-left: 0;
+  color: var(--muted);
+  list-style: none;
+}
+
+.scs-list li {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.scs-list li svg {
+  width: 20px;
+  flex: 0 0 20px;
+  stroke: #aab3c0;
+}
+
+.scs-root strong {
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.scs-approach-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.scs-card--flat {
+  background: #212633;
+}
+
+.scs-card-body p {
+  margin: 0 0 8px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.scs-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+.scs-results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.scs-card--simple .scs-card-header {
+  font-size: 17px;
+  font-weight: 700;
+  color: #e0e5ec;
+}
+
+.scs-screens {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.scs-screen {
+  border-radius: 12px;
+  border: 1px solid #3e3e3e;
+  background: white;
+}
+
+.scs-screens img {
+  border-radius: 25px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Contact */
+.scs-contact {
+  margin-top: 50px;
+  padding: 0 15px;
+}
+
+.scs-container.scs-contact-inner {
+  background: #212633;
+  border-radius: 16px;
+  justify-content: space-between;
+  padding: 30px 40px;
+  max-width: 1260px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.scs-contact h2 {
+  margin: 0 0 8px;
+}
+
+.scs-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 2px;
+  background: #111827;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.scs-btn--inverse {
+  background: #fff;
+  color: #111827;
+}
+
+.scs-btn:hover {
+  background: #171c28;
+  color: #fff;
+}
+
+/* Tech stack */
+.tech-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.tech-item {
+  background: #212633;
+  border-radius: 10px;
+  padding: 20px 26px;
+  line-height: 1;
+  color: #e0e5ec;
+}
+
+@media (min-width: 768px) {
+  .scs-hero-inner {
+    grid-template-columns: 1fr 1fr;
+    padding: 80px 0;
+  }
+
+  .scs-title {
+    font-size: 40px;
+  }
+
+  .scs-metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 28px 0;
+  }
+
+  .scs-two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .scs-approach-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scs-results-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .scs-screens {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .scs-container.scs-contact-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .scs-hero {
+    padding-top: 100px;
+  }
+
+  .scs-container.scs-contact-inner {
+    padding: 30px 20px;
+  }
+
+  .scs-container h2 {
+    margin-bottom: 15px;
+  }
+
+  .scs-list li svg {
+    width: 14px;
+    flex: 0 0 14px;
+  }
+}

@@ -1,0 +1,163 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/case-studies-listing.less';
+
+import drB from '../assets/case-studies-listing/dr-b.png';
+import atgSeeds from '../assets/case-studies-listing/atg-seeds.jpg';
+import dipro from '../assets/case-studies-listing/dipro.png';
+import igadget from '../assets/case-studies-listing/igadget.jpg';
+import dduResources from '../assets/case-studies-listing/ddu-resources.jpg';
+import anselRes from '../assets/case-studies-listing/ansel-res.png';
+import seedPlanet from '../assets/case-studies-listing/seed-planet.png';
+import perennialSeo from '../assets/case-studies-listing/perennial-seo.jpg';
+import bettyResources from '../assets/case-studies-listing/betty-resources.jpg';
+import perennialImg from '../assets/case-studies-listing/perennial-img.png';
+import amazon from '../assets/case-studies-listing/amazon.jpg';
+import petdog from '../assets/case-studies-listing/petdog.png';
+import womenwork from '../assets/case-studies-listing/womenwork.png';
+import atgWebsite from '../assets/case-studies-listing/atg-website.png';
+
+const caseStudies = [
+  {
+    image: drB, alt: "Dr. B Dental Solutions – A collection of dental care products",
+    title: "Dr. B Dental Solutions", badges: ["Paid Ads"],
+    text: "Dr. B Dental Solutions Achieves 215% Revenue Growth with Google Shopping Ads",
+    href: "/case-study/dental-ecommerce-google-shopping-ads",
+  },
+  {
+    image: atgSeeds, alt: "All that grows seeds",
+    title: "AllThatGrows", badges: ["Paid Ads"],
+    text: "AllThatGrows Achieves 2.97x ROAS & 500+ Conversions with Google Ads.",
+    href: "/case-study/seed-ecommerce-on-shopify-google-ads",
+  },
+  {
+    image: dipro, alt: "The Diamond Pro",
+    title: "The Diamond Pro", badges: ["SEO"],
+    text: "Increasing Affiliate Clicks by 169% with SEO for Diamond Industry Client.",
+    href: "/case-study/seo-affiliate-marketing-diamond-industry",
+  },
+  {
+    image: igadget, alt: "iGadget",
+    title: "iGadget", badges: ["Google Shopping Engine"],
+    text: "Achieving 23.59% of Total Orders through Google Shopping",
+    href: "/case-study/mobile-repairs-accessory-store-igadget",
+  },
+  {
+    image: dduResources, alt: "Diamond Designs",
+    title: "Diamond Designs", badges: ["Facebook/ Instagram", "Paid Ads"],
+    text: "Achieving a ROAS of 5x with Facebook/ Instagram ads within just 5 months.",
+    href: "/case-study/diamond-designs",
+  },
+  {
+    image: anselRes, alt: "Ansel and Ivy",
+    title: "Ansel & Ivy", badges: ["Google Shopping Engine"],
+    text: "How CueForGood helped Ansel & Ivy generate 12.35% of its total revenue from Google Shopping.",
+    href: "/case-study/google-shopping-ansel-and-ivy",
+  },
+  {
+    image: seedPlanet, alt: "Seed Planet",
+    title: "AllThatGrows", badges: ["Facebook/ Instagram", "Paid Ads"],
+    text: "Optimizing Facebook/ Instagram paid ads to achieve a 3.27x ROAS, consistently over the years.",
+    href: "/case-study/high-roas-during-pandemic",
+  },
+  {
+    image: perennialSeo, alt: "Perennial Seo",
+    title: "Perennial Cycle", badges: ["SEO"],
+    text: "How PerennialCycle increased YOY Organic Revenue by 155.63% with just Elemental SEO.",
+    href: "/case-study/seo-perennial-cycle",
+  },
+  {
+    image: bettyResources, alt: "Betty and Biddy",
+    title: "Betty and Biddy", badges: ["Google Shopping Engine"],
+    text: "Raising the revenue by 1699% for Betty and Biddy with Google Shopping Campaigns",
+    href: "/case-study/betty-and-biddy-google-shopping",
+  },
+  {
+    image: perennialImg, alt: "Perennial cycle",
+    title: "Perennial Cycle", badges: ["Google Shopping Engine"],
+    text: "How Google Shopping Engine Played A Big Role In Increasing The Revenue Meter By 616.91%.",
+    href: "/case-study/google-shopping-perennial-cycle",
+  },
+  {
+    image: amazon, alt: "AllThatGrows – A display of seeds with branded decorations",
+    title: "AllThatGrows", badges: ["Marketplace Optimization"],
+    text: "Leveraging the Amazon Marketplace to increase revenue for AllThatGrows.",
+    href: "/case-study/amazon-marketplace",
+  },
+  {
+    image: petdog, alt: "PetDoors",
+    title: "PetDoors", badges: ["Magento", "SEO"],
+    text: "Merging revenue-driven blogs to increase organic sessions by 106.94% for PetDoors.",
+    href: "/case-study/merging-blog-pages-seo",
+  },
+  {
+    image: womenwork, alt: "Womanswork",
+    title: "Womanswork", badges: ["Magento", "Speed Optimization"],
+    text: "Ensuring speed optimization for Womanswork's Magento 2 eStore.",
+    href: "/case-study/site-speed-ww",
+  },
+  {
+    image: atgWebsite, alt: "Atg Website",
+    title: "AllThatGrows", badges: ["Shopify", "Creative Design", "Digital Marketing"],
+    text: "Building brand identity, packaging designs & marketing campaigns for AllThatGrows.",
+    href: "/case-study/allthatgrows",
+  },
+];
+---
+
+<Layout
+  title="Case Studies on Magento & Shopify Stores"
+  description="We constantly strive to deliver on our promise of in-depth client collaborations fueled by clear & consistent communication. Take an in-depth look into how we sailed through a few of our projects"
+>
+  <div class="cs-listing-page">
+
+    <section class="cs-listing-intro">
+      <div class="container">
+        <h1>Case Studies</h1>
+        <div class="cs-listing-intro-row">
+          <p>Meticulously honing our skills over the last 15 years, we constantly strive to deliver on our promise of in-depth client collaborations fueled by clear &amp; consistent communication.</p>
+          <p>Adhering to timing &amp; budget expectations of our clients, we build &amp; modify the solutions their customers are looking for, thereby reinforcing the brand identity in the industry. Take an in-depth look into how we sailed through a few of our projects.</p>
+        </div>
+      </div>
+    </section>
+
+    {caseStudies.map((cs, i) => (
+      <section class="cs-listing-row">
+        <div class="container">
+          <div class={`cs-listing-row-inner ${i % 2 === 1 ? 'reverse' : ''}`}>
+            <div class="cs-listing-media">
+              <img src={cs.image.src} alt={cs.alt} loading="lazy" />
+            </div>
+            <div class="cs-listing-text">
+              <h2>{cs.title}</h2>
+              <div class="cs-listing-badges">
+                {cs.badges.map((b) => <span class="cs-listing-badge">{b}</span>)}
+              </div>
+              <h4>{cs.text}</h4>
+              <a href={cs.href} class="cs-listing-btn">Read more</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <section class="cs-listing-resources">
+      <div class="container">
+        <h2>Resources</h2>
+        <div class="cs-listing-resources-row">
+          <div class="cs-listing-resource-col">
+            <p>Be sure to check off all the points on this specially-curated Conversion Rate Optimisation (CRO) before investing in your next big eCommerce venture.</p>
+            <h3>91 Point CRO Checklist &amp; Infographic</h3>
+            <a href="/holygrail-of-ecommerce-conversion-rate-optimization-91-point-checklist" class="cs-listing-btn">Download</a>
+          </div>
+          <div class="cs-listing-resource-col">
+            <p>Follow our 40-Point Checklist Guide for quick tips &amp; feasible steps to smoothly switch the HTTP version of your website to a more secure version, HTTPS.</p>
+            <h3>40 Point Checklist for a Successful HTTP to HTTPS Migration</h3>
+            <a href="/40-point-checklist-for-a-successful-http-to-https-migration" class="cs-listing-btn">Download</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
