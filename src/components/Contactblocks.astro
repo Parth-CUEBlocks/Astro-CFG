@@ -1,0 +1,17 @@
+---
+const { title, description,color } = Astro.props;
+
+---
+<section class="impact-cta-section contactblock">
+  <div class="container-inner">
+    <div class="contactus-area" style={`background-color: ${color || '#eae7ff'}`}>
+      <div class="left-cont">
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+      <div class="right-cont">
+        <a class="btn-read-more focus-visible" href="/contact">Contact us</a>
+      </div>
+    </div>
+  </div>
+</section>

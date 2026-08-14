@@ -9,6 +9,7 @@ const currentUrl = rawPath.replace(/\/$/, '') || '/';
 const response = await client.getEntries({
   content_type: "shopifyPageServiceBlocks",
   'fields.pageUrl': currentUrl,
+  order: ["-sys.createdAt"],
 });
 
 const data = response.items;

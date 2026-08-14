@@ -25,7 +25,7 @@
     padding-bottom: 35px;
   }
 }
-.cfg-hero-grid {
+.cfg-hero-grid {  
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -51,10 +51,12 @@
     }
 }
 .cfg-hero-subtitle {
-  font-size: 21px;
-  font-weight: 700;
-  color: #e0e5ec;
-  margin:0px;
+    font-size: 21px;
+    color: #e0e5ec;
+    margin: 0px;
+    margin-bottom: 20px;
+    margin-top: 14px;
+    font-weight: 700;
 }
 .cfg-hero-desc {
   line-height:140%;
@@ -108,21 +110,35 @@
   flex: 1;
   display: flex;
 }
+/***Service Inner Pages****/
+.service-innerpages{
+    @media (min-width:993px){
+      .cfg-hero-grid {
+        gap: 80px;
+      }
+      .cfg-hero-title{
+        font-size: 34px;
+      }
+    
+  }
+  .flex-hero {
+    display: flex;
+    gap: 10px;
+    img{
+      max-height: 90px;
+    }
+  }
+  .cfg-shopify-hero{
+    padding-bottom: 60px;
+  }
+}
 /****Approach Section****/
 .cfg-approach-section {
-  padding-top: 60px;
-  padding-bottom: 90px;
-}
-
-.services-page .badge-row-container {
-    margin-bottom: 5px;
-    .tech-badge {
-      font-size: 10px;
-      padding: 4px 12px;
-    }
+    padding-top: 60px;
+    padding-bottom: 100px;
+    border-top: 1px solid #292e3b;
 }
 .cfg-section-heading {
-  
   font-size: 34px;
   font-weight: 800;
   text-align: center;
@@ -130,56 +146,52 @@
   text-transform: uppercase;
   color: #e0e5ec;
 }
-
 .cfg-approach-grid {
-  display: flex;
-  gap: 24px;
-  padding-top: 30px;
+    display: flex;
+    gap: 30px;
+    padding-top: 50px;
 }
-
 .cfg-approach-card {
-  flex: 1;
-  background-color: #212633;
-  padding: 44px 28px;
-  text-align: center;
+    flex: 1;
+    background-color: #212633;
+    padding: 50px 30px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1);
+}
+.cfg-approach-card:hover {
+  transform: scale(1.05);
   transition: transform 0.2s ease-in-out;
 }
-
-.cfg-approach-card:hover {
-  scale: 1.05;
-}
-
 .cfg-approach-icon {
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
 }
-
 .cfg-approach-icon img {
-  width: 115px;
-  height: 115px;
-  object-fit: contain;
+  max-height: 115px;
 }
-
 .cfg-approach-card h3 {
-  
   font-size: 23px;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 0px;
   margin-bottom: 12px;
   color: #e0e5ec;
   text-transform: capitalize;
 }
-
 .cfg-approach-card p {
-  font-family: 'Lato', sans-serif;
   font-size: 17px;
-  color: #aab3c0;
-  line-height: 1.6;
   margin: 0px;
 }
 
 /*****repeat blocks******/
+.services-page .badge-row-container {
+    margin-bottom: 5px;
+    .tech-badge {
+      font-size: 10px;
+      padding: 4px 12px;
+    }
+}
 .services-matrix-section .container-inner {
     display: flex;
     flex-direction: column;
@@ -214,7 +226,7 @@
     }
   }
   }
-  &:last-child{
+  &:nth-child(3){
     .cfg-service-img {
     img{
       max-height: none;
@@ -284,6 +296,33 @@
     }
   }
 }
+/***Service page only**/
+.service-order  {
+  .cfg-service-row{
+    &:first-child {
+      order: 1;
+    } 
+    &:nth-child(4) {
+      order: 2;
+    } 
+    &:nth-child(3) {
+      order: 4;
+    } 
+    &:nth-child(2) {
+      order: 3;
+    } 
+    
+  }
+}
+/***Service Inner Pages*****/
+.cfg-services-title {
+    color: #e0e5ec;
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 50px;
+}
+
+
 
  .contactus-area {
     flex-direction: column;

@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import '../styles/shopify.less';
+import '../styles/services.less';
 
 import { getSeoMetadata } from '../../lib/seo';
 import ServiceHeroSection from '../components/servicepage/ServiceHeroSection.astro';
 import Serviceblock from '../components/servicepage/Serviceblock.astro';
 import ServiceOurApproach from '../components/servicepage/ServiceOurApproach.astro';
+import Contactblocks from '../components/Contactblocks.astro';
 
 const { title, description } = await getSeoMetadata(Astro.url.pathname, {
   title: "Shopify Agency for B Corps & Purpose-Driven Brands | CueForGood",
@@ -14,15 +15,15 @@ const { title, description } = await getSeoMetadata(Astro.url.pathname, {
 ---
 
 <Layout title={title} description={description}>
-  <div class="cfg-shopify-outer-wrapper shopify-page">
+  <div class="cfg-shopify-outer-wrapper service-innerpages shopify-page">
     <div class="cfg-shopify-inner-container">
       <ServiceHeroSection/>
       <ServiceOurApproach/>
-      <section class="cfg-services-section">
+      <div class="cfg-services-section">
         <h2 class="cfg-services-title">Our Shopify Services</h2>
         <Serviceblock/>
-      </section>
-
+      </div>
+      <Contactblocks color="#eae7ff" title="Ready to Scale Your Mission?" description="Let’s build something good." />
 
     </div>
   </div>
