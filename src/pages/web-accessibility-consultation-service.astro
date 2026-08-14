@@ -1,0 +1,290 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/web-accessibility.less';
+
+import wam from '../assets/web-accessibility/WAM.png';
+import woa from '../assets/web-accessibility/WOA.png';
+import hop from '../assets/web-accessibility/hop.png';
+import wcfg from '../assets/web-accessibility/wcfg.png';
+import adaB from '../assets/web-accessibility/ADA_b.png';
+import eaaB from '../assets/web-accessibility/EAA_b.png';
+
+import s1 from '../assets/web-accessibility/s1.png';
+import s2 from '../assets/web-accessibility/s2.png';
+import s3 from '../assets/web-accessibility/s3.png';
+import s4 from '../assets/web-accessibility/s4.png';
+import s5 from '../assets/web-accessibility/s5.png';
+import s6 from '../assets/web-accessibility/s6.png';
+import s7 from '../assets/web-accessibility/s7.png';
+import s8 from '../assets/web-accessibility/s8.png';
+import s9 from '../assets/web-accessibility/s9.png';
+import s10 from '../assets/web-accessibility/s10.png';
+import s11 from '../assets/web-accessibility/s11.png';
+
+import cbc from '../assets/web-accessibility/cbc.png';
+import npf from '../assets/web-accessibility/npf.png';
+import sf from '../assets/web-accessibility/sf.png';
+import aha from '../assets/web-accessibility/aha.png';
+import sp from '../assets/web-accessibility/sp.png';
+
+import vl from '../assets/web-accessibility/vl.png';
+import pd from '../assets/web-accessibility/pd.png';
+import bab from '../assets/web-accessibility/bab.png';
+import bl from '../assets/web-accessibility/bl.png';
+import dd from '../assets/web-accessibility/dd.png';
+import awh from '../assets/web-accessibility/AWH.png';
+import hs from '../assets/web-accessibility/hs.png';
+import atg from '../assets/web-accessibility/atg.svg';
+
+const processSteps = [
+  { num: "01", title: "Discovery Call", text: "We begin by understanding your platform, content structure, audience, and accessibility goals." },
+  { num: "02", title: "Audit", text: "We run SortSite, Lighthouse, and VoiceOver, along with detailed manual testing to flag gaps." },
+  { num: "03", title: "Reporting", text: "You receive a prioritised report mapped to WCAG 2.1, ADA, and EAA success criteria." },
+  { num: "04", title: "Support", text: "We guide your team or work directly with your developers to fix issues." },
+  { num: "05", title: "Re-Audit", text: "We retest the site to verify improvements and certify compliance." },
+  { num: "06", title: "Monitoring (Optional)", text: "Quarterly scans and alerts keep accessibility intact as your site evolves." },
+];
+
+const workflowSteps = [
+  { step: "Step 01:", title: "Initial Consultation", icon: s1, description: "We start with a discovery meeting to:", details: ["Understand your current structure and user journeys", "Define accessibility goals, compliance targets, and challenges", "Set the scope of the audit: pages, templates, and content types", "Align expectations on timing, outcomes, and collaboration needs"], secondary: ["<strong>Standards referenced:</strong> WCAG 2.1 (A/AA/AAA), ADA, EAA, and Section 508"] },
+  { step: "Step 02:", title: "Pre-Audit Preparation", icon: s2, description: "We gather all necessary technical and content details:", details: ["Sitemap or prioritised URL list", "CMS, platform, or custom stack information", "Staging or admin access if required"], secondary: ["<strong>Tools finalised for testing include:</strong> VoiceOver, Lighthouse, SortSite, and browser accessibility dev tools"] },
+  { step: "Step 03:", title: "Automated Testing", icon: s3, description: "Using trusted tools, we flag technical issues such as:", details: ["Missing or incorrect labels", "Heading structure errors", "Colour-contrast failures"], secondary: ["<strong>Tools used:</strong> SortSite, Lighthouse", "<strong>Deliverable:</strong> Initial findings spreadsheet"] },
+  { step: "Step 04:", title: "Manual Testing", icon: s4, description: "We manually test areas that automation may miss:", details: ["Keyboard navigation (Tab / Shift+Tab)", "Screen reader flows (VoiceOver, NVDA)", "Form validation, input labelling, and error handling", "Alt text, focus order, and ARIA landmarks"], secondary: ["<strong>Tools used:</strong> Colour Contrast Analyser, HTML validation tools"] },
+  { step: "Step 05:", title: "Code Review", icon: s5, description: "We analyse your code for semantic, accessible structure:", details: ["HTML and CSS: semantic tags and logical layout", "JavaScript: focus control, and dynamic content updates", "ARIA: correct roles and landmarks"], secondary: ["<strong>Tools used:</strong> W3C Validator, ARIA Validator, ESLint accessibility plugin"], third: "Only accessibility-impacting issues are in scope; unrelated items are flagged separately." },
+  { step: "Step 06:", title: "Compliance Check", icon: s6, description: "Your site is evaluated against the latest criteria:", details: ["WCAG 2.1 (A/AA/AAA as required)", "Section 508 for US public-facing entities", "ADA Title III and EAA requirements for global reach"], secondary: ["<strong>References:</strong> WCAG Quick Ref, Trusted Tester, and EU accessibility guidance"] },
+  { step: "Step 07:", title: "Reporting", icon: s7, description: "Our report includes:", details: ["Findings from automated, manual, and code reviews", "Screenshots and detailed issue breakdowns", "Severity rankings and business impact", "WCAG, ADA, and EAA mapping for each item"] },
+  { step: "Step 08:", title: "Recommendations & Remediation Plan", icon: s8, description: "You receive:", details: ["Clear, actionable recommendations", "Prioritised implementation roadmap", "Optional setup in your project-management tool"], secondary: ["<strong>Resources provided:</strong> WCAG Quick Reference and best-practice docs"] },
+  { step: "Step 09:", title: "Implementation Support", icon: s9, description: "We offer:", details: ["One-on-one developer guidance", "QA for complex fixes", "Theme or plugin troubleshooting", "Custom checklists for devs and content editors", "Training materials or recorded walk-throughs"] },
+  { step: "Step 10:", title: "Re-Audit and Verification", icon: s10, description: "After implementation:", details: ["We retest your site", "Verify all resolved issues, and confirm WCAG, ADA, and EAA compliance", "Document third-party limitations"], secondary: ["<strong>Output:</strong> Final verification report"] },
+  { step: "Step 11:", title: "Continuous Monitoring", icon: s11, description: "", details: ["Schedule audits quarterly or during major updates", "Monitor regressions with SortSite", "Recommend workflows to preserve accessibility"] },
+];
+
+const targetAudiences = [
+  { icon: cbc, title: "Certified B Corps maintaining digital ethics" },
+  { icon: npf, title: "Nonprofits focused on inclusive reach" },
+  { icon: sf, title: "Sustainability-focused ecommerce brands" },
+  { icon: aha, title: "Agencies handling accessibility for clients" },
+  { icon: sp, title: "Startups prioritizing accessibility from day one" },
+];
+
+const servicePlans = [
+  { icon: "📋", title: "Comprehensive Plan", features: ["Manual testing of up to ten pages", "Code review and user testing", "Detailed audit and findings report"] },
+  { icon: "⭐", title: "Premium Plan", features: ["Everything in the Comprehensive", "Developer support and training", "Re-audit plus monitoring setup"] },
+  { icon: "✏️", title: "Custom Plan", features: ["Tailored for agencies or enterprise teams", "Full integration support", "Collaborative roadmap development"] },
+];
+
+const brandLogos = [vl, pd, bab, bl, dd, awh, hs, atg];
+---
+
+<Layout
+  title="Web Accessibility Consultation for B Corps & Purpose-Led Brands | CueForGood"
+  description="Meet WCAG 2.1, ADA, EAA, and Section 508 standards. Our audits, remediation, and monitoring help purpose-led brands deliver inclusive digital experiences."
+>
+  <div class="wac-page">
+
+    <section class="wac-hero">
+      <div class="page_width">
+        <h1>Web Accessibility Consultation for B Corps &amp; Purpose-Led Brands</h1>
+        <p class="wac-hero-subtitle">Inclusive by Design. Accessible by Default.</p>
+        <p class="wac-hero-desc">We craft beautiful, optimised digital experiences that every visitor can use. Our team helps B Corps, nonprofits, and purpose-driven brands reach WCAG 2.1, ADA, EAA, and Section 508 compliance without diluting your voice, visuals, or values.</p>
+        <a href="/contact" class="wac-btn">Book a Free Consultation</a>
+      </div>
+    </section>
+
+    <section class="wac-split page_width">
+      <div class="wac-split-text">
+        <h2>Why Accessibility Matters for Purpose-Driven Brands</h2>
+        <p>An accessible website is about more than checklists; it widens your impact and proves your commitment to equity.</p>
+        <ul class="wac-check-list">
+          <li><p>Advance your mission</p><p>Inclusion is a core B Corp metric for community and governance.</p></li>
+          <li><p>Build trust, and advocacy</p><p>Barrier-free journeys convert better, and inspire word-of-mouth.</p></li>
+          <li><p>Boost organic reach</p><p>Search engines reward well-structured, accessible code.</p></li>
+          <li><p>Reduce legal and reputational risk</p><p>Compliance shields against ADA, EAA, and other global regulations.</p></li>
+        </ul>
+      </div>
+      <div class="wac-split-media">
+        <img src={wam.src} alt="Illustration showing diverse users accessing web content through various assistive technologies" />
+        <p>&ldquo;Design that makes people give a damn begins with accessibility.&rdquo;</p>
+      </div>
+    </section>
+
+    <section class="wac-regulations">
+      <div class="page_width">
+        <h2 class="wac-regulations-header">ADA &amp; EAA: Regulations You Can't Ignore</h2>
+        <div class="wac-regulations-grid">
+          <article class="wac-regulation-card">
+            <img src={eaaB.src} alt="ADA Americans with Disabilities Act illustration" />
+            <h3>ADA - Americans with Disabilities Act Title III (USA)</h3>
+            <ul>
+              <li>Applies to public-facing businesses (so-called "places of public accommodation"), including ecommerce sites, and nonprofit portals.</li>
+              <li>Courts routinely cite WCAG 2.1 AA as the practical benchmark for compliance.</li>
+              <li>Non-compliance can trigger lawsuits, settlement costs, and reputational damage.</li>
+            </ul>
+          </article>
+          <article class="wac-regulation-card">
+            <img src={adaB.src} alt="European Accessibility Act illustration" />
+            <h3>EAA – European Accessibility Act (w.e.f. June 2025)</h3>
+            <ul>
+              <li>Requires digital goods and services offered in the EU – from e-commerce and ticketing to banking, and e-books – to meet accessibility standards comparable to WCAG 2.1 AA.</li>
+              <li>Affects any organisation selling or operating within EU markets, regardless of where it is headquartered.</li>
+              <li>Key date: 28 June 2025 for new products and services; existing websites must comply by 2028.</li>
+              <li>Enforcement tools include market withdrawal, fines, and consumer complaints handled by EU member-state authorities.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="wac-regulations-footer">
+          <p>Our audit explicitly maps every issue to ADA, EAA, WCAG 2.1, and Section 508 checkpoints, ensuring you stay compliant on both sides of the Atlantic.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wac-split reverse page_width">
+      <div class="wac-split-media">
+        <img src={woa.src} alt="Dashboard showing accessibility audit results and compliance metrics" />
+      </div>
+      <div class="wac-split-text">
+        <h2>What Our Accessibility Consultation Covers</h2>
+        <p>We blend automated scans, live user testing, and hands-on developer guidance to uncover issues and lay out a sustainable roadmap.</p>
+        <a href="/contact" class="wac-btn">Book a Discovery Session</a>
+      </div>
+    </section>
+
+    <section class="wac-process page_width">
+      <div class="wac-process-media">
+        <img src={hop.src} alt="Process workflow illustration showing our collaborative approach to accessibility consulting" />
+      </div>
+      <div class="wac-process-content">
+        <h2>How Our Process Works</h2>
+        <p>Our process is transparent, collaborative, and rooted in user-first thinking. Here is how we work together:</p>
+        <div class="wac-process-steps">
+          {processSteps.map((s) => (
+            <div class="wac-process-step">
+              <div class="wac-process-step-num">{s.num}</div>
+              <div>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="wac-faaw">
+      <div class="page_width">
+        <h2>Full Accessibility Audit Workflow</h2>
+        <p>Our workflow goes beyond surface checks, using WCAG-aligned benchmarks and real-world user scenarios to provide a roadmap for lasting compliance.</p>
+        <div class="wac-accordion-grid">
+          {workflowSteps.map((s) => (
+            <details class="wac-accordion-item">
+              <summary class="wac-accordion-trigger">
+                <div class="wac-accordion-header">
+                  <div class="wac-accordion-icon"><img src={s.icon.src} alt="" loading="lazy" /></div>
+                  <div>
+                    <div class="wac-step-number">{s.step}</div>
+                    <h3>{s.title}</h3>
+                  </div>
+                </div>
+                <span class="wac-accordion-arrow"></span>
+              </summary>
+              <div class="wac-accordion-body">
+                {s.description && <p>{s.description}</p>}
+                <ul>
+                  {s.details.map((d) => <li set:html={d} />)}
+                </ul>
+                {s.secondary && s.secondary.map((desc) => <p class="wac-accordion-tools" set:html={desc} />)}
+                {s.third && <p class="wac-accordion-tools">{s.third}</p>}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="wac-audience">
+      <div class="page_width">
+        <div class="wac-audience-header">
+          <h2>Who This Is For</h2>
+          <p>Our consultation is ideal for</p>
+        </div>
+        <div class="wac-audience-row">
+          {targetAudiences.slice(0, 3).map((a) => (
+            <article class="wac-audience-card">
+              <h3>{a.title}</h3>
+            </article>
+          ))}
+        </div>
+        <div class="wac-audience-row">
+          {targetAudiences.slice(3).map((a) => (
+            <article class="wac-audience-card">
+              <h3>{a.title}</h3>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="wac-plans">
+      <div class="page_width">
+        <h2>Service Plans</h2>
+        <div class="wac-plans-grid">
+          {servicePlans.map((plan) => (
+            <article class="wac-plan-card">
+              <div class="wac-plan-header">
+                <div class="wac-plan-icon">{plan.icon}</div>
+                <h3>{plan.title}</h3>
+              </div>
+              <ul>
+                {plan.features.map((f) => <li>{f}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="wac-brands">
+      <div class="page_width">
+        <h2>Brands We've Worked With</h2>
+        <p>We are proud to partner with purpose-led organisations across the ecommerce, fashion, and nonprofit sectors.</p>
+        <div class="wac-brand-cards">
+          {brandLogos.map((logo) => (
+            <div class="wac-brand-card">
+              <img src={logo.src} alt="Brand logo" loading="lazy" />
+            </div>
+          ))}
+        </div>
+        <p class="wac-brands-conclusion">Whether migrating platforms, improving UX, or achieving compliance, we build accessible experiences that scale your mission.</p>
+      </div>
+    </section>
+
+    <section class="wac-why page_width">
+      <div class="wac-why-content">
+        <h2>Why CueForGood?</h2>
+        <p>We are more than auditors – we are partners in building a better internet.</p>
+        <ul>
+          <li>Purpose-native specialists for mission-aligned brands</li>
+          <li>Developer-ready audits in plain language</li>
+          <li>Hands-on remediation and QA support</li>
+          <li>Flexibility across Shopify, WordPress, Magento, and custom stacks</li>
+        </ul>
+        <div class="wac-lets-build">
+          <h3>Let's Build a Web Everyone Can Use</h3>
+          <p>Accessibility is the foundation of certification, usability, and brand trust. We will help you lay it right.</p>
+        </div>
+        <a href="/contact" class="wac-btn">Get Started with a Free Consultation</a>
+      </div>
+      <div class="wac-why-media">
+        <img src={wcfg.src} alt="Accessibility consultation illustration" />
+      </div>
+    </section>
+
+    <section class="wac-final-cta">
+      <div class="page_width">
+        <h2>Make Us Part of the Impact</h2>
+        <p>Please <a href="/contact">share details</a> of your story &amp; project requirements</p>
+      </div>
+    </section>
+
+  </div>
+</Layout>
