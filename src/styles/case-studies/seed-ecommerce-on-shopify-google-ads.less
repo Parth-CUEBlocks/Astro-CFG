@@ -3,10 +3,60 @@
 
   .cs-numbered-step-num {
     color: var(--seed-accent) !important;
-    opacity: 0.9;
+    -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(#4dc094, #fff);
+    -webkit-background-clip: text;
   }
 
   .cs-process-card {
     margin-bottom: 40px;
+  }
+}
+
+
+.cs-section p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 28px;
+}
+.cs-hero .cs-hero-img {
+    max-width: 900px;
+}
+section.cs-stats-multi .container{
+  background-color: #141924;
+  padding: 50px 30px;
+}
+.cs-rating-box {
+    border: 1px solid #2a3142;
+    padding: 30px 10px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.cs-rating-box .cs-rating-num{
+  font-size: 48px;
+  font-weight: 700;
+}
+.cs-rating-box p {
+  font-size: 20px;
+  color: #aab3c0;
+  margin: 0;
+  font-weight: 600;
+}
+.cs-ratings-note a {
+  color: #fff;
+}
+
+
+
+@media(max-width: 768px) {
+  .cs-numbered-step:last-child {
+    margin-bottom: 0;
+  }
+  section.cs-result .top-details:last-child p {
+    font-size: 20px;
   }
 }

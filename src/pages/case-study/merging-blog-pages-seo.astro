@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import CaseStudyCta from '../../components/CaseStudyCta.astro';
 import '../../styles/case-study.less';
+import '../../styles/case-studies/merging-blog-pages-seo.less';
+
 
 import door1 from '../../assets/case-study/merging-blog-pages-seo/door1.png';
 import door2 from '../../assets/case-study/merging-blog-pages-seo/door2.png';
@@ -10,6 +12,8 @@ import logo from '../../assets/case-study/merging-blog-pages-seo/logo.png';
 import graph from '../../assets/case-study/merging-blog-pages-seo/graph.jpg';
 import dogWindow from '../../assets/case-study/merging-blog-pages-seo/dog-window.jpg';
 import bottom from '../../assets/case-study/merging-blog-pages-seo/bottom.png';
+import gpPhoto from '../../assets/case-study/merging-blog-pages-seo/gpPhoto.png';
+
 
 const themes = [
   { theme: "Blog posts about Pet door training", blogs: "Blog 1 (Parent Blog)\nBlog 2\nBlog 3" },
@@ -29,14 +33,15 @@ const themes = [
         <p class="cs-hero-label">Case Study</p>
         <h1 style="font-family: 'Courier New', monospace; letter-spacing: 2px;">PETDOORS.COM</h1>
         <p class="cs-hero-subheading">How merging revenue-driven blog posts lead to <strong>106.94%</strong> increase in organic sessions for PetDoors.com</p>
+        <img src={gpPhoto.src} alt="PetDoors" width="auto" height="auto" />
         <p class="cs-hero-subheading" style="max-width: 900px; margin-top: 30px;">PetDoors.com stocks one of the world's largest selections of built-to-last, weather-tight pet doors. The company already has 500,000 pet owners on board, providing the most suitable door for dogs &amp; cats of all sizes.</p>
       </div>
     </section>
 
     <section class="cs-section" style="padding: 20px 0 60px;">
       <div class="container">
-        <p style="max-width: 900px; margin: 0 auto 16px; font-size: 16px; text-align: center;">Their plethora of experience in the industry has made them understand pet doors more than anyone else in the world. To add to this, the company is well aware of the nuances of how blogs can help gain market share in organic traffic. As a result, they've been consistently covering all nitty-gritty of information around pet doors via their blogs.</p>
-        <p style="max-width: 900px; margin: 0 auto; font-size: 16px; text-align: center;">However, when someone publishes content over a long period of time, content pieces with overlapping information can occur naturally. These overlapping content led to a rise in visibility of one content piece while the other pieces faded in the shadow.</p>
+        <p style="max-width: 900px; margin: 0 auto 16px; text-align: center;">Their plethora of experience in the industry has made them understand pet doors more than anyone else in the world. To add to this, the company is well aware of the nuances of how blogs can help gain market share in organic traffic. As a result, they've been consistently covering all nitty-gritty of information around pet doors via their blogs.</p>
+        <p style="max-width: 900px; margin: 0 auto; text-align: center;">However, when someone publishes content over a long period of time, content pieces with overlapping information can occur naturally. These overlapping content led to a rise in visibility of one content piece while the other pieces faded in the shadow.</p>
 
         <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap; margin: 50px 0 30px;">
           <img src={door1.src} alt="PetDoors" style="max-width: 130px; width: 100%; height: auto;" />
@@ -51,9 +56,9 @@ const themes = [
       </div>
     </section>
 
-    <section class="cs-testimonial" style="padding: 70px 0; text-align: center;">
+    <section class="cs-testimonial pd-sec-feature">
       <div class="container">
-        <p style="max-width: 900px; margin: 0 auto; font-size: 26px; line-height: 1.6; color: #e0e5ec;">To derive maximum benefit from their blog posts, CueForGood assisted Petdoors.com to merge and optimize their blog posts with overlapping content.</p>
+        <p>To derive maximum benefit from their blog posts, CueForGood assisted Petdoors.com to merge and optimize their blog posts with overlapping content.</p>
       </div>
     </section>
 
@@ -62,7 +67,7 @@ const themes = [
         <h2 class="heading_main">Results</h2>
         <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 15px;">Petdoors Experienced</p>
         <div style="border-top: 1px solid #2a3142; max-width: 900px; margin: 30px auto 0; padding-top: 40px; text-align: left;">
-          <p style="font-size: 28px; line-height: 1.5;"><strong style="color: #e0e5ec;">106.94%</strong> increase in Sessions from their Revenue-driven blog posts</p>
+          <p style="line-height: 1.5;"><strong style="color: #e0e5ec;">106.94%</strong> increase in Sessions from their Revenue-driven blog posts</p>
           <img src={graph.src} alt="PetDoors" style="width: 100%; height: auto; margin-top: 20px;" />
         </div>
       </div>
@@ -104,7 +109,7 @@ const themes = [
 
         <div style="margin-top: 70px;">
           <h2 class="heading_main text-center">An important exception</h2>
-          <p class="text-center" style="max-width: 900px; margin: 0 auto 40px; font-size: 16px;">Please note, not all blog posts are a right fit for merging. A blog performing well on its own might have its performance compromised when merged and hence, before qualifying any blog for merging, you should make an exception for the following:</p>
+          <p class="text-center" style="max-width: 900px; margin: 0 auto 40px;">Please note, not all blog posts are a right fit for merging. A blog performing well on its own might have its performance compromised when merged and hence, before qualifying any blog for merging, you should make an exception for the following:</p>
           <div class="cs-callout-row">
             <div class="cs-callout-box">Blog posts doing well in Social Media or newsletters</div>
             <div class="cs-callout-box">Blog posts that are part of buying funnel (even with less number of Sessions)</div>

@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import CaseStudyCta from '../../components/CaseStudyCta.astro';
 import '../../styles/case-study.less';
+import '../../styles/case-studies/google-shopping-ansel-and-ivy.less';
 
 import heroPlants from '../../assets/case-study/google-shopping-ansel-and-ivy/hero-plants.png';
 import about from '../../assets/case-study/google-shopping-ansel-and-ivy/about.jpg';
@@ -88,7 +89,7 @@ const hereShow = [
 
     <section class="cs-section" style="padding: 40px 0;">
       <div class="container">
-        <p class="cs-note" style="text-align: center; color: #7c8494;"><strong>Note:</strong> Measuring the performance from August 2020 till September 2021 as we started working on the project from 22 July 2020 onwards.</p>
+        <p class="cs-note"><strong style="color: #e0e5ec;">Note:</strong> Measuring the performance from August 2020 till September 2021 as we started working on the project from 22 July 2020 onwards.</p>
       </div>
     </section>
 
@@ -106,11 +107,11 @@ const hereShow = [
       </div>
     </section>
 
-    <section class="cs-section" style="padding: 60px 0;">
+    <section class="cs-section cs-dark background" style="padding: 60px 0;">
       <div class="container">
         <h2 class="heading_main">Background</h2>
-        <p style="font-size: 16px;">After developing Ansel &amp; Ivy's website and migrating the same from Magento to Shopify, our team at CueForGood looked for ways to generate more sales for the company. While analysing the brand, we noticed its absence from the Google Shopping Platform. Considering the aesthetics, product range, competitors, and market growth, it was clearly a missed opportunity.</p>
-        <p style="font-size: 16px;">We, therefore, advised the client to try Google Shopping for amplified traffic, sales, and ROI for at least 3 months. Starting 22 July 2020, we experienced striking returns on the ad spent within 3 months. Consequently, the client decided to continue working on the channel which has now made its way to becoming one of the top traffic &amp; revenue-generating sources for the website.</p>
+        <p>After developing Ansel &amp; Ivy's website and migrating the same from Magento to Shopify, our team at CueForGood looked for ways to generate more sales for the company. While analysing the brand, we noticed its absence from the Google Shopping Platform. Considering the aesthetics, product range, competitors, and market growth, it was clearly a missed opportunity.</p>
+        <p>We, therefore, advised the client to try Google Shopping for amplified traffic, sales, and ROI for at least 3 months. Starting 22 July 2020, we experienced striking returns on the ad spent within 3 months. Consequently, the client decided to continue working on the channel which has now made its way to becoming one of the top traffic &amp; revenue-generating sources for the website.</p>
       </div>
     </section>
 
@@ -125,7 +126,7 @@ const hereShow = [
             </div>
           ))}
           <div class="cs-challenge-item">
-            <img src={challenge.src} alt="Ansel & Ivy Service" style="width: 100%; height: auto;" />
+            <img src={challenge.src} alt="Ansel & Ivy Service" style="width: 100%;height: auto;text-align: right;float: right; max-width: 376px;" />
           </div>
         </div>
       </div>
@@ -189,7 +190,7 @@ const hereShow = [
     <section class="cs-result">
       <div class="container">
         <h2 class="heading_main">Results</h2>
-        <p style="font-size: 20px; margin-bottom: 40px;">Starting 22 July 2020, Google Shopping has benefited Ansel &amp; Ivy By</p>
+        <p style=" margin-bottom: 40px;">Starting 22 July 2020, Google Shopping has benefited Ansel &amp; Ivy By</p>
         <div class="cs-radial-stats-row">
           {stats.map((s) => (
             <div class="cs-radial-stat">
@@ -216,8 +217,8 @@ const hereShow = [
 
     <section class="cs-section text-center" style="padding: 40px 0 0;">
       <div class="container">
-        <p style="font-size: 18px;">Want to give your online sales a boost? We're right here to help. Get in touch with us at <a href="mailto:letstalk@cueforgood.com" style="color: #ffffff; text-decoration: underline;">letstalk@cueforgood.com</a> to know how we can add value to your business.</p>
-        <img src={footerPlants.src} alt="Ansel and Ivy" style="max-width: 420px; margin: 30px auto 0;" />
+        <p>Want to give your online sales a boost? We're right here to help. Get in touch with us at <a href="mailto:letstalk@cueforgood.com" style="color: #ffffff; text-decoration: underline;">letstalk@cueforgood.com</a> to know how we can add value to your business.</p>
+        <img src={footerPlants.src} alt="Ansel and Ivy" style="max-width: 420px; margin: 30px auto 0; width:100%;" />
       </div>
     </section>
 

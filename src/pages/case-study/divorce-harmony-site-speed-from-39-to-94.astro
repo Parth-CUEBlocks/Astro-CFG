@@ -1,0 +1,225 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyCta from '../../components/CaseStudyCta.astro';
+import '../../styles/case-study.less';
+import '../../styles/case-studies/divorce-harmony-site-speed-from-39-to-94.less';
+
+import phpImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/php.png';
+import wpImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/wp.png';
+import feImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/fe.png';
+import cfImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/cf.png';
+import approachDiagram from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/approach-diagram.png';
+import beforeImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/before.png';
+import afterImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/after.png';
+import dori from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/dori.png';
+
+// Import your 4 image assets (Update paths/names to match your assets folder)
+import homepagePsiImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/psi-homepage.png';
+import mediationPsiImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/psi-mediation.png';
+import maritalPsiImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/psi-marital.png';
+import cheapPsiImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/psi-cheap.png';
+
+const stats = [
+  { pct: "88.3%", label: "On load time improved" },
+  { pct: "88.3%", label: "LCP (Core Web Vital) improved" },
+  { pct: "65.1%", label: "Fully loaded time improved" },
+  { pct: "65.1%", label: "TBT (Core Web Vital) improved" },
+];
+
+const techStack = [
+  { label: "Programming Language", img: phpImg },
+  { label: "CMS", img: wpImg },
+  { label: "Frontend", img: feImg },
+  { label: "Optimization & Security", img: cfImg },
+];
+
+const approachSteps = [
+  { title: "Comprehensive Speed Audit:", text: "We use PageSpeed Insights (PSI) to thoroughly audit key sections of the website. For DivorceHarmony, we analyzed the home page, service pages (divorce mediation, marital mediation), informational pages, and contact pages." },
+  { title: "Template-Based Optimization:", text: "By identifying and fixing template issues, we create sitewide improvements. Each page type fix cascades across similar pages throughout the site." },
+  { title: "Impact-Driven Prioritization:", text: "We analyze and prioritize changes based on feasibility and potential impact, focusing on modifications that deliver the greatest performance gains." },
+  { title: "Validation and Monitoring:", text: "After implementing changes, we rerun speed tests to validate improvements and continue monitoring the site to ensure sustained performance." },
+];
+
+const issues = [
+  { q: "01 Scripts Optimization", a: "We identified and removed two unnecessary GTM tags along with an outdated Google Analytics code that was no longer in use. Additionally, the homepage contained a Spotify embed that triggered video-loading scripts, which we optimized by implementing lazy loading to prevent unnecessary script execution during page load. As part of this process, we also eliminated unused theme-related scripts to further enhance performance." },
+  { q: "02 Cloudflare Rocket Loader Implementation", a: "Cloudflare Rocket Loader is a performance optimization tool that improves website speed by deferring JavaScript execution until after the page's main content (text, images, fonts) has loaded. This allows the user to see and interact with the page much faster, while JavaScript loads in the background." },
+  { q: "03 Critical CSS Implementation", a: "Prioritized the loading of essential CSS to enable faster initial rendering of the page. Non-critical CSS was deferred to load after user interaction, improving performance and delivering a smoother, more responsive experience." },
+  { q: "04 Theme Update", a: "We upgraded the current theme to its latest version to take advantage of new features, security improvements with PHP 8, and performance optimizations. The update included better compatibility with modern web standards, improved coding practices, and enhanced support for Core Web Vitals. Additionally, it helped resolve deprecated functions and optimise scripts/styles, leading to a faster, more stable, and future-proof website." },
+  { q: "05 Code Optimization", a: "Minified and optimized CSS, JavaScript, and HTML to reduce file sizes and improve load efficiency. This enhancement led to faster page speeds, better performance scores, and an overall smoother user experience." },
+  { q: "06 Server-Level Caching", a: "Implemented server-level caching to store frequently accessed data, reducing server load and improving response times. This optimization significantly enhanced website performance, ensuring faster load times and a better user experience." },
+  { q: "07 Font Preloading to Fix CLS Issue", a: "We identified that the font loading behavior on the website was causing a Cumulative Layout Shift (CLS) issue. This occurred because the fonts were loading late, resulting in a visual shift as the content re-rendered with the correct fonts. To address this, we added the font-display: swap property, which allows the text to be displayed with a fallback font until the custom font is fully loaded. This improves the perceived loading speed and prevents layout shifts, enhancing the user experience and Core Web Vitals score." },
+  { q: "08 Optimizing the Hero Banner for LCP", a: 'The Largest Contentful Paint (LCP) issue was traced back to the hero banner on the homepage, which was set as a background image. Background images are not prioritized by browsers in the same way as <img> tags, leading to slower loading times for this key visual element. To optimize this, we updated the code to use an <img> tag instead. Additionally, we added the loading="eager" and fetchpriority="high" attributes to instruct the browser to load the image immediately and with high priority. This significantly improves the LCP performance by ensuring the banner appears faster.' },
+  { q: "09 Optimizing Image Loading for Mobile and Desktop", a: "We discovered that desktop-sized images were being unnecessarily loaded on mobile devices, increasing the page load time and consuming more bandwidth. To resolve this, we implemented a condition to serve different image sizes based on the device type. This ensures that mobile devices only load smaller, optimized images, while desktops load larger, high-resolution versions. This change reduces unnecessary resource loading and enhances the overall performance and efficiency of the website." },
+];
+
+const psiSections = [
+  { title: "Homepage (Mobile):", img: homepagePsiImg },
+  { title: "Divorce Mediation Service Page (Mobile):", img: mediationPsiImg },
+  { title: "Marital Mediation Service Page (Mobile):", img: maritalPsiImg },
+  { title: "Cheap Divorce Service Page (Mobile):", img: cheapPsiImg },
+];
+---
+
+<Layout
+  title="How We Took DivorceHarmony.com from Slow to Speedy (39 to 94)"
+  description="Slow site? See how we fixed DivorceHarmony.com's speed, improved Core Web Vitals, and cut load times—without a redesign or platform switch."
+>
+  <div class="case-study-page">
+
+    <section class="cs-hero" style="text-align: left; padding-bottom: 40px;">
+      <div class="container">
+        <p class="cs-hero-label">Case Study</p>
+        <h1>Accelerating DivorceHarmony.com: From 39 to 85 in Page Speed Insights</h1>
+        <h2 class="heading_main">Results:</h2>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 0 0 60px;">
+      <div class="container">
+        <div class="cs-arrow-stats-row">
+          {stats.map((s) => (
+            <div class="cs-arrow-stat">
+              <div class="cs-arrow-stat-inner">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M7 8V16H9V8H16L8 0L0 8H7Z" fill="#028A0F"/></svg>
+                <div>
+                  <div class="cs-arrow-stat-num">{s.pct}</div>
+                  <p>{s.label}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 0 0 60px;">
+      <div class="container">
+        <h2 class="heading_main">Tech Stack:</h2>
+        <div class="cs-tech-box-grid">
+          {techStack.map((t) => (
+            <div class="cs-tech-box-item">
+              <p>{t.label}</p>
+              <div class="cs-tech-box">
+                <img src={t.img.src} alt={t.label} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 0 0 60px;">
+      <div class="container">
+        <h2 class="heading_main">Few words from Dori:</h2>
+        <h3>With CueForGood's help our website's speed improved significantly. The site's Core Web Vitals scores saw a major boost and our bounce rates have dropped noticeably. <strong style="font-weight: 700;">We highly recommend them!</strong></h3>
+        <p style="margin-top: 20px; font-weight: 700; color: #e0e5ec;">Dori Shwirtz</p>
+        <p style="margin: 0;">Licensed Attorney, Florida Supreme Court</p>
+        <p style="margin: 0;">Certified Mediator and Divorce Coach</p>
+      </div>
+    </section>
+
+    <CaseStudyCta variant="blue" />
+
+    <section class="cs-section" style="padding: 60px 0;">
+      <div class="container">
+        <h2 class="heading_main">Challenges we addressed</h2>
+        <p style="max-width: 1000px;">DivorceHarmony.com struggled with slow page load times and inconsistent performance, which impacted user experience and accessibility. Visitors seeking time-sensitive legal guidance, mediation services, and divorce coaching often faced delays that led to frustration or drop-offs.</p>
+        <p style="max-width: 1000px;">To support its mission of affordable, hassle-free online divorces, the site needed technical optimization to ensure all key content - legal resources, service details, and contact info - was delivered quickly and reliably across all devices.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 60px 0;">
+      <div class="container">
+        <div class="cs-dual-column">
+          <div class="cs-dual-col" style="gap: 24px;">
+            <div>
+              <h2 class="heading_main">Our approach</h2>
+              <p style="font-weight: 700; color: #e0e5ec;">We follow a structured methodology for site speed optimization that delivers consistent results:</p>
+            </div>
+            {approachSteps.map((s) => (
+              <div>
+                <h3 style="font-weight: 700; color: #e0e5ec; margin: 0 0 8px;">{s.title}</h3>
+                <p style="margin: 0;">{s.text}</p>
+              </div>
+            ))}
+
+            <div>
+              <h2 class="heading_main" style="margin-top: 20px;">Issues addressed on Divorce Harmony:</h2>
+              {issues.map((item) => (
+                <details class="cs-accordion-item">
+                  <summary class="cs-accordion-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e0e5ec"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"></path></svg>
+                    {item.q}
+                  </summary>
+                  <div class="cs-accordion-panel">{item.a}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+          <div class="cs-dual-col">
+            <img src={approachDiagram.src} alt="our approach diagram" style="width: 100%; height: auto;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" style="padding: 60px 0;">
+      <div class="container">
+        <h2 class="heading_main">Performance results</h2>
+        <p>Improvements measured using PageSpeed Insights (09 Jan vs 22 Jan 2025):</p>
+        <div class="cs-advantage-row" style="margin-top: 30px; margin-bottom: 0; align-items: flex-start;">
+          <div class="cs-advantage-media">
+            <h4 style=" font-weight: 700; color: #e0e5ec; margin: 0 0 16px;">Before(Homepage):</h4>
+            <img src={beforeImg.src} alt="Divorce Harmony Performance results Before Homepage fixes" style="border-radius: 8px;" />
+          </div>
+          <div class="cs-advantage-media">
+            <h4 style="font-weight: 700; color: #e0e5ec; margin: 0 0 16px;">After(Homepage):</h4>
+            <img src={afterImg.src} alt="Divorce Harmony Performance results after Homepage fixes" style="border-radius: 8px;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-advantage" style="padding: 0 0 60px;">
+      <div class="container">
+        <div class="cs-advantage-row">
+          <div class="cs-advantage-media" style="flex: 0 0 320px;">
+            <img src={dori.src} alt="Dori Shwirtz owner of Divorce harmony" style="border-radius: 8px;" />
+          </div>
+          <div class="cs-advantage-text">
+            <h2 class="heading_main">About DivorceHarmony</h2>
+            <p>DivorceHarmony.com provides Florida residents with quick, inexpensive, and peaceful divorce processes. Founded by Dori Shwirtz, a licensed attorney, certified mediator, and divorce coach, Divorce Harmony specializes in divorce mediation, marital mediation, and divorce coaching - all accessible online, eliminating court appearances.</p>
+            <p>The website has been featured in renowned publications such as Forbes, US News, MarketWatch, Chicago Tribune, Oprah Magazine, and Yahoo, highlighting its authority in the industry.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PageSpeed Insights Section with 4 image items -->
+    <section class="cs-section" style="padding: 0 0 60px;">
+      <div class="container">
+        <h2 class="heading_main">PageSpeed Insights Improvements:</h2>
+        <div class="cs-psi-grid">
+          {psiSections.map((item) => (
+            <div class="cs-psi-card">
+              <h4>{item.title}</h4>
+              <div class="cs-psi-image-wrapper">
+                <img src={item.img.src} alt={item.title} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<style>
+  .cs-accordion-trigger::-webkit-details-marker {
+    display: none;
+  }
+  .cs-accordion-trigger {
+    list-style: none;
+  }
+</style>

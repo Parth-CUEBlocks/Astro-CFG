@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../styles/career.less';
+
+import image1 from "../assets/page.career/career1.jpg";
+import image2 from "../assets/page.career/career-mobile.jpg";
+
 ---
 
 <Layout title="Careers at CueForGood | Join Our Team">
@@ -8,8 +12,8 @@ import '../styles/career.less';
     <div class="cfg-career-inner-container">
       
       <!-- INTRODUCTION SECTION -->
-      <section class="cfg-career-intro-section">
-        <h1 class="cfg-career-heading">Work With Us</h1>
+      <section class="cfg-career-intro-section" aria-labelledby="cfg-career-heading">
+        <h1 id="cfg-career-heading" class="cfg-career-heading">Work With Us</h1>
         <p class="cfg-career-intro-text">
           With passion as its compass, CueForGood offers a platform with purpose. Our team of developers, designers, and online marketers reimagines eCommerce through creativity that outlasts each of us as individuals. We believe in coming to work with ideas that have whiffs of newness and a heart that feels like it is on a trip to La La Land.
         </p>
@@ -18,67 +22,63 @@ import '../styles/career.less';
         </p>
       </section>
 
-      <hr class="cfg-career-divider" />
+      <hr class="cfg-career-divider" aria-hidden="true" />
 
-      <!-- CULTURE & BENEFITS SECTION -->
-      <section class="cfg-career-culture-block">
-        <h2 class="cfg-career-subheading">We Care - Here's How</h2>
+      <!-- CULTURE & BENEFITS SECTION (SWIPER SLIDER) -->
+      <section class="cfg-career-culture-block" aria-labelledby="cfg-career-subheading">
+        <h2 id="cfg-career-subheading" class="cfg-career-subheading">We Care - Here's How</h2>
         <p class="cfg-career-culture-description">
           Thriving as a place for people and their ideas, we work towards elevating eCommerce businesses (both start-ups and established ones). As part of a close-knit team, we create opportunities that help each one of us flourish. But the best thing we do at CueForGood is care for our employees.
         </p>
 
-        <div class="cfg-career-perks-grid">
-          <!-- Remote-Friendly Work -->
-          <div class="cfg-career-perk-card">
-            <svg class="cfg-career-perk-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-            </svg>
-            <h3>Remote-Friendly Work</h3>
+        <!-- Perks Swiper Slider Container -->
+        <div class="swiper perks-swiper">
+          <div class="swiper-wrapper">
+            <!-- Remote-Friendly Work -->
+            <div class="swiper-slide cfg-career-perk-card">
+              <svg class="cfg-career-perk-icon" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+              </svg>
+              <h3>Remote-Friendly Work</h3>
+            </div>
+
+            <!-- Competitive Salary -->
+            <div class="swiper-slide cfg-career-perk-card">
+              <svg class="cfg-career-perk-icon" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.22.058a7.067 7.067 0 011.83.684c.548.283 1.17.283 1.718 0a7.07 7.07 0 011.83-.684l.22-.058M9 9.182l.22-.058a7.07 7.07 0 011.83-.684c.548-.283 1.17-.283 1.718 0a7.07 7.07 0 011.83.684l.22.058M12 3v18" />
+              </svg>
+              <h3>Competitive Salary</h3>
+            </div>
+
+            <!-- Maternity / Paternity Leave -->
+            <div class="swiper-slide cfg-career-perk-card">
+              <svg class="cfg-career-perk-icon" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M12 18.75a6.75 6.75 0 110-13.5 6.75 6.75 0 010 13.5zM9.75 9.75h.008v.008H9.75V9.75zm4.5 0h.008v.008h-.008V9.75z" />
+              </svg>
+              <h3>Maternity/ Paternity Leave</h3>
+            </div>
           </div>
 
-          <!-- Competitive Salary -->
-          <div class="cfg-career-perk-card">
-            <svg class="cfg-career-perk-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.22.058a7.067 7.067 0 011.83.684c.548.283 1.17.283 1.718 0a7.07 7.07 0 011.83-.684l.22-.058M9 9.182l.22-.058a7.07 7.07 0 011.83-.684c.548-.283 1.17-.283 1.718 0a7.07 7.07 0 011.83.684l.22.058M12 3v18" />
-            </svg>
-            <h3>Competitive Salary</h3>
-          </div>
-
-          <!-- Maternity / Paternity Leave -->
-          <div class="cfg-career-perk-card">
-            <svg class="cfg-career-perk-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M12 18.75a6.75 6.75 0 110-13.5 6.75 6.75 0 010 13.5zM9.75 9.75h.008v.008H9.75V9.75zm4.5 0h.008v.008h-.008V9.75z" />
-            </svg>
-            <h3>Maternity/ Paternity Leave</h3>
-          </div>
-        </div>
-
-        <div class="cfg-career-carousel-dots">
-          <span class="cfg-career-dot cfg-active-dot"></span>
-          <span class="cfg-career-dot"></span>
+          <!-- Pagination dots populated dynamically by Swiper -->
+          <div class="swiper-pagination perks-pagination"></div>
         </div>
       </section>
 
       <!-- OFFICE GALLERY -->
-      <section class="cfg-career-gallery">
-        <img src="/images/team-meeting.jpg" alt="Collaborative meeting session" class="cfg-career-gallery-thumb" />
-        <img src="/images/cue-for-good-glass.jpg" alt="Frosted glass branding window" class="cfg-career-gallery-thumb" />
-        <img src="/images/team-gathering.jpg" alt="All-hands collaborative gathering" class="cfg-career-gallery-thumb" />
+      <section class="cfg-career-gallery" aria-label="Office Gallery">
+        <img src={image1.src} alt="Collaborative meeting session at CueForGood" class="cfg-career-gallery-thumb desk " />
+        <img src={image2.src} alt="Collaborative meeting session at CueForGood" class="cfg-career-gallery-thumb mob" />
       </section>
 
-      <!-- JOB OPENINGS LIST -->
-      <section class="cfg-career-openings-grid">
+      <!-- JOB OPENINGS SECTION -->
+      <section class="cfg-career-openings-grid" aria-label="Job Openings">
         <div class="cfg-career-status-panel">
           <span class="cfg-career-status-badge">Open Posts</span>
           <h2>WE ARE HIRING<br />AT CueForGood</h2>
         </div>
 
-        <div class="cfg-career-listings-panel" id="cfg-career-listings">
-          <button type="button" class="cfg-career-job-title" data-job-index="0">Email Marketing Specialist</button>
-          <button type="button" class="cfg-career-job-title" data-job-index="1">Business Development Specialist</button>
-          <button type="button" class="cfg-career-job-title" data-job-index="2">Shopify Developer</button>
-          <button type="button" class="cfg-career-job-title" data-job-index="3">Senior Shopify Developer</button>
-          <button type="button" class="cfg-career-job-title" data-job-index="4">(QA) Quality Analyst</button>
+        <div class="cfg-career-listings-panel" id="cfg-career-listings" aria-live="polite" aria-busy="true">
+          <p class="cfg-career-listings-loading">Loading open positions…</p>
         </div>
       </section>
 
@@ -99,55 +99,55 @@ import '../styles/career.less';
       </div>
 
       <!-- JOB APPLICATION FORM -->
-      <section class="cfg-career-form-block">
-        <h2>Apply Now!</h2>
+      <section class="cfg-career-form-block" aria-labelledby="cfg-career-form-heading">
+        <h2 id="cfg-career-form-heading">Apply Now!</h2>
         <p class="cfg-career-mandatory-notice">(* Indicates Mandatory Fields)</p>
 
         <form class="cfg-career-application-form" action="#" method="POST" enctype="multipart/form-data" novalidate id="cfg-career-form">
           <div class="cfg-career-form-grid">
             <div class="cfg-career-input-group">
               <label for="name">Name*</label>
-              <input type="text" id="name" name="name" placeholder="Enter your name" required class="cfg-career-input-field" />
-              <p class="cfg-career-error-msg" data-error-for="name"></p>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required class="cfg-career-input-field" aria-describedby="err-name" />
+              <p class="cfg-career-error-msg" id="err-name" data-error-for="name" aria-live="polite" role="alert"></p>
             </div>
 
             <div class="cfg-career-input-group">
               <label for="email">Email*</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email" required class="cfg-career-input-field" />
-              <p class="cfg-career-error-msg" data-error-for="email"></p>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required class="cfg-career-input-field" aria-describedby="err-email" />
+              <p class="cfg-career-error-msg" id="err-email" data-error-for="email" aria-live="polite" role="alert"></p>
             </div>
 
             <div class="cfg-career-input-group">
               <label for="phone">Phone*</label>
-              <input type="tel" id="phone" name="phone" placeholder="Enter your phone" required class="cfg-career-input-field" />
-              <p class="cfg-career-error-msg" data-error-for="phone"></p>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone" required class="cfg-career-input-field" aria-describedby="err-phone" />
+              <p class="cfg-career-error-msg" id="err-phone" data-error-for="phone" aria-live="polite" role="alert"></p>
             </div>
 
             <div class="cfg-career-input-group">
               <label for="job">Job*</label>
-              <input type="text" id="job" name="job" placeholder="Enter Job title" required class="cfg-career-input-field" />
-              <p class="cfg-career-error-msg" data-error-for="job"></p>
+              <input type="text" id="job" name="job" placeholder="Enter Job title" required class="cfg-career-input-field" aria-describedby="err-job" />
+              <p class="cfg-career-error-msg" id="err-job" data-error-for="job" aria-live="polite" role="alert"></p>
             </div>
           </div>
 
           <div class="cfg-career-form-grid">
             <div class="cfg-career-upload-group">
-              <label>Attachment (.png, .pdf, .txt, .doc)*</label>
+              <label for="resume">Attachment (.png, .pdf, .txt, .doc)*</label>
               <span style="font-size: 13px; color: #94a3b8;">Max size allowed-2 MB</span>
               <div class="cfg-career-file-wrapper">
-                <input type="file" id="resume" name="resume" accept=".png, .pdf, .txt, .doc" required />
+                <input type="file" id="resume" name="resume" accept=".png, .pdf, .txt, .doc" required aria-describedby="err-resume" />
               </div>
-              <p class="cfg-career-error-msg" data-error-for="resume"></p>
+              <p class="cfg-career-error-msg" id="err-resume" data-error-for="resume" aria-live="polite" role="alert"></p>
             </div>
 
             <div class="cfg-career-captcha-wrapper">
               <div id="cfg-career-recaptcha"></div>
-              <p class="cfg-career-error-msg" data-error-for="captcha"></p>
+              <p class="cfg-career-error-msg" id="err-captcha" data-error-for="captcha" aria-live="polite" role="alert"></p>
             </div>
           </div>
 
-          <p class="cfg-career-error-msg" data-error-for="api"></p>
-          <p class="cfg-career-success-msg" data-success></p>
+          <p class="cfg-career-error-msg" id="err-api" data-error-for="api" aria-live="polite" role="alert"></p>
+          <p class="cfg-career-success-msg" data-success aria-live="polite" role="status"></p>
 
           <div class="cfg-career-submit-wrapper">
             <button type="submit" class="cfg-career-submit-btn">Submit</button>
@@ -175,12 +175,14 @@ import '../styles/career.less';
     staging: "6Lf_zZYrAAAAAFYDbqnVwpnfLTFW8GcT9blHDdjm",
   };
 
+  const SHEET_URLS = {
+    live: "https://script.google.com/macros/s/AKfycbz8111ZSW0xSpGVfTzs4LsC4UTtjvMQgAuIbGN2-Ey5Kw-_SjPViQeamJBh6HztVKnn-A/exec",
+    staging: "https://script.google.com/macros/s/AKfycbx6cvf3MLEG0wyk6QZOKRrFAp63rnI2gudhhOUhLJtES1UlMN6Ilgd9hxgehcibXzN5/exec",
+  };
+
   const ALLOWED_RESUME_EXTENSIONS = [".png", ".pdf", ".txt", ".doc", ".docx"];
   const MAX_RESUME_SIZE_BYTES = 2 * 1024 * 1024;
 
-  // Exact-match only. Do not switch this to `.includes("cueforgood.com")` —
-  // staging hosts like dev.cueforgood.com also contain that substring and must
-  // never be treated as live.
   const LIVE_HOSTS = ["www.cueforgood.com", "cueforgood.com"];
 
   function getHostConfig() {
@@ -190,6 +192,7 @@ import '../styles/career.less';
       apiUrl: isLive ? "https://apilive.cueforgood.com" : "https://apistaging.cueforgood.com",
       submitUrl: isLive ? "https://apilive.cueforgood.com/" : "https://apistaging.cueforgood.com/",
       recaptchaSiteKey: isLive ? RECAPTCHA_SITE_KEYS.live : RECAPTCHA_SITE_KEYS.staging,
+      sheetUrl: isLive ? SHEET_URLS.live : SHEET_URLS.staging,
     };
   }
 
@@ -207,6 +210,167 @@ import '../styles/career.less';
   const config = getHostConfig();
   const form = document.getElementById("cfg-career-form");
 
+  let jobsVacancies = [];
+
+  function setListFromText(container, content) {
+    container.innerHTML = "";
+    if (!content) return;
+
+    if (/<li[\s>]/i.test(content)) {
+      container.innerHTML = content;
+      return;
+    }
+
+    content
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .forEach((line) => {
+        const li = document.createElement("li");
+        li.textContent = line;
+        container.appendChild(li);
+      });
+  }
+
+  const jobModalOverlay = document.getElementById("cfg-career-job-modal");
+  const jobModalHeading = document.getElementById("cfg-career-job-modal-heading");
+  const jobModalDescription = jobModalOverlay.querySelector(".cfg-career-job-modal-description");
+  const jobModalResponsibilities = jobModalOverlay.querySelector(".cfg-career-job-modal-responsibilities");
+  const jobModalSkills = jobModalOverlay.querySelector(".cfg-career-job-modal-skills");
+  const jobModalMsg = jobModalOverlay.querySelector(".cfg-career-job-modal-msg");
+  const jobModalClose = document.getElementById("cfg-career-job-modal-close");
+  const jobModalApply = document.getElementById("cfg-career-job-modal-apply");
+  let lastFocusedJobTrigger = null;
+  let currentJobTitle = "";
+
+  // Modal Focus Trap Logic for Accessibility
+  function handleJobModalKeydown(event) {
+    if (event.key === "Escape") {
+      closeJobModal();
+      return;
+    }
+
+    if (event.key === "Tab") {
+      const focusableEls = jobModalOverlay.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      const firstEl = focusableEls[0];
+      const lastEl = focusableEls[focusableEls.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstEl) {
+        event.preventDefault();
+        lastEl.focus();
+      } else if (!event.shiftKey && document.activeElement === lastEl) {
+        event.preventDefault();
+        firstEl.focus();
+      }
+    }
+  }
+
+  function openJobModal(job, trigger) {
+    currentJobTitle = job.jobName || "";
+    jobModalHeading.textContent = job.jobName || "";
+    jobModalDescription.innerHTML = job.jobDescription || "";
+    setListFromText(jobModalResponsibilities, job.jobResponsibility);
+    setListFromText(jobModalSkills, job.jobSkills);
+    jobModalMsg.innerHTML = job.jobMsg || "";
+
+    lastFocusedJobTrigger = trigger || null;
+    jobModalOverlay.hidden = false;
+    jobModalClose.focus();
+    document.addEventListener("keydown", handleJobModalKeydown);
+  }
+
+  function closeJobModal() {
+    jobModalOverlay.hidden = true;
+    document.removeEventListener("keydown", handleJobModalKeydown);
+    if (lastFocusedJobTrigger) lastFocusedJobTrigger.focus();
+  }
+
+  jobModalClose.addEventListener("click", closeJobModal);
+  jobModalOverlay.addEventListener("click", (event) => {
+    if (event.target === jobModalOverlay) closeJobModal();
+  });
+
+  jobModalApply.addEventListener("click", () => {
+    if (!form) return;
+    const jobInput = form.querySelector('[name="job"]');
+    if (jobInput) {
+      jobInput.value = currentJobTitle;
+      jobInput.focus();
+    }
+    closeJobModal();
+    form.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  function renderJobListings() {
+    const listingsPanel = document.getElementById("cfg-career-listings");
+    if (!listingsPanel) return;
+
+    listingsPanel.innerHTML = "";
+    listingsPanel.setAttribute("aria-busy", "false");
+
+    if (!jobsVacancies.length) {
+      const emptyMsg = document.createElement("p");
+      emptyMsg.className = "cfg-career-listings-empty";
+      emptyMsg.textContent = "No open positions right now. Check back soon!";
+      listingsPanel.appendChild(emptyMsg);
+      return;
+    }
+
+    const colLeft = document.createElement("div");
+    colLeft.className = "cfg-career-listings-col";
+
+    const colRight = document.createElement("div");
+    colRight.className = "cfg-career-listings-col";
+
+    jobsVacancies.forEach((job, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "cfg-career-job-title";
+      button.dataset.jobIndex = String(index);
+      button.setAttribute("aria-label", `Job title: ${job.jobName}`);
+      button.textContent = job.jobName;
+      button.addEventListener("click", () => openJobModal(job, button));
+
+      if (index % 2 === 0) {
+        colLeft.appendChild(button);
+      } else {
+        colRight.appendChild(button);
+      }
+    });
+
+    listingsPanel.appendChild(colLeft);
+    listingsPanel.appendChild(colRight);
+  }
+
+  async function loadJobVacancies() {
+    const listingsPanel = document.getElementById("cfg-career-listings");
+
+    try {
+      const res = await fetch(config.sheetUrl);
+      const data = await res.json();
+      jobsVacancies = Array.isArray(data) ? data : [];
+    } catch (err) {
+      console.error("Error fetching job vacancies:", err);
+      jobsVacancies = [];
+      if (listingsPanel) {
+        listingsPanel.innerHTML = "";
+        listingsPanel.setAttribute("aria-busy", "false");
+        const errorMsg = document.createElement("p");
+        errorMsg.className = "cfg-career-listings-empty";
+        errorMsg.textContent = "Couldn't load open positions right now. Please try again later.";
+        listingsPanel.appendChild(errorMsg);
+      }
+      return;
+    }
+
+    renderJobListings();
+  }
+
+  loadJobVacancies();
+
+  // Application Form Logic
   if (form) {
     let widgetId = null;
 
@@ -223,11 +387,16 @@ import '../styles/career.less';
     function setFieldError(fieldName, message) {
       const errorEl = form.querySelector(`[data-error-for="${fieldName}"]`);
       if (errorEl) errorEl.textContent = message || "";
+      const field = form.querySelector(`[name="${fieldName}"]`);
+      if (field) field.setAttribute("aria-invalid", message ? "true" : "false");
     }
 
     function clearErrors() {
       form.querySelectorAll("[data-error-for]").forEach((el) => {
         el.textContent = "";
+      });
+      form.querySelectorAll("input").forEach((input) => {
+        input.removeAttribute("aria-invalid");
       });
     }
 
@@ -238,164 +407,6 @@ import '../styles/career.less';
     const resumeInput = form.querySelector('[name="resume"]');
     const submitBtn = form.querySelector(".cfg-career-submit-btn");
     const successEl = form.querySelector("[data-success]");
-
-    // Placeholder copy — replace each entry with the real job posting content
-    // before this goes live.
-    const JOB_LISTINGS = [
-      {
-        title: "Email Marketing Specialist",
-        description: [
-          "We're looking for an Email Marketing Specialist to plan, build, and optimize email campaigns for our eCommerce clients.",
-        ],
-        responsibilities: [
-          "Design and execute email marketing campaigns across the client portfolio",
-          "Segment audiences and set up automated flows (welcome, abandoned cart, post-purchase)",
-          "Analyze campaign performance and iterate on subject lines, content, and send times",
-        ],
-        skills: [
-          "Hands-on experience with an ESP such as Klaviyo or Mailchimp",
-          "Strong writing skills and attention to detail",
-          "Comfort working with performance data and A/B test results",
-        ],
-        closingMessage: "Sound like you? We'd love to hear from you.",
-      },
-      {
-        title: "Business Development Specialist",
-        description: [
-          "We're looking for a Business Development Specialist to help grow our client base of purpose-driven eCommerce brands.",
-        ],
-        responsibilities: [
-          "Identify and qualify new business opportunities",
-          "Build and maintain relationships with prospective clients",
-          "Collaborate with the marketing team on outreach and proposals",
-        ],
-        skills: [
-          "Prior experience in B2B sales or business development",
-          "Excellent communication and relationship-building skills",
-          "Familiarity with the eCommerce or digital agency space",
-        ],
-        closingMessage: "Sound like you? We'd love to hear from you.",
-      },
-      {
-        title: "Shopify Developer",
-        description: [
-          "We're looking for a Shopify Developer to build and customize storefronts for our eCommerce clients.",
-        ],
-        responsibilities: [
-          "Develop and customize Shopify themes and apps",
-          "Troubleshoot and resolve storefront issues",
-          "Collaborate with designers and project managers on client requirements",
-        ],
-        skills: [
-          "Experience with Shopify Liquid, HTML, CSS, and JavaScript",
-          "Understanding of Shopify's theme and app architecture",
-          "Ability to debug and optimize storefront performance",
-        ],
-        closingMessage: "Sound like you? We'd love to hear from you.",
-      },
-      {
-        title: "Senior Shopify Developer",
-        description: [
-          "We're looking for a Senior Shopify Developer to lead complex storefront builds and mentor junior developers.",
-        ],
-        responsibilities: [
-          "Architect and lead custom Shopify Plus development projects",
-          "Review code and mentor junior developers on the team",
-          "Work directly with clients on technical requirements and solutions",
-        ],
-        skills: [
-          "Several years of hands-on Shopify/Shopify Plus development experience",
-          "Strong grasp of Liquid, JavaScript, and API integrations",
-          "Experience leading or mentoring within a development team",
-        ],
-        closingMessage: "Sound like you? We'd love to hear from you.",
-      },
-      {
-        title: "(QA) Quality Analyst",
-        description: [
-          "We're looking for a Quality Analyst to help us ship reliable, well-tested work across our client projects.",
-        ],
-        responsibilities: [
-          "Write and execute test plans for web and eCommerce projects",
-          "Log, track, and verify bug fixes with the development team",
-          "Perform cross-browser and cross-device testing",
-        ],
-        skills: [
-          "Experience with manual QA testing methodologies",
-          "Attention to detail and strong bug-reporting skills",
-          "Familiarity with eCommerce platforms is a plus",
-        ],
-        closingMessage: "Sound like you? We'd love to hear from you.",
-      },
-    ];
-
-    const jobModalOverlay = document.getElementById("cfg-career-job-modal");
-    const jobModalHeading = document.getElementById("cfg-career-job-modal-heading");
-    const jobModalDescription = jobModalOverlay.querySelector(".cfg-career-job-modal-description");
-    const jobModalResponsibilities = jobModalOverlay.querySelector(".cfg-career-job-modal-responsibilities");
-    const jobModalSkills = jobModalOverlay.querySelector(".cfg-career-job-modal-skills");
-    const jobModalMsg = jobModalOverlay.querySelector(".cfg-career-job-modal-msg");
-    const jobModalClose = document.getElementById("cfg-career-job-modal-close");
-    const jobModalApply = document.getElementById("cfg-career-job-modal-apply");
-    let lastFocusedJobTrigger = null;
-    let currentJobTitle = "";
-
-    function renderJobList(container, items) {
-      container.innerHTML = "";
-      items.forEach((text) => {
-        const li = document.createElement("li");
-        li.textContent = text;
-        container.appendChild(li);
-      });
-    }
-
-    function handleJobModalKeydown(event) {
-      if (event.key === "Escape") closeJobModal();
-    }
-
-    function openJobModal(job, trigger) {
-      currentJobTitle = job.title;
-      jobModalHeading.textContent = job.title;
-      jobModalDescription.innerHTML = "";
-      job.description.forEach((text) => {
-        const p = document.createElement("p");
-        p.textContent = text;
-        jobModalDescription.appendChild(p);
-      });
-      renderJobList(jobModalResponsibilities, job.responsibilities);
-      renderJobList(jobModalSkills, job.skills);
-      jobModalMsg.textContent = job.closingMessage;
-
-      lastFocusedJobTrigger = trigger || null;
-      jobModalOverlay.hidden = false;
-      jobModalClose.focus();
-      document.addEventListener("keydown", handleJobModalKeydown);
-    }
-
-    function closeJobModal() {
-      jobModalOverlay.hidden = true;
-      document.removeEventListener("keydown", handleJobModalKeydown);
-      if (lastFocusedJobTrigger) lastFocusedJobTrigger.focus();
-    }
-
-    document.querySelectorAll(".cfg-career-job-title").forEach((button) => {
-      button.addEventListener("click", () => {
-        const job = JOB_LISTINGS[Number(button.dataset.jobIndex)];
-        if (job) openJobModal(job, button);
-      });
-    });
-
-    jobModalClose.addEventListener("click", closeJobModal);
-    jobModalOverlay.addEventListener("click", (event) => {
-      if (event.target === jobModalOverlay) closeJobModal();
-    });
-
-    jobModalApply.addEventListener("click", () => {
-      jobInput.value = currentJobTitle;
-      closeJobModal();
-      form.scrollIntoView({ behavior: "smooth", block: "start" });
-      jobInput.focus();
-    });
 
     phoneInput.addEventListener("input", () => {
       const value = phoneInput.value.trim();

@@ -1,9 +1,9 @@
-/* Shared structural styles reused across every /case-study/[slug] page. */
-
+.cs-section p{
+ font-size: 18px;
+}
 .case-study-page {
   background-color: #171c28;
   color: #aab3c0;
-  font-family: 'Lato', sans-serif;
 }
 
 .case-study-page .container {
@@ -14,6 +14,9 @@
   box-sizing: border-box;
 }
 
+.cs-section.cs-dark {
+  background-color: #141924;
+}
 
 .case-study-page .text-center {
   text-align: center;
@@ -26,9 +29,8 @@
   margin: 0 0 20px;
 }
 
-/* Hero */
 .cs-hero {
-  padding: 130px 0 60px;
+  padding: 130px 0 0;
   text-align: center;
 }
 
@@ -57,510 +59,15 @@
 }
 
 .cs-hero .cs-hero-subheading {
-  font-size: 20px;
-  line-height: 1.5;
-  max-width: 780px;
-  margin: 0 auto;
-  color: #aab3c0;
-}
-
-/* Revenue / top stats row */
-.cs-stats {
-  padding: 40px 0;
-}
-
-.cs-stats-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px 60px;
-}
-
-.cs-stat {
-  flex: 1 1 320px;
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-}
-
-.cs-stat h3 {
-  font-size: 48px;
-  font-weight: 700;
-  color: #e0e5ec;
-  margin: 0;
-  white-space: nowrap;
-}
-
-.cs-stat p {
-  font-size: 20px;
-  color: #aab3c0;
-  margin: 0;
-  letter-spacing: 0.3px;
-}
-
-.cs-stats-note {
-  margin-top: 20px;
-  font-size: 15px;
-  color: #7c8494;
-}
-
-/* CTA banner (CaseStudyCta.astro) */
-.cfg-cta-banner {
-  padding: 45px 0;
-}
-
-.cfg-cta-blue {
-  background-color: #e1f0ff;
-}
-
-.cfg-cta-lavender {
-  background-color: #eae7ff;
-}
-
-.cfg-cta-inner {
-  max-width: 1290px;
-  margin: 0 auto;
-  padding: 0 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.cfg-cta-heading {
-  font-size: 28px;
-  font-weight: 700;
-  color: #171c28;
-  margin: 0 0 8px;
-}
-
-.cfg-cta-text {
-  color: #171c28;
-  font-size: 17px;
-  margin: 0;
-}
-
-.cfg-cta-link {
-  color: #171c28;
-  text-decoration: underline;
-}
-
-.cfg-cta-btn {
-  display: inline-block;
-  border: 2px solid #171c28;
-  color: #171c28;
-  padding: 14px 32px;
-  font-weight: 600;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: all 0.2s ease;
-}
-
-.cfg-cta-btn:hover {
-  background: #171c28;
-  color: #eae7ff;
-}
-
-/* Testimonial */
-.cs-testimonial {
-  background-color: #141924;
-  padding: 70px 0;
-}
-
-.cs-testimonial-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 60px;
-}
-
-.cs-testimonial-col {
-  flex: 1 1 400px;
-}
-
-.cs-testimonial-quote-icon {
-  width: 44px;
-  height: auto;
-  margin-bottom: 24px;
-  opacity: 0.7;
-}
-
-.cs-testimonial p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin: 0 0 20px;
-  color: #aab3c0;
-}
-
-.cs-testimonial-col-right {
-  padding-top: 50px;
-}
-
-.cs-testimonial-author strong {
-  color: #e0e5ec;
-  letter-spacing: 0.5px;
-}
-
-.cs-testimonial-author em {
-  color: #aab3c0;
-}
-
-/* Generic section spacing */
-.cs-section {
-  padding: 90px 0;
-}
-
-.cs-section .top-details {
-  max-width: 780px;
-  margin: 0 auto 50px;
-  text-align: center;
-}
-
-.cs-section .top-details p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #aab3c0;
-}
-
-/* Process (4-up icon grid) */
-.cs-process {
-  padding: 90px 0;
-}
-
-.cs-process-intro {
-  max-width: 900px;
-  margin: 0 auto 60px;
-  text-align: center;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #aab3c0;
-}
-
-.cs-process-intro strong {
   font-size: 22px;
-  color: #e0e5ec;
-}
-
-.cs-process-card {
-  background-color: #141924;
-  border-radius: 30px;
-  padding: 60px 60px 40px;
-}
-
-.cs-process-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px 40px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.cs-process-grid li {
-  text-align: center;
-}
-
-.cs-process-grid img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  margin-bottom: 20px;
-}
-
-.cs-process-grid p {
-  color: #aab3c0;
-  font-size: 16px;
+  font-weight: 400;
   line-height: 1.5;
-  margin: 0;
-  max-width: 260px;
+  max-width: 820px;
   margin: 0 auto;
-}
-
-/* Challenges */
-.cs-challenges-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px 60px;
-}
-
-/* Challenge item: heading + paragraph, no number */
-.cs-challenge-item h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #e0e5ec;
-  margin: 0 0 14px;
-}
-
-.cs-challenge-item p {
-  font-size: 16px;
-  line-height: 1.6;
   color: #aab3c0;
-  margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* 3-up icon row (icon + heading, centered) */
-.cs-icon-row {
-  padding: 60px 0;
-  text-align: center;
-}
-
-.cs-icon-row > .cs-icon-row-intro {
-  font-size: 20px;
-  color: #aab3c0;
-  margin: 0 0 40px;
-}
-
-.cs-icon-row-grid {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
-}
-
-.cs-icon-row-grid li {
-  flex: 1 1 220px;
-  max-width: 260px;
-}
-
-.cs-icon-row-grid img {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-  margin-bottom: 16px;
-}
-
-.cs-icon-row-grid h4 {
-  font-size: 18px;
-  font-weight: 700;
-  color: #e0e5ec;
-  line-height: 1.4;
-  margin: 0;
-}
-
-/* Loose product collage */
-.cs-product-collage {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.cs-product-collage img {
-  max-width: 100%;
-  height: auto;
-}
-
-.cs-product-collage .cs-product-collage-accent {
-  max-width: 200px;
-}
-
-.cs-challenge-block {
-  display: flex;
-  gap: 20px;
-}
-
-.cs-challenge-block .cs-challenge-num {
-  font-size: 20px;
-  font-weight: 700;
-  color: #e0e5ec;
-  flex-shrink: 0;
-}
-
-.cs-challenge-block p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0;
-  color: #aab3c0;
-}
-
-/* Advantage generic two-column blocks */
-.cs-advantage {
-  padding: 90px 0 0;
-}
-
-.cs-advantage .sub-dec {
-  max-width: 780px;
-  margin: 0 auto 60px;
-  text-align: center;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #aab3c0;
-}
-
-.cs-advantage-row {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  margin-bottom: 90px;
-}
-
-.cs-advantage-row.reverse {
-  flex-direction: row-reverse;
-}
-
-.cs-advantage-media {
-  flex: 1 1 50%;
-}
-
-.cs-advantage-media img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.cs-advantage-text {
-  flex: 1 1 50%;
-}
-
-.cs-advantage-text h4 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #e0e5ec;
-  margin: 0 0 20px;
-}
-
-.cs-advantage-text p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #aab3c0;
-  margin: 0 0 16px;
-}
-
-.cs-advantage-text ol {
-  margin: 0;
-  padding-left: 22px;
-}
-
-.cs-advantage-text ol li {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #aab3c0;
-  margin-bottom: 16px;
-}
-
-.cs-advantage-text ol li strong {
-  color: #e0e5ec;
-}
-
-.cs-advantage-text ol li a {
-  color: #e0e5ec;
-  text-decoration: underline;
-}
-
-/* Result section */
-.cs-result {
-  padding: 90px 0;
-  text-align: center;
-}
-
-.cs-result .top-details {
-  max-width: 780px;
-  margin: 0 auto 40px;
-}
-
-.cs-result h2 {
-  font-size: 32px;
-  color: #e0e5ec;
-  margin: 0 0 16px;
-}
-
-.cs-result .top-details p {
-  font-size: 20px;
-  color: #aab3c0;
-}
-
-.cs-result-icon {
-  width: 90px;
-  height: auto;
-  margin: 30px auto;
-  display: block;
-}
-
-.cs-result-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px 60px;
-  text-align: left;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.cs-result-grid p {
-  font-size: 18px;
-  line-height: 1.5;
-  color: #aab3c0;
-  margin: 0 0 24px;
-}
-
-@media (max-width: 992px) {
-  .cs-advantage-row,
-  .cs-advantage-row.reverse {
-    flex-direction: column;
-  }
-
-  .cs-process-grid,
-  .cs-challenges-grid,
-  .cs-result-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .cs-hero {
-    padding: 100px 0 40px;
-  }
-
-  .cs-hero h1 {
-    font-size: 32px;
-  }
-
-  .cs-hero .cs-hero-subheading {
-    font-size: 16px;
-  }
-
-  .case-study-page .heading_main,
-  .cs-result h2 {
-    font-size: 26px;
-  }
-
-  .cs-section,
-  .cs-process,
-  .cs-advantage,
-  .cs-result {
-    padding: 50px 0;
-  }
-
-  .cfg-cta-inner {
-    padding: 0 20px;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .cs-process-card {
-    padding: 40px 24px 30px;
-  }
-
-  .cs-testimonial-row {
-    gap: 30px;
-  }
-
-  .cs-testimonial-col-right {
-    padding-top: 0;
-  }
-
-  .cs-stat {
-    flex: 1 1 100%;
-  }
-
-  .cs-stat h3 {
-    font-size: 36px;
-  }
-}
-
-/* Split hero (text left, portrait/photo right) */
 .cs-hero-split {
   padding: 130px 0 0;
 }
@@ -610,7 +117,433 @@
   display: block;
 }
 
-/* Colored full-width banner (intro text or CTA link) */
+.cs-stats {
+  padding: 40px 0;
+}
+
+.cs-stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 60px;
+}
+
+.cs-stat {
+  flex: 1 1 320px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.cs-stat h3 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #e0e5ec;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.cs-stat p {
+  font-size: 20px;
+  color: #aab3c0;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.cs-stats-note {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #7c8494;
+}
+
+.cfg-cta-banner {
+  padding: 45px 15px;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.cfg-cta-blue {
+  background-color: #e1f0ff;
+}
+
+.cfg-cta-lavender {
+  background-color: #eae7ff;
+}
+
+.cfg-cta-inner {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cfg-cta-heading {
+  font-size: 34px;
+  font-weight: 700;
+  color: #171c28;
+  margin: 0 0 8px;
+  font-family: Gotham;
+}
+
+.cfg-cta-text {
+  color: #171c28;
+  font-size: 20px;
+  margin: 0;
+  font-family: Gotham;
+}
+
+.cfg-cta-link {
+  color: #171c28;
+  text-decoration: underline;
+}
+
+.cfg-cta-btn {
+  display: inline-block;
+  border: 5px solid #171c28;
+  color: #171c28;
+  padding: 14px 32px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  font-size: 24px;
+}
+
+.cfg-cta-btn:hover {
+  background: #171c28;
+  color: #eae7ff;
+}
+
+.cs-testimonial {
+  background-color: #141924;
+  padding: 70px 0;
+}
+
+.cs-testimonial-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.cs-testimonial-col {
+  flex: 1 1 400px;
+}
+
+.cs-testimonial-quote-icon {
+  width: 44px;
+  height: auto;
+  margin-bottom: 24px;
+  opacity: 0.7;
+}
+
+.cs-testimonial p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+  color: #aab3c0;
+}
+
+.cs-testimonial-col-right {
+  padding-top: 50px;
+}
+
+.cs-testimonial-author strong {
+  color: #e0e5ec;
+  letter-spacing: 0.5px;
+}
+
+.cs-testimonial-author em {
+  color: #aab3c0;
+}
+
+.cs-section {
+  padding: 90px 0;
+}
+
+.cs-section .top-details {
+  max-width: 780px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.cs-section .top-details p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #aab3c0;
+}
+
+.cs-process {
+  padding: 90px 0;
+}
+
+.cs-process-intro {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #aab3c0;
+}
+
+.cs-process-intro strong {
+  font-size: 22px;
+  color: #e0e5ec;
+}
+
+.cs-process-card {
+  background-color: #141924;
+  padding: 60px 60px 40px;
+}
+
+.cs-process-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cs-process-grid li {
+  text-align: center;
+}
+
+.cs-process-grid img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.cs-process-grid p {
+  color: #aab3c0;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.cs-challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 60px;
+}
+
+.cs-challenge-item h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #e0e5ec;
+  margin: 0 0 25px;
+}
+
+.cs-challenge-item p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #aab3c0;
+  margin: 0;
+}
+
+.cs-challenge-block {
+  display: flex;
+  gap: 20px;
+}
+
+.cs-challenge-block .cs-challenge-num {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e0e5ec;
+  flex-shrink: 0;
+}
+
+.cs-challenge-block p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  color: #aab3c0;
+}
+
+.cs-icon-row {
+  padding: 60px 0 80px;
+  text-align: center;
+  background-color: #141924;
+}
+
+.cs-icon-row p.cs-icon-row-intro {
+  font-size: 22px;
+}
+
+.cs-icon-row > .cs-icon-row-intro {
+  font-size: 20px;
+  color: #aab3c0;
+  margin: 0 0 40px;
+}
+
+.cs-icon-row-grid {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.cs-icon-row-grid li {
+  flex: 1 1 33%;
+  max-width: 260px;
+  margin-top: 40px;
+}
+
+.cs-icon-row-grid img {
+  max-height: 50px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.cs-icon-row-grid h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e0e5ec;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.cs-product-collage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cs-product-collage img {
+  max-width: 100%;
+  height: auto;
+}
+
+.cs-product-collage .cs-product-collage-accent {
+  max-width: 200px;
+}
+
+.cs-advantage {
+  padding: 90px 0 0;
+}
+
+.cs-advantage .sub-dec {
+  max-width: 780px;
+  margin: 0 auto 60px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #aab3c0;
+}
+
+.cs-advantage-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 90px;
+}
+
+.cs-advantage-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.cs-advantage-media {
+  flex: 1 1 50%;
+}
+
+.cs-advantage-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cs-advantage-text {
+  flex: 1 1 50%;
+}
+
+.cs-advantage-text h4 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #e0e5ec;
+  margin: 0 0 20px;
+}
+
+.cs-advantage-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #aab3c0;
+  margin: 0 0 16px;
+}
+
+.cs-advantage-text ol {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.cs-advantage-text ol li {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #aab3c0;
+  margin-bottom: 16px;
+}
+
+.cs-advantage-text ol li strong {
+  color: #e0e5ec;
+}
+
+.cs-advantage-text ol li a {
+  color: #e0e5ec;
+  text-decoration: underline;
+}
+
+.cs-result {
+  padding: 90px 0;
+  text-align: center;
+}
+
+.cs-result .top-details {
+  text-align: left;
+}
+
+.cs-result h2 {
+  font-size: 32px;
+  color: #e0e5ec;
+  margin: 0 0 16px;
+}
+
+.cs-result .top-details p {
+  font-size: 18px;
+  color: #aab3c0;
+}
+
+.cs-result-icon {
+  width: 90px;
+  height: auto;
+  margin: 30px auto;
+  display: block;
+}
+
+.cs-result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 60px;
+  text-align: left;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cs-result-grid p,
+section.cs-result p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #aab3c0;
+}
+
 .cs-banner {
   background-color: var(--cs-banner-bg, #153a7f);
   padding: 60px 0;
@@ -635,7 +568,7 @@
 }
 
 .cs-banner a {
-  color: #ffffff;
+  color: #aab3c0;
   text-decoration: underline;
 }
 
@@ -646,12 +579,14 @@
 .cs-banner.cs-banner-cta p {
   font-size: 20px;
   font-weight: 700;
-  color: #e0e5ec;
+  color: #aab3c0;
   max-width: 900px;
   margin: 0 auto;
 }
+.cs-banner.cs-banner-cta p a{
+      color: #e0e5ec;
+}
 
-/* 4-up stats grid with icon + label */
 .cs-stats-4up {
   padding: 90px 0 60px;
 }
@@ -689,7 +624,6 @@
   margin: 4px 0 0;
 }
 
-/* Numbered process steps (big number + paragraph) */
 .cs-numbered-steps {
   padding: 60px 0;
 }
@@ -698,31 +632,38 @@
   display: grid;
   grid-template-columns: 1fr;
   align-items: start;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
+  position: relative;
 }
 
 .cs-numbered-step .cs-numbered-step-num {
   grid-area: 1 / 1;
-  font-size: 90px;
-  font-weight: 800;
+  font-size: 140px;
+  font-weight: 700;
   color: rgba(224, 229, 236, 0.18);
   line-height: 1;
   margin: 0;
+  font-family: Lato;
+  opacity: .5;
+  
+  opacity: 0.5;
 }
 
 .cs-numbered-step p {
   grid-area: 1 / 1;
   align-self: center;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: #aab3c0;
   margin: 0;
-  padding-left: 110px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
-/* Multi-up plain stats (label + big number + text), 3-per-row */
 .cs-stats-multi {
   padding: 60px 0;
+  // border-bottom: 1px solid #ddd;
 }
 
 .cs-stats-multi-grid {
@@ -739,7 +680,7 @@
 }
 
 .cs-stats-multi-item .cs-stats-multi-num {
-  font-size: 52px;
+  font-size: 70px;
   font-weight: 800;
   color: #e0e5ec;
   line-height: 1.1;
@@ -751,7 +692,6 @@
   margin: 6px 0 0;
 }
 
-/* Rating boxes */
 .cs-ratings {
   padding: 60px 0;
   text-align: center;
@@ -789,7 +729,7 @@
 }
 
 .cs-ratings-note {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
   color: #e0e5ec;
   max-width: 900px;
@@ -797,11 +737,10 @@
 }
 
 .cs-ratings-note a {
-  color: #ffffff;
+  color: #aab3c0;
   text-decoration: underline;
 }
 
-/* Centered quote block with decorative lines + bg quote mark */
 .cs-quote {
   padding: 80px 0;
   text-align: center;
@@ -817,12 +756,12 @@
 }
 
 .cs-quote-lines span {
-  width: 40px;
+  width: 100px;
   height: 4px;
 }
 
 .cs-quote-lines .cs-quote-line-red {
-  background: #e2574c;
+  background: #006a4e;
 }
 
 .cs-quote-lines .cs-quote-line-green {
@@ -866,20 +805,19 @@
   z-index: 0;
 }
 
-/* Radial/donut progress stats row */
 .cs-radial-stats {
-  padding: 50px 0 40px;
+  padding: 50px 0 80px;
 }
 
 .cs-radial-stats-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 60px 80px;
 }
 
 .cs-radial-stat {
   text-align: center;
+  width: 20%;
 }
 
 .cs-radial-stat-arrow {
@@ -942,20 +880,19 @@
 
 .cs-radial-ring span {
   position: relative;
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 800;
   color: #e0e5ec;
 }
 
 .cs-radial-stat p {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
-  color: #e0e5ec;
+  color: #aab3c0;
   margin: 0;
   line-height: 1.4;
 }
 
-/* Two independently-stacked columns (text col + media col, uneven item heights) */
 .cs-dual-column {
   display: flex;
   gap: 60px;
@@ -994,7 +931,6 @@
   display: block;
 }
 
-/* 2-up icon process grid (icon + paragraph) */
 .cs-icon-process-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1020,7 +956,6 @@
   text-align: left;
 }
 
-/* Before / after comparison row */
 .cs-compare {
   display: flex;
   align-items: center;
@@ -1067,17 +1002,6 @@
   stroke: #e0e5ec;
 }
 
-@media (max-width: 768px) {
-  .cs-icon-process-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cs-compare-num {
-    font-size: 28px;
-  }
-}
-
-/* Themes/blog-posts style comparison table */
 .cs-data-table {
   border: 1px solid #2a3142;
   border-radius: 4px;
@@ -1109,7 +1033,6 @@
   border-left: 1px solid #2a3142;
 }
 
-/* Exception / callout boxes */
 .cs-callout-row {
   display: flex;
   gap: 24px;
@@ -1127,32 +1050,6 @@
   font-style: italic;
 }
 
-@media (max-width: 768px) {
-  .cs-data-table-row {
-    grid-template-columns: 1fr;
-  }
-
-  .cs-data-table-cell + .cs-data-table-cell {
-    border-left: none;
-    border-top: 1px solid #2a3142;
-  }
-}
-
-@media (max-width: 992px) {
-  .cs-dual-column {
-    flex-direction: column;
-  }
-
-  .cs-stats-multi-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .cs-ratings-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Speed comparison card (before/after with bg photo + progress bars) */
 .cs-speed-card {
   position: relative;
   border-radius: 4px;
@@ -1184,7 +1081,7 @@
 }
 
 .cs-speed-stat-block {
-  color: #ffffff;
+  color: #aab3c0;
 }
 
 .cs-speed-stat-block.right {
@@ -1211,7 +1108,7 @@
 .cs-speed-card-arrow {
   width: 36px;
   height: 36px;
-  stroke: #ffffff;
+  stroke: #aab3c0;
   align-self: center;
 }
 
@@ -1234,7 +1131,7 @@
 
 .cs-speed-bar-block {
   flex: 1 1 45%;
-  color: #ffffff;
+  color: #aab3c0;
 }
 
 .cs-speed-bar-block.right {
@@ -1271,7 +1168,6 @@
   letter-spacing: 1px;
 }
 
-/* Pink numbered list */
 .cs-pink-list {
   display: flex;
   flex-direction: column;
@@ -1297,7 +1193,6 @@
   color: #aab3c0;
 }
 
-/* Circular icon grid */
 .cs-circle-icon-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1333,29 +1228,272 @@
   text-align: left;
 }
 
-@media (max-width: 768px) {
-  .cs-speed-card-stats,
-  .cs-speed-card-bars {
+@media (max-width: 992px) {
+  .cs-advantage-row,
+  .cs-advantage-row.reverse,
+  .cs-dual-column {
     flex-direction: column;
-    gap: 24px;
-    text-align: left;
   }
 
-  .cs-speed-stat-block.right,
-  .cs-speed-bar-block.right {
-    text-align: left;
-  }
-
-  .cs-speed-bar-block.right .cs-speed-bar-track {
-    justify-content: flex-start;
-  }
-
-  .cs-circle-icon-grid {
+  .cs-process-grid,
+  .cs-challenges-grid,
+  .cs-result-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cs-stats-multi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cs-ratings-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Up-arrow divided stats row */
+.cs-arrow-stats-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cs-arrow-stat {
+  flex: 1 1 220px;
+  padding: 0 30px;
+  border-left: 1px solid #2a3142;
+}
+
+.cs-arrow-stat:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.cs-arrow-stat-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.cs-arrow-stat-inner svg {
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+.cs-arrow-stat-num {
+  font-size: 36px;
+  font-weight: 800;
+  color: #e0e5ec;
+  line-height: 1.1;
+}
+
+.cs-arrow-stat p {
+  margin: 4px 0 0;
+  font-size: 15px;
+  color: #aab3c0;
+}
+
+/* Tech stack boxes (label + light logo box) */
+.cs-tech-box-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.cs-tech-box-item p {
+  font-size: 15px;
+  color: #aab3c0;
+  margin: 0 0 12px;
+}
+
+.cs-tech-box {
+  background-color: #aebbd9;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+}
+
+.cs-tech-box img {
+  max-width: 100%;
+  max-height: 50px;
+  height: auto;
+}
+
+/* Accordion */
+.cs-accordion-item {
+  border-bottom: 1px solid #2a3142;
+}
+
+.cs-accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 16px 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #e0e5ec;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cs-accordion-trigger svg {
+  flex-shrink: 0;
+  stroke: #e0e5ec;
+}
+
+.cs-accordion-panel {
+  padding: 0 0 20px 36px;
+  color: #aab3c0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Before/after PSI score circles */
+.cs-psi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 0;
+}
+
+.cs-psi-pair {
+  padding: 0 30px;
+}
+
+.cs-psi-pair:nth-child(odd) {
+  border-right: 1px solid #2a3142;
+}
+
+.cs-psi-pair h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e0e5ec;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #2a3142;
+  margin: 0 0 24px;
+}
+
+.cs-psi-pair-row {
+  display: flex;
+  gap: 24px;
+}
+
+.cs-psi-score-block {
+  text-align: center;
+}
+
+.cs-psi-score-ring {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  background: conic-gradient(var(--psi-color, #e05d3d) calc(var(--pct) * 1%), rgba(255,255,255,0.06) 0);
+}
+
+.cs-psi-score-ring-inner {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: #171c28;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--psi-color, #e05d3d);
+}
+
+.cs-psi-score-block p {
+  margin: 0;
+  font-size: 14px;
+  color: #aab3c0;
+}
+.pd-sec-feature {
+    background: url(/src/assets/case-study/merging-blog-pages-seo/pd-parallax-img.jpg) no-repeat;
+    background-attachment: fixed;
+    background-position: 50%;
+    background-size: cover;
+    min-height: 600px;
+    position: relative;
+    padding: 0;
+}
+.pd-sec-feature:before {
+    background-color: rgba(0, 0, 0, .5);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.pd-sec-feature p{
+  color: #fff;
+    font-size: 40px;
+    font-weight: 300;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 140px 0;
+    position: relative;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+  .cs-tech-box-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
+  .cs-arrow-stat {
+    flex: 1 1 100%;
+    border-left: none;
+    padding: 16px 0;
+    border-top: 1px solid #2a3142;
+  }
+
+  .cs-arrow-stat:first-child {
+    border-top: none;
+  }
+
+  .cs-tech-box-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-psi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-psi-pair:nth-child(odd) {
+    border-right: none;
+  }
+
+  .cs-psi-pair {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-hero {
+    padding: 100px 0 40px;
+  }
+  .cs-section p{
+    font-size: 15px;
+  }
+  .cs-hero h1 {
+    font-size: 32px;
+  }
+
+  .cs-hero .cs-hero-subheading {
+    font-size: 15px;
+  }
+
   .cs-hero-split {
     padding-top: 110px;
   }
@@ -1368,8 +1506,104 @@
     font-size: 26px;
   }
 
-  .cs-stats-4up-grid {
+  .case-study-page .heading_main,
+  .cs-result h2 {
+    font-size: 24px;
+  }
+  .cs-advantage-text p,
+  .background p{
+    font-size: 15px;
+  }
+
+  .cs-section,
+  .cs-process,
+  .cs-advantage,
+  .cs-result {
+    padding: 50px 0;
+  }
+  .cs-radial-stat {
+    text-align: center;
+    width: calc(50% - 40px);
+  }
+
+  .cfg-cta-banner {
+    margin: 0 15px;
+  }
+  .cs-radial-stat p{
+    font-size: 20px;
+  }
+
+  .cfg-cta-inner {
+    padding: 0 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cfg-cta-heading {
+    font-size: 28px;
+  }
+
+  .cfg-cta-text {
+    font-size: 20px;
+  }
+
+  .cs-process-card {
+    padding: 40px 24px 30px;
+  }
+
+  .cs-testimonial-row {
+    gap: 30px;
+  }
+
+  .cs-testimonial-col-right {
+    padding-top: 0;
+  }
+
+  .cs-stat {
+    flex: 1 1 100%;
+  }
+
+  .cs-stat h3 {
+    font-size: 36px;
+  }
+
+  .cs-challenge-item p,
+  section.cs-result p {
+    font-size: 15px;
+  }
+
+  .cs-icon-row p.cs-icon-row-intro {
+    font-size: 15px;
+  }
+
+  .cs-icon-row-grid h4 {
+    font-size: 15px;
+  }
+
+  .cs-advantage-row {
+    flex-direction: column-reverse;
+    gap: 30px;
+    margin-bottom: 0;
+  }
+
+  .cs-banner {
+    padding: 40px 0;
+  }
+
+  .cs-banner h3 {
+    font-size: 24px;
+  }
+
+  .cs-stats-4up-grid,
+  .cs-icon-process-grid,
+  .cs-data-table-row,
+  .cs-circle-icon-grid,
+  .cs-stats-multi-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cs-stats-4up-grid,
+  .cs-stats-multi-grid {
     gap: 30px;
   }
 
@@ -1378,11 +1612,31 @@
   }
 
   .cs-numbered-step .cs-numbered-step-num {
-    font-size: 60px;
+    font-size: 200px;
+    position: absolute;
+    left: -7px;
+    top: -80px;
   }
 
   .cs-numbered-step p {
-    padding-left: 70px;
+    // padding-left: 70px;
+    position: static;
+  }
+  .cs-numbered-step{
+    min-height: 140px;
+    margin-top: 40px;
+    margin-bottom: 65px;
+  }
+  .cs-result .top-details p {
+    font-size: 15px;
+  }
+
+  .cs-ratings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cs-quote h4 {
+    font-size: 19px;
   }
 
   .cs-radial-ring {
@@ -1399,24 +1653,40 @@
     gap: 40px;
   }
 
-  .cs-banner {
-    padding: 40px 0;
+  .cs-compare-num {
+    font-size: 28px;
   }
 
-  .cs-banner h3 {
-    font-size: 24px;
+  .cs-data-table-cell + .cs-data-table-cell {
+    border-left: none;
+    border-top: 1px solid #2a3142;
   }
 
+  .cs-speed-card-stats,
+  .cs-speed-card-bars {
+    flex-direction: column;
+    gap: 24px;
+    text-align: left;
+  }
+
+  .cs-speed-stat-block.right,
+  .cs-speed-bar-block.right {
+    text-align: left;
+  }
+
+  .cs-speed-bar-block.right .cs-speed-bar-track {
+    justify-content: flex-start;
+  }
+  .cs-stats-multi-item .cs-stats-multi-num {
+    font-size: 50px;
+  }
+  .cs-stats-multi-item p {
+    font-size: 15px;
+  }
   .cs-stats-multi-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr 1fr;
   }
-
-  .cs-ratings-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .cs-quote h4 {
-    font-size: 19px;
+  .cs-advantage-text ol li {
+    font-size: 15px;
   }
 }
