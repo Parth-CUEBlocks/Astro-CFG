@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/generative-engine-optimization.less';
+
+const stats = [
+  { n: "65%", l: "of searches now end without a click - up from 58.5% in 2024 (Onely / Semrush, 2025)" },
+  { n: "4.4×", l: "higher economic value per visit from AI-referred traffic vs. traditional organic search (Semrush, 2025)" },
+  { n: "58%", l: "reduction in clicks to top-ranked pages when an AI Overview is present (Ahrefs, 2026)" },
+  { n: "14 mo", l: "average lag between what you publish today and what AI models learn" },
+];
+
+const services = [
+  { num: "01", title: "AI Visibility Audit", text: "We benchmark how ChatGPT, Perplexity, and Gemini currently represent your brand - where you appear, where you don't, and what queries you should be winning. Measured against your competitors in the same category." },
+  { num: "02", title: "Technical GEO Infrastructure", text: "Making your site genuinely machine-readable - not just technically compliant. This means attribute-rich schema markup (generic schema has shown no citation advantage in recent studies; the detail inside it is what matters), JavaScript rendering fixes so AI crawlers actually see your content, log-file analysis to identify what bots are visiting and ignoring, and ensuring you're indexed by both Google and Bing since ChatGPT draws from Bing's index." },
+  { num: "03", title: "Semantic Content Audit & Restructuring", text: "We map your entire site to identify how AI systems interpret your topical authority. Then we rewrite key pages - product pages, category pages, about pages, impact reports - into modular semantic units that AI can extract, verify, and cite independently." },
+  { num: "04", title: "Entity & Certification Optimisation", text: "Your B Corp score, Fair Trade certification, 1% for the Planet membership - these are structured facts that AI engines can cite confidently. We ensure each certification is marked up, linked, and presented in a format that reduces AI's effort to verify and surface it." },
+  { num: "05", title: "Content Freshness & Quarterly Refresh Strategy", text: "AI retrieval through RAG favours recently updated content over static evergreen pages. We build a refresh cadence into your content programme so your brand consistently beats competitors whose content is slowly decaying in relevance." },
+  { num: "06", title: "AI Visibility Tracking & Reporting", text: "We track citation frequency across platforms, brand sentiment in AI responses, semantic similarity scores, and AI referral revenue - not rankings. We show you whether AI is describing you as a category leader, and we close the gap when it isn't." },
+];
+
+const metrics = [
+  { title: "Citation frequency", text: "How often your brand is cited across ChatGPT, Perplexity, and Gemini for high-value queries in your category." },
+  { title: "Brand sentiment in AI responses", text: "Does AI describe you as a premium ethical leader - or vaguely? We track and improve how your brand is reconstructed." },
+  { title: "Semantic similarity scores", text: "How mathematically close your content is to the answers AI is currently generating for your target queries." },
+  { title: "AI referral value", text: "AI-referred visitors are worth 4.4× more than organic search visitors, based on conversion rate - and AI referral sessions grew 527% year-over-year in 2025. (Semrush)" },
+];
+
+const whoFor = [
+  { title: "B Corps", text: "Your certification data is citation gold. We structure it so AI can use it accurately." },
+  { title: "Ethical eCommerce", text: "Sustainable, fair trade, and planet-positive brands competing for AI-first discovery." },
+  { title: "Shopify & Magento stores", text: "Product and category pages rebuilt for AI retrieval, not just search crawlers." },
+  { title: "Impact-led brands", text: "You have proprietary impact data. We turn it into content AI systems cite as a primary source." },
+  { title: "Purpose-driven DTC", text: "Brands where mission and revenue need to grow together - not compete." },
+  { title: "Certified brands", text: "Fair Trade, 1% for the Planet, organic certifications - we make every credential machine-readable." },
+];
+
+const faqItems = [
+  { q: "How is GEO different from SEO?", a: "SEO was about winning a ranked position in a list of links. GEO is about becoming the synthesised answer AI gives when someone asks a question. The mechanics are fundamentally different - AI systems retrieve content based on semantic relevance, entity clarity, and verifiability, not just keyword density or backlinks. You can rank #1 in Google and still be completely absent from ChatGPT, Perplexity, or Gemini's answers. Both matter. They just require different work." },
+  { q: "How quickly will we see results?", a: "It depends on the type of query. For queries that trigger real-time web retrieval (RAG) - which can be up to 70% of prompts in some industries - well-optimised content can start appearing in AI answers within weeks. For queries that rely on the model's static training data, there is a lag of up to 14 months before new model versions incorporate your changes. We'll be transparent about which wins are short-term and which are long-term from the start." },
+  { q: "Does our B Corp certification actually help with GEO?", a: "Yes - significantly. B Corp certification comes with a specific score, a recertification date, a public profile, and a set of structured impact metrics. These are all verifiable, structured facts that AI systems can cite with confidence. The challenge is that most B Corp websites describe their certification in vague, marketing-heavy language rather than presenting the specific data points AI needs. We fix that." },
+  { q: "Do you optimise for one AI platform or all of them?", a: "All major platforms - but we tailor strategy to each. Perplexity prioritises authoritative, research-heavy sources with recent citations, making it ideal for brands with strong impact data. Gemini and AI Overviews heavily weight entity clarity and domain authority. ChatGPT favours semantic coherence and broad citation presence across the web. Each platform has different retrieval behaviours and we account for all of them." },
+  { q: "Will our organic traffic drop?", a: "For informational content, very likely - and the data is sobering. AI Overviews now reduce clicks to top-ranked pages by 58% (Ahrefs, 2026), and click-through rates drop from 15% to 8% when an AI Overview appears for a keyword (Pew Research, 2025). Some brands that built their traffic on how-to and educational content have seen declines of 50–80%. The nuance is that the traffic surviving the AI filter tends to be far more qualified - those visitors already know what they need and are closer to a decision. We help you track both dimensions: what you're losing in volume and what you're gaining in intent quality and AI citation presence." },
+];
+---
+
+<Layout
+  title="Generative Engine Optimization(GEO) for B Corps & Purpose Driven Brands - CueForGood"
+  description="CueForGood helps B Corps and impact-led brands show up in AI search. From entity-based SEO to LLM-ready content, we make your values visible where it matters most."
+>
+  <div class="geo-page">
+    <div class="page">
+
+      <section class="hero">
+        <p class="eyebrow">Generative Engine Optimization</p>
+        <h1>Is your brand showing up in AI search?</h1>
+        <p class="hero-sub">AI search doesn't guarantee anyone visibility. But brands with clear, verifiable, well-structured content get cited more often - and that's exactly what we help you build.</p>
+        <div class="btn-gen">
+          <a href="#audit" class="cta-btn">Get in touch</a>
+          <a href="/geo-aeo-audit" class="cta-btn bg-white">Free GEO Audit*</a>
+        </div>
+        <p class="forbcorp">(* for B Corps &amp; Purpose driven brands)</p>
+      </section>
+
+      <div class="stats-bar">
+        {stats.map((s) => (
+          <div class="stat">
+            <div class="stat-n">{s.n}</div>
+            <div class="stat-l">{s.l}</div>
+          </div>
+        ))}
+      </div>
+
+      <div class="two-col">
+        <div class="label-col">What's changed</div>
+        <div class="body-col">
+          <h2>Search has shifted from ranking to being cited</h2>
+          <p>AI tools no longer return a list of links and let the user decide. They synthesise a single answer - drawing from sources they trust, content they can verify, and brands they can clearly identify. If your digital presence is vague, buried in marketing language, or technically invisible to AI crawlers, you simply won't appear.</p>
+          <p>For B Corps, ethical eCommerce brands, and purpose-led businesses, this is both a risk and an opportunity. The brands that get cited aren't always the biggest - they're the most verifiable. Your certifications, impact data, and sourcing practices are exactly the kind of specific, structured facts AI systems are built to favour. The question is whether they're presented in a way AI can actually use.</p>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <h2>Purpose-driven brands have a structural GEO advantage most haven't tapped yet</h2>
+        <p>Your B Corp score, Fair Trade certification, carbon neutrality data, and supply chain transparency are structured, verifiable facts - exactly the kind of signals AI engines are built to cite with confidence. Most brands in your category can't say the same.</p>
+        <p>The gap is rarely in having the assets. It's in how they're presented. "Committed to a sustainable future" costs an AI compute to interpret and yields nothing citable. "B Corp certified, score 112, recertified March 2024" is instantly usable. We make that shift systematically across your entire digital presence - turning your credentials into the citation signals they were always meant to be.</p>
+      </div>
+
+      <div class="two-col" style="border-bottom: none;">
+        <div class="label-col">What we do</div>
+        <div class="body-col">
+          <h2>Our GEO services</h2>
+          <div class="svc-list">
+            {services.map((s) => (
+              <div class="svc-row">
+                <div class="svc-num">{s.num}</div>
+                <div class="svc-inner">
+                  <h3>{s.title}</h3>
+                  <p>{s.text}</p>
+                </div>
+              </div>
+            ))}
+
+            <div class="svc-row svc-row--linked">
+              <div class="svc-num">07</div>
+              <div class="svc-inner">
+                <h3>SEO foundations that AI actually relies on</h3>
+                <p>GEO doesn't replace SEO - it depends on it. Research shows that <strong>76% of URLs cited in Google AI Overviews also rank in the top 10 organic results</strong>, and that strong traditional rankings meaningfully increase the probability of AI citation. We ensure your site's technical foundations, page speed, crawlability, internal linking, and content depth are all working in AI's favour - because the brands AI cites most confidently are also the ones that have earned authority the old-fashioned way.</p>
+                <a href="/organic-search" class="svc-link">Explore our SEO service →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="two-col">
+        <div class="label-col">How we measure success</div>
+        <div class="body-col">
+          <h2>New metrics for a zero-click world</h2>
+          <p>Universal rankings no longer exist. AI responses vary by platform, user context, and conversation history. Here's what we track instead:</p>
+          <div class="metrics-grid">
+            {metrics.map((m) => (
+              <div class="metric-card">
+                <h4>{m.title}</h4>
+                <p>{m.text}</p>
+              </div>
+            ))}
+          </div>
+          <div class="truth">
+            <p>We'll be upfront with you: your traditional traffic may decline even as your AI-driven authority grows. That's not failure - it's the shift. We'll be honest about the timeline, what to expect in the first 90 days, and what progress looks like before the model updates.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="label-col">Who this is for</div>
+        <div class="body-col">
+          <h2>Built for brands that lead with purpose</h2>
+          <div class="who-grid">
+            {whoFor.map((w) => (
+              <div class="who-tag">
+                <strong>{w.title}</strong>
+                <span>{w.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="two-col" style="border-bottom: none;">
+        <div class="label-col">Common questions</div>
+        <div class="body-col">
+          <h2>GEO explained</h2>
+          <div class="faq-list">
+            {faqItems.map((item) => (
+              <details class="faq-item">
+                <summary class="faq-trigger">
+                  <span class="q">{item.q}</span>
+                  <span class="faq-arrow">↓</span>
+                </summary>
+                <div class="faq-body">
+                  <p>{item.a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-block" id="audit">
+        <div>
+          <h2>Ready to Scale Your Mission?<br />Let's find out where you stand.</h2>
+        </div>
+        <div>
+          <p>We start every GEO engagement with an AI Visibility Audit - a benchmark of how your brand currently appears across ChatGPT, Perplexity, and Gemini, what queries you should be winning, and what's standing in the way.</p>
+          <a href="/contact" class="cta-btn accent">Get in touch</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>

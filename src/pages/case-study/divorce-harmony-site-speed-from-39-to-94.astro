@@ -148,7 +148,8 @@ const psiSections = [
               {issues.map((item) => (
                 <details class="cs-accordion-item">
                   <summary class="cs-accordion-trigger">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e0e5ec"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"></path></svg>
+                    <svg class="cs-accordion-icon-plus" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e0e5ec"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"></path></svg>
+                    <svg class="cs-accordion-icon-minus" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e0e5ec"><path d="M200-440v-80h560v80H200Z"></path></svg>
                     {item.q}
                   </summary>
                   <div class="cs-accordion-panel">{item.a}</div>
@@ -221,5 +222,14 @@ const psiSections = [
   }
   .cs-accordion-trigger {
     list-style: none;
+  }
+  .cs-accordion-icon-minus {
+    display: none;
+  }
+  details[open] .cs-accordion-icon-plus {
+    display: none;
+  }
+  details[open] .cs-accordion-icon-minus {
+    display: block;
   }
 </style>
