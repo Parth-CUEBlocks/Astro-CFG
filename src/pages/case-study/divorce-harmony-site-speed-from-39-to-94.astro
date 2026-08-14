@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import CaseStudyCta from '../../components/CaseStudyCta.astro';
 import '../../styles/case-study.less';
+import '../../styles/case-studies/divorce-harmony-site-speed-from-39-to-94.less';
 
 import phpImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/php.png';
 import wpImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/wp.png';
@@ -11,6 +12,12 @@ import approachDiagram from '../../assets/case-study/divorce-harmony-site-speed-
 import beforeImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/before.png';
 import afterImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/after.png';
 import dori from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/dori.png';
+
+// Import your 4 image assets (Update paths/names to match your assets folder)
+import homepagePsiImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/psi-homepage.png';
+import mediationPsiImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/psi-mediation.png';
+import maritalPsiImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/psi-marital.png';
+import cheapPsiImg from '../../assets/case-study/divorce-harmony-site-speed-from-39-to-94/psi-cheap.png';
 
 const stats = [
   { pct: "88.3%", label: "On load time improved" },
@@ -45,17 +52,11 @@ const issues = [
   { q: "09 Optimizing Image Loading for Mobile and Desktop", a: "We discovered that desktop-sized images were being unnecessarily loaded on mobile devices, increasing the page load time and consuming more bandwidth. To resolve this, we implemented a condition to serve different image sizes based on the device type. This ensures that mobile devices only load smaller, optimized images, while desktops load larger, high-resolution versions. This change reduces unnecessary resource loading and enhances the overall performance and efficiency of the website." },
 ];
 
-function psiColor(score: number) {
-  if (score < 50) return "#e05d3d";
-  if (score < 90) return "#f0a63c";
-  return "#3fce8c";
-}
-
-const psiPairs = [
-  { title: "Homepage (Mobile):", before: 39, after: 85 },
-  { title: "Divorce Mediation Service Page (Mobile):", before: 77, after: 91 },
-  { title: "Marital Mediation Service Page (Mobile):", before: 56, after: 81 },
-  { title: "Cheap Divorce Service Page (Mobile):", before: 61, after: 90 },
+const psiSections = [
+  { title: "Homepage (Mobile):", img: homepagePsiImg },
+  { title: "Divorce Mediation Service Page (Mobile):", img: mediationPsiImg },
+  { title: "Marital Mediation Service Page (Mobile):", img: maritalPsiImg },
+  { title: "Cheap Divorce Service Page (Mobile):", img: cheapPsiImg },
 ];
 ---
 
@@ -68,8 +69,8 @@ const psiPairs = [
     <section class="cs-hero" style="text-align: left; padding-bottom: 40px;">
       <div class="container">
         <p class="cs-hero-label">Case Study</p>
-        <h1 style="font-size: 38px; max-width: 900px;">Accelerating DivorceHarmony.com: From 39 to 85 in Page Speed Insights</h1>
-        <h2 class="heading_main" style="font-size: 24px; margin-top: 30px;">Results:</h2>
+        <h1>Accelerating DivorceHarmony.com: From 39 to 85 in Page Speed Insights</h1>
+        <h2 class="heading_main">Results:</h2>
       </div>
     </section>
 
@@ -110,7 +111,7 @@ const psiPairs = [
     <section class="cs-section" style="padding: 0 0 60px;">
       <div class="container">
         <h2 class="heading_main">Few words from Dori:</h2>
-        <h3 style="font-size: 22px; font-weight: 400; line-height: 1.6; color: #e0e5ec; max-width: 900px;">With CueForGood's help our website's speed improved significantly. The site's Core Web Vitals scores saw a major boost and our bounce rates have dropped noticeably. <strong style="font-weight: 700;">We highly recommend them!</strong></h3>
+        <h3>With CueForGood's help our website's speed improved significantly. The site's Core Web Vitals scores saw a major boost and our bounce rates have dropped noticeably. <strong style="font-weight: 700;">We highly recommend them!</strong></h3>
         <p style="margin-top: 20px; font-weight: 700; color: #e0e5ec;">Dori Shwirtz</p>
         <p style="margin: 0;">Licensed Attorney, Florida Supreme Court</p>
         <p style="margin: 0;">Certified Mediator and Divorce Coach</p>
@@ -137,7 +138,7 @@ const psiPairs = [
             </div>
             {approachSteps.map((s) => (
               <div>
-                <h3 style="font-size: 18px; font-weight: 700; color: #e0e5ec; margin: 0 0 8px;">{s.title}</h3>
+                <h3 style="font-weight: 700; color: #e0e5ec; margin: 0 0 8px;">{s.title}</h3>
                 <p style="margin: 0;">{s.text}</p>
               </div>
             ))}
@@ -147,7 +148,7 @@ const psiPairs = [
               {issues.map((item) => (
                 <details class="cs-accordion-item">
                   <summary class="cs-accordion-trigger">
-                    <svg width="20" height="20" viewBox="0 -960 960 960" fill="none" stroke="currentColor" stroke-width="60"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e0e5ec"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"></path></svg>
                     {item.q}
                   </summary>
                   <div class="cs-accordion-panel">{item.a}</div>
@@ -168,11 +169,11 @@ const psiPairs = [
         <p>Improvements measured using PageSpeed Insights (09 Jan vs 22 Jan 2025):</p>
         <div class="cs-advantage-row" style="margin-top: 30px; margin-bottom: 0; align-items: flex-start;">
           <div class="cs-advantage-media">
-            <h4 style="font-size: 18px; font-weight: 700; color: #e0e5ec; margin: 0 0 16px;">Before(Homepage):</h4>
+            <h4 style=" font-weight: 700; color: #e0e5ec; margin: 0 0 16px;">Before(Homepage):</h4>
             <img src={beforeImg.src} alt="Divorce Harmony Performance results Before Homepage fixes" style="border-radius: 8px;" />
           </div>
           <div class="cs-advantage-media">
-            <h4 style="font-size: 18px; font-weight: 700; color: #e0e5ec; margin: 0 0 16px;">After(Homepage):</h4>
+            <h4 style="font-weight: 700; color: #e0e5ec; margin: 0 0 16px;">After(Homepage):</h4>
             <img src={afterImg.src} alt="Divorce Harmony Performance results after Homepage fixes" style="border-radius: 8px;" />
           </div>
         </div>
@@ -194,26 +195,16 @@ const psiPairs = [
       </div>
     </section>
 
+    <!-- PageSpeed Insights Section with 4 image items -->
     <section class="cs-section" style="padding: 0 0 60px;">
       <div class="container">
         <h2 class="heading_main">PageSpeed Insights Improvements:</h2>
         <div class="cs-psi-grid">
-          {psiPairs.map((p) => (
-            <div class="cs-psi-pair">
-              <h4>{p.title}</h4>
-              <div class="cs-psi-pair-row">
-                <div class="cs-psi-score-block">
-                  <div class="cs-psi-score-ring" style={`--pct: ${p.before}; --psi-color: ${psiColor(p.before)};`}>
-                    <div class="cs-psi-score-ring-inner" style={`color: ${psiColor(p.before)};`}>{p.before}</div>
-                  </div>
-                  <p>Before</p>
-                </div>
-                <div class="cs-psi-score-block">
-                  <div class="cs-psi-score-ring" style={`--pct: ${p.after}; --psi-color: ${psiColor(p.after)};`}>
-                    <div class="cs-psi-score-ring-inner" style={`color: ${psiColor(p.after)};`}>{p.after}</div>
-                  </div>
-                  <p>After</p>
-                </div>
+          {psiSections.map((item) => (
+            <div class="cs-psi-card">
+              <h4>{item.title}</h4>
+              <div class="cs-psi-image-wrapper">
+                <img src={item.img.src} alt={item.title} />
               </div>
             </div>
           ))}
