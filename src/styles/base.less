@@ -459,6 +459,9 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
       font-weight: 800;
       line-height: 140%;
       text-align: center;
+      @media (max-width: 990px) {
+        font-size: 28px;
+      }
       @media (max-width:767px){
         font-size: 24px;
       }
@@ -468,6 +471,30 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
       font-weight: 500;
       line-height: 130%;
     }
+}
+.contactblock{
+  .contactus-area {
+    padding: 60px 80px;
+    flex-direction: row;
+    @media (max-width: 990px) {
+      padding: 60px 20px;
+    }
+    @media (max-width: 767px) {
+      padding: 40px 30px;
+      flex-direction: column;
+        gap: 0;
+    }
+    p{
+      font-size: 24px;
+      @media (max-width: 767px) {
+        font-size: 20px;
+      }
+    }
+    .btn-read-more{
+      border-color: #171c28;
+      font-weight: 600;
+    }
+  }
 }
 
 .contactus-area.btm-cont {
