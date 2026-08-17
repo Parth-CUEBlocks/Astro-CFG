@@ -34,10 +34,15 @@
     gap: 20px;
     flex-direction: column;
   }
+  @media (max-width:767px){
+  }
 }
 .cfg-hero-content {
   flex: 1;
   max-width: 580px;
+  @media (max-width:992px){
+    max-width: 100%;
+  }
 }
 .cfg-hero-title {
     font-size: 40px;
@@ -109,9 +114,18 @@
 .cfg-hero-media {
   flex: 1;
   display: flex;
+  justify-content: center;
 }
 /***Service Inner Pages****/
 .service-innerpages{
+  .cfg-service-row{
+    &:nth-child(odd){
+      flex-direction: row-reverse;
+      @media (max-width:767px){
+        flex-direction: column-reverse;
+      }
+    }
+  }
     @media (min-width:993px){
       .cfg-hero-grid {
         gap: 80px;
@@ -126,10 +140,21 @@
     gap: 10px;
     img{
       max-height: 90px;
+      @media (max-width: 767px) {
+        max-height: 70px;
+      }
     }
   }
   .cfg-shopify-hero{
     padding-bottom: 60px;
+    @media (max-width: 767px) {
+      padding-bottom: 50px;
+    }
+  }
+  @media (max-width: 767px) {
+    .cfg-hero-title {
+    font-size: 24px;
+    }
   }
 }
 /****Approach Section****/
@@ -137,6 +162,10 @@
     padding-top: 60px;
     padding-bottom: 100px;
     border-top: 1px solid #292e3b;
+    @media (max-width: 767px) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
 }
 .cfg-section-heading {
   font-size: 34px;
@@ -145,11 +174,18 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #e0e5ec;
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
 }
 .cfg-approach-grid {
     display: flex;
     gap: 30px;
     padding-top: 50px;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      gap: 40px;
+    }
 }
 .cfg-approach-card {
     flex: 1;
@@ -197,6 +233,9 @@
     flex-direction: column;
     row-gap: 150px;
     padding-bottom: 80px;
+    @media (max-width:1200px){
+        row-gap: 80px;
+    }
     @media (max-width:767px){
       row-gap: 0px;
     padding-bottom: 50px;
@@ -205,6 +244,42 @@
 .cfg-service-row {
   display: flex;
   gap: 60px;
+  &.imagehover{
+    background-color: #9cbcdb;
+    color: #171c28;
+    position: relative;
+    margin-top: 80px;
+    @media (max-width:767px){
+      margin-top: 50px;
+    }
+    .cfg-service-details{
+      padding: 40px;
+      max-width: 50%;
+      @media (max-width:767px){
+        max-width: 100%;
+        padding: 0px;
+      }
+      h2{
+        color: #171c28;
+      }
+      .btn-read-more{
+        color: #171c28;
+        border-color: #171c28;
+      }
+    }
+    .cfg-service-img{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      max-width: 50%;
+      @media (max-width:767px){
+        display: none;
+      }
+      .imagewithtags {
+          display: flex;
+      }
+    }
+  }
   @media (max-width:767px){
     flex-direction: column;
     gap: 32px;
@@ -215,7 +290,7 @@
       background-color: #ffffff0a;
     }
   }
-  .cfg-service-img {
+  .cfg-service-img {  
   flex: 1;
   img{
     width: 100%;
@@ -297,7 +372,7 @@
   }
 }
 /***Service page only**/
-.service-order  {
+.servicepageonly  {
   .cfg-service-row{
     &:first-child {
       order: 1;
@@ -307,9 +382,15 @@
     } 
     &:nth-child(3) {
       order: 4;
+      @media (max-width:767px){
+        background-color: transparent;
+      }
     } 
     &:nth-child(2) {
       order: 3;
+      @media (max-width:767px){
+        background-color: #ffffff0a;
+      }
     } 
     
   }
@@ -320,40 +401,28 @@
     text-align: center;
     font-size: 34px;
     margin-bottom: 50px;
+    @media (max-width: 767px) {
+      font-size: 28px;
+    }
 }
-
-
-
- .contactus-area {
-    flex-direction: column;
-    padding: 57px 0 64px;
-    row-gap: 8px;
-    align-items: center;
-    background-color: #e1f0ff;
-    clear: both;
-    display: flex;
-    justify-content: space-between;
-    color: #171c28;
+.service-innerpages{
+  
+  .cfg-service-row{
     @media (max-width:767px){
-      padding: 30px 15px 35px;
-      text-align: center;
+      flex-direction: column-reverse;
     }
-    h2{
-      color: #171c28;
-      font-size: 34px;
-      font-style: normal;
-      font-weight: 800;
-      line-height: 140%;
-      text-align: center;
-      @media (max-width:767px){
-        font-size: 24px;
-      }
+     .cfg-service-img img{
+      max-height: none;
+      border-radius: 24px;
+     }
+  }
+  .description-data{
+    ul + p{
+      margin-top: 20px;
     }
-    p,a{
-      color: #171c28;
-      font-weight: 500;
-      line-height: 130%;
-    }
+  }
 }
+
+
 
 

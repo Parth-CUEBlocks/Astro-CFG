@@ -15,8 +15,8 @@ const { title, description } = await getSeoMetadata(Astro.url.pathname, {
 });
 ---
 
-<Layout title={title} description={description}>
-  <div class="cfg-shopify-outer-wrapper services-page service-order">
+<Layout title={title} description={description} pageClass="nofooter-blog">
+  <div class="cfg-shopify-outer-wrapper services-page servicepageonly">
     <div class="cfg-shopify-inner-container">
     
     <!-- Hero Section -->
