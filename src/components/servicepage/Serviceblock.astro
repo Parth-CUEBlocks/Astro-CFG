@@ -14,7 +14,7 @@ const response = await client.getEntries({
 
 const data = response.items;
 const casestudy = (data as any[]) || [];
-  // console.log(casestudy);
+  //  console.log(casestudy);
 ---
 <section class="services-matrix-section">
       <div class="container-inner">
@@ -25,6 +25,7 @@ const casestudy = (data as any[]) || [];
         const shortDescriptionBelowHeading = item.fields?.shortDescriptionBelowHeading;
         const departmentServices = item.fields?.departmentServices ? documentToHtmlString(item.fields.departmentServices as any)  : "";
         const detailedBlockRightForTwoColumn = item.fields?.detailedBlockRightForTwoColumn ? documentToHtmlString(item.fields.detailedBlockRightForTwoColumn as any)  : "";
+        const fullWidthBottomBlock = item.fields?.fullWidthBottomBlock ? documentToHtmlString(item.fields.fullWidthBottomBlock as any)  : "";
         const buttonLabel = item.fields?.buttonLabel;
         const buttonurl = item.fields?.buttonUrl;
         const buttonLabel2 = item.fields?.buttonLabelRight;
@@ -38,6 +39,7 @@ const casestudy = (data as any[]) || [];
         const ImageURL2 = Image2?.fields?.file?.url;
         const altText2 = Image2?.fields?.title || "Service Image";
         return(
+          <>
           <div class={`cfg-service-row ${className || ''}`}>
             <div class="cfg-service-details">
               {tagsAboveHeading && tagsAboveHeading.length > 0 && (
@@ -80,8 +82,10 @@ const casestudy = (data as any[]) || [];
               </div>
 
             
-            
-        </div>
+             {fullWidthBottomBlock && <div class="fullwidth-data"  set:html={fullWidthBottomBlock} />}
+         </div>
+        
+        </>
         )
       })}
       </div>
