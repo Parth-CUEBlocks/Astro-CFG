@@ -1,28 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import '../styles/shopify.less';
+import '../styles/services.less';
 
 import { getSeoMetadata } from '../../lib/seo';
 import ServiceHeroSection from '../components/servicepage/ServiceHeroSection.astro';
 import Serviceblock from '../components/servicepage/Serviceblock.astro';
 import ServiceOurApproach from '../components/servicepage/ServiceOurApproach.astro';
+import Contactblocks from '../components/Contactblocks.astro';
+
 
 const { title, description } = await getSeoMetadata(Astro.url.pathname, {
   title: "Custom Wordpress Development for B Corps, Earth Friendly & Purpose Driven Brands",
   description: "From Wordpress Development to WooCommerce Customization, CueForGood offers a full range of Wordpress services. We leverage eCommerce for a global audience & love working with Earth-Friendly & Purpose Driven Brands. ",
 });
+
 ---
 
-<Layout title={title} description={description}>
-  <div class="cfg-shopify-outer-wrapper">
+<Layout title={title} description={description} pageClass="nofooter-blog nofooter-testimonial">
+  <div class="cfg-shopify-outer-wrapper service-innerpages wordpress-page">
     <div class="cfg-shopify-inner-container">
       <ServiceHeroSection/>
       <ServiceOurApproach/>
-      <section class="cfg-services-section">
+      <div class="cfg-services-section">
         <Serviceblock/>
-
-      </section>
-
+      </div>
+      <Contactblocks color="#eae7ff" title="Let’s build something good." description="Build a website that reflects your mission, supports your growth, and centers your users." />
 
     </div>
   </div>

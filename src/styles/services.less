@@ -87,6 +87,9 @@
       }
     }
 }
+.wordpress-page .cfg-hero-desc p + p {
+    margin-bottom: 0px;
+}
 .ethical_Organizations {
     padding-top: 65px;
      h2 {
@@ -106,10 +109,12 @@
         padding-bottom: 18px;
       }
     }
-    p{
-      max-width: 760px;
-    }
+    
 } 
+.servicepageonly .ethical_Organizations p {
+    max-width: 760px;
+}
+
 
 .cfg-hero-media {
   flex: 1;
@@ -124,6 +129,12 @@
       @media (max-width:767px){
         flex-direction: column-reverse;
       }
+    }
+    &.fullwidth{  
+      flex-direction: column;
+    }
+    &.wordpress-service{
+      gap:20px;
     }
   }
     @media (min-width:993px){
@@ -165,6 +176,14 @@
     @media (max-width: 767px) {
       padding-top: 50px;
       padding-bottom: 50px;
+    }
+    .main-heading{
+      text-align: center;
+      p{
+        color: #e0e5ec;
+        font-weight: 700;
+        padding-top: 20px;
+      }
     }
 }
 .cfg-section-heading {
@@ -244,6 +263,14 @@
 .cfg-service-row {
   display: flex;
   gap: 60px;
+  align-items: center;
+  flex-wrap: wrap;
+  &.twocolumn-text{
+    align-items: flex-start;
+    .description-data{
+      padding-top: 0px;
+    }
+  }
   &.imagehover{
     background-color: #9cbcdb;
     color: #171c28;
@@ -279,6 +306,7 @@
           display: flex;
       }
     }
+    
   }
   @media (max-width:767px){
     flex-direction: column;
@@ -308,8 +336,15 @@
     }
     }
   }
+  .fullwidth-data{
+      h3{
+        color: #e0e5ec;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+    }
 }
-.cfg-service-details {
+.cfg-service-details,.cfg-service-img {
   flex: 1;
   h2{
     color: #e0e5ec;
@@ -330,6 +365,13 @@
     padding-top: 24px;
     @media (max-width:767px){
       padding-top: 16px;
+    }
+    h3{
+      color: #e0e5ec;
+      margin-bottom: 15px;
+    }
+    p+ul{
+      margin-top: 15px;
     }
     ul{
       li{
@@ -413,7 +455,10 @@
     }
      .cfg-service-img img{
       max-height: none;
-      border-radius: 24px;
+      border-radius: 25px;
+     }
+     &.noborder .cfg-service-img img{
+      border-radius: 0px;
      }
   }
   .description-data{
@@ -421,8 +466,48 @@
       margin-top: 20px;
     }
   }
+  .nopaddingtop{
+    .description-data{
+      padding-top: 0px;
+    }
+  }
 }
 
+.nofooter-testimonial footer.site-footer {
+    border-top: 1px solid #3f3f3f;
+}
 
-
+/***Wordpress Page***/
+.wordpress-page{
+  .ethical_Organizations {
+    h3{
+      color: #e0e5ec;
+      font-size: 34px;
+      text-transform: capitalize;
+      margin-bottom: 20px;
+      @media (max-width: 767px) {
+        font-size: 24px;
+      }
+    }
+    ul{
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 15px;
+      li{
+        margin-bottom: 10px;
+        b,strong{
+          color:#e0e5ec;
+        }
+      }
+    }
+  }
+  .cfg-approach-section {
+     .main-heading{
+       p {
+        font-weight: 400;
+        color: #aab3c0;
+        } 
+     }
+  }
+}
 

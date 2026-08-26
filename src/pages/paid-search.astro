@@ -8,13 +8,13 @@ import Serviceblock from '../components/servicepage/Serviceblock.astro';
 import ServiceOurApproach from '../components/servicepage/ServiceOurApproach.astro';
 
 const { title, description } = await getSeoMetadata(Astro.url.pathname, {
-  title: "PHP Development for B Corps & Purpose-Driven Brands | CueForGood ",
-  description: "CueForGood builds secure, scalable PHP platforms for B Corps and mission-led organizations. From e-commerce and custom apps to API development and migration, we align tech with your impact.",
+  title: "Paid Media Strategy for B Corps & Purpose-Led Brands | CueForGood",
+  description: "Turn clicks into impact with CueForGood’s paid media strategies. Reach conscious audiences across Google, Meta, and LinkedIn with intent-driven campaigns built for mission-led growth.",
 });
 ---
 
 <Layout title={title} description={description} pageClass="nofooter-blog nofooter-testimonial">
-  <div class="cfg-shopify-outer-wrapper service-innerpages php-page">
+  <div class="cfg-shopify-outer-wrapper service-innerpages paidsearch-page">
     <div class="cfg-shopify-inner-container">
       <ServiceHeroSection/>
       <ServiceOurApproach/>
