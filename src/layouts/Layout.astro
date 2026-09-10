@@ -11,8 +11,13 @@ import '../styles/footer.less';
 
 
 
-const { title = "CueForGood | eCommerce Agency for Impact Brands" } = Astro.props;
-const { description = "eCommerce digital agency aligning competence with purpose." } = Astro.props;
+// const { title = "CueForGood | eCommerce Agency for Impact Brands" } = Astro.props;
+// const { description = "eCommerce digital agency aligning competence with purpose." } = Astro.props;
+const { 
+  title = "CueForGood | eCommerce Agency for Impact Brands",
+  description = "eCommerce digital agency aligning competence with purpose.",
+  pageClass = "" // Default to an empty string if not provided
+} = Astro.props;
 import favicon from '../assets/favicon.ico';
 ---
 
@@ -37,11 +42,12 @@ import favicon from '../assets/favicon.ico';
 
 		<Header />
 
-		<main id="main-content" tabindex="-1">
+		<main id="main-content" class:list={["main-wrapper", pageClass]} tabindex="-1">
 			<slot />
-		</main>
+			<Footer />
+		</main> 
 
-		<Footer />
+		
 		<script> 
 			function handleResponsiveElements() {
 			if (window.innerWidth > 768) {
@@ -49,6 +55,9 @@ import favicon from '../assets/favicon.ico';
 			} else {
 				document.querySelectorAll('.div-desktop').forEach(element => element.remove());
 			}
+			document.querySelectorAll('.nofooter-blog .cfg-blog-viewport').forEach(element => element.remove());
+			document.querySelectorAll('.nofooter-testimonial .cfg-testimonial-viewport').forEach(element => element.remove());
+			
 			}
 
 			document.addEventListener('DOMContentLoaded', handleResponsiveElements);

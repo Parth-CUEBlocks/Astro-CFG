@@ -14,7 +14,8 @@ const data1 = responsetitle.items[0]?.fields?.ourApproachHeading as any ;
 
 const response = await client.getEntries({
   content_type: "ourApproachShopifyPage",
-  'fields.pageUrl': currentUrl
+  'fields.pageUrl': currentUrl,
+  order: ["-sys.createdAt"],
 });
 const data = response.items;
 const approach = (data as any[]) || [];
