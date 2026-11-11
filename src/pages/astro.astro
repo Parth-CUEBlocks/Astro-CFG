@@ -1,0 +1,296 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/astro.less';
+
+import { getSeoMetadata } from '../../lib/seo';
+
+import heroImg from '../assets/page.astro/astro_hero.png';
+import approach1 from '../assets/page.astro/oa-1.svg';
+import approach2 from '../assets/page.astro/oa-2.svg';
+import approach3 from '../assets/page.astro/oa-3.svg';
+import as1 from '../assets/page.astro/as-1.png';
+import as2 from '../assets/page.astro/as-2.png';
+import as3 from '../assets/page.astro/as-3.png';
+import as4 from '../assets/page.astro/as-4.png';
+import as5 from '../assets/page.astro/as-5.png';
+import as6 from '../assets/page.astro/as-6.png';
+import as7 from '../assets/page.astro/as-7.png';
+
+const { title, description } = await getSeoMetadata(Astro.url.pathname, {
+  title: "Astro Development Agency for Sustainable Brands & B Corps",
+  description: "Astro websites built for speed, sustainability, and impact. CueForGood helps B Corps & purpose-driven brands stand out online.",
+});
+
+const approachSteps = [
+  {
+    icon: approach1,
+    alt: " defined approach",
+    title: "defined process",
+    text: "We follow a structured and transparent process from discovery through launch. Every project is planned around clear requirements, defined milestones, and regular communication, so you have a clear view of the work at every stage.",
+  },
+  {
+    icon: approach2,
+    alt: "best practice",
+    title: "Sustainable Best Practices",
+    text: "Our development approach combines modern web standards, accessibility, performance, and efficient delivery. We look for opportunities to reduce unnecessary code, data transfer, and complexity while maintaining the functionality and experience your website requires.",
+  },
+  {
+    icon: approach3,
+    alt: "consultative approach",
+    title: "Architecture That Fits",
+    text: "Based on your requirements, we recommend the architecture, CMS, and hosting setup that best fits your business and website. This gives your team a practical foundation to work with today, while providing the flexibility to evolve as your website grows.",
+  },
+];
+
+// `reverse` puts the image on the right; `extra` adds the section-specific classes from the original page.
+const services = [
+  {
+    image: as1,
+    title: "Custom Astro Website Development for Purpose-Driven Brands",
+    paragraphs: [
+      "We design and develop custom Astro websites for B Corps, sustainable brands, ethical businesses, and purpose-driven organizations. This includes marketing websites, blogs, documentation hubs, portfolios, and content-rich digital experiences.",
+      "Each build is developed around the requirements of the business, with a focus on performance, accessibility, scalability, and a clean technical foundation.",
+    ],
+    cta: "Get in touch",
+    extra: "fleex build",
+  },
+  {
+    image: as2,
+    title: "Migration to Astro From Another Platform",
+    paragraphs: [
+      "We help businesses move from existing platforms to Astro while maintaining the content, functionality, and search visibility they've built over time.",
+      "Whether you're migrating from WordPress, Webflow, Next.js, Gatsby, or another platform, we manage the technical migration, content structure, URL mapping, redirects, and SEO considerations as part of the process.",
+      "The result is a new Astro implementation without unnecessarily disrupting the digital presence you've already established.",
+    ],
+    cta: "Talk to us about migrating",
+    reverse: true,
+    extra: "fleex",
+  },
+  {
+    image: as3,
+    alt: " CMS Integration with Astro",
+    title: "CMS Integration with Astro",
+    paragraphs: [
+      "Connect your Astro site with a content management system that suits your requirements and helps you scale your site.",
+      "We integrate Astro with CMS platforms including Sanity, Contentful, Storyblok, and Strapi, as well as Markdown and MDX collections. This allows content teams to manage and publish their content while Astro provides the frontend experience.",
+      "For organizations producing impact reports, sourcing stories, certifications, editorial content, and other detailed brand information, the result is a flexible content workflow combined with a lightweight frontend.",
+    ],
+    cta: "Explore CMS options",
+    extra: "fleex remarketing",
+  },
+  {
+    image: as4,
+    title: "Astro Performance & Web Accessibility Audit",
+    paragraphs: [
+      "We assess the technical factors that influence how your website performs and how easily people can use it.Our audits cover Core Web Vitals, page weight, JavaScript, component hydration, carbon footprint, image delivery, rendering, accessibility, and other factors that influence website performance and usability.",
+      "We identify areas where unnecessary code, data, or technical complexity can be reduced, while addressing accessibility issues that may prevent people from fully engaging with your website. The result is a clearer picture of where your site can become faster, more accessible, and more efficient.",
+    ],
+    cta: "Book a performance & accessibility review",
+    reverse: true,
+    extra: "fleex",
+  },
+  {
+    image: as5,
+    title: "Islands Architecture & Component Integration",
+    paragraphs: [
+      "Astro's islands architecture allows us to introduce interactive functionality where it's needed while keeping the rest of the page lightweight and fast. This is particularly useful for experiences such as donation calculators, impact trackers, product configurators, and other interactive elements.",
+      "We can integrate React, Vue, Svelte, and Preact components as required, giving businesses the flexibility to build engaging digital experiences without adding unnecessary JavaScript across the entire site.",
+    ],
+    cta: "Get in touch",
+    extra: "fleex",
+  },
+  {
+    image: as6,
+    title: "Sustainable Hosting & Deployment Setup",
+    paragraphs: [
+      "We help businesses set up and manage the infrastructure behind their Astro websites, from hosting and deployment to staging and ongoing development.",
+      "We work with platforms including Vercel, Netlify, Cloudflare Pages, and renewable-powered hosting providers where appropriate. We also configure CI/CD pipelines, staging environments, and the appropriate rendering strategy, whether static, SSR, or hybrid, based on the requirements of the website.",
+    ],
+    cta: "Get in touch",
+    reverse: true,
+    // the original page puts `fleex` on the text column here, not the section, so this row is not vertically centred
+    textExtra: "fleex",
+  },
+  {
+    image: as7,
+    title: "Ongoing Maintenance & Support Retainers",
+    paragraphs: [
+      "We provide ongoing support to keep your website performing well as your business and digital needs evolve.",
+      "Our support retainers cover ongoing development, content updates, bug fixes, dependency updates, uptime monitoring, and regular performance reviews, giving your team access to the technical expertise needed to keep the website running smoothly and continually improve it.",
+    ],
+    cta: "Talk to us about ongoing support",
+    extra: "fleex",
+  },
+];
+
+const faqs = [
+  {
+    question: "How is Astro different from Next.js or Gatsby?",
+    answer: "Astro takes a lightweight approach to delivering websites, shipping minimal JavaScript by default and adding interactivity only where it is required. This makes it particularly well suited to content-rich and marketing websites where performance is an important consideration.",
+  },
+  {
+    question: "What makes Astro a good choice for a business website?",
+    answer: "Astro is built around a lightweight approach to website development, delivering minimal JavaScript by default and adding interactivity where it's needed. This makes it well suited to marketing websites, content-rich sites, and other digital experiences where performance, flexibility, and scalability are important.",
+  },
+  {
+    question: "Can you migrate my existing website to Astro?",
+    answer: "Yes. We migrate websites from WordPress, Webflow, Next.js, Gatsby, and other platforms. We manage the content, URL structure, redirects, functionality, and technical SEO as part of the migration, helping you move to Astro without unnecessarily disrupting your existing website or search visibility. To figure out the possibilities, please contact us at <a href=\"mailto:letstalk@cueforgood.com\" class=\"underline\">letstalk@cueforgood.com</a>.",
+  },
+  {
+    question: "Can Astro work with our existing CMS?",
+    answer: "Yes. Astro can integrate with a range of content management systems, including Sanity, Contentful, Storyblok, and Strapi. We can recommend and configure the CMS based on how your team manages and publishes content.",
+  },
+  {
+    question: "Do you handle hosting and deployment as well?",
+    answer: "Yes. We can manage the wider technical setup, including hosting, CMS integration, deployment pipelines, staging environments, and the appropriate rendering strategy for your website.",
+  },
+  {
+    question: "How long does an Astro website take to build?",
+    answer: "Timelines depend on the scope and complexity of the project. A straightforward marketing website can typically be completed within a few weeks, while larger migrations and custom builds require more planning. We'll establish the scope and provide a clear timeline during discovery.",
+  },
+  {
+    question: "Do you offer ongoing Astro support?",
+    answer: "Yes. We provide ongoing maintenance and development support, including updates, fixes, content changes, monitoring, and performance reviews, so your team has continued access to Astro development expertise after launch.",
+  },
+];
+---
+
+<Layout title={title} description={description} pageClass="nofooter-blog">
+  <div class="cfg-astro-page">
+    <article class="static_page shopify-page astroPage">
+      <section class="ser_sec_row creative_design_page">
+        <div class="container">
+          <div class="ser_sec_row_lt wdt-40 pd_right_40">
+            <div class="ser_sec_row_lt_text">
+              <div class="shopify-top-wrap">
+                <h1 class="heading_main">Astro Websites for B Corps &amp; Sustainable Brands</h1>
+              </div>
+              <h3>High-performance, lightweight websites for brands with a purpose</h3>
+              <p>We design, develop, and migrate websites using Astro, a modern web framework built for speed and performance. Astro's lightweight architecture allows websites to deliver HTML content with interactivity wherever needed, helping create fast and efficient digital user experience.</p>
+              <br />
+              <p>For B Corps, sustainable brands, and purpose-driven organizations, this provides a flexible foundation for building websites that are performant, accessible, and efficient, while giving teams the freedom to create the digital experiences their audiences expect.</p>
+            </div>
+          </div>
+          <div class="ser_sec_row_rt wdt-60 pd_left_40 text-center">
+            <img src={heroImg.src} alt="CueForGood " class="img-responsive" loading="eager" fetchpriority="high" />
+          </div>
+        </div>
+      </section>
+
+      <section class="our-process">
+        <div class="container">
+          <div class="main-heading text-center">
+            <h2 class="heading_main">OUR APPROACH</h2>
+          </div>
+          <div class="process-steps">
+            {approachSteps.map((step) => (
+              <div class="steps">
+                <div class="steps-inn">
+                  <figure>
+                    <img src={step.icon.src} alt={step.alt} class="image_responsive" />
+                  </figure>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {services.map((service, index) => (
+        <section class:list={["motion-graphics", { "right-img": service.reverse }, service.extra]}>
+          <div class="container">
+            {index === 0 && (
+              <div class="main-heading text-center">
+                <h2 class="heading_main">Our Astro Development Services</h2>
+              </div>
+            )}
+            <div class="print-outer">
+              <div class:list={["ser_sec_row_rt", service.reverse ? "pd_left_40 right" : "pd_right_40"]}>
+                <figure>
+                  <img src={service.image.src} alt={service.alt ?? service.title} class="img-responsive" loading="lazy" />
+                </figure>
+              </div>
+              <div class:list={["ser_sec_row_lt", service.reverse ? "pd_right_40" : "pd_left_40", service.textExtra]}>
+                <h2 class="heading_main">{service.title}</h2>
+                <div class="ser_sec_row_lt_text">
+                  <p set:html={service.paragraphs.join("<br /><br />")} />
+                </div>
+                <a
+                  href="/contact"
+                  id={index === 0 ? "first-focus-element" : undefined}
+                  class="btn main_cta focus-visible"
+                >{service.cta}</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      <div class="cb_good_section">
+        <div class="service_weoffer cb_testimonails">
+          <div class="container">
+            <div class="contactus-area">
+              <div class="left-cont">
+                <h2 class="heading-cb">Ready to Build with Astro?</h2>
+                <p>Build a faster, lighter website with Astro, backed by the expertise to make the technology work for your brand, your customers, and your goals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-wrapper astro-faq">
+        <div class="container">
+          <h2 class="main-heading">Frequently Asked Questions</h2>
+          {faqs.map((faq) => (
+            <>
+              <button class="accordion">
+                <svg width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="chevron-icon" aria-hidden="true">
+                  <path d="M1.5 1.5L9.5 9.5L17.5 1.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                {faq.question}
+              </button>
+              <div class="accordion-content">
+                <p set:html={faq.answer} />
+              </div>
+            </>
+          ))}
+        </div>
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<script>
+  // Only one FAQ open at a time; the first one starts open (same behaviour as the Gatsby page).
+  const accordionBtns = document.querySelectorAll<HTMLButtonElement>(".astro-faq .accordion");
+
+  const close = (btn: HTMLButtonElement) => {
+    const content = btn.nextElementSibling as HTMLElement;
+    btn.classList.remove("is-open");
+    btn.setAttribute("aria-expanded", "false");
+    content.classList.remove("active");
+    content.style.maxHeight = "";
+  };
+
+  const open = (btn: HTMLButtonElement) => {
+    const content = btn.nextElementSibling as HTMLElement;
+    btn.classList.add("is-open");
+    btn.setAttribute("aria-expanded", "true");
+    content.classList.add("active");
+    content.style.maxHeight = content.scrollHeight + 20 + "px";
+  };
+
+  accordionBtns.forEach((btn) => {
+    btn.setAttribute("aria-expanded", "false");
+    btn.addEventListener("click", () => {
+      const isOpen = btn.classList.contains("is-open");
+      accordionBtns.forEach(close);
+      if (!isOpen) open(btn);
+    });
+  });
+
+  if (accordionBtns.length) open(accordionBtns[0]);
+</script>

@@ -1,0 +1,161 @@
+// Privacy policy page — styles ported from the Gatsby site (custom.less + dark-mode rules),
+// scoped under .cfg-privacy-page so they do not leak into the rest of the site.
+// Dark-mode rules use the doubled scope to keep the specificity edge they had via body.dark_mode.
+
+.cfg-privacy-page {
+  // Gatsby offset its fixed header with body padding; the Astro header is fixed and 90px tall.
+  padding-top: 90px;
+  font-weight: 300;
+  line-height: 1.3;
+}
+.cfg-privacy-page h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.cfg-privacy-page h3 {
+  font-size: 1.17em;
+}
+.cfg-privacy-page section {
+  vertical-align: top;
+}
+.cfg-privacy-page section.ser_sec_row.privacy-page {
+  margin-top: 80px;
+}
+@media (max-width: 1024px) {
+  .cfg-privacy-page section.ser_sec_row.privacy-page {
+    margin-top: 62px;
+  }
+}
+@media (max-width: 767px) {
+  .cfg-privacy-page section.ser_sec_row.privacy-page {
+    margin-top: 62px;
+  }
+}
+.cfg-privacy-page .focus-visible:focus-visible {
+  background-color: transparent;
+  border-color: #e7a743;
+  box-shadow: none;
+  color: #000;
+  outline: 2px solid #e7a743;
+  outline-offset: 4px;
+  transition: none !important;
+}
+.cfg-privacy-page .container {
+  max-width: 1290px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+}
+@media only screen and (max-width: 1290px) {
+  .cfg-privacy-page .container {
+    max-width: 1105px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .cfg-privacy-page .container {
+    display: inline-block;
+    width: 100%;
+  }
+}
+.cfg-privacy-page section {
+  display: inline-block;
+  width: 100%;
+  margin: 50px 0;
+}
+@media only screen and (max-width: 1199px) {
+  .cfg-privacy-page section {
+    margin: 30px 0;
+  }
+}
+.cfg-privacy-page [hidden] {
+  display: none;
+}
+.cfg-privacy-page a {
+  background-color: transparent;
+}
+.cfg-privacy-page a:active,
+.cfg-privacy-page a:hover {
+  outline: 0;
+}
+.cfg-privacy-page strong {
+  font-weight: bold;
+}
+.cfg-privacy-page img {
+  border: 0;
+}
+.cfg-privacy-page *:focus {
+  outline: none;
+}
+.cfg-privacy-page * {
+  margin: 0;
+  padding: 0;
+}
+.cfg-privacy-page *,
+.cfg-privacy-page *:before,
+.cfg-privacy-page *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.cfg-privacy-page a {
+  text-decoration: none;
+}
+.cfg-privacy-page ul {
+  list-style: none outside none;
+}
+.cfg-privacy-page .privacy-page p {
+  margin: 20px 0;
+  line-height: 1.5;
+}
+.cfg-privacy-page .privacy-page h3 {
+  margin: 0 0 20px;
+  border-bottom: 1px solid #f7f7f7;
+  padding: 10px 0;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.cfg-privacy-page .privacy-page ul {
+  padding-left: 20px;
+}
+.cfg-privacy-page .privacy-page ul li {
+  list-style-type: disc;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+.cfg-privacy-page .privacy-page span {
+  color: #0c1a29;
+  font-weight: 500;
+}
+.cfg-privacy-page .heading_main {
+  font-size: 34px;
+  text-transform: capitalize;
+}
+@media only screen and (max-width: 991px) {
+  .cfg-privacy-page .heading_main {
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cfg-privacy-page .heading_main {
+    font-size: 24px;
+  }
+}
+.cfg-privacy-page .ser_sec_row {
+  display: inline-block;
+  width: 100%;
+}
+.cfg-privacy-page .focus-visible:focus-visible {
+  outline-offset: 1px;
+}
+.cfg-privacy-page.cfg-privacy-page * {
+  color: #E0E5EC;
+}
+.cfg-privacy-page.cfg-privacy-page p,
+.cfg-privacy-page.cfg-privacy-page p span,
+.cfg-privacy-page.cfg-privacy-page li {
+  color: #AAB3C0;
+}
+.cfg-privacy-page.cfg-privacy-page h2,
+.cfg-privacy-page.cfg-privacy-page h3 {
+  color: #E0E5EC;
+}

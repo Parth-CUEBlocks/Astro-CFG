@@ -16,7 +16,8 @@ import '../styles/footer.less';
 const { 
   title = "CueForGood | eCommerce Agency for Impact Brands",
   description = "eCommerce digital agency aligning competence with purpose.",
-  pageClass = "" // Default to an empty string if not provided
+  pageClass = "", // Default to an empty string if not provided
+  noindex = false
 } = Astro.props;
 import favicon from '../assets/favicon.ico';
 ---
@@ -27,6 +28,7 @@ import favicon from '../assets/favicon.ico';
 		<meta charset="UTF-8" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		{noindex && <meta name="robots" content="noindex" />}
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href={favicon} />
 		
@@ -76,6 +78,7 @@ import favicon from '../assets/favicon.ico';
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		background : #171C28
 	}
 
 	.skip-to-content-anchor {

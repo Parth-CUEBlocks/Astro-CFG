@@ -1,0 +1,804 @@
+// Astro service page — styles ported from the Gatsby site (_astro.less + shared service-page rules),
+// scoped under .cfg-astro-page so they do not leak into the rest of the site.
+
+.cfg-astro-page {
+  // Gatsby offset its fixed header with body padding; the Astro header is fixed and 90px tall.
+  padding-top: 90px;
+  font-weight: 300;
+  line-height: 1.3;
+  overflow-x: hidden;
+}
+.cfg-astro-page h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.cfg-astro-page h3 {
+  font-size: 1.17em;
+  font-weight: 700;
+}
+.cfg-astro-page section {
+  vertical-align: top;
+}
+@media (max-width: 1024px) {
+  .cfg-astro-page section.creative_design_page {
+    margin-top: 62px;
+  }
+}
+@media (max-width: 767px) {
+  .cfg-astro-page section.creative_design_page {
+    margin-top: 62px;
+  }
+}
+.cfg-astro-page .focus-visible:focus-visible {
+  background-color: transparent;
+  border-color: #e7a743;
+  box-shadow: none;
+  color: #000;
+  outline: 2px solid #e7a743;
+  outline-offset: 4px;
+  transition: none !important;
+}
+.cfg-astro-page .main_cta.focus-visible:focus {
+  outline: 0;
+}
+.cfg-astro-page .main_cta.focus-visible:focus-visible {
+  background-color: transparent;
+  border-color: unset;
+  box-shadow: none;
+  color: #000;
+  outline: 5px solid #e7a743;
+  outline-offset: 4px;
+  display: inline-block;
+  transition: none !important;
+}
+.cfg-astro-page .shopify-page .motion-graphics .print-outer {
+  padding-top: 50px;
+}
+.cfg-astro-page .shopify-page .cb_good_section .service_weoffer.cb_testimonails .container {
+  border: 0;
+  padding-top: 0;
+}
+.cfg-astro-page .container {
+  max-width: 1290px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+}
+@media only screen and (max-width: 1290px) {
+  .cfg-astro-page .container {
+    max-width: 1105px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .cfg-astro-page .container {
+    display: inline-block;
+    width: 100%;
+  }
+}
+.cfg-astro-page section {
+  display: inline-block;
+  width: 100%;
+  margin: 50px 0;
+}
+@media only screen and (max-width: 1199px) {
+  .cfg-astro-page section {
+    margin: 30px 0;
+  }
+}
+.cfg-astro-page article,
+.cfg-astro-page figure {
+  display: block;
+}
+.cfg-astro-page [hidden] {
+  display: none;
+}
+.cfg-astro-page a {
+  background-color: transparent;
+}
+.cfg-astro-page a:active,
+.cfg-astro-page a:hover {
+  outline: 0;
+}
+.cfg-astro-page h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.cfg-astro-page img {
+  border: 0;
+}
+.cfg-astro-page figure {
+  margin: 1em 40px;
+}
+.cfg-astro-page button {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.cfg-astro-page button {
+  overflow: visible;
+}
+.cfg-astro-page button {
+  text-transform: none;
+}
+.cfg-astro-page button {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+.cfg-astro-page button[disabled] {
+  cursor: default;
+}
+.cfg-astro-page button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.cfg-astro-page *:focus {
+  outline: none;
+}
+.cfg-astro-page * {
+  margin: 0;
+  padding: 0;
+}
+.cfg-astro-page figure {
+  margin: 0;
+}
+.cfg-astro-page *,
+.cfg-astro-page *:before,
+.cfg-astro-page *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.cfg-astro-page a {
+  text-decoration: none;
+}
+.cfg-astro-page .main_cta {
+  font-weight: 600;
+  color: #000000;
+  border: 4px solid #000;
+  text-align: center;
+  display: inline-block;
+  text-transform: uppercase;
+  margin-top: 20px;
+  position: relative;
+  padding: 22px 30px;
+  min-width: 200px;
+  max-width: 100%;
+  transition: all ease 0.5s;
+}
+.cfg-astro-page .main_cta:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  background: #000;
+  bottom: 0;
+  top: 0;
+  z-index: -81;
+  transition: all ease 0.5s;
+  width: 0;
+  right: 0;
+  display: none;
+}
+.cfg-astro-page .main_cta:hover {
+  color: #ffffff;
+  background-color: #000;
+  transition: all ease 0.5s;
+}
+.cfg-astro-page .main_cta:hover::before {
+  width: 100%;
+}
+.cfg-astro-page .underline {
+  text-decoration: underline;
+}
+.cfg-astro-page .heading_main {
+  font-size: 34px;
+  text-transform: capitalize;
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .heading_main {
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cfg-astro-page .heading_main {
+    font-size: 24px;
+  }
+}
+.cfg-astro-page .pd_right_40 {
+  padding-right: 40px;
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .pd_right_40 {
+    padding-right: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cfg-astro-page .pd_right_40 {
+    padding-right: 0px;
+  }
+}
+.cfg-astro-page .pd_left_40 {
+  padding-left: 40px;
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .pd_left_40 {
+    padding-left: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cfg-astro-page .pd_left_40 {
+    padding-left: 0px;
+  }
+}
+.cfg-astro-page .img-responsive {
+  max-width: 100%;
+}
+@media (min-width: 767px) and (max-width: 1100px) {
+  .cfg-astro-page .main_cta {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+}
+@media (min-width: 767px) and (max-width: 1100px) {
+  .cfg-astro-page .static_page.shopify-page .creative_design_page .ser_sec_row_rt {
+    padding-left: 0;
+  }
+}
+@media (min-width: 767px) and (max-width: 1100px) {
+  .cfg-astro-page .cb_good_section .service_weoffer p {
+    font-size: 15px;
+  }
+}
+@media (min-width: 767px) and (max-width: 1100px) {
+  .cfg-astro-page .shopify-page section.motion-graphics.fleex.build .heading_main {
+    padding-bottom: 20px;
+  }
+}
+@media (min-width: 767px) and (max-width: 1100px) {
+  .cfg-astro-page .shopify-page section.motion-graphics .print-outer {
+    padding-top: 0;
+  }
+}
+@media (min-width: 767px) and (max-width: 991px) {
+  .cfg-astro-page .static_page .motion-graphics img {
+    width: 100%;
+  }
+}
+@media (min-width: 767px) and (max-width: 991px) {
+  .cfg-astro-page section.ser_sec_row.creative_design_page .ser_sec_row_rt {
+    padding-left: 0;
+  }
+}
+.cfg-astro-page .ser_sec_row {
+  display: inline-block;
+  width: 100%;
+}
+.cfg-astro-page .ser_sec_row_lt {
+  width: 50%;
+  float: left;
+}
+.cfg-astro-page .ser_sec_row_lt_text {
+  margin: 20px 0 ;
+}
+@media only screen and (max-width: 767px) {
+  .cfg-astro-page .ser_sec_row_lt {
+    width: 100%;
+  }
+}
+.cfg-astro-page .ser_sec_row_rt {
+  width: 50%;
+  float: left;
+}
+.cfg-astro-page .ser_sec_row_rt .main_cta {
+  margin-top: 15px;
+}
+@media only screen and (max-width: 767px) {
+  .cfg-astro-page .ser_sec_row_rt {
+    width: 100%;
+  }
+}
+.cfg-astro-page h1.heading_main {
+  margin: 0;
+}
+.cfg-astro-page .shopify-page .shopify-top-wrap {
+  display: flex;
+  gap: 10px;
+}
+.cfg-astro-page .shopify-page .shopify-top-wrap + h3 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.cfg-astro-page .creative_design_page {
+  margin-top: 80px;
+}
+@media only screen and (max-width: 1290px) {
+  .cfg-astro-page .creative_design_page {
+    margin-top: 50px;
+  }
+}
+.cfg-astro-page .creative_design_page .wdt-40 {
+  width: 50%;
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .creative_design_page .wdt-40 {
+    width: 100%;
+  }
+}
+.cfg-astro-page .creative_design_page .wdt-40 .ser_sec_row_rt {
+  width: 100%;
+}
+.cfg-astro-page .creative_design_page .wdt-60 {
+  width: 50%;
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .creative_design_page .wdt-60 {
+    width: 100%;
+  }
+}
+.cfg-astro-page .our-process {
+  text-align: center;
+  margin-top: 10px;
+}
+.cfg-astro-page .our-process .heading_main {
+  text-transform: uppercase;
+}
+.cfg-astro-page .our-process .process-steps {
+  display: inline-block;
+  width: 100%;
+  padding: 70px 0;
+}
+@media only screen and (max-width: 767px) {
+  .cfg-astro-page .our-process .process-steps {
+    padding: 30px 0;
+  }
+}
+.cfg-astro-page .our-process .process-steps .steps {
+  float: left;
+  width: 33.3%;
+  padding: 0 15px;
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .our-process .process-steps .steps {
+    width: 100%;
+    padding: 20px 5px;
+    width: 480px;
+    margin: 0 auto;
+    float: none;
+    max-width: 100%;
+  }
+}
+.cfg-astro-page .our-process .process-steps .steps h3 {
+  font-size: 23px;
+  font-weight: 600;
+  color: #000000;
+  text-transform: capitalize;
+  margin: 30px 0 12px;
+}
+.cfg-astro-page .our-process .process-steps .steps p {
+  padding: 0 20px;
+  font-size: 17px;
+}
+.cfg-astro-page .our-process .process-steps .steps .steps-inn {
+  background-color: #fff;
+  box-shadow: 0px 0px 50px #ddd;
+  padding: 50px 10px;
+  transition: 400ms linear;
+  transform: scale(1);
+}
+.cfg-astro-page .our-process .process-steps .steps .steps-inn:hover {
+  transition: 400ms linear;
+  transform: scale(1.01);
+  box-shadow: 0px 0px 50px #b1afaf;
+}
+.cfg-astro-page .our-process .process-steps .steps .steps-inn img {
+  max-height: 115px;
+}
+.cfg-astro-page .motion-graphics {
+  padding-bottom: 20px;
+}
+.cfg-astro-page .static_page .text-center {
+  text-align: center;
+}
+.cfg-astro-page .static_page .process-steps {
+  padding: 50px 0 20px;
+}
+@media only screen and (max-width: 767px) {
+  .cfg-astro-page .static_page .process-steps {
+    padding: 20px 0 20px;
+  }
+}
+.cfg-astro-page .static_page .motion-graphics {
+  padding-bottom: 0px;
+}
+.cfg-astro-page .static_page .motion-graphics .ser_sec_row_lt_text {
+  margin: 15px 0 0px;
+}
+.cfg-astro-page .static_page .motion-graphics figure {
+  position: relative;
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .static_page .motion-graphics figure {
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .static_page .motion-graphics.right-img {
+    background-color: #f7f6f6;
+    padding: 50px 0;
+  }
+}
+.cfg-astro-page .static_page .motion-graphics.right-img .right {
+  float: right;
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .static_page .motion-graphics .ser_sec_row_rt,
+  .cfg-astro-page .static_page .motion-graphics .ser_sec_row_lt {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .static_page .motion-graphics .pd_right_40,
+  .cfg-astro-page .static_page .motion-graphics .pd_left_40 {
+    padding: 0px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .cfg-astro-page .static_page.shopify-page .creative_design_page .ser_sec_row_rt {
+    padding-top: 40px;
+  }
+}
+.cfg-astro-page .static_page.shopify-page .our-process .steps-inn {
+  min-height: 460px;
+}
+@media only screen and (max-width: 1199px) {
+  .cfg-astro-page .static_page.shopify-page .our-process .steps-inn {
+    min-height: 560px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .static_page.shopify-page .our-process .steps-inn {
+    min-height: 160px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cfg-astro-page .static_page.shopify-page .our-process .steps-inn {
+    min-height: 160px;
+  }
+}
+@media (min-width: 1024px) {
+  .cfg-astro-page .fleex .print-outer {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+  }
+}
+@media (min-width: 1024px) {
+  .cfg-astro-page .fleex.right-img .print-outer {
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+}
+.cfg-astro-page .remarketing img.img-responsive {
+  box-shadow: 0px 0px 80px #ddd;
+}
+.cfg-astro-page .focus-visible:focus-visible {
+  outline-offset: 1px;
+}
+.cfg-astro-page .cb_good_section {
+  font-family: "Gotham";
+  font-weight: normal;
+}
+.cfg-astro-page .cb_good_section .heading-cb {
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 90px;
+  line-height: 1.1;
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .cb_good_section .heading-cb {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cfg-astro-page .cb_good_section .heading-cb {
+    font-size: 28px;
+  }
+}
+.cfg-astro-page .cb_good_section .img-responsive {
+  max-width: 100%;
+}
+.cfg-astro-page .cb_good_section .contactus-area .heading-cb {
+  margin-bottom: 4px;
+  text-align: left;
+}
+@media only screen and (max-width: 767px) {
+  .cfg-astro-page .cb_good_section .contactus-area .heading-cb {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+.cfg-astro-page .cb_good_section .contactus-area p {
+  font-size: 20px;
+}
+.cfg-astro-page .cb_good_section .service_weoffer {
+  padding-top: 120px;
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .cb_good_section .service_weoffer {
+    padding-top: 60px;
+  }
+}
+.cfg-astro-page .cb_good_section .service_weoffer .heading-cb {
+  text-align: left;
+  margin-bottom: 4px;
+}
+.cfg-astro-page .cb_good_section .service_weoffer p {
+  font-size: 24px;
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .cb_good_section .service_weoffer p {
+    font-size: 20px;
+  }
+}
+.cfg-astro-page .cb_good_section .service_weoffer.cb_testimonails {
+  padding-top: 0px;
+  padding-bottom: 60px;
+  clear: both;
+}
+.cfg-astro-page .cb_good_section .service_weoffer.cb_testimonails .container {
+  border-top: 1px solid #dcdcdc;
+  padding-top: 100px;
+}
+@media only screen and (max-width: 767px) {
+  .cfg-astro-page .cb_good_section .service_weoffer .contactus-area .heading-cb {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+.cfg-astro-page .cb_good_section h3 {
+  opacity: 1;
+  letter-spacing: 0px;
+}
+.cfg-astro-page .cb_good_section .contactus-area {
+  clear: both;
+  background-color: #e1f0ff;
+  padding: 60px 80px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 1199px) {
+  .cfg-astro-page .cb_good_section .contactus-area {
+    padding: 60px 30px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page .cb_good_section .contactus-area {
+    display: inline-block;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cfg-astro-page .cb_good_section .contactus-area {
+    padding: 30px;
+    text-align: center;
+  }
+}
+.cfg-astro-page .cb_good_section .service_weoffer.cb_testimonails .contactus-area {
+  background-color: #eae7ff;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.cfg-astro-page .cb_good_section .cb_good_section {
+  overflow-x: hidden;
+}
+@media (max-width: 1026px) {
+  .cfg-astro-page .cb_good_section .contactus-area {
+    padding: 40px 30px;
+  }
+}
+.cfg-astro-page.cfg-astro-page * {
+  color: #E0E5EC;
+}
+.cfg-astro-page.cfg-astro-page p {
+  color: #AAB3C0;
+}
+.cfg-astro-page.cfg-astro-page h1,
+.cfg-astro-page.cfg-astro-page h2,
+.cfg-astro-page.cfg-astro-page h3 {
+  color: #E0E5EC;
+}
+.cfg-astro-page.cfg-astro-page .cb_good_section .contactus-area .heading-cb {
+  color: #171C28;
+}
+.cfg-astro-page.cfg-astro-page .cb_good_section .contactus-area p {
+  color: #171C28;
+}
+.cfg-astro-page.cfg-astro-page .cb_good_section .service_weoffer {
+  background-color: #171C28;
+}
+.cfg-astro-page.cfg-astro-page .cb_good_section {
+  background-color: #171C28;
+}
+.cfg-astro-page.cfg-astro-page .cb_good_section .service_weoffer.cb_testimonails .container {
+  border-top-color: #292E3B;
+}
+.cfg-astro-page.cfg-astro-page a.btn.main_cta {
+  border-color: #E0E5EC;
+  color: #E0E5EC;
+}
+.cfg-astro-page.cfg-astro-page a.btn.main_cta:hover {
+  background-color: #E0E5EC;
+  color: #171C28;
+}
+.cfg-astro-page.cfg-astro-page .static_page.shopify-page .our-process .steps-inn {
+  background-color: #212633;
+  box-shadow: none;
+}
+.cfg-astro-page.cfg-astro-page .static_page.shopify-page .our-process .process-steps .steps h3 {
+  color: #E0E5EC;
+}
+.cfg-astro-page.cfg-astro-page .static_page.shopify-page .remarketing img.img-responsive {
+  box-shadow: none;
+}
+@media only screen and (max-width: 991px) {
+  .cfg-astro-page.cfg-astro-page .static_page .motion-graphics.right-img {
+    background-color: #171c28;
+  }
+}
+.cfg-astro-page .astroPage .faq-wrapper.astro-faq {
+  padding: 110px 0;
+}
+@media (max-width: 767px) {
+  .cfg-astro-page .astroPage .faq-wrapper.astro-faq {
+    padding: 40px 0 25px;
+  }
+}
+.cfg-astro-page .astroPage .faq-wrapper.astro-faq h2.main-heading {
+  color: #E0E5EC;
+  margin-bottom: 35px;
+}
+.cfg-astro-page .astroPage .faq-wrapper.astro-faq button.accordion {
+  width: 100%;
+  background-color: #1E2534;
+  border: 1px solid #2B3245;
+  border-radius: 6px;
+  outline: none;
+  text-align: left;
+  padding: 29px 25px;
+  font-size: 22px;
+  color: #E0E5EC;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s linear;
+  position: relative;
+  line-height: 1.3;
+  margin-top: 12px;
+}
+.cfg-astro-page .astroPage .faq-wrapper.astro-faq button.accordion:first-of-type {
+  margin-top: 0;
+}
+@media (max-width: 767px) {
+  .cfg-astro-page .astroPage .faq-wrapper.astro-faq button.accordion {
+    padding: 16px 40px 16px 16px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+.cfg-astro-page .astroPage .faq-wrapper.astro-faq button.accordion .chevron-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.2s ease-in-out;
+}
+@media (max-width: 767px) {
+  .cfg-astro-page .astroPage .faq-wrapper.astro-faq button.accordion .chevron-icon {
+    right: 16px;
+  }
+}
+.cfg-astro-page .astroPage .faq-wrapper.astro-faq button.accordion .chevron-icon path {
+  stroke: #E0E5EC;
+}
+.cfg-astro-page .astroPage .faq-wrapper.astro-faq button.accordion.is-open .chevron-icon {
+  transform: translateY(-50%) rotate(180deg);
+}
+.cfg-astro-page .astroPage .faq-wrapper.astro-faq .accordion-content {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+  color: #AAB3C0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+@media (max-width: 767px) {
+  .cfg-astro-page .astroPage .faq-wrapper.astro-faq .accordion-content {
+    padding: 0 16px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+.cfg-astro-page .astroPage .faq-wrapper.astro-faq .accordion-content {
+  display: none;
+}
+.cfg-astro-page .astroPage .faq-wrapper.astro-faq .accordion-content.active {
+  padding: 17px 20px 32px;
+  border-radius: 0 0 6px 6px;
+  background-color: #1E2534;
+  border: 1px solid #2B3245;
+  border-top: 0;
+  display: block;
+}
+@media (max-width: 767px) {
+  .cfg-astro-page .astroPage .faq-wrapper.astro-faq .accordion-content.active {
+    padding: 10px 16px 4px;
+  }
+}
+.cfg-astro-page .astroPage .faq-wrapper.astro-faq button.accordion.is-open {
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+  padding-bottom: 0;
+}
+.cfg-astro-page .astroPage .cb_good_section .service_weoffer.cb_testimonails .contactus-area {
+  text-align: center;
+  background-color: #E1F0FF;
+}
+.cfg-astro-page .astroPage .cb_good_section .service_weoffer.cb_testimonails .contactus-area .heading-cb {
+  color: #171C28;
+  text-align: center;
+}
+.cfg-astro-page .astroPage section.ser_sec_row.creative_design_page {
+  background-color: #1E2534;
+  margin: 0 auto 100px;
+  padding: 80px 0 70px;
+}
+.cfg-astro-page .astroPage .cb_good_section .service_weoffer.cb_testimonails {
+  padding-bottom: 90px;
+}
+.cfg-astro-page .astroPage .underline {
+  text-decoration: underline;
+}
+@media (max-width: 767px) {
+  .cfg-astro-page .astroPage section.ser_sec_row.creative_design_page {
+    padding: 50px 0 70px;
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .cfg-astro-page .astroPage .shopify-page .motion-graphics .print-outer {
+    padding-top: 0;
+  }
+}
+@media (max-width: 767px) {
+  .cfg-astro-page .astroPage section.motion-graphics.fleex.build .main-heading h2.heading_main {
+    padding-bottom: 30px;
+    padding-top: 5px;
+  }
+}
+@media (max-width: 767px) {
+  .cfg-astro-page .astroPage.static_page .motion-graphics {
+    padding: 30px 0 0;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 767px) {
+  .cfg-astro-page .astroPage .cb_good_section .service_weoffer.cb_testimonails {
+    padding-bottom: 60px;
+  }
+}
